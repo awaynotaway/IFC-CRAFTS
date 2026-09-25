@@ -1,6 +1,12 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const db = require("../config/db");
+const CodeGenerator = require(
+    "../services/codeGenerator.service"
+);
+const IntegrationHub = require(
+    "../services/integrationHub.service"
+);
 
 class AuthController {
 
@@ -74,8 +80,7 @@ class AuthController {
             const hashedPassword =
                 await bcrypt.hash(password, 10);
 
-            const userCode =
-                `USR-${Date.now()}`;
+           
 
             const [userResult] = await db.execute(
                 `
@@ -90,7 +95,7 @@ class AuthController {
                 VALUES (?, ?, ?, ?, ?, ?)
                 `,
                 [
-                    userCode,
+                    `TEMP-${Date.now()}`,
                     firstName,
                     lastName,
                     email,
@@ -102,9 +107,19 @@ class AuthController {
             const userId =
                 userResult.insertId;
 
-            const accountCode =
-                `ACC-${Date.now()}`;
-
+                 const userCode =
+                    CodeGenerator.generate(
+                        "USR",
+                        userId
+                    );
+            const [accountResult] = await db.execute(
+            `UPDATE users SET user_code = ? WHERE id = ?`,
+            [
+                userCode,
+                userId
+            ]
+        );
+               
             await db.execute(
                 `
                 INSERT INTO accounts (
@@ -116,16 +131,43 @@ class AuthController {
                 VALUES (?, ?, ?, ?)
                 `,
                 [
-                    accountCode,
+                    `TEMP-${Date.now()}`,
                     userId,
                     username,
                     hashedPassword
                 ]
             );
 
+            const accountId = accountResult.insertId;
+            const accountCode =
+                CodeGenerator.generate(
+                    "ACC",
+                    accountId
+                );
+            
+                await db.execute(
+                `
+                UPDATE accounts
+                SET account_code = ?
+                WHERE id = ?
+                `,
+                [
+                    accountCode,
+                    accountId
+                ]
+            );
+
+            await IntegrationHub.processEvent(
+                "USER_REGISTERED",
+                {
+                    userId
+                }
+            );
+
             return res.status(201).json({
                 success: true,
-                message: "Account registered successfully."
+                message:
+                    "Account registered successfully."
             });
 
         } catch (error) {
@@ -160,7 +202,8 @@ class AuthController {
 
                 return res.status(400).json({
                     success: false,
-                    message: "Username and password are required."
+                    message:
+                        "Username and password are required."
                 });
 
             }
@@ -224,6 +267,13 @@ class AuthController {
                 }
             );
 
+            await IntegrationHub.processEvent(
+                "USER_LOGGED_IN",
+                {
+                    userId: account.user_id
+                }
+            );
+
             return res.status(200).json({
                 success: true,
                 message: "Login successful.",
@@ -240,18 +290,50 @@ class AuthController {
 
         } catch (error) {
 
-    console.error(
-        "[AuthController][Register]",
-        error
-    );
+            console.error(
+                "[AuthController][Login]",
+                error
+            );
 
-    return res.status(500).json({
-        success: false,
-        message: error.message,
-        error
-    });
+            return res.status(500).json({
+                success: false,
+                message: "Failed to login."
+            });
 
-}
+        }
+
+    }
+
+    async logout(req, res) {
+
+        try {
+
+            await IntegrationHub.processEvent(
+                "USER_LOGGED_OUT",
+                {
+                    userId: req.user.userId
+                }
+            );
+
+            return res.status(200).json({
+                success: true,
+                message: "Logout successful."
+            });
+
+        } catch (error) {
+
+            console.error(
+                "[AuthController][Logout]",
+                error
+            );
+
+            return res.status(500).json({
+                success: false,
+                message: "Failed to logout."
+            });
+
+        }
+
     }
 
 }
