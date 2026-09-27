@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require("path");
 
 const express = require("express");
 const cors = require("cors");
@@ -42,6 +43,11 @@ const chatRoutes =
         "./routes/chat.routes"
     );
 
+const reviewRoutes =
+    require(
+        "./routes/review.routes"
+    );
+
 const app = express();
 
 app.use(cors());
@@ -51,6 +57,12 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+
+app.use(
+    express.static(
+        path.join(__dirname, "../frontend")
+    )
+);
 
 
 
@@ -67,12 +79,16 @@ app.use(
 
 app.get("/", (req, res) => {
 
-    res.status(200).json({
-        success: true,
-        message: "IFC Crafts API is running."
-    });
+    res.sendFile(
+        path.join(
+            __dirname,
+            "../frontend",
+            "index.html"
+        )
+    );
 
 });
+``
 
 app.use(
     "/api/auth",
@@ -123,6 +139,11 @@ auditLogRoutes
 app.use(
     "/api/chats",
     chatRoutes
+);
+
+app.use(
+    "/api/reviews",
+    reviewRoutes
 );
 const PORT = process.env.PORT || 5000;
 

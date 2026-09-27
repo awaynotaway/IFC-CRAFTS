@@ -95,13 +95,13 @@ class AuthController {
                 VALUES (?, ?, ?, ?, ?, ?)
                 `,
                 [
-                    `TEMP-${Date.now()}`,
-                    firstName,
-                    lastName,
-                    email,
-                    contactNumber,
-                    address
-                ]
+    `TEMP-${Date.now()}`,
+    firstName,
+    lastName,
+    email,
+    contactNumber,
+    address
+]
             );
 
             const userId =
@@ -112,33 +112,38 @@ class AuthController {
                         "USR",
                         userId
                     );
-            const [accountResult] = await db.execute(
-            `UPDATE users SET user_code = ? WHERE id = ?`,
-            [
-                userCode,
-                userId
-            ]
-        );
-               
             await db.execute(
-                `
-                INSERT INTO accounts (
-                    account_code,
-                    user_id,
-                    username,
-                    password
-                )
-                VALUES (?, ?, ?, ?)
-                `,
-                [
-                    `TEMP-${Date.now()}`,
-                    userId,
-                    username,
-                    hashedPassword
-                ]
-            );
+    `
+    UPDATE users
+    SET user_code = ?
+    WHERE id = ?
+    `,
+    [
+        userCode,
+        userId
+    ]
+);
+               
+            const [accountResult] = await db.execute(
+        `
+        INSERT INTO accounts (
+            account_code,
+            user_id,
+            username,
+            password
+        )
+        VALUES (?, ?, ?, ?)
+        `,
+        [
+    `TEMP-${Date.now()}-${userId}`,
+    userId,
+    username,
+    hashedPassword
+]
+    );
 
-            const accountId = accountResult.insertId;
+const accountId =
+    accountResult.insertId;
             const accountCode =
                 CodeGenerator.generate(
                     "ACC",
@@ -158,11 +163,13 @@ class AuthController {
             );
 
             await IntegrationHub.processEvent(
-                "USER_REGISTERED",
-                {
-                    userId
-                }
-            );
+    "USER_REGISTERED",
+    {
+        userId,
+        firstName,
+        lastName
+    }
+);
 
             return res.status(201).json({
                 success: true,
@@ -270,7 +277,8 @@ class AuthController {
             await IntegrationHub.processEvent(
                 "USER_LOGGED_IN",
                 {
-                    userId: account.user_id
+                    userId: account.user_id,
+                    username: account.username
                 }
             );
 
@@ -311,7 +319,8 @@ class AuthController {
             await IntegrationHub.processEvent(
                 "USER_LOGGED_OUT",
                 {
-                    userId: req.user.userId
+                    userId: req.user.userId,
+                    username: req.user.username
                 }
             );
 

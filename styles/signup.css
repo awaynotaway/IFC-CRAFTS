@@ -1,0 +1,203 @@
+.nav-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 120px 20px 40px 20px;
+    background-color: #f8fafc;
+}
+
+.auth-card-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.auth-page-logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    border: 2px solid #000000;
+    display: block;
+}
+
+.auth-heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.custom-auth-form {
+    text-align: left;
+}
+
+.custom-input-group {
+    margin-bottom: 18px;
+}
+
+.custom-input-group label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.required-star {
+    color: #ef4444;
+    margin-left: 2px;
+}
+
+.custom-input-group input {
+    width: 100%;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 2px solid #000000;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #000000;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+/* Tinanggal ang native browser password reveal icon (tulad sa Edge) para hindi madoble */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+.custom-input-group input::placeholder {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.custom-input-group input:focus {
+    border-bottom-color: #2563eb;
+}
+
+.custom-input-group input.password-mismatch {
+    border-bottom-color: #ef4444 !important;
+}
+
+.custom-input-group input.password-match {
+    border-bottom-color: #22c55e !important;
+}
+
+.password-field-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-field-wrapper input {
+    padding-right: 35px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.toggle-password:hover {
+    color: #000000;
+}
+
+.password-hint {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+.password-hint.error-text {
+    color: #ef4444;
+}
+
+.password-hint.success-text {
+    color: #22c55e;
+}
+
+.password-match-hint {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+.password-match-hint.error-text {
+    color: #ef4444;
+}
+
+.password-match-hint.success-text {
+    color: #22c55e;
+}
+
+.auth-btn-wrapper {
+    text-align: center;
+    margin-top: 22px;
+}
+
+.btn-black-submit {
+    display: inline-block;
+    width: auto;
+    min-width: 160px;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-black-submit:hover {
+    background-color: #222222;
+    transform: translateY(-2px);
+}
+
+.auth-prompt-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-prompt-wrapper p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.auth-link {
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}

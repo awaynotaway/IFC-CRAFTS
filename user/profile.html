@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFC Crafts - User Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=The+Seasons&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="css/pendingOrders.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="../pictures/IFCLogo.jpg" alt="IFC Crafts Logo" class="nav-logo">
+                <span class="brand-name">IFC CRAFTS</span>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="../index.html">HOME</a>
+                <a href="../products.html">PRODUCTS</a>
+                <a href="../services.html">SERVICES</a>
+                <a href="../reviews.html">REVIEWS</a>
+            </nav>
+
+            <div class="nav-right-actions">
+                <button type="button" class="nav-icon-btn notification-bell-btn" id="notifModalBtn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notif-badge" id="navNotifBadge" style="display: none;">0</span>
+                </button>
+                <a href="userCart.html" class="nav-icon-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="profile.html" class="profile-icon-only active" title="User Profile">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notification List Modal / Pop-up -->
+    <div class="notif-modal-overlay" id="notifModalOverlay">
+        <div class="notif-modal-content">
+            <div class="notif-modal-header">
+                <h3>Notifications</h3>
+                <button type="button" class="close-notif-modal" id="closeNotifModal">&times;</button>
+            </div>
+            <div class="notif-modal-body" id="notifModalList">
+                <div class="empty-notif-message">No notifications found.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Single Notification Message Modal -->
+    <div class="notif-modal-overlay" id="detailNotifModalOverlay" style="z-index: 1200;">
+        <div class="notif-modal-content">
+            <div class="notif-modal-header">
+                <h3 id="detailNotifTitle">Notification Details</h3>
+                <button type="button" class="close-notif-modal" id="closeDetailModal">&times;</button>
+            </div>
+            <div class="notif-modal-body" style="display: flex; flex-direction: column; gap: 15px;">
+                <p id="detailNotifMessage" style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #334155; line-height: 1.5; margin: 0;"></p>
+                <span id="detailNotifTime" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #94a3b8;"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-wrapper">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-menu-group">
+                <a href="userDashboard.html" class="sidebar-item">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="userOrder.html" class="sidebar-item">
+                    <i class="fas fa-clipboard-list"></i> Orders & Transactions
+                </a>
+                <a href="pendingOrders.html" class="sidebar-item">
+                    <i class="fas fa-clock"></i> Pending Orders
+                </a>
+                <a href="userMessage.html" class="sidebar-item">
+                    <i class="fas fa-comments"></i> Messages
+                </a>
+                <a href="profile.html" class="sidebar-item active">
+                    <i class="fas fa-user-circle"></i> Profile
+                </a>
+            </div>
+            
+            <div style="padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.08);">
+                <a href="#" id="logoutBtn" class="sidebar-item logout-btn" style="color: #dc3545; background-color: #fff5f5;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main-content">
+            <div class="dashboard-content-area">
+                
+                <div class="content-header-box">
+                    <h1>Profile</h1>
+                    <p>Manage your account information</p>
+                </div>
+
+                <div class="profile-scroll-area">
+                    
+                    <!-- Profile Summary Card with Edit Pencil on Upper Right -->
+                    <div class="profile-summary-card">
+                        <button class="card-edit-pencil-btn" onclick="openEditModal()" title="Edit Profile">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <div class="profile-avatar-container">
+                            <div class="profile-avatar-circle" id="profileAvatarContainer">
+                                <i class="fas fa-user" id="defaultAvatarIcon"></i>
+                                <img id="profileAvatarImg" src="" alt="Profile Picture" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                            </div>
+                            <label for="avatarFileInput" class="avatar-edit-badge" title="Change Profile Picture">
+                                <i class="fas fa-camera"></i>
+                            </label>
+                            <input type="file" id="avatarFileInput" accept="image/*" style="display: none;" onchange="handleAvatarChange(event)">
+                        </div>
+                        <div class="profile-summary-info">
+                            <h2 id="profileDisplayName">Maria Santos</h2>
+                            <p>Registered Customer</p>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information Box (Fixed/No Dropdown) -->
+                    <div class="profile-section-box">
+                        <div class="section-static-header">
+                            <h3>Personal Information</h3>
+                        </div>
+                        <div class="section-direct-content">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">First Name:</span>
+                                    <span class="info-value" id="valFirstName">Maria</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Last Name:</span>
+                                    <span class="info-value" id="valLastName">Santos</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Email Address:</span>
+                                    <span class="info-value" id="valEmail">santos.maria08@gmail.com</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Contact Number:</span>
+                                    <span class="info-value" id="valContact">09123473843</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Full Address:</span>
+                                    <span class="info-value" id="valAddress">Taytay, Rizal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Profile Modal Pop-up -->
+    <div class="modal-overlay" id="editProfileModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Edit Profile Information</h3>
+                <button class="modal-close-btn" onclick="closeEditModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm" onsubmit="saveProfileChanges(event)">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="editFirstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="editLastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="editEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="text" id="editContact" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Full Address</label>
+                        <input type="text" id="editAddress" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+                        <button type="submit" class="btn-save">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+
+        const notifBtn = document.getElementById('notifModalBtn');
+        const notifOverlay = document.getElementById('notifModalOverlay');
+        const closeNotifBtn = document.getElementById('closeNotifModal');
+        const detailOverlay = document.getElementById('detailNotifModalOverlay');
+        const closeDetailBtn = document.getElementById('closeDetailModal');
+
+        if (notifBtn) {
+            notifBtn.addEventListener('click', () => {
+                notifOverlay.style.display = 'flex';
+                loadModalNotifications();
+            });
+        }
+        if (closeNotifBtn) {
+            closeNotifBtn.addEventListener('click', () => {
+                notifOverlay.style.display = 'none';
+            });
+        }
+        if (closeDetailBtn) {
+            closeDetailBtn.addEventListener('click', () => {
+                detailOverlay.style.display = 'none';
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === notifOverlay) notifOverlay.style.display = 'none';
+            if (e.target === detailOverlay) detailOverlay.style.display = 'none';
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const logoutBtnEl = document.getElementById('logoutBtn');
+            if (logoutBtnEl) {
+                logoutBtnEl.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('ifc_user_firstname');
+                    window.location.href = '../index.html';
+                });
+            }
+
+            const notifications = JSON.parse(localStorage.getItem('ifc_user_notifications')) || [];
+            updateNotificationBadge(notifications);
+            loadProfileData();
+        });
+
+        function loadModalNotifications() {
+            let notifications = JSON.parse(localStorage.getItem('ifc_user_notifications')) || [];
+            const notifListContainer = document.getElementById('notifModalList');
+
+            if (notifications.length === 0) {
+                notifListContainer.innerHTML = `<div class="empty-notif-message">No notifications found.</div>`;
+                return;
+            }
+
+            notifListContainer.innerHTML = '';
+            notifications.forEach((notif, index) => {
+                const div = document.createElement('div');
+                div.className = `notif-item-popup ${notif.unread ? 'unread' : ''}`;
+                div.innerHTML = `
+                    <div class="notif-title">${notif.title || 'Notification'}</div>
+                    <div class="notif-desc">${notif.message || notif.desc}</div>
+                    <div class="notif-time">${notif.time || 'Just now'}</div>
+                `;
+                
+                div.addEventListener('click', () => {
+                    document.getElementById('detailNotifTitle').textContent = notif.title || 'Notification Details';
+                    document.getElementById('detailNotifMessage').textContent = notif.message || notif.desc || 'No message available.';
+                    document.getElementById('detailNotifTime').textContent = notif.time || 'Just now';
+
+                    detailOverlay.style.display = 'flex';
+
+                    if (notif.unread) {
+                        notif.unread = false;
+                        notifications[index] = notif;
+                        localStorage.setItem('ifc_user_notifications', JSON.stringify(notifications));
+                        div.classList.remove('unread');
+                        updateNotificationBadge(notifications);
+                    }
+                });
+
+                notifListContainer.appendChild(div);
+            });
+        }
+
+        function updateNotificationBadge(notifications) {
+            const unreadCount = notifications.filter(n => n.unread === true).length;
+            const badge = document.getElementById('navNotifBadge');
+            if (unreadCount > 0) {
+                badge.textContent = unreadCount;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        function loadProfileData() {
+            const savedFirstName = localStorage.getItem('ifc_user_firstname') || "Maria";
+            const savedLastName = localStorage.getItem('ifc_user_lastname') || "Santos";
+            const savedEmail = localStorage.getItem('ifc_user_email') || "santos.maria08@gmail.com";
+            const savedContact = localStorage.getItem('ifc_user_contact') || "09123473843";
+            const savedAddress = localStorage.getItem('ifc_user_address') || "Taytay, Rizal";
+            const savedAvatar = localStorage.getItem('ifc_user_avatar');
+
+            document.getElementById('profileDisplayName').textContent = `${savedFirstName} ${savedLastName}`;
+            document.getElementById('valFirstName').textContent = savedFirstName;
+            document.getElementById('valLastName').textContent = savedLastName;
+            document.getElementById('valEmail').textContent = savedEmail;
+            document.getElementById('valContact').textContent = savedContact;
+            document.getElementById('valAddress').textContent = savedAddress;
+
+            if (savedAvatar) {
+                const imgEl = document.getElementById('profileAvatarImg');
+                const iconEl = document.getElementById('defaultAvatarIcon');
+                imgEl.src = savedAvatar;
+                imgEl.style.display = 'block';
+                iconEl.style.display = 'none';
+            }
+        }
+
+        function handleAvatarChange(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const base64Image = e.target.result;
+                    localStorage.setItem('ifc_user_avatar', base64Image);
+                    
+                    const imgEl = document.getElementById('profileAvatarImg');
+                    const iconEl = document.getElementById('defaultAvatarIcon');
+                    imgEl.src = base64Image;
+                    imgEl.style.display = 'block';
+                    iconEl.style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+    function openEditModal() {
+            document.getElementById('editFirstName').value = document.getElementById('valFirstName').textContent;
+            document.getElementById('editLastName').value = document.getElementById('valLastName').textContent;
+            document.getElementById('editEmail').value = document.getElementById('valEmail').textContent;
+            document.getElementById('editContact').value = document.getElementById('valContact').textContent;
+            document.getElementById('editAddress').value = document.getElementById('valAddress').textContent;
+
+            document.getElementById('editProfileModal').style.display = 'flex';
+        }
+
+        function closeEditModal() {
+            document.getElementById('editProfileModal').style.display = 'none';
+        }
+
+        function saveProfileChanges(e) {
+            e.preventDefault();
+            const newFirstName = document.getElementById('editFirstName').value;
+            const newLastName = document.getElementById('editLastName').value;
+            const newEmail = document.getElementById('editEmail').value;
+            const newContact = document.getElementById('editContact').value;
+            const newAddress = document.getElementById('editAddress').value;
+
+            localStorage.setItem('ifc_user_firstname', newFirstName);
+            localStorage.setItem('ifc_user_lastname', newLastName);
+            localStorage.setItem('ifc_user_email', newEmail);
+            localStorage.setItem('ifc_user_contact', newContact);
+            localStorage.setItem('ifc_user_address', newAddress);
+
+            loadProfileData();
+            closeEditModal();
+        }
+    </script>
+</body>
+</html>

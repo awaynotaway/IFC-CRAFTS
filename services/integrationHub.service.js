@@ -45,7 +45,11 @@ class IntegrationHubService {
                 "PAYMENT_REJECTED",
 
                 // Delivery
-                "ORDER_SHIPPED"
+                "ORDER_SHIPPED",
+
+                //Reviews
+                "REVIEW_CREATED"
+
 
             ];
 
@@ -77,7 +81,10 @@ class IntegrationHubService {
                         action: "USER_REGISTERED",
                         module: "AUTHENTICATION",
                         description:
-                            "Customer registered an account."
+`${payload.firstName} ${payload.lastName} registered an account.`
+
+
+
                     });
 
                     break;
@@ -89,7 +96,7 @@ class IntegrationHubService {
                         action: "USER_LOGGED_IN",
                         module: "AUTHENTICATION",
                         description:
-                            "User logged into the system."
+`${payload.username} logged into the system.`
                     });
 
                     break;
@@ -101,7 +108,7 @@ class IntegrationHubService {
                         action: "USER_LOGGED_OUT",
                         module: "AUTHENTICATION",
                         description:
-                            "User logged out from the system."
+`${payload.username} logged out of the system.`
                     });
 
                     break;
@@ -382,6 +389,19 @@ class IntegrationHubService {
                     });
 
                     break;
+
+                    //REVIEWS
+                    case "REVIEW_CREATED":
+
+    await AuditLogService.create({
+        userId: payload.userId,
+        action: "CREATE_REVIEW",
+        module: "REVIEWS",
+        description:
+            `${payload.username} submitted a review for "${payload.productName}".`
+    });
+
+    break;
             }
 
             return {

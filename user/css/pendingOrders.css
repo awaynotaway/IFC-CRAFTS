@@ -1,0 +1,554 @@
+/* =========================================
+   NAVBAR RIGHT ACTIONS & ICONS
+   ========================================= */
+.nav-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-icon-btn {
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-icon-btn:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notif-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.profile-icon-only {
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.profile-icon-only:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+/* =========================================
+   NOTIFICATION & RECEIPT MODAL POP-UP STYLES (Synced size with userOrder)
+   ========================================= */
+.notif-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.notif-modal-content {
+    background: #ffffff;
+    width: 100%;
+    max-width: 520px; /* Pinalawak para maging kapareho ng userOrder modal */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: modalFadeIn 0.2s ease;
+    max-height: 85vh; /* Uniform max-height para sa magandang scrolling */
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.notif-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.notif-modal-header h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+.close-notif-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.close-notif-modal:hover {
+    color: #000000;
+}
+
+.notif-modal-body {
+    overflow-y: auto;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.notif-item-popup {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.notif-item-popup:hover {
+    background-color: #f1f5f9;
+}
+
+.notif-item-popup.unread {
+    background-color: #f1f5f9;
+    border-left: 4px solid #000000;
+}
+
+.notif-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 3px;
+}
+
+.notif-desc {
+    font-size: 0.82rem;
+    color: #475569;
+    margin-bottom: 5px;
+}
+
+.notif-time {
+    font-size: 0.72rem;
+    color: #94a3b8;
+}
+
+.empty-notif-message {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   DASHBOARD LAYOUT & SIDEBAR (Synced from userOrder)
+   ========================================= */
+.dashboard-wrapper {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    background-color: #f8fafc;
+    margin-top: 80px;
+}
+
+.dashboard-sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 120px);
+    box-sizing: border-box;
+}
+
+.sidebar-menu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #475569;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-item i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-item:hover {
+    background-color: #f1f5f9;
+    color: #000000;
+}
+
+.sidebar-item.active {
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.sidebar-item.logout-btn {
+    color: #dc3545; 
+    background-color: #fff5f5;
+    font-weight: 600;
+}
+
+.sidebar-item.logout-btn:hover {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.dashboard-main-content {
+    flex: 1;
+    padding: 40px;
+    max-width: 1000px;
+}
+
+.welcome-banner {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+}
+
+.welcome-banner h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.welcome-banner p {
+    font-family: 'Inter', sans-serif;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   ORDERS CONTAINER STYLES
+   ========================================= */
+.recent-orders-container {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.recent-orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.recent-orders-header h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #000000;
+    margin: 0;
+}
+
+#pendingOrdersList {
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.transaction-card-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    transition: all 0.2s ease;
+}
+
+.transaction-card-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.tx-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.order-id-label {
+    font-weight: 700;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+}
+
+.tx-date {
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+}
+
+.tx-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-preview {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tx-product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+.tx-product-info h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 3px;
+}
+
+.craft-type, .qty-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.tx-card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.total-price-group {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+}
+
+.total-label {
+    color: #64748b;
+    margin-right: 5px;
+}
+
+.total-amount {
+    font-weight: 700;
+    color: #000000;
+}
+
+.tx-action-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* =========================================
+   STATUS BADGE COLOR STYLES
+   ========================================= */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.status-badge.complete {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.pending {
+    background-color: #fef3c7;
+    color: #78350f;
+}
+
+.status-badge.rejected {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge.process {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.view-details-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.view-details-link:hover {
+    background: #f1f5f9;
+}
+
+.empty-orders-message {
+    padding: 30px;
+    text-align: center;
+    color: #64748b;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+}
+
+/* Estilo para ang mga box sa loob ng resibo modal */
+.summary-section-box {
+    background: #f8fafc;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2px;
+}
+
+.summary-section-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #334155;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.summary-item-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    color: #475569;
+}
+
+.proof-thumbnail-img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.proof-thumbnail-img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .dashboard-wrapper {
+        flex-direction: column;
+    }
+    .dashboard-sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 15px;
+        position: static;
+        height: auto;
+    }
+    .sidebar-menu-group {
+        flex-direction: row;
+    }
+    .tx-card-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .tx-card-meta {
+        align-items: flex-start;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 8px;
+    }
+}
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

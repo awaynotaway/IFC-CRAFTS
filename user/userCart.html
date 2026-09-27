@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFC Crafts - My Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=The+Seasons&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="css/userCart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="../pictures/IFCLogo.jpg" alt="IFC Crafts Logo" class="nav-logo">
+                <span class="brand-name">IFC CRAFTS</span>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="../index.html">HOME</a>
+                <a href="../products.html">PRODUCTS</a>
+                <a href="../services.html">SERVICES</a>
+                <a href="../reviews.html">REVIEWS</a>
+            </nav>
+
+            <div class="nav-right-actions" id="navRightActions">
+                <!-- Dynamic actions via JS -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Cart Page Content -->
+    <main class="cart-main-wrapper">
+        
+        <!-- Cart Header Bar -->
+        <div class="cart-header-box">
+            <div class="cart-title-area">
+                <h1>Cart</h1>
+            </div>
+            <div class="cart-header-actions">
+                <button class="cart-action-icon-btn" title="Search Cart"><i class="fas fa-search"></i></button>
+                <button class="cart-action-icon-btn" onclick="clearEntireCart()" title="Clear Cart"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+
+        <!-- Cart Items Box -->
+        <div class="cart-content-container">
+            <div class="cart-toolbar">
+                <div class="cart-search-box">
+                    <input type="text" id="cartSearchInput" placeholder="Search item..." onkeyup="filterCartItems()">
+                    <i class="fas fa-search" style="color: #888; font-size: 0.85rem;"></i>
+                </div>
+            </div>
+
+            <!-- Listahan ng mga items sa cart -->
+            <div class="cart-items-list" id="cartItemsList">
+                <!-- Awtomatikong ika-load ng JS -->
+            </div>
+        </div>
+
+        <!-- Bottom Checkout Bar -->
+        <div class="cart-checkout-bar">
+            <div class="select-all-area">
+                <input type="checkbox" id="selectAllCheckbox" onchange="toggleSelectAll(this)" checked style="width: 18px; height: 18px; cursor: pointer;">
+                <label for="selectAllCheckbox" style="cursor: pointer;">All</label>
+            </div>
+
+            <div class="cart-summary-totals">
+                <div class="subtotal-text" id="cartSubtotalDisplay">Total with 12% VAT: ₱0.00</div>
+            </div>
+
+            <button class="checkout-main-btn" onclick="openOrderSummaryModal()">CHECK OUT</button>
+        </div>
+
+    </main>
+
+    <!-- ORDER SUMMARY MODAL -->
+    <div class="modal-overlay" id="orderSummaryModal">
+        <div class="order-summary-modal">
+            <div class="summary-modal-header">
+                <h2>Order Details</h2>
+                <button class="close-modal-btn" onclick="closeOrderSummaryModal()"><i class="fas fa-times"></i></button>
+            </div>
+
+            <!-- Product Information Box -->
+            <div class="summary-section-box">
+                <div class="summary-section-title">
+                    <i class="fas fa-box-open"></i> Product Information
+                </div>
+                <div id="modalSummaryItemsList">
+                    <!-- Dynamic Items -->
+                </div>
+            </div>
+
+            <!-- Subtotal & VAT Box -->
+            <div class="summary-section-box">
+                <div class="summary-item-row">
+                    <span>Subtotal</span>
+                    <span id="modalSubtotal">₱0</span>
+                </div>
+                <div class="summary-item-row">
+                    <span>VAT (12%)</span>
+                    <span id="modalVatAmount">₱0</span>
+                </div>
+            </div>
+
+            <!-- Delivery Information Box -->
+            <div class="summary-section-box">
+                <div class="summary-section-title">
+                    <i class="fas fa-truck"></i> Delivery Information
+                </div>
+                <div class="summary-item-row">
+                    <span>Method</span>
+                    <span class="fw-semibold">Delivery</span>
+                </div>
+                <div class="summary-item-row">
+                    <span>Location</span>
+                    <span>Taytay, Rizal</span>
+                </div>
+            </div>
+
+            <!-- Personal Information Box -->
+            <div class="summary-section-box">
+                <div class="summary-section-title">
+                    <i class="fas fa-user-circle"></i> Personal Information
+                </div>
+                <div class="summary-item-row">
+                    <span>Name</span>
+                    <span id="displayUserName" class="fw-semibold">Juan Dela Cruz</span>
+                </div>
+                <div class="summary-item-row">
+                    <span>Contact Number</span>
+                    <span id="displayUserContact" class="fw-semibold">09123456789</span>
+                </div>
+                <div class="summary-item-row">
+                    <span>Address</span>
+                    <span id="displayUserAddress" class="text-end" style="max-width: 200px;">Blk 1 Lot 2, Taytay, Rizal</span>
+                </div>
+            </div>
+
+            <!-- Payment Information Box -->
+            <div class="summary-section-box">
+                <div class="summary-section-title">
+                    <i class="fas fa-credit-card"></i> Payment Information
+                </div>
+                <div class="summary-item-row">
+                    <span>Method</span>
+                    <span style="font-weight: 700;">GCASH</span>
+                </div>
+                <div class="gcash-instruction-box">
+                    Send payment via GCash to: <strong>0912-345-6789 (IFC Crafts)</strong>
+                </div>
+
+                <!-- NAAYOS NA GCASH QR CODE CONTAINER (Eksakto sa disenyo ng larawan) -->
+                <div class="gcash-qr-container">
+                    <div class="gcash-qr-header">Scan GCash QR Code to Pay</div>
+                    <div class="gcash-qr-wrapper">
+                        <img src="../pics/gcash-qr.jpg" alt="IFC Crafts GCash QR Code" id="gcashQrImage" onerror="this.src='../pictures/IFCLogo.jpg'">
+                    </div>
+                    <div class="gcash-qr-footer">IFC Crafts Official QR</div>
+                </div>
+
+                <div class="summary-item-row" style="align-items: center; margin-top: 14px;">
+                    <span>Proof of Payment</span>
+                    <div class="proof-upload-area">
+                        <div class="proof-box-preview" id="proofPreviewText">No Image</div>
+                        <label class="insert-proof-btn">
+                            Insert Proof
+                            <input type="file" id="cartGcashReceipt" accept="image/*" onchange="previewProofImage(event)" style="display: none;">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Amount & Proceed Button -->
+            <div class="summary-total-row">
+                <span>Total Amount</span>
+                <span id="modalTotalAmount" style="font-size: 1.2rem; color: #2e7d32;">₱0</span>
+            </div>
+
+            <button class="proceed-checkout-btn" onclick="finalizeCheckout()">Confirm and Place Order</button>
+        </div>
+    </div>
+
+    <!-- CUSTOM ALERT MODAL -->
+    <div class="modal-overlay" id="customAlertModal" style="z-index: 9999;">
+        <div class="order-summary-modal" style="max-width: 360px; text-align: center; padding: 25px;">
+            <div style="font-size: 2.5rem; color: #e65100; margin-bottom: 10px;">
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <h3 style="margin-bottom: 10px; font-size: 1.2rem; color: #333;">Notice</h3>
+            <p id="customAlertMessage" style="font-size: 0.95rem; color: #555; margin-bottom: 20px;">Please attach your proof of payment.</p>
+            <button onclick="closeCustomAlert()" style="background: #000000; color: #fff; border: none; padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; width: 100%;">OK</button>
+        </div>
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        let cartItems = JSON.parse(localStorage.getItem('ifc_user_cart')) || [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+           const isLoggedIn =
+    !!localStorage.getItem("token");
+            const navRightActions = document.getElementById('navRightActions');
+
+            if (navRightActions) {
+                if (isLoggedIn) {
+                    navRightActions.innerHTML = `
+                        <a href="userDashboard.html" class="nav-icon-btn" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge" id="notifBadge" style="display: none;">0</span>
+                        </a>
+                        <a href="userCart.html" class="nav-icon-btn" title="Shopping Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cartBadge" style="display: none;">0</span>
+                        </a>
+                        <a href="userDashboard.html" class="nav-icon-btn" title="User Profile">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    `;
+                } else {
+                    navRightActions.innerHTML = `
+                        <div id="navAuthArea" class="nav-auth-container">
+                            <a href="../login.html" class="auth-combined-btn">
+                                <i class="fas fa-user"></i>
+                                <span class="auth-text">LOGIN/SIGNUP</span>
+                            </a>
+                        </div>
+                    `;
+                }
+            }
+            renderCart();
+        });
+
+        function renderCart(filterText = "") {
+            const listContainer = document.getElementById('cartItemsList');
+            listContainer.innerHTML = '';
+
+            const filteredItems = cartItems.filter(item => 
+                (item.name || item.product || "").toLowerCase().includes(filterText.toLowerCase()) || 
+                (item.category || item.craft || "").toLowerCase().includes(filterText.toLowerCase())
+            );
+
+            if (filteredItems.length === 0) {
+                listContainer.innerHTML = `<div style="text-align: center; padding: 30px; color: #777;">Your cart is empty.</div>`;
+                updateTotals();
+                return;
+            }
+
+            filteredItems.forEach((item) => {
+                const itemName = item.name || item.product || "Handmade Craft";
+                const itemImage = item.image || '../pictures/IFCLogo.jpg';
+                const itemQty = parseInt(item.qty || item.quantity || 1);
+                const rawPrice = parseFloat(String(item.price || 0).replace(/[^\d.]/g, '')) || 0;
+                const itemTotal = rawPrice * itemQty;
+
+                const itemCard = document.createElement('div');
+                itemCard.className = 'cart-item-card';
+                itemCard.innerHTML = `
+                    <div class="cart-item-left">
+                        <input type="checkbox" ${item.selected !== false ? 'checked' : ''} onchange="toggleItemSelection('${itemName.replace(/'/g, "\\'")}')" style="width: 18px; height: 18px; cursor: pointer;">
+                        <img src="${itemImage}" alt="${itemName}" class="cart-item-img" onerror="this.src='../pictures/IFCLogo.jpg'">
+                        <div class="cart-item-details">
+                            <h4>${itemName}</h4>
+                            <p>${item.size || item.category || item.craft || 'Handmade Craft'}</p>
+                            <div class="qty-controls">
+                                <span>Qty.:</span>
+                                <button class="qty-btn" onclick="updateQty('${itemName.replace(/'/g, "\\'")}', -1)"><i class="fas fa-minus"></i></button>
+                                <span>${itemQty}</span>
+                                <button class="qty-btn" onclick="updateQty('${itemName.replace(/'/g, "\\'")}', 1)"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item-right">
+                        <div class="cart-item-price">₱${itemTotal.toFixed(2)}</div>
+                        <button class="remove-item-btn" onclick="removeItem('${itemName.replace(/'/g, "\\'")}')">Remove</button>
+                    </div>
+                `;
+                listContainer.appendChild(itemCard);
+            });
+
+            updateTotals();
+            saveCartToStorage();
+        }
+
+        function updateQty(name, change) {
+            const item = cartItems.find(i => (i.name || i.product) === name);
+            if (item) {
+                let currentQty = parseInt(item.qty || item.quantity || 1);
+                currentQty += change;
+                if (currentQty <= 0) currentQty = 1;
+                
+                item.qty = currentQty;
+                item.quantity = currentQty;
+                
+                renderCart(document.getElementById('cartSearchInput').value);
+            }
+        }
+
+        function removeItem(name) {
+            cartItems = cartItems.filter(i => (i.name || i.product) !== name);
+            renderCart(document.getElementById('cartSearchInput').value);
+        }
+
+        function clearEntireCart() {
+            cartItems = [];
+            renderCart();
+        }
+
+        function toggleItemSelection(name) {
+            const item = cartItems.find(i => (i.name || i.product) === name);
+            if (item) {
+                item.selected = item.selected === false ? true : false;
+            }
+            updateTotals();
+            saveCartToStorage();
+        }
+
+        function toggleSelectAll(masterCheckbox) {
+            const isChecked = masterCheckbox.checked;
+            cartItems.forEach(i => i.selected = isChecked);
+            renderCart(document.getElementById('cartSearchInput').value);
+        }
+
+        function updateTotals() {
+            let subtotal = 0;
+            cartItems.forEach(i => {
+                if (i.selected !== false) {
+                    const rawPrice = parseFloat(String(i.price || 0).replace(/[^\d.]/g, '')) || 0;
+                    const qty = parseInt(i.qty || i.quantity || 1);
+                    subtotal += rawPrice * qty;
+                }
+            });
+            const vat = subtotal * 0.12;
+            const totalWithVat = subtotal + vat;
+
+            document.getElementById('cartSubtotalDisplay').textContent = `Total with 12% VAT: ₱${totalWithVat.toFixed(2)}`;
+        }
+
+        function filterCartItems() {
+            renderCart(document.getElementById('cartSearchInput').value);
+        }
+
+        function saveCartToStorage() {
+            localStorage.setItem('ifc_user_cart', JSON.stringify(cartItems));
+        }
+
+        function openOrderSummaryModal() {
+            const selectedItems = cartItems.filter(i => i.selected !== false);
+            if (selectedItems.length === 0) return;
+
+            let subtotal = 0;
+            let modalListHTML = '';
+
+            selectedItems.forEach(item => {
+                const itemName = item.name || item.product || "Handmade Craft";
+                const itemImage = item.image || '../pictures/IFCLogo.jpg';
+                const qty = parseInt(item.qty || item.quantity || 1);
+                const rawPrice = parseFloat(String(item.price || 0).replace(/[^\d.]/g, '')) || 0;
+                const itemTotal = rawPrice * qty;
+                subtotal += itemTotal;
+
+                modalListHTML += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <img src="${itemImage}" style="width: 35px; height: 35px; border-radius: 6px; object-fit: cover;" onerror="this.src='../pictures/IFCLogo.jpg'">
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.82rem;">${itemName}</div>
+                                <div style="font-size: 0.72rem; color: #666;">Qty: ${qty}</div>
+                            </div>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.82rem;">₱${itemTotal.toFixed(2)}</div>
+                    </div>
+                `;
+            });
+
+            const vat = subtotal * 0.12;
+            const totalAmount = subtotal + vat;
+
+            document.getElementById('modalSummaryItemsList').innerHTML = modalListHTML;
+            document.getElementById('modalSubtotal').textContent = `₱${subtotal.toFixed(2)}`;
+            document.getElementById('modalVatAmount').textContent = `₱${vat.toFixed(2)}`;
+            document.getElementById('modalTotalAmount').textContent = `₱${totalAmount.toFixed(2)}`;
+
+          const currentUser =
+    JSON.parse(
+        localStorage.getItem("user")
+    ) || {};
+
+console.log("CURRENT USER:", currentUser);
+
+document.getElementById(
+    "displayUserName"
+).textContent =
+    `${currentUser.first_name || ""} ${currentUser.last_name || ""}`.trim();
+
+document.getElementById(
+    "displayUserContact"
+).textContent =
+    currentUser.contact_number || "-";
+
+document.getElementById(
+    "displayUserAddress"
+).textContent =
+    currentUser.address || "-";
+
+            document.getElementById('orderSummaryModal').classList.add('active');
+        }
+
+        function closeOrderSummaryModal() {
+            document.getElementById('orderSummaryModal').classList.remove('active');
+        }
+
+        function previewProofImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewBox = document.getElementById('proofPreviewText');
+                    previewBox.style.backgroundImage = `url(${e.target.result})`;
+                    previewBox.style.backgroundSize = 'cover';
+                    previewBox.style.backgroundPosition = 'center';
+                    previewBox.textContent = '';
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function showCustomAlert(message) {
+            document.getElementById('customAlertMessage').textContent = message;
+            document.getElementById('customAlertModal').classList.add('active');
+        }
+
+        function closeCustomAlert() {
+            document.getElementById('customAlertModal').classList.remove('active');
+        }
+
+        function finalizeCheckout() {
+            const receiptInput = document.getElementById('cartGcashReceipt');
+            if (!receiptInput.files || receiptInput.files.length === 0) {
+                showCustomAlert("Please attach your proof of payment.");
+                return;
+            }
+
+            const fullName = document.getElementById('displayUserName').textContent;
+            const contactNum = document.getElementById('displayUserContact').textContent;
+            const address = document.getElementById('displayUserAddress').textContent;
+
+            const reader = new FileReader();
+            reader.onload = function(uploadEvent) {
+                const receiptBase64 = uploadEvent.target.result;
+                const selectedItems = cartItems.filter(i => i.selected !== false);
+                let orders = JSON.parse(localStorage.getItem('ifc_user_orders')) || [];
+                let notifications = JSON.parse(localStorage.getItem('ifc_user_notifications')) || [];
+
+                selectedItems.forEach(item => {
+                    const itemName = item.name || item.product || "Handmade Craft";
+                    const rawPrice = parseFloat(String(item.price || 0).replace(/[^\d.]/g, '')) || 0;
+                    const qty = parseInt(item.qty || item.quantity || 1);
+                    const subtotal = rawPrice * qty;
+                    const vat = subtotal * 0.12;
+                    const total = subtotal + vat;
+
+                    const orderItem = {
+                        id: 'IFC-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000),
+                        name: itemName,
+                        product: itemName,
+                        craft: item.size || item.category || item.craft || 'Handmade Craft',
+                        image: item.image || '../pictures/IFCLogo.jpg',
+                        price: '₱' + total.toFixed(2),
+                        quantity: qty,
+                        qty: qty,
+                        subtotal: '₱' + subtotal.toFixed(2),
+                        vat: '₱' + vat.toFixed(2),
+                        total: '₱' + total.toFixed(2),
+                        date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+                        year: String(new Date().getFullYear()),
+                        status: 'processing',
+                        shipping: address,
+                        customerName: fullName,
+                        contactNumber: contactNum,
+                        payment: 'GCash',
+                        receiptImage: receiptBase64
+                    };
+                    orders.unshift(orderItem);
+
+                    notifications.unshift({
+                        text: `Your GCash order for ${itemName} (Qty: ${qty}) amounting to ₱${total.toFixed(2)} (with 12% VAT) has been placed successfully.`,
+                        date: new Date().toLocaleString(),
+                        unread: true
+                    });
+                });
+
+                localStorage.setItem('ifc_user_orders', JSON.stringify(orders));
+                localStorage.setItem('ifc_user_notifications', JSON.stringify(notifications));
+
+                cartItems = cartItems.filter(i => i.selected === false);
+                saveCartToStorage();
+                closeOrderSummaryModal();
+
+                window.location.href = 'userOrder.html';
+            };
+            reader.readAsDataURL(receiptInput.files[0]);
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+    </script>
+</body>
+</html>

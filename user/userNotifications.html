@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFC Crafts - Notifications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=The+Seasons&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="css/userDashboard.css">
+    <link rel="stylesheet" href="css/userNotifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="../pictures/IFCLogo.jpg" alt="IFC Crafts Logo" class="nav-logo">
+                <span class="brand-name">IFC CRAFTS</span>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="../index.html">HOME</a>
+                <a href="../products.html">PRODUCTS</a>
+                <a href="../services.html">SERVICES</a>
+                <a href="../reviews.html">REVIEWS</a>
+            </nav>
+
+            <div class="nav-right-actions">
+                <a href="userDashboard.html" class="login-signup-btn active" title="User Dashboard">
+                    <div class="user-icon-circle">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="login-text" id="navUserName">User</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-wrapper">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <a href="userDashboard.html" class="sidebar-item">
+                <i class="fas fa-home"></i> Dashboard
+            </a>
+            <a href="userOrder.html" class="sidebar-item">
+                <i class="fas fa-clipboard-list"></i> Orders
+            </a>
+            <a href="userTransactions.html" class="sidebar-item">
+                <i class="fas fa-file-invoice-dollar"></i> Transactions
+            </a>
+            <a href="userMessage.html" class="sidebar-item">
+                <i class="fas fa-comments"></i> Messages
+            </a>
+            <a href="userNotifications.html" class="sidebar-item active">
+                <i class="fas fa-bell"></i> Notifications
+            </a>
+            <a href="profile.html" class="sidebar-item">
+                <i class="fas fa-user-circle"></i> Profile
+            </a>
+            
+            <div class="sidebar-logout-wrapper" style="margin-top: auto; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.08);">
+                <a href="#" onclick="logoutUser(event)" class="sidebar-item logout-btn" style="color: #dc3545; background-color: #fff5f5;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main-content" style="max-width: none;">
+            <div class="dashboard-content-area">
+                
+                <!-- Header Box -->
+                <div class="content-header-box">
+                    <h1>Notifications</h1>
+                </div>
+
+                <!-- Notifications Main Card Container -->
+                <div class="notifications-container-box">
+                    <div class="notifications-header-bar">
+                        <span id="notifCountTitle">Notifications (0)</span>
+                        <button class="mark-all-read-btn" onclick="markAllAsRead()">
+                            Mark as all read <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Scrollable Notifications List -->
+                    <div class="notifications-scroll-area" id="notificationsScrollArea">
+                        <!-- Dynamic items will load here -->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+
+        function logoutUser(e) {
+            e.preventDefault();
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('ifc_user_firstname');
+            window.location.href = '../index.html';
+        }
+
+        // Kunin ang mga notifications mula sa localStorage o mag-load ng default kung wala pa
+        let storedNotifs = JSON.parse(localStorage.getItem('ifc_user_notifications'));
+        
+        if (!storedNotifs || !Array.isArray(storedNotifs)) {
+            storedNotifs = [
+                { id: 1, title: 'Payment Verified', message: 'Your payment for Order #005 has been verified by the admin.', time: 'Today, 10:30 AM', read: false },
+                { id: 2, title: 'Order Shipped', message: 'Your order #004 is now out for delivery via courier.', time: 'Yesterday, 2:15 PM', read: false },
+                { id: 3, title: 'Meet-up Scheduled', message: 'Meet-up confirmed for Order #003 at SM Megamall.', time: 'Oct 24, 1:00 PM', read: true }
+            ];
+            localStorage.setItem('ifc_user_notifications', JSON.stringify(storedNotifs));
+        }
+
+        let notifications = storedNotifs;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedUser = localStorage.getItem('ifc_user_firstname');
+            if (savedUser) {
+                document.getElementById('navUserName').textContent = savedUser;
+            }
+            renderNotifications();
+        });
+
+        function renderNotifications() {
+            const scrollArea = document.getElementById('notificationsScrollArea');
+            const countTitle = document.getElementById('notifCountTitle');
+            
+            scrollArea.innerHTML = '';
+            
+            const unreadCount = notifications.filter(n => !n.read).length;
+            countTitle.textContent = `Notifications (${unreadCount})`;
+
+            if (notifications.length === 0) {
+                scrollArea.innerHTML = '<p class="no-notif-text">No notifications found.</p>';
+                return;
+            }
+
+            notifications.forEach(notif => {
+                // Fallbacks para maiwasan ang 'undefined' text sakaling may kulang sa data
+                const notifTitle = notif.title || 'System Notification';
+                const notifMessage = notif.message || 'You have a new update regarding your account or order.';
+                const notifTime = notif.time || 'Recent';
+
+                const card = document.createElement('div');
+                card.className = `notification-card ${notif.read ? 'read' : 'unread'}`;
+                card.onclick = () => toggleReadStatus(notif.id);
+
+                card.innerHTML = `
+                    <div class="notif-card-header">
+                        <span class="notif-title"><i class="fas fa-circle dot-icon" style="display: ${notif.read ? 'none' : 'inline-block'}"></i> ${notifTitle}</span>
+                        <span class="notif-time">${notifTime}</span>
+                    </div>
+                    <p class="notif-message">${notifMessage}</p>
+                `;
+                scrollArea.appendChild(card);
+            });
+        }
+
+        function toggleReadStatus(id) {
+            notifications = notifications.map(n => {
+                if (n.id === id) {
+                    return { ...n, read: true };
+                }
+                return n;
+            });
+            saveAndRender();
+        }
+
+        function markAllAsRead() {
+            notifications = notifications.map(n => ({ ...n, read: true }));
+            saveAndRender();
+        }
+
+        function saveAndRender() {
+            localStorage.setItem('ifc_user_notifications', JSON.stringify(notifications));
+            renderNotifications();
+        }
+
+        // =========================================================================
+        // PALIWANAG PARA SA CHECKOUT:
+        // Kapag nag-successful ang checkout sa kabilang page, i-run mo ang function na ito:
+        // =========================================================================
+        function addNewOrderNotification(orderId) {
+            const currentDate = new Date().toLocaleString('en-US', { 
+                month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true 
+            });
+
+            const newNotif = {
+                id: Date.now(),
+                title: 'Order Placed Successfully',
+                message: `Your payment and order #${orderId} have been successfully processed!`,
+                time: currentDate,
+                read: false
+            };
+
+            notifications.unshift(newNotif);
+            saveAndRender();
+        }
+    </script>
+</body>
+</html>

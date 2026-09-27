@@ -1,15 +1,17 @@
 const db = require("../config/db");
+const CodeGenerator = require(
+"./codeGenerator.service"
+);
 
 class NotificationService {
 
     async create(data) {
 
-        try {
+    try {
 
-            const notificationCode =
-                `NOTIF-${Date.now()}`;
-
-            const query = `
+        const [result] =
+            await db.execute(
+                `
                 INSERT INTO notifications (
                     notification_code,
                     user_id,
@@ -17,35 +19,56 @@ class NotificationService {
                     message
                 )
                 VALUES (?, ?, ?, ?)
-            `;
-
-            const [result] = await db.execute(
-                query,
+                `,
                 [
-                    notificationCode,
+                    "TEMP",
                     data.userId,
                     data.title,
                     data.message
                 ]
             );
 
-            return {
-                success: true,
-                notificationId: result.insertId
-            };
+        const notificationId =
+            result.insertId;
 
-        } catch (error) {
-
-            console.error(
-                "[NotificationService]",
-                error
+        const notificationCode =
+            CodeGenerator.generate(
+                "NOTIF",
+                notificationId
             );
 
-            throw new Error(
-                "Failed to create notification."
-            );
-        }
+        await db.execute(
+            `
+            UPDATE notifications
+            SET notification_code = ?
+            WHERE id = ?
+            `,
+            [
+                notificationCode,
+                notificationId
+            ]
+        );
+
+        return {
+            success: true,
+            notificationId,
+            notificationCode
+        };
+
+    } catch (error) {
+
+        console.error(
+            "[NotificationService]",
+            error
+        );
+
+        throw new Error(
+            "Failed to create notification."
+        );
+
     }
+
+}
 }
 
 module.exports = new NotificationService();

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFC Crafts - User Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=The+Seasons&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="css/userDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="../pictures/IFCLogo.jpg" alt="IFC Crafts Logo" class="nav-logo">
+                <span class="brand-name">IFC CRAFTS</span>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="../index.html">HOME</a>
+                <a href="../products.html">PRODUCTS</a>
+                <a href="../services.html">SERVICES</a>
+                <a href="../reviews.html">REVIEWS</a>
+            </nav>
+
+            <div class="nav-right-actions">
+                <button type="button" class="nav-icon-btn notification-bell-btn" id="notifModalBtn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notif-badge" id="navNotifBadge" style="display: none;">0</span>
+                </button>
+                <a href="userCart.html" class="nav-icon-btn" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="profile.html" class="profile-icon-only active" title="User Profile">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notification List Modal / Pop-up -->
+    <div class="notif-modal-overlay" id="notifModalOverlay">
+        <div class="notif-modal-content">
+            <div class="notif-modal-header">
+                <h3>Notifications</h3>
+                <button type="button" class="close-notif-modal" id="closeNotifModal">&times;</button>
+            </div>
+            <div class="notif-modal-body" id="notifModalList">
+                <div class="empty-notif-message">No notifications found.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Single Notification Message Modal -->
+    <div class="notif-modal-overlay" id="detailNotifModalOverlay" style="z-index: 1200;">
+        <div class="notif-modal-content">
+            <div class="notif-modal-header">
+                <h3 id="detailNotifTitle">Notification Details</h3>
+                <button type="button" class="close-notif-modal" id="closeDetailModal">&times;</button>
+            </div>
+            <div class="notif-modal-body" style="display: flex; flex-direction: column; gap: 15px;">
+                <p id="detailNotifMessage" style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #334155; line-height: 1.5; margin: 0;"></p>
+                <span id="detailNotifTime" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #94a3b8;"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-wrapper">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-menu-group">
+                <a href="userDashboard.html" class="sidebar-item active">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="userOrder.html" class="sidebar-item">
+                    <i class="fas fa-clipboard-list"></i> Orders & Transactions
+                </a>
+                <a href="pendingOrders.html" class="sidebar-item">
+                    <i class="fas fa-clock"></i> Pending Orders
+                </a>
+                <a href="userMessage.html" class="sidebar-item">
+                    <i class="fas fa-comments"></i> Messages
+                </a>
+                <a href="profile.html" class="sidebar-item">
+                    <i class="fas fa-user-circle"></i> Profile
+                </a>
+            </div>
+            
+            <div style="padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.08);">
+                <a href="#" id="logoutBtn" class="sidebar-item logout-btn" style="color: #dc3545; background-color: #fff5f5;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main-content">
+            
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <h1>Hello <span id="welcomeFirstName">User</span>!</h1>
+                <p>Welcome back! Here's a quick look at your activity</p>
+            </div>
+
+            <!-- Stat Cards Grid -->
+            <div class="stats-grid-3">
+                <div class="stat-card clickable-card" onclick="window.location.href='userOrder.html'">
+                    <div class="stat-header">
+                        <div class="stat-icon-circle"><i class="fas fa-shopping-bag"></i></div>
+                        My Orders
+                    </div>
+                    <div>
+                        <div class="stat-value" id="totalOrdersCount">0</div>
+                        <div class="stat-label">Total Order</div>
+                    </div>
+                </div>
+
+                <div class="stat-card clickable-card" onclick="window.location.href='userOrder.html?status=process'">
+                    <div class="stat-header">
+                        <div class="stat-icon-circle"><i class="fas fa-spinner"></i></div>
+                        Processing
+                    </div>
+                    <div>
+                        <div class="stat-value" id="processingOrdersCount">0</div>
+                        <div class="stat-label">In Progress</div>
+                    </div>
+                </div>
+
+                <div class="stat-card clickable-card" onclick="window.location.href='pendingOrders.html'">
+                    <div class="stat-header">
+                        <div class="stat-icon-circle"><i class="fas fa-clock"></i></div>
+                        Pending Orders
+                    </div>
+                    <div>
+                        <div class="stat-value" id="pendingOrdersCount">0</div>
+                        <div class="stat-label">Pending</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Section -->
+            <div class="recent-orders-container">
+                <div class="recent-orders-header">
+                    <h2>Recent Orders</h2>
+                    <a href="userOrder.html" class="view-all-link">View all <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i></a>
+                </div>
+
+                <div id="recentOrdersList">
+                    <div class="empty-orders-message">
+                        No recent orders found.
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        const token =
+    localStorage.getItem(
+        "token"
+    );
+
+if (!token) {
+
+    window.location.href =
+        "../login.html";
+
+}
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem(
+    "token"
+);
+
+localStorage.removeItem(
+    "user"
+);
+
+window.location.href =
+    "../login.html";
+            window.location.href = '../index.html';
+        });
+
+        const notifBtn = document.getElementById('notifModalBtn');
+        const notifOverlay = document.getElementById('notifModalOverlay');
+        const closeNotifBtn = document.getElementById('closeNotifModal');
+        const detailOverlay = document.getElementById('detailNotifModalOverlay');
+        const closeDetailBtn = document.getElementById('closeDetailModal');
+
+        notifBtn.addEventListener('click', () => {
+            notifOverlay.style.display = 'flex';
+            loadModalNotifications();
+        });
+
+        closeNotifBtn.addEventListener('click', () => {
+            notifOverlay.style.display = 'none';
+        });
+
+        closeDetailBtn.addEventListener('click', () => {
+            detailOverlay.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === notifOverlay) {
+                notifOverlay.style.display = 'none';
+            }
+            if (e.target === detailOverlay) {
+                detailOverlay.style.display = 'none';
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const user =
+    JSON.parse(
+        localStorage.getItem(
+            "user"
+        )
+    );
+
+if (user) {
+
+    document.getElementById(
+        "welcomeFirstName"
+    ).textContent =
+        user.firstName;
+
+}
+
+            loadDashboardData();
+        });
+
+        function loadDashboardData() {
+            const orders = JSON.parse(localStorage.getItem('ifc_user_orders')) || [];
+            const transactions = JSON.parse(localStorage.getItem('ifc_user_transactions')) || [];
+            const combinedOrders = [...orders, ...transactions];
+            const notifications = JSON.parse(localStorage.getItem('ifc_user_notifications')) || [];
+
+            document.getElementById('totalOrdersCount').textContent = combinedOrders.length;
+
+            const processingCount = combinedOrders.filter(o => {
+                const s = (o.status || '').toLowerCase();
+                return s === 'process' || s === 'processing';
+            }).length;
+            document.getElementById('processingOrdersCount').textContent = processingCount;
+
+            const pendingCount = combinedOrders.filter(o => {
+                const s = (o.status || '').toLowerCase();
+                return s === 'pending';
+            }).length;
+            document.getElementById('pendingOrdersCount').textContent = pendingCount;
+
+            updateNotificationBadge(notifications);
+
+            const recentContainer = document.getElementById('recentOrdersList');
+            if (combinedOrders.length === 0) {
+                recentContainer.innerHTML = `<div class="empty-orders-message">No recent orders found.</div>`;
+                return;
+            }
+
+            recentContainer.innerHTML = '';
+            const recentOrders = combinedOrders.slice(0, 3);
+
+            recentOrders.forEach(order => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'transaction-card-item';
+                itemDiv.innerHTML = `
+                    <div class="tx-card-header">
+                        <span class="order-id-label">Order# ${order.id}</span>
+                        <span class="tx-date">${order.date}</span>
+                    </div>
+                    <div class="tx-card-body">
+                        <div class="product-preview">
+                            <img src="${order.image || '../pictures/necklace.jpg'}" alt="${order.product || order.name}" class="tx-product-img" onerror="this.src='../pictures/necklace.jpg'">
+                            <div class="tx-product-info">
+                                <h3>${order.product || order.name}</h3>
+                                <p class="craft-type">${order.craft || 'Handmade Craft'}</p>
+                                <p class="qty-text">Qty.: ${order.qty || order.quantity || 1}</p>
+                            </div>
+                        </div>
+                        <div class="tx-card-meta">
+                            <div class="total-price-group">
+                                <span class="total-label">Total:</span>
+                                <span class="total-amount">${order.price || order.total}</span>
+                            </div>
+                            <div class="tx-action-group">
+                                <span class="status-badge ${order.status === 'completed' ? 'completed' : 'in-progress'}">${order.status ? order.status.charAt(0).toUpperCase() + order.status.slice(1) : 'Processing'}</span>
+                                <a href="userOrder.html" class="view-details-link">View</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                recentContainer.appendChild(itemDiv);
+            });
+        }
+
+        function loadModalNotifications() {
+            let notifications = JSON.parse(localStorage.getItem('ifc_user_notifications')) || [];
+            const notifListContainer = document.getElementById('notifModalList');
+
+            if (notifications.length === 0) {
+                notifListContainer.innerHTML = `<div class="empty-notif-message">No notifications found.</div>`;
+                return;
+            }
+
+            notifListContainer.innerHTML = '';
+            notifications.forEach((notif, index) => {
+                const div = document.createElement('div');
+                div.className = `notif-item-popup ${notif.unread ? 'unread' : ''}`;
+                div.style.display = 'flex';
+                div.style.justifyContent = 'space-between';
+                div.style.alignItems = 'center';
+
+                const notifTitle = notif.title || notif.product || notif.name || 'Notification Update';
+                const notifDesc = notif.message || notif.desc || 'You have a new update regarding your order.';
+                const notifTime = notif.time || notif.date || 'Just now';
+
+                div.innerHTML = `
+                    <div style="flex: 1; cursor: pointer;" class="notif-content-area">
+                        <div class="notif-title">${notifTitle}</div>
+                        <div class="notif-desc">${notifDesc}</div>
+                        <div class="notif-time">${notifTime}</div>
+                    </div>
+                    <button type="button" class="btn-delete-notif" data-index="${index}" title="Delete Notification" style="background: none; border: none; color: #dc3545; font-size: 1rem; cursor: pointer; padding: 5px 10px;">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                `;
+                
+                div.querySelector('.notif-content-area').addEventListener('click', () => {
+                    document.getElementById('detailNotifTitle').textContent = notifTitle;
+                    document.getElementById('detailNotifMessage').textContent = notifDesc;
+                    document.getElementById('detailNotifTime').textContent = notifTime;
+
+                    detailOverlay.style.display = 'flex';
+
+                    if (notif.unread) {
+                        notif.unread = false;
+                        notifications[index] = notif;
+                        localStorage.setItem('ifc_user_notifications', JSON.stringify(notifications));
+                        div.classList.remove('unread');
+                        updateNotificationBadge(notifications);
+                    }
+                });
+
+                div.querySelector('.btn-delete-notif').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteSingleNotification(index);
+                });
+
+                notifListContainer.appendChild(div);
+            });
+        }
+
+        function deleteSingleNotification(index) {
+            let notifications = JSON.parse(localStorage.getItem('ifc_user_notifications')) || [];
+            notifications.splice(index, 1);
+            localStorage.setItem('ifc_user_notifications', JSON.stringify(notifications));
+            loadModalNotifications();
+            updateNotificationBadge(notifications);
+        }
+
+        function updateNotificationBadge(notifications) {
+            const unreadCount = notifications.filter(n => n.unread === true).length;
+            const badge = document.getElementById('navNotifBadge');
+            if (unreadCount > 0) {
+                badge.textContent = unreadCount;
+                badge.style.display = 'inline-block';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

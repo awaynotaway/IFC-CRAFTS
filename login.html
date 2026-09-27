@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFC Crafts - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=The+Seasons&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="nav-logo">
+                <span class="brand-name">IFC CRAFTS</span>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="products.html">PRODUCTS</a>
+                <a href="services.html">SERVICES</a>
+                <a href="reviews.html">REVIEWS</a>
+            </nav>
+
+            <div class="nav-right-actions" id="navRightActions">
+                <div id="navAuthArea" class="nav-auth-container">
+                    <a href="login.html" class="auth-combined-btn">
+                        <i class="fas fa-user"></i>
+                        <span class="auth-text">LOGIN/SIGNUP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="login-page-wrapper">
+        <div class="login-card-container">
+            <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="login-page-logo">
+            
+            <h1 class="login-heading">Login</h1>
+
+            <form id="loginForm" class="custom-login-form">
+                <div class="custom-input-group">
+                    <label for="username">Username:</label>
+<div class="input-with-icon">
+<i class="fas fa-user"></i>
+<input
+type="text"
+id="username"
+name="username"
+required
+placeholder="Type your username..."
+>
+</div>
+                </div>
+
+                <div class="custom-input-group">
+                    <label for="password">Password:</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" required placeholder="Type your password...">
+                    </div>
+                    <div class="forgot-password-wrapper">
+                        <a href="forgotPassword.html" class="forgot-password-link">Forgot password?</a>
+                    </div>
+                </div>
+
+                <div class="login-btn-wrapper">
+                    <button type="submit" class="btn-black-submit">LOGIN</button>
+                </div>
+
+                <div class="signup-prompt-wrapper">
+                    <p>Don't have an account? <a href="signup.html" class="signup-link">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>IFC CRAFTS</h3>
+                <p>Handmade • Creative • Student Artists</p>
+            </div>
+           
+            <div class="footer-socials">
+                <h4>Visit Our Pages</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1FCM4HD3Uy/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ifc_crafts" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+           
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: ifc.artgallery@gmail.com</p>
+                <p>Phone: +63 952 678 1122</p>
+                <p>Location: Taytay, Rizal</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IFC Crafts. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+   <script src="js/config/api.js">  </script>
+    <script src="js/auth/login.js"></script>
+</body>
+</html>

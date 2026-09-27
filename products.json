@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Anatomical Heart",
+    "image": "images/small/AnatomicalHeart.jpg",
+    "size": "Small",
+    "price": "₱89",
+    "description": "Detailed, realistic sculpted heart pendant."
+  },
+  {
+    "name": "Beast's Witness",
+    "image": "images/large/BeastsWitness.jpg",
+    "size": "Large",
+    "price": "₱159",
+    "description": "Signature creature-eye design."
+  },
+  {
+    "name": "Beetle Charm",
+    "image": "images/medium/BeetleCharm.jpg",
+    "size": "Medium",
+    "price": "₱129",
+    "description": "Intricately detailed beetle pendant."
+  },
+  {
+    "name": "Blue Cross",
+    "image": "images/medium/BlueCross.jpg",
+    "size": "Medium",
+    "price": "₱119",
+    "description": "Simple, elegant blue cross pendant."
+  },
+  {
+    "name": "Blue Ice Heart",
+    "image": "images/small/BlueIceHeart.jpg",
+    "size": "Small",
+    "price": "₱89",
+    "description": "Unique blue heart with horned features."
+  },
+  {
+    "name": "Chica",
+    "image": "images/medium/Chica.jpg",
+    "size": "Medium",
+    "price": "₱129",
+    "description": "Hand-sculpted character-themed pendant."
+  },
+  {
+    "name": "Creature Eye Charms",
+    "image": "images/medium/CreatureEyeCharms.jpg",
+    "size": "Medium",
+    "price": "₱129",
+    "description": "Detailed mystical eye pendant."
+  },
+  {
+    "name": "Cyclops Heart",
+    "image": "images/small/CyclopsHeart.jpg",
+    "size": "Small",
+    "price": "₱89",
+    "description": "Red heart with a singular eye and horns."
+  },
+  {
+    "name": "Foxy",
+    "image": "images/medium/Foxy.jpg",
+    "size": "Medium",
+    "price": "₱129",
+    "description": "Hand-sculpted character-themed pendant."
+  },
+  {
+    "name": "Fredbear",
+    "image": "images/medium/Fredbear.jpg",
+    "size": "Medium",
+    "price": "₱129",
+    "description": "Hand-sculpted character-themed pendant."
+  },
+  {
+    "name": "Galactic Spiral",
+    "image": "images/large/GalacticSpiral.jpg",
+    "size": "Large",
+    "price": "₱159",
+    "description": "Intricate star pendant with a cosmic spiral core."
+  },
+  {
+    "name": "Green Mosaic",
+    "image": "images/large/GreenMosaic.jpg",
+    "size": "Large",
+    "price": "₱159",
+    "description": "Intricately detailed mosaic-style star pendant."
+  },
+  {
+    "name": "Green Stone",
+    "image": "images/small/GreenStone.jpg",
+    "size": "Small",
+    "price": "₱79",
+    "description": "Simple, smooth polished green stone pendant."
+  },
+  {
+    "name": "Guardian Eye",
+    "image": "images/large/GuradianEye.jpg",
+    "size": "Large",
+    "price": "₱159",
+    "description": "Mystical eye amulet with detailed artistry."
+  },
+  {
+    "name": "Heart2Heart",
+    "image": "images/medium/Heart2Heart.jpg",
+    "size": "Medium",
+    "price": "₱129",
+    "description": "Detailed dual-heart design pendant."
+  },
+  {
+    "name": "Ladybugs",
+    "image": "images/small/Ladybugs.jpg",
+    "size": "Small",
+    "price": "₱89",
+    "description": "Detailed, charming ladybug pendant."
+  },
+  {
+    "name": "Primal Star",
+    "image": "images/large/PrimalStar.jpg",
+    "size": "Large",
+    "price": "₱159",
+    "description": "Textured, primal-style star pendant."
+  },
+  {
+    "name": "Prism Cross",
+    "image": "images/small/PrismCross.jpg",
+    "size": "Small",
+    "price": "₱89",
+    "description": "Edgy, studded-style cross pendant."
+  },
+  {
+    "name": "Red Potion",
+    "image": "images/small/RedPotion.jpg",
+    "size": "Small",
+    "price": "₱89",
+    "description": "Miniature glass bottle with red potion essence."
+  },
+  {
+    "name": "Ruby Shard",
+    "image": "images/large/RubyShard.jpg",
+    "size": "Large",
+    "price": "₱149",
+    "description": "Bold, geometric red shard pendant."
+  },
+  {
+    "name": "Sacred Heart Amulet",
+    "image": "images/small/SacredHearts.jpg",
+    "size": "Small",
+    "price": "₱89",
+    "description": "Detailed filigree-style sacred heart pendant."
+  },
+  {
+    "name": "Star-Bound",
+    "image": "images/large/Star-Bound.jpg",
+    "size": "Large",
+    "price": "₱159",
+    "description": "Highly detailed celestial-themed star pendant."
+  },
+  {
+    "name": "Tamagocharm",
+    "image": "images/large/Tamagocharm.jpg",
+    "size": "Large",
+    "price": "₱159",
+    "description": "Nostalgic, digital-pet inspired charm."
+  },
+  {
+    "name": "The Puppet",
+    "image": "images/medium/ThePuppet.jpg",
+    "size": "Medium",
+    "price": "₱129",
+    "description": "Hand-sculpted character-themed pendant."
+  }
+]
