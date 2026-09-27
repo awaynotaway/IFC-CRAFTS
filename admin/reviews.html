@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Reviews</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/reviews.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">
+        IFC CRAFTS
+      </span>
+
+    </div>
+
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        onclick="window.location.href='notifications.html'"
+        aria-label="Notifications"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot"></span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="profile-chip"
+      >
+
+        <span class="avatar">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+
+        </span>
+
+        <span>Admin</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== PAGE SHELL ==================== -->
+
+  <div class="shell">
+
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+      <nav class="sidenav">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+          href="index.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+
+          <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a
+          href="orders.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+
+          <span>Orders</span>
+
+        </a>
+
+
+        <!-- PRODUCTS & SERVICES -->
+
+        <a
+          href="products_services.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+
+          <span>Products &amp; Services</span>
+
+        </a>
+
+
+        <!-- USERS -->
+
+        <a
+          href="users.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <span>Users</span>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a
+          href="messages.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+
+          <span>Messages</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a
+          href="notifications.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+
+          <span>Notifications</span>
+
+        </a>
+
+
+        <!-- REVIEWS -->
+
+        <a
+          href="reviews.html"
+          class="sidenav-link active"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+
+          <span>Reviews</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a
+          href="reports.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+
+          <span>Reports</span>
+
+        </a>
+
+
+        <!-- AUDIT LOGS -->
+
+        <a
+          href="audit_logs.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+
+          <span>Audit Logs</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a
+          href="settings.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+
+          <span>Settings</span>
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+
+    <main class="main">
+
+      <!-- ==================== PAGE HEADER ==================== -->
+
+      <section class="page-header">
+
+        <div>
+          <h1>REVIEWS</h1>
+          <p>View and manage customer reviews and ratings.</p>
+        </div>
+
+      </section>
+
+
+      <!-- ==================== REVIEW STATS ==================== -->
+
+      <section class="review-stats">
+
+        <!-- TOTAL REVIEWS -->
+
+        <button
+          type="button"
+          class="stat-card active"
+          data-rating="all"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>Total Reviews</span>
+            <strong id="totalReviews">0</strong>
+          </div>
+
+        </button>
+
+
+        <!-- AVERAGE RATING -->
+
+        <button
+          type="button"
+          class="stat-card"
+          data-rating="all"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>Average Rating</span>
+            <strong id="averageRating">0.0</strong>
+          </div>
+
+        </button>
+
+
+        <!-- 5 STAR -->
+
+        <button
+          type="button"
+          class="stat-card"
+          data-rating="5"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M4 12h16"></path>
+              <path d="M12 4v16"></path>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>5 Star Reviews</span>
+            <strong id="fiveStarReviews">0</strong>
+          </div>
+
+        </button>
+
+
+        <!-- WITH COMMENTS -->
+
+        <button
+          type="button"
+          class="stat-card"
+          data-rating="comment"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>With Comments</span>
+            <strong id="commentReviews">0</strong>
+          </div>
+
+        </button>
+
+      </section>
+
+
+      <!-- ==================== FILTER BAR ==================== -->
+
+      <section class="review-toolbar">
+
+        <label class="search-field">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
+
+          <input
+            type="search"
+            id="reviewSearch"
+            placeholder="Search reviews..."
+          >
+
+        </label>
+
+
+        <select
+          class="filter-select"
+          id="ratingFilter"
+        >
+          <option value="all">All Ratings</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="2">2 Stars</option>
+          <option value="1">1 Star</option>
+        </select>
+
+
+        <select
+          class="filter-select"
+          id="productFilter"
+        >
+          <option value="all">All Products</option>
+          <option value="Necklace">Necklace</option>
+          <option value="Bracelet">Bracelet</option>
+          <option value="Keychain">Keychain</option>
+          <option value="Henna Art">Henna Art</option>
+        </select>
+
+
+        <select
+          class="filter-select"
+          id="statusFilter"
+        >
+          <option value="all">All Status</option>
+          <option value="visible">Visible</option>
+          <option value="hidden">Hidden</option>
+        </select>
+
+      </section>
+
+
+      <!-- ==================== REVIEWS PANEL ==================== -->
+
+      <section class="reviews-panel">
+
+        <div class="reviews-panel-header">
+
+          <div>
+            <h2>Customer Reviews</h2>
+            <p id="reviewResultText">Showing all reviews</p>
+          </div>
+
+        </div>
+
+
+        <div
+          class="reviews-list"
+          id="reviewsList"
+        >
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+          class="empty-state"
+          id="emptyState"
+        >
+
+          <div class="empty-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="28"
+              height="28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+            >
+              <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+            </svg>
+
+          </div>
+
+          <strong>No reviews found</strong>
+
+          <span>
+            Reviews matching your filters will appear here.
+          </span>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- ==================== REVIEW DETAILS MODAL ==================== -->
+
+  <div
+    class="modal-overlay"
+    id="reviewModal"
+  >
+
+    <section class="review-modal">
+
+      <div class="modal-header">
+
+        <div>
+          <span class="modal-label">REVIEW DETAILS</span>
+          <h2>Customer Review</h2>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close"
+          id="closeReviewModal"
+        >
+          &times;
+        </button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <div class="modal-customer">
+
+          <div
+            class="customer-avatar large"
+            id="modalAvatar"
+          >
+            MS
+          </div>
+
+          <div>
+
+            <strong id="modalCustomer">
+              Maria Santos
+            </strong>
+
+            <span id="modalDate">
+              August 15, 2026
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-detail-grid">
+
+          <div class="modal-detail">
+            <span>Order</span>
+            <strong id="modalOrder">#001</strong>
+          </div>
+
+          <div class="modal-detail">
+            <span>Product</span>
+            <strong id="modalProduct">Necklace</strong>
+          </div>
+
+        </div>
+
+
+        <div class="modal-review-section">
+
+          <span class="modal-section-label">
+            Rating
+          </span>
+
+          <div
+            class="modal-stars"
+            id="modalStars"
+          ></div>
+
+        </div>
+
+
+        <div class="modal-review-section">
+
+          <span class="modal-section-label">
+            Customer Review
+          </span>
+
+          <p id="modalComment"></p>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          class="secondary-btn"
+          id="modalVisibilityBtn"
+        >
+          Hide Review
+        </button>
+
+        <button
+          type="button"
+          class="primary-btn"
+          id="modalViewOrderBtn"
+        >
+          View Order
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <script>
+
+    /* ===============================================================
+       SAMPLE DATA
+       Backend team can replace this later with API/database data.
+    =============================================================== */
+
+    let reviews = [
+      {
+        id: 1,
+        customer: "Maria Santos",
+        initials: "MS",
+        order: "#001",
+        product: "Necklace",
+        rating: 5,
+        comment: "The necklace is so pretty and the quality is really nice. I love how the final design turned out!",
+        date: "08/15/2026",
+        status: "visible"
+      },
+      {
+        id: 2,
+        customer: "Angela Cruz",
+        initials: "AC",
+        order: "#004",
+        product: "Bracelet",
+        rating: 5,
+        comment: "Very cute bracelet! The seller was also easy to communicate with. Thank you!",
+        date: "08/12/2026",
+        status: "visible"
+      },
+      {
+        id: 3,
+        customer: "Joshua Reyes",
+        initials: "JR",
+        order: "#007",
+        product: "Keychain",
+        rating: 4,
+        comment: "The keychain looks great and arrived in good condition.",
+        date: "08/10/2026",
+        status: "visible"
+      },
+      {
+        id: 4,
+        customer: "Nicole Garcia",
+        initials: "NG",
+        order: "#010",
+        product: "Henna Art",
+        rating: 5,
+        comment: "I really loved the design. It was exactly what I requested.",
+        date: "08/08/2026",
+        status: "visible"
+      },
+      {
+        id: 5,
+        customer: "Carla Mendoza",
+        initials: "CM",
+        order: "#012",
+        product: "Necklace",
+        rating: 3,
+        comment: "",
+        date: "08/05/2026",
+        status: "hidden"
+      }
+    ];
+
+
+    /* ===============================================================
+       ELEMENTS
+    =============================================================== */
+
+    const reviewsList =
+      document.getElementById("reviewsList");
+
+    const reviewSearch =
+      document.getElementById("reviewSearch");
+
+    const ratingFilter =
+      document.getElementById("ratingFilter");
+
+    const productFilter =
+      document.getElementById("productFilter");
+
+    const statusFilter =
+      document.getElementById("statusFilter");
+
+    const emptyState =
+      document.getElementById("emptyState");
+
+    const reviewResultText =
+      document.getElementById("reviewResultText");
+
+    const reviewModal =
+      document.getElementById("reviewModal");
+
+    let selectedReviewId = null;
+    let specialFilter = null;
+
+
+    /* ===============================================================
+       STAR GENERATOR
+    =============================================================== */
+
+    function generateStars(rating) {
+
+      let stars = "";
+
+      for (let i = 1; i <= 5; i++) {
+
+        stars += `
+          <span class="star ${i <= rating ? "filled" : ""}">
+            ★
+          </span>
+        `;
+
+      }
+
+      return stars;
+
+    }
+
+
+    /* ===============================================================
+       FILTER REVIEWS
+    =============================================================== */
+
+    function getFilteredReviews() {
+
+      const search =
+        reviewSearch.value
+          .trim()
+          .toLowerCase();
+
+      const rating =
+        ratingFilter.value;
+
+      const product =
+        productFilter.value;
+
+      const status =
+        statusFilter.value;
+
+
+      return reviews.filter(review => {
+
+        const matchesSearch =
+          review.customer
+            .toLowerCase()
+            .includes(search) ||
+
+          review.order
+            .toLowerCase()
+            .includes(search) ||
+
+          review.product
+            .toLowerCase()
+            .includes(search) ||
+
+          review.comment
+            .toLowerCase()
+            .includes(search);
+
+
+        const matchesRating =
+          rating === "all" ||
+          review.rating === Number(rating);
+
+
+        const matchesProduct =
+          product === "all" ||
+          review.product === product;
+
+
+        const matchesStatus =
+          status === "all" ||
+          review.status === status;
+
+
+        const matchesSpecial =
+          specialFilter === "comment"
+            ? review.comment.trim() !== ""
+            : specialFilter === "5"
+            ? review.rating === 5
+            : true;
+
+
+        return (
+          matchesSearch &&
+          matchesRating &&
+          matchesProduct &&
+          matchesStatus &&
+          matchesSpecial
+        );
+
+      });
+
+    }
+
+
+    /* ===============================================================
+       RENDER
+    =============================================================== */
+
+    function renderReviews() {
+
+      const filtered =
+        getFilteredReviews();
+
+      reviewsList.innerHTML = "";
+
+
+      emptyState.style.display =
+        filtered.length === 0
+          ? "flex"
+          : "none";
+
+
+      reviewResultText.textContent =
+        filtered.length === 1
+          ? "Showing 1 review"
+          : `Showing ${filtered.length} reviews`;
+
+
+      filtered.forEach(review => {
+
+        const reviewItem =
+          document.createElement("article");
+
+        reviewItem.className = "review-item";
+
+
+        reviewItem.innerHTML = `
+
+          <div class="review-customer">
+
+            <div class="customer-avatar">
+              ${escapeHTML(review.initials)}
+            </div>
+
+            <div class="customer-info">
+
+              <strong>
+                ${escapeHTML(review.customer)}
+              </strong>
+
+              <span>
+                Order ${escapeHTML(review.order)}
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="review-content">
+
+            <div class="review-top">
+
+              <div>
+
+                <div class="stars">
+                  ${generateStars(review.rating)}
+                </div>
+
+                <span class="rating-text">
+                  ${review.rating}.0 / 5.0
+                </span>
+
+              </div>
+
+              <span class="review-date">
+                ${escapeHTML(review.date)}
+              </span>
+
+            </div>
+
+
+            <div class="review-product">
+
+              <span>Product</span>
+
+              <strong>
+                ${escapeHTML(review.product)}
+              </strong>
+
+            </div>
+
+
+            <p class="review-comment">
+
+              ${
+                review.comment
+                  ? escapeHTML(review.comment)
+                  : "No written comment."
+              }
+
+            </p>
+
+          </div>
+
+
+          <div class="review-status-area">
+
+            <span
+              class="visibility-badge ${review.status}"
+            >
+              ${
+                review.status === "visible"
+                  ? "Visible"
+                  : "Hidden"
+              }
+            </span>
+
+          </div>
+
+
+          <div class="review-actions">
+
+            <div class="review-menu-wrapper">
+
+              <button
+                type="button"
+                class="review-more-btn"
+                data-menu="${review.id}"
+                aria-label="More options"
+              >
+                •••
+              </button>
+
+
+              <div
+                class="review-menu"
+                id="review-menu-${review.id}"
+              >
+
+                <button
+                  type="button"
+                  data-action="view"
+                  data-id="${review.id}"
+                >
+                  View Details
+                </button>
+
+
+                <button
+                  type="button"
+                  data-action="visibility"
+                  data-id="${review.id}"
+                >
+                  ${
+                    review.status === "visible"
+                      ? "Hide Review"
+                      : "Show Review"
+                  }
+                </button>
+
+
+                <button
+                  type="button"
+                  data-action="order"
+                  data-id="${review.id}"
+                >
+                  View Order
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        `;
+
+
+        reviewsList.appendChild(
+          reviewItem
+        );
+
+      });
+
+
+      updateStats();
+
+    }
+
+
+    /* ===============================================================
+       STATS
+    =============================================================== */
+
+    function updateStats() {
+
+      const total =
+        reviews.length;
+
+
+      const totalRating =
+        reviews.reduce(
+          (sum, review) =>
+            sum + review.rating,
+          0
+        );
+
+
+      const average =
+        total
+          ? totalRating / total
+          : 0;
+
+
+      const fiveStars =
+        reviews.filter(
+          review =>
+            review.rating === 5
+        ).length;
+
+
+      const comments =
+        reviews.filter(
+          review =>
+            review.comment.trim() !== ""
+        ).length;
+
+
+      document.getElementById(
+        "totalReviews"
+      ).textContent =
+        total;
+
+
+      document.getElementById(
+        "averageRating"
+      ).textContent =
+        average.toFixed(1);
+
+
+      document.getElementById(
+        "fiveStarReviews"
+      ).textContent =
+        fiveStars;
+
+
+      document.getElementById(
+        "commentReviews"
+      ).textContent =
+        comments;
+
+    }
+
+
+    /* ===============================================================
+       FILTER EVENTS
+    =============================================================== */
+
+    reviewSearch.addEventListener(
+      "input",
+      renderReviews
+    );
+
+
+    ratingFilter.addEventListener(
+      "change",
+      () => {
+
+        specialFilter = null;
+
+        clearStatActive();
+
+        renderReviews();
+
+      }
+    );
+
+
+    productFilter.addEventListener(
+      "change",
+      renderReviews
+    );
+
+
+    statusFilter.addEventListener(
+      "change",
+      renderReviews
+    );
+
+
+    document.querySelectorAll(
+      ".stat-card"
+    ).forEach(card => {
+
+      card.addEventListener(
+        "click",
+        () => {
+
+          clearStatActive();
+
+          card.classList.add("active");
+
+
+          const filter =
+            card.dataset.rating;
+
+
+          if (filter === "5") {
+
+            specialFilter = "5";
+
+            ratingFilter.value = "all";
+
+          }
+
+          else if (filter === "comment") {
+
+            specialFilter = "comment";
+
+            ratingFilter.value = "all";
+
+          }
+
+          else {
+
+            specialFilter = null;
+
+            ratingFilter.value = "all";
+
+          }
+
+
+          renderReviews();
+
+        }
+      );
+
+    });
+
+
+    function clearStatActive() {
+
+      document.querySelectorAll(
+        ".stat-card"
+      ).forEach(card => {
+
+        card.classList.remove(
+          "active"
+        );
+
+      });
+
+    }
+
+
+    /* ===============================================================
+       THREE DOT MENU
+    =============================================================== */
+
+    reviewsList.addEventListener(
+      "click",
+      event => {
+
+        const menuButton =
+          event.target.closest(
+            ".review-more-btn"
+          );
+
+
+        if (menuButton) {
+
+          event.stopPropagation();
+
+
+          const id =
+            menuButton.dataset.menu;
+
+
+          const menu =
+            document.getElementById(
+              `review-menu-${id}`
+            );
+
+
+          document.querySelectorAll(
+            ".review-menu"
+          ).forEach(item => {
+
+            if (item !== menu) {
+              item.classList.remove("open");
+            }
+
+          });
+
+
+          menu.classList.toggle(
+            "open"
+          );
+
+          return;
+
+        }
+
+
+        const actionButton =
+          event.target.closest(
+            "[data-action]"
+          );
+
+
+        if (!actionButton) {
+          return;
+        }
+
+
+        event.stopPropagation();
+
+
+        const id =
+          Number(
+            actionButton.dataset.id
+          );
+
+
+        const action =
+          actionButton.dataset.action;
+
+
+        if (action === "view") {
+
+          openReviewModal(id);
+
+        }
+
+
+        if (
+          action === "visibility"
+        ) {
+
+          toggleVisibility(id);
+
+        }
+
+
+        if (action === "order") {
+
+          window.location.href =
+            "orders.html";
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      () => {
+
+        document.querySelectorAll(
+          ".review-menu"
+        ).forEach(menu => {
+
+          menu.classList.remove(
+            "open"
+          );
+
+        });
+
+      }
+    );
+
+
+    /* ===============================================================
+       VISIBILITY
+    =============================================================== */
+
+    function toggleVisibility(id) {
+
+      const review =
+        reviews.find(
+          item => item.id === id
+        );
+
+
+      if (!review) {
+        return;
+      }
+
+
+      review.status =
+        review.status === "visible"
+          ? "hidden"
+          : "visible";
+
+
+      renderReviews();
+
+
+      if (
+        selectedReviewId === id &&
+        reviewModal.classList.contains(
+          "open"
+        )
+      ) {
+
+        updateModalVisibilityButton(
+          review
+        );
+
+      }
+
+    }
+
+
+    /* ===============================================================
+       REVIEW MODAL
+    =============================================================== */
+
+    function openReviewModal(id) {
+
+      const review =
+        reviews.find(
+          item => item.id === id
+        );
+
+
+      if (!review) {
+        return;
+      }
+
+
+      selectedReviewId = id;
+
+
+      document.getElementById(
+        "modalAvatar"
+      ).textContent =
+        review.initials;
+
+
+      document.getElementById(
+        "modalCustomer"
+      ).textContent =
+        review.customer;
+
+
+      document.getElementById(
+        "modalDate"
+      ).textContent =
+        review.date;
+
+
+      document.getElementById(
+        "modalOrder"
+      ).textContent =
+        review.order;
+
+
+      document.getElementById(
+        "modalProduct"
+      ).textContent =
+        review.product;
+
+
+      document.getElementById(
+        "modalStars"
+      ).innerHTML =
+        generateStars(
+          review.rating
+        );
+
+
+      document.getElementById(
+        "modalComment"
+      ).textContent =
+        review.comment ||
+        "No written comment.";
+
+
+      updateModalVisibilityButton(
+        review
+      );
+
+
+      reviewModal.classList.add(
+        "open"
+      );
+
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+    function updateModalVisibilityButton(
+      review
+    ) {
+
+      document.getElementById(
+        "modalVisibilityBtn"
+      ).textContent =
+        review.status === "visible"
+          ? "Hide Review"
+          : "Show Review";
+
+    }
+
+
+    function closeReviewModal() {
+
+      reviewModal.classList.remove(
+        "open"
+      );
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+      selectedReviewId = null;
+
+    }
+
+
+    document.getElementById(
+      "closeReviewModal"
+    ).addEventListener(
+      "click",
+      closeReviewModal
+    );
+
+
+    reviewModal.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target ===
+          reviewModal
+        ) {
+
+          closeReviewModal();
+
+        }
+
+      }
+    );
+
+
+    document.getElementById(
+      "modalVisibilityBtn"
+    ).addEventListener(
+      "click",
+      () => {
+
+        if (
+          selectedReviewId !== null
+        ) {
+
+          toggleVisibility(
+            selectedReviewId
+          );
+
+        }
+
+      }
+    );
+
+
+    document.getElementById(
+      "modalViewOrderBtn"
+    ).addEventListener(
+      "click",
+      () => {
+
+        window.location.href =
+          "orders.html";
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape" &&
+          reviewModal.classList.contains(
+            "open"
+          )
+        ) {
+
+          closeReviewModal();
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       ESCAPE HTML
+    =============================================================== */
+
+    function escapeHTML(value) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent =
+        String(value ?? "");
+
+      return div.innerHTML;
+
+    }
+
+
+    /* ===============================================================
+       INITIAL LOAD
+    =============================================================== */
+
+    renderReviews();
+
+  </script>
+
+</body>
+</html>

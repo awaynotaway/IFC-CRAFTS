@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Users</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/users.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">
+        IFC CRAFTS
+      </span>
+
+    </div>
+
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        onclick="window.location.href='notifications.html'"
+        aria-label="Notifications"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot"></span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="profile-chip"
+      >
+
+        <span class="avatar">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+
+        </span>
+
+        <span>Admin</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== PAGE SHELL ==================== -->
+
+  <div class="shell">
+
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+      <nav class="sidenav">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+          href="index.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+
+          <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a
+          href="orders.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+
+          <span>Orders</span>
+
+        </a>
+
+
+        <!-- PRODUCTS & SERVICES -->
+
+        <a
+          href="products_services.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+
+          <span>Products &amp; Services</span>
+
+        </a>
+
+
+        <!-- USERS -->
+
+        <a
+          href="users.html"
+          class="sidenav-link active"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <span>Users</span>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a
+          href="messages.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+
+          <span>Messages</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a
+          href="notifications.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+
+          <span>Notifications</span>
+
+        </a>
+
+
+        <!-- REVIEWS -->
+
+        <a
+          href="reviews.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+
+          <span>Reviews</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a
+          href="reports.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+
+          <span>Reports</span>
+
+        </a>
+
+
+        <!-- AUDIT LOGS -->
+
+        <a
+          href="audit_logs.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+
+          <span>Audit Logs</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a
+          href="settings.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+
+          <span>Settings</span>
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main class="main">
+
+
+      <!-- PAGE HEADER -->
+
+      <section class="page-header">
+
+        <h1>USERS</h1>
+
+        <p>
+          Manage registered customers.
+        </p>
+
+      </section>
+
+
+      <!-- ==================== USER STATS ==================== -->
+
+      <section class="user-stats">
+
+
+        <!-- TOTAL USERS -->
+
+        <button
+          type="button"
+          class="user-stat-card active"
+          data-user-filter="all"
+        >
+
+          <span class="user-stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="27"
+              height="27"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+
+          </span>
+
+          <span class="user-stat-content">
+            <span class="user-stat-label">Total Users</span>
+            <strong id="statTotalUsers">0</strong>
+          </span>
+
+        </button>
+
+
+        <!-- ACTIVE -->
+
+        <button
+          type="button"
+          class="user-stat-card"
+          data-user-filter="active"
+        >
+
+          <span class="user-stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="27"
+              height="27"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="10" cy="7" r="4"/>
+              <path d="M3 21c0-4 3.1-7 7-7 2.2 0 4.1.9 5.4 2.3"/>
+              <circle cx="17" cy="17" r="4"/>
+              <path d="m15.5 17 1 1 2-2"/>
+            </svg>
+
+          </span>
+
+          <span class="user-stat-content">
+            <span class="user-stat-label">Active</span>
+            <strong id="statActiveUsers">0</strong>
+          </span>
+
+        </button>
+
+
+        <!-- INACTIVE -->
+
+        <button
+          type="button"
+          class="user-stat-card"
+          data-user-filter="inactive"
+        >
+
+          <span class="user-stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="27"
+              height="27"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="6" r="3"/>
+              <path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+              <rect x="5" y="15" width="14" height="7" rx="2"/>
+              <path d="m10 17 4 3"/>
+              <path d="m14 17-4 3"/>
+            </svg>
+
+          </span>
+
+          <span class="user-stat-content">
+            <span class="user-stat-label">Inactive</span>
+            <strong id="statInactiveUsers">0</strong>
+          </span>
+
+        </button>
+
+
+        <!-- BANNED -->
+
+        <button
+          type="button"
+          class="user-stat-card"
+          data-user-filter="banned"
+        >
+
+          <span class="user-stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="27"
+              height="27"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M6 18 18 6"/>
+            </svg>
+
+          </span>
+
+          <span class="user-stat-content">
+            <span class="user-stat-label">Banned</span>
+            <strong id="statBannedUsers">0</strong>
+          </span>
+
+        </button>
+
+      </section>
+
+
+      <!-- ==================== USER TABS ==================== -->
+
+      <div class="user-tabs">
+
+        <button
+          type="button"
+          class="user-tab active"
+          data-tab="all"
+        >
+          All Users
+        </button>
+
+        <button
+          type="button"
+          class="user-tab"
+          data-tab="customer"
+        >
+          Customers
+        </button>
+
+        <button
+          type="button"
+          class="user-tab"
+          data-tab="admin"
+        >
+          Admins
+        </button>
+
+        <button
+          type="button"
+          class="user-tab"
+          data-tab="banned"
+        >
+          Banned
+        </button>
+
+      </div>
+
+
+      <!-- ==================== TOOLBAR ==================== -->
+
+      <section class="user-toolbar">
+
+
+        <!-- SEARCH -->
+
+        <label class="search-field">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="17"
+            height="17"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m20 20-3.5-3.5"/>
+          </svg>
+
+          <input
+            type="search"
+            id="userSearch"
+            placeholder="Search users..."
+            autocomplete="off"
+          >
+
+        </label>
+
+
+        <!-- ROLE FILTER -->
+
+        <select
+          id="roleFilter"
+          class="select-field"
+        >
+          <option value="all">All Roles</option>
+          <option value="Customer">Customer</option>
+          <option value="Admin">Admin</option>
+        </select>
+
+
+        <!-- STATUS FILTER -->
+
+        <select
+          id="statusFilter"
+          class="select-field"
+        >
+          <option value="all">Status</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+          <option value="Banned">Banned</option>
+        </select>
+
+
+        <!-- EXPORT -->
+
+        <button
+          type="button"
+          class="export-btn"
+          id="exportUsersBtn"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M12 3v12"/>
+            <path d="m7 10 5 5 5-5"/>
+            <path d="M5 21h14"/>
+          </svg>
+
+          <span>Export</span>
+
+        </button>
+
+      </section>
+
+
+      <!-- ==================== USERS TABLE ==================== -->
+
+      <section class="users-panel">
+
+        <div class="users-table-wrap">
+
+          <table class="users-table">
+
+            <thead>
+
+              <tr>
+
+                <th class="checkbox-column">
+                  <input
+                    type="checkbox"
+                    id="selectAllUsers"
+                    aria-label="Select all users"
+                  >
+                </th>
+
+                <th>User</th>
+                <th>Email</th>
+                <th>Contact No.</th>
+                <th>Address</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Joined</th>
+                <th class="action-column">Action</th>
+
+              </tr>
+
+            </thead>
+
+            <tbody id="usersTableBody">
+
+              <!-- JS RENDERS USERS HERE -->
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- ==================== USER DETAILS MODAL ==================== -->
+
+  <div
+    class="modal-overlay"
+    id="userModal"
+    aria-hidden="true"
+  >
+
+    <section
+      class="user-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="userModalTitle"
+    >
+
+      <div class="user-modal-header">
+
+        <div>
+          <span class="modal-label">User Details</span>
+          <h2 id="userModalTitle">User</h2>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="closeUserModal"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+
+      </div>
+
+
+      <div class="user-modal-body">
+
+
+        <!-- USER PROFILE -->
+
+        <div class="modal-user-profile">
+
+          <div
+            class="modal-user-avatar"
+            id="modalUserAvatar"
+          >
+            U
+          </div>
+
+          <div>
+
+            <strong id="modalUserName">
+              —
+            </strong>
+
+            <span id="modalUsername">
+              —
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DETAILS -->
+
+        <div class="user-detail-list">
+
+          <div class="user-detail-row">
+            <span>Email</span>
+            <strong id="modalUserEmail">—</strong>
+          </div>
+
+          <div class="user-detail-row">
+            <span>Contact No.</span>
+            <strong id="modalUserContact">—</strong>
+          </div>
+
+          <div class="user-detail-row">
+            <span>Address</span>
+            <strong id="modalUserAddress">—</strong>
+          </div>
+
+          <div class="user-detail-row">
+            <span>Role</span>
+            <strong id="modalUserRole">—</strong>
+          </div>
+
+          <div class="user-detail-row">
+            <span>Status</span>
+            <strong id="modalUserStatus">—</strong>
+          </div>
+
+          <div class="user-detail-row">
+            <span>Joined</span>
+            <strong id="modalUserJoined">—</strong>
+          </div>
+
+        </div>
+
+
+        <!-- ADMIN ACTION -->
+
+        <div class="user-admin-box">
+
+          <span class="admin-box-label">
+            Manage User
+          </span>
+
+          <select
+            id="modalStatusSelect"
+            class="modal-select"
+          >
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Banned">Banned</option>
+          </select>
+
+          <button
+            type="button"
+            class="update-user-btn"
+            id="updateUserStatusBtn"
+          >
+            Update Status
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="user-modal-footer">
+
+        <button
+          type="button"
+          class="close-user-btn"
+          id="closeUserModalFooter"
+        >
+          Close
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- ==================== SCRIPT ==================== -->
+
+  <script>
+
+    /* ===============================================================
+       FRONTEND-ONLY SAMPLE DATA
+       Replace this array with database/API data later.
+    =============================================================== */
+
+    const users = [
+      {
+        id: 1,
+        name: "Maria Santos",
+        username: "@maria_santos",
+        email: "maria@gmail.com",
+        contact: "09567966487",
+        address: "Taytay, Rizal",
+        role: "Customer",
+        status: "Active",
+        joined: "08/15/2025"
+      },
+
+      {
+        id: 2,
+        name: "Angela Cruz",
+        username: "@angela_cruz",
+        email: "angela@gmail.com",
+        contact: "09171234567",
+        address: "Antipolo, Rizal",
+        role: "Customer",
+        status: "Inactive",
+        joined: "08/20/2025"
+      },
+
+      {
+        id: 3,
+        name: "IFC Administrator",
+        username: "@ifc_admin",
+        email: "admin@ifccrafts.com",
+        contact: "09181234567",
+        address: "Rizal",
+        role: "Admin",
+        status: "Active",
+        joined: "07/10/2025"
+      },
+
+      {
+        id: 4,
+        name: "Sample User",
+        username: "@sample_user",
+        email: "sample@gmail.com",
+        contact: "09991234567",
+        address: "Cainta, Rizal",
+        role: "Customer",
+        status: "Banned",
+        joined: "09/01/2025"
+      }
+    ];
+
+
+    /* ===============================================================
+       ELEMENTS
+    =============================================================== */
+
+    const usersTableBody =
+      document.getElementById("usersTableBody");
+
+    const userSearch =
+      document.getElementById("userSearch");
+
+    const roleFilter =
+      document.getElementById("roleFilter");
+
+    const statusFilter =
+      document.getElementById("statusFilter");
+
+    const selectAllUsers =
+      document.getElementById("selectAllUsers");
+
+    const statTotalUsers =
+      document.getElementById("statTotalUsers");
+
+    const statActiveUsers =
+      document.getElementById("statActiveUsers");
+
+    const statInactiveUsers =
+      document.getElementById("statInactiveUsers");
+
+    const statBannedUsers =
+      document.getElementById("statBannedUsers");
+
+    const userModal =
+      document.getElementById("userModal");
+
+    const modalUserTitle =
+      document.getElementById("userModalTitle");
+
+    const modalUserAvatar =
+      document.getElementById("modalUserAvatar");
+
+    const modalUserName =
+      document.getElementById("modalUserName");
+
+    const modalUsername =
+      document.getElementById("modalUsername");
+
+    const modalUserEmail =
+      document.getElementById("modalUserEmail");
+
+    const modalUserContact =
+      document.getElementById("modalUserContact");
+
+    const modalUserAddress =
+      document.getElementById("modalUserAddress");
+
+    const modalUserRole =
+      document.getElementById("modalUserRole");
+
+    const modalUserStatus =
+      document.getElementById("modalUserStatus");
+
+    const modalUserJoined =
+      document.getElementById("modalUserJoined");
+
+    const modalStatusSelect =
+      document.getElementById("modalStatusSelect");
+
+    const updateUserStatusBtn =
+      document.getElementById("updateUserStatusBtn");
+
+
+    let activeTab = "all";
+    let activeStatFilter = "all";
+    let selectedUserId = null;
+
+
+    /* ===============================================================
+       HELPERS
+    =============================================================== */
+
+    function normalize(value) {
+      return String(value || "")
+        .trim()
+        .toLowerCase();
+    }
+
+
+    function getInitials(name) {
+
+      return String(name || "U")
+        .split(" ")
+        .filter(Boolean)
+        .slice(0, 2)
+        .map(part => part[0])
+        .join("")
+        .toUpperCase();
+
+    }
+
+
+    function getStatusClass(status) {
+
+      switch (normalize(status)) {
+
+        case "active":
+          return "status-active";
+
+        case "inactive":
+          return "status-inactive";
+
+        case "banned":
+          return "status-banned";
+
+        default:
+          return "";
+
+      }
+
+    }
+
+
+    function getRoleClass(role) {
+
+      return normalize(role) === "admin"
+        ? "role-admin"
+        : "role-customer";
+
+    }
+
+
+    /* ===============================================================
+       STAT COUNTS
+    =============================================================== */
+
+    function updateStats() {
+
+      statTotalUsers.textContent =
+        users.length;
+
+      statActiveUsers.textContent =
+        users.filter(
+          user => normalize(user.status) === "active"
+        ).length;
+
+      statInactiveUsers.textContent =
+        users.filter(
+          user => normalize(user.status) === "inactive"
+        ).length;
+
+      statBannedUsers.textContent =
+        users.filter(
+          user => normalize(user.status) === "banned"
+        ).length;
+
+    }
+
+
+    /* ===============================================================
+       FILTER USERS
+    =============================================================== */
+
+    function getFilteredUsers() {
+
+      const search =
+        normalize(userSearch.value);
+
+      const role =
+        normalize(roleFilter.value);
+
+      const status =
+        normalize(statusFilter.value);
+
+
+      return users.filter(user => {
+
+        const searchableText = normalize(
+          [
+            user.name,
+            user.username,
+            user.email,
+            user.contact,
+            user.address,
+            user.role,
+            user.status
+          ].join(" ")
+        );
+
+
+        const matchesSearch =
+          !search ||
+          searchableText.includes(search);
+
+
+        const matchesRole =
+          role === "all" ||
+          normalize(user.role) === role;
+
+
+        const matchesStatus =
+          status === "all" ||
+          normalize(user.status) === status;
+
+
+        let matchesTab = true;
+
+        if (activeTab === "customer") {
+
+          matchesTab =
+            normalize(user.role) === "customer";
+
+        }
+
+        else if (activeTab === "admin") {
+
+          matchesTab =
+            normalize(user.role) === "admin";
+
+        }
+
+        else if (activeTab === "banned") {
+
+          matchesTab =
+            normalize(user.status) === "banned";
+
+        }
+
+
+        const matchesStat =
+          activeStatFilter === "all" ||
+          normalize(user.status) === activeStatFilter;
+
+
+        return (
+          matchesSearch &&
+          matchesRole &&
+          matchesStatus &&
+          matchesTab &&
+          matchesStat
+        );
+
+      });
+
+    }
+
+
+    /* ===============================================================
+       RENDER TABLE
+    =============================================================== */
+
+    function renderUsers() {
+
+      const filteredUsers =
+        getFilteredUsers();
+
+
+      if (!filteredUsers.length) {
+
+        usersTableBody.innerHTML = `
+          <tr>
+            <td
+              colspan="9"
+              class="empty-row"
+            >
+              No users found.
+            </td>
+          </tr>
+        `;
+
+        return;
+
+      }
+
+
+      usersTableBody.innerHTML =
+        filteredUsers.map(user => `
+
+          <tr>
+
+            <td class="checkbox-column">
+
+              <input
+                type="checkbox"
+                class="user-checkbox"
+                value="${user.id}"
+                aria-label="Select ${user.name}"
+              >
+
+            </td>
+
+
+            <td>
+
+              <div class="user-cell">
+
+                <div class="user-avatar-table">
+                  ${getInitials(user.name)}
+                </div>
+
+                <div class="user-info">
+
+                  <strong>
+                    ${user.name}
+                  </strong>
+
+                  <span>
+                    ${user.username}
+                  </span>
+
+                </div>
+
+              </div>
+
+            </td>
+
+
+            <td class="muted-cell">
+              ${user.email}
+            </td>
+
+
+            <td>
+              ${user.contact}
+            </td>
+
+
+            <td>
+              ${user.address}
+            </td>
+
+
+            <td>
+
+              <span class="role-badge ${getRoleClass(user.role)}">
+                ${user.role}
+              </span>
+
+            </td>
+
+
+            <td>
+
+              <span class="user-status-badge ${getStatusClass(user.status)}">
+                ${user.status}
+              </span>
+
+            </td>
+
+
+            <td>
+              ${user.joined}
+            </td>
+
+
+            <td class="action-column">
+
+              <button
+                type="button"
+                class="user-more-btn"
+                data-user-id="${user.id}"
+                aria-label="View ${user.name}"
+              >
+                •••
+              </button>
+
+            </td>
+
+          </tr>
+
+        `).join("");
+
+    }
+
+
+    /* ===============================================================
+       OPEN USER MODAL
+    =============================================================== */
+
+    function openUserModal(userId) {
+
+      const user =
+        users.find(
+          item => item.id === Number(userId)
+        );
+
+
+      if (!user) {
+        return;
+      }
+
+
+      selectedUserId =
+        user.id;
+
+
+      modalUserTitle.textContent =
+        `User #${String(user.id).padStart(3, "0")}`;
+
+      modalUserAvatar.textContent =
+        getInitials(user.name);
+
+      modalUserName.textContent =
+        user.name;
+
+      modalUsername.textContent =
+        user.username;
+
+      modalUserEmail.textContent =
+        user.email;
+
+      modalUserContact.textContent =
+        user.contact;
+
+      modalUserAddress.textContent =
+        user.address;
+
+      modalUserRole.textContent =
+        user.role;
+
+      modalUserStatus.textContent =
+        user.status;
+
+      modalUserJoined.textContent =
+        user.joined;
+
+      modalStatusSelect.value =
+        user.status;
+
+
+      userModal.classList.add("open");
+
+      userModal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+    /* ===============================================================
+       CLOSE USER MODAL
+    =============================================================== */
+
+    function closeUserModal() {
+
+      userModal.classList.remove("open");
+
+      userModal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+      selectedUserId = null;
+
+    }
+
+
+    /* ===============================================================
+       UPDATE USER STATUS
+    =============================================================== */
+
+    updateUserStatusBtn.addEventListener(
+      "click",
+      () => {
+
+        const user =
+          users.find(
+            item =>
+              item.id === selectedUserId
+          );
+
+
+        if (!user) {
+          return;
+        }
+
+
+        user.status =
+          modalStatusSelect.value;
+
+
+        modalUserStatus.textContent =
+          user.status;
+
+
+        updateStats();
+        renderUsers();
+
+      }
+    );
+
+
+    /* ===============================================================
+       SEARCH + FILTERS
+    =============================================================== */
+
+    userSearch.addEventListener(
+      "input",
+      renderUsers
+    );
+
+
+    roleFilter.addEventListener(
+      "change",
+      renderUsers
+    );
+
+
+    statusFilter.addEventListener(
+      "change",
+      renderUsers
+    );
+
+
+    /* ===============================================================
+       TABS
+    =============================================================== */
+
+    document.querySelectorAll(
+      ".user-tab"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          activeTab =
+            button.dataset.tab;
+
+
+          document.querySelectorAll(
+            ".user-tab"
+          ).forEach(tab => {
+
+            tab.classList.remove(
+              "active"
+            );
+
+          });
+
+
+          button.classList.add(
+            "active"
+          );
+
+
+          activeStatFilter = "all";
+
+
+          document.querySelectorAll(
+            ".user-stat-card"
+          ).forEach(card => {
+
+            card.classList.remove(
+              "active"
+            );
+
+          });
+
+
+          document.querySelector(
+            '[data-user-filter="all"]'
+          )?.classList.add("active");
+
+
+          renderUsers();
+
+        }
+      );
+
+    });
+
+
+    /* ===============================================================
+       STAT CARD FILTER
+    =============================================================== */
+
+    document.querySelectorAll(
+      ".user-stat-card"
+    ).forEach(card => {
+
+      card.addEventListener(
+        "click",
+        () => {
+
+          activeStatFilter =
+            card.dataset.userFilter;
+
+
+          document.querySelectorAll(
+            ".user-stat-card"
+          ).forEach(item => {
+
+            item.classList.remove(
+              "active"
+            );
+
+          });
+
+
+          card.classList.add(
+            "active"
+          );
+
+
+          renderUsers();
+
+        }
+      );
+
+    });
+
+
+    /* ===============================================================
+       TABLE ACTION
+    =============================================================== */
+
+    usersTableBody.addEventListener(
+      "click",
+      event => {
+
+        const button =
+          event.target.closest(
+            ".user-more-btn"
+          );
+
+
+        if (!button) {
+          return;
+        }
+
+
+        openUserModal(
+          button.dataset.userId
+        );
+
+      }
+    );
+
+
+    /* ===============================================================
+       SELECT ALL
+    =============================================================== */
+
+    selectAllUsers.addEventListener(
+      "change",
+      () => {
+
+        document.querySelectorAll(
+          ".user-checkbox"
+        ).forEach(checkbox => {
+
+          checkbox.checked =
+            selectAllUsers.checked;
+
+        });
+
+      }
+    );
+
+
+    /* ===============================================================
+       EXPORT CSV
+    =============================================================== */
+
+    document.getElementById(
+      "exportUsersBtn"
+    ).addEventListener(
+      "click",
+      () => {
+
+        const filteredUsers =
+          getFilteredUsers();
+
+
+        const rows = [
+
+          [
+            "Name",
+            "Username",
+            "Email",
+            "Contact No.",
+            "Address",
+            "Role",
+            "Status",
+            "Joined"
+          ],
+
+          ...filteredUsers.map(user => [
+
+            user.name,
+            user.username,
+            user.email,
+            user.contact,
+            user.address,
+            user.role,
+            user.status,
+            user.joined
+
+          ])
+
+        ];
+
+
+        const csv =
+          rows
+            .map(row =>
+              row.map(value =>
+                `"${String(value)
+                  .replaceAll('"', '""')}"`
+              ).join(",")
+            )
+            .join("\n");
+
+
+        const blob =
+          new Blob(
+            [csv],
+            {
+              type:
+                "text/csv;charset=utf-8;"
+            }
+          );
+
+
+        const url =
+          URL.createObjectURL(blob);
+
+
+        const link =
+          document.createElement("a");
+
+
+        link.href = url;
+
+        link.download =
+          "ifc-crafts-users.csv";
+
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        link.remove();
+
+        URL.revokeObjectURL(url);
+
+      }
+    );
+
+
+    /* ===============================================================
+       MODAL EVENTS
+    =============================================================== */
+
+    document.getElementById(
+      "closeUserModal"
+    ).addEventListener(
+      "click",
+      closeUserModal
+    );
+
+
+    document.getElementById(
+      "closeUserModalFooter"
+    ).addEventListener(
+      "click",
+      closeUserModal
+    );
+
+
+    userModal.addEventListener(
+      "click",
+      event => {
+
+        if (event.target === userModal) {
+          closeUserModal();
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape" &&
+          userModal.classList.contains("open")
+        ) {
+
+          closeUserModal();
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       INITIAL RENDER
+    =============================================================== */
+
+    updateStats();
+    renderUsers();
+
+  </script>
+
+</body>
+</html>

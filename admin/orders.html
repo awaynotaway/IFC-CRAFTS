@@ -1,0 +1,3261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Orders</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/orders.css">
+
+</head>
+
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+  <header class="topbar">
+
+    <div class="brand">
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">IFC CRAFTS</span>
+    </div>
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        id="notificationBtn"
+        aria-label="Notifications"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot"></span>
+      </button>
+
+      <button type="button" class="profile-chip">
+        <span class="avatar">
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+        </span>
+
+        <span>Admin</span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ==================== PAGE SHELL ==================== -->
+  <div class="shell">
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <nav class="sidenav">
+
+        <!-- Dashboard -->
+        <a href="index.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+
+        <!-- Orders -->
+        <a href="orders.html" class="sidenav-link active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+          <span>Orders</span>
+        </a>
+
+        <!-- Products & Services -->
+        <a href="products_services.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+          <span>Products &amp; Services</span>
+        </a>
+
+        <!-- Users -->
+        <a href="users.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Users</span>
+        </a>
+
+        <!-- Messages -->
+        <a href="messages.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+          <span>Messages</span>
+        </a>
+
+        <!-- Notifications -->
+        <a href="notifications.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span>Notifications</span>
+        </a>
+
+        <!-- Reviews -->
+        <a href="reviews.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+          <span>Reviews</span>
+        </a>
+
+        <!-- Reports -->
+        <a href="reports.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+          <span>Reports</span>
+        </a>
+
+        <!-- Audit Logs -->
+        <a href="audit_logs.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+          <span>Audit Logs</span>
+        </a>
+
+        <!-- Settings -->
+        <a href="settings.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+          <span>Settings</span>
+        </a>
+
+      </nav>
+    </aside>
+
+
+    <!-- ==================== MAIN ==================== -->
+    <main class="main">
+
+      <section class="page-header">
+        <h1>Orders</h1>
+        <p>View and manage customer orders, payments, and order status.</p>
+      </section>
+
+
+      <!-- ==================== STAT CARDS ==================== -->
+      <section class="stat-grid stat-grid-6">
+
+        <button type="button" class="stat-card active" data-status-filter="all">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6H20V19H4V6Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M8 10H16M8 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="stat-label">Orders</span>
+          <strong class="stat-value" id="statOrders">0</strong>
+        </button>
+
+        <button type="button" class="stat-card" data-status-filter="pending">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 7V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="stat-label">Pending</span>
+          <strong class="stat-value" id="statPending">0</strong>
+        </button>
+
+        <button type="button" class="stat-card" data-status-filter="processing">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M8 12H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="stat-label">Processing</span>
+          <strong class="stat-value" id="statProcessing">0</strong>
+        </button>
+
+        <button type="button" class="stat-card" data-status-filter="shipped">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M3 6H15V17H3V6Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M15 10H19L21 13V17H15V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <circle cx="7" cy="18" r="1.5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="18" cy="18" r="1.5" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <span class="stat-label">Shipped</span>
+          <strong class="stat-value" id="statShipped">0</strong>
+        </button>
+
+        <button type="button" class="stat-card" data-status-filter="received">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="stat-label">Received</span>
+          <strong class="stat-value" id="statReceived">0</strong>
+        </button>
+
+        <button type="button" class="stat-card" data-status-filter="cancelled">
+          <div class="stat-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9 9L15 15M15 9L9 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="stat-label">Cancelled</span>
+          <strong class="stat-value" id="statCancelled">0</strong>
+        </button>
+
+      </section>
+
+
+      <!-- ==================== TOOLBAR ==================== -->
+      <section class="transaction-toolbar">
+
+        <label class="search-field">
+          <svg
+            viewBox="0 0 24 24"
+            width="17"
+            height="17"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M20 20l-4-4"/>
+          </svg>
+
+          <input
+            type="search"
+            id="transactionSearch"
+            placeholder="Search order ID, customer, or product..."
+          >
+        </label>
+
+        <select id="statusFilter" class="select-field">
+          <option value="all">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="processing">Processing</option>
+          <option value="ready for pickup">Ready for Pickup</option>
+          <option value="shipped">Shipped</option>
+          <option value="received">Received</option>
+          <option value="completed">Completed</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+
+        <input
+          type="date"
+          id="dateFilter"
+          class="date-field"
+        >
+
+      </section>
+
+
+      <!-- ==================== TABLE ==================== -->
+      <section class="transaction-panel">
+
+        <div class="table-scroll">
+
+          <table class="transaction-table">
+
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product(s)</th>
+                <th>Amount</th>
+                <th>Payment Status</th>
+                <th>Order Status</th>
+                <th>Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="transactionTableBody">
+              <tr>
+                <td colspan="8" class="empty-row">
+                  Loading orders...
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- ==================== VIEW DETAILS ==================== -->
+  <div class="details-overlay" id="detailsOverlay">
+
+    <section
+      class="transaction-details"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="detailsTitle"
+    >
+
+      <header class="details-header">
+
+        <div>
+          <span class="details-label">
+            Order Details
+          </span>
+
+          <h2 id="detailsTitle">
+            Order
+            <span id="detailTransactionId">#—</span>
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="details-close"
+          id="closeDetailsBtn"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </header>
+
+
+      <!-- PRODUCT -->
+      <section class="details-section">
+
+        <h3>Product</h3>
+
+        <div class="details-product">
+
+          <div class="details-product-image">
+            IFC
+          </div>
+
+          <div class="details-product-name">
+            <strong id="detailProduct">—</strong>
+            <span id="detailQuantity">Qty: —</span>
+          </div>
+
+          <strong
+            class="details-product-price"
+            id="detailProductPrice"
+          >
+            ₱0.00
+          </strong>
+
+        </div>
+
+      </section>
+
+
+      <!-- PRICE -->
+      <section class="details-section compact-section">
+
+        <h3>Price Summary</h3>
+
+        <div class="details-row">
+          <span>Subtotal</span>
+          <strong id="detailSubtotal">₱0.00</strong>
+        </div>
+
+        <div class="details-row">
+          <span>VAT (12%)</span>
+          <strong id="detailVat">₱0.00</strong>
+        </div>
+
+        <div class="details-row total-row">
+          <span>Total</span>
+          <strong id="detailTotal">₱0.00</strong>
+        </div>
+
+      </section>
+
+
+      <!-- PAYMENT -->
+      <section class="details-section">
+
+        <h3>Payment Information</h3>
+
+        <div class="details-row">
+          <span>Method</span>
+          <strong id="detailPaymentMethod">—</strong>
+        </div>
+
+        <div class="details-row">
+          <span>Payment Status</span>
+
+          <span
+            id="detailPaymentStatus"
+            class="badge details-status-badge badge-pending"
+          >
+            Pending
+          </span>
+        </div>
+
+        <div class="payment-proof-row">
+
+          <span>Proof of Payment</span>
+
+          <div class="proof-area">
+
+            <div
+              class="proof-thumbnail"
+              id="proofThumbnail"
+            >
+              PROOF
+            </div>
+
+            <button
+              type="button"
+              class="view-proof-btn"
+              id="viewProofBtn"
+            >
+              View Proof
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="details-row">
+          <span>Verified At</span>
+          <strong id="detailVerifiedAt">—</strong>
+        </div>
+
+        <div class="details-row">
+          <span>Verified By</span>
+          <strong id="detailVerifiedBy">—</strong>
+        </div>
+
+        <div
+          class="admin-action-box"
+          id="paymentActions"
+        >
+
+          <span class="admin-action-label">
+            Payment Action
+          </span>
+
+          <div class="admin-action-buttons">
+
+            <button
+              type="button"
+              class="admin-btn verify-btn"
+              id="verifyPaymentBtn"
+            >
+              Verify Payment
+            </button>
+
+            <button
+              type="button"
+              class="admin-btn reject-btn"
+              id="rejectPaymentBtn"
+            >
+              Reject Payment
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ORDER -->
+      <section class="details-section">
+
+        <h3>Order Information</h3>
+
+        <div class="details-row">
+
+          <span>Order Status</span>
+
+          <span
+            id="detailOrderStatus"
+            class="badge details-status-badge badge-pending"
+          >
+            Pending
+          </span>
+
+        </div>
+
+        <div class="admin-action-box">
+
+          <span class="admin-action-label">
+            Update Order Status
+          </span>
+
+          <div class="status-update-row">
+
+            <select
+              id="orderStatusSelect"
+              class="admin-select"
+            >
+              <option value="Pending">Pending</option>
+              <option value="Processing">Processing</option>
+              <option value="Ready for Pickup">Ready for Pickup</option>
+              <option value="Shipped">Shipped</option>
+              <option value="Received">Received</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+
+            <button
+              type="button"
+              class="admin-btn update-btn"
+              id="updateStatusBtn"
+            >
+              Update
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- DELIVERY -->
+      <section class="details-section">
+
+        <div class="section-heading-row">
+
+          <h3>Delivery Information</h3>
+
+          <button
+            type="button"
+            class="text-action-btn"
+            id="editDeliveryBtn"
+          >
+            Edit
+          </button>
+
+        </div>
+
+        <div class="details-row">
+          <span>Method</span>
+          <strong id="detailDeliveryMethod">—</strong>
+        </div>
+
+        <div class="details-row">
+          <span>Date / Schedule</span>
+          <strong id="detailDeliveryDate">—</strong>
+        </div>
+
+        <div class="details-row">
+          <span>Location</span>
+          <strong id="detailDeliveryLocation">—</strong>
+        </div>
+
+        <div
+          class="delivery-edit-form"
+          id="deliveryEditForm"
+          hidden
+        >
+
+          <label>
+            Delivery Method
+
+            <select
+              id="editDeliveryMethod"
+              class="admin-select"
+            >
+              <option value="Pickup">Pickup</option>
+              <option value="Meet-up">Meet-up</option>
+              <option value="Delivery">Delivery</option>
+            </select>
+          </label>
+
+          <label>
+            Date / Schedule
+
+            <input
+              type="text"
+              id="editDeliveryDate"
+              class="admin-input"
+              placeholder="Enter date or schedule"
+            >
+          </label>
+
+          <label>
+            Location
+
+            <input
+              type="text"
+              id="editDeliveryLocation"
+              class="admin-input"
+              placeholder="Enter location"
+            >
+          </label>
+
+          <div class="delivery-edit-actions">
+
+            <button
+              type="button"
+              class="admin-btn cancel-btn"
+              id="cancelDeliveryBtn"
+            >
+              Cancel
+            </button>
+
+            <button
+              type="button"
+              class="admin-btn update-btn"
+              id="saveDeliveryBtn"
+            >
+              Save
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ACTIVITY -->
+      <section class="details-section activity-section">
+
+        <h3>Activity History</h3>
+
+        <div
+          class="activity-list"
+          id="activityList"
+        >
+          <div class="activity-empty">
+            No activity recorded yet.
+          </div>
+        </div>
+
+      </section>
+
+
+      <footer class="details-footer">
+
+        <button
+          type="button"
+          class="close-details-btn"
+          id="closeDetailsFooterBtn"
+        >
+          Close
+        </button>
+
+      </footer>
+
+    </section>
+
+  </div>
+
+
+  <!-- ==================== PROOF MODAL ==================== -->
+  <div
+    class="proof-overlay"
+    id="proofOverlay"
+  >
+
+    <section
+      class="proof-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="proofTitle"
+    >
+
+      <header class="proof-modal-header">
+
+        <h2 id="proofTitle">
+          Proof of Payment
+        </h2>
+
+        <button
+          type="button"
+          id="closeProofXBtn"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </header>
+
+      <div
+        class="proof-preview"
+        id="proofPreview"
+      >
+        <div class="proof-placeholder">
+          <strong>Payment Proof Preview</strong>
+          <span>Customer uploaded proof will appear here.</span>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="close-proof-btn"
+        id="closeProofBtn"
+      >
+        Close
+      </button>
+
+    </section>
+
+  </div>
+
+
+  <script>
+
+    /* =====================================================
+       BACKEND CONFIG
+    ====================================================== */
+
+    const API_BASE_URL = "/api";
+
+    /*
+      IMPORTANT:
+      The old Transactions page already uses /transactions
+      for retrieving payment/order records.
+
+      We KEEP that backend contract here.
+      The PAGE itself is now Orders.
+    */
+
+    const ENDPOINTS = {
+
+      transactions:
+"/inventory/transactions",
+
+      transaction:
+        (id) =>
+          `/transactions/${encodeURIComponent(id)}`,
+
+      payment:
+        (id) =>
+          `/transactions/${encodeURIComponent(id)}/payment`,
+
+      orderStatus:
+        (orderId) =>
+          `/orders/${encodeURIComponent(orderId)}/status`,
+
+      delivery:
+        (orderId) =>
+          `/orders/${encodeURIComponent(orderId)}/delivery`
+
+    };
+
+
+    const VAT_RATE = 0.12;
+
+    let transactions = [];
+    let selectedTransaction = null;
+
+
+    /* =====================================================
+       API REQUEST
+    ====================================================== */
+
+    async function apiRequest(endpoint, options = {}) {
+
+      const config = {
+        credentials: "include",
+        ...options,
+
+        headers: {
+          Accept: "application/json",
+
+          ...(
+            options.body instanceof FormData
+              ? {}
+              : {
+                  "Content-Type": "application/json"
+                }
+          ),
+
+          ...(options.headers || {})
+        }
+      };
+
+
+      const response =
+        await fetch(
+          `${API_BASE_URL}${endpoint}`,
+          config
+        );
+
+
+      if (!response.ok) {
+
+        let message =
+          `Request failed (${response.status})`;
+
+        try {
+
+          const errorData =
+            await response.json();
+
+          message =
+            errorData.message ||
+            errorData.error ||
+            message;
+
+        } catch (error) {
+          // Response is not JSON.
+        }
+
+        throw new Error(message);
+      }
+
+
+      if (response.status === 204) {
+        return null;
+      }
+
+
+      const contentType =
+        response.headers.get(
+          "content-type"
+        ) || "";
+
+
+      if (
+        contentType.includes(
+          "application/json"
+        )
+      ) {
+        return response.json();
+      }
+
+
+      return null;
+    }
+
+
+    /* =====================================================
+       DATA NORMALIZER
+    ====================================================== */
+
+    function normalizeTransaction(raw = {}) {
+
+      const customer =
+        typeof raw.customer === "object"
+          ? raw.customer || {}
+          : {};
+
+      const product =
+        typeof raw.product === "object"
+          ? raw.product || {}
+          : {};
+
+      const payment =
+        typeof raw.payment === "object"
+          ? raw.payment || {}
+          : {};
+
+      const pricing =
+        raw.pricing || {};
+
+      const delivery =
+        raw.delivery || {};
+
+
+      const transactionId =
+        raw.transactionId ??
+        raw.transaction_id ??
+        raw.id ??
+        "";
+
+
+      const orderId =
+        raw.orderId ??
+        raw.order_id ??
+        raw.order?.id ??
+        transactionId;
+
+
+      const quantity =
+        Number(
+          product.quantity ??
+          raw.quantity ??
+          1
+        );
+
+
+      const subtotal =
+        Number(
+          pricing.subtotal ??
+          raw.subtotal ??
+          raw.amount ??
+          0
+        );
+
+
+      const vat =
+        Number(
+          pricing.vat ??
+          raw.vat ??
+          subtotal * VAT_RATE
+        );
+
+
+      const total =
+        Number(
+          pricing.total ??
+          raw.total ??
+          subtotal + vat
+        );
+
+
+      const unitPrice =
+        Number(
+          product.unitPrice ??
+          product.unit_price ??
+          raw.unitPrice ??
+          raw.unit_price ??
+          (
+            quantity > 0
+              ? subtotal / quantity
+              : subtotal
+          )
+        );
+
+
+      return {
+
+        backendId:
+          transactionId,
+
+        orderId:
+          orderId,
+
+        id:
+          formatOrderId(orderId),
+
+        customer:
+          customer.name ??
+          raw.customerName ??
+          raw.customer_name ??
+          (
+            typeof raw.customer === "string"
+              ? raw.customer
+              : "—"
+          ),
+
+        email:
+          customer.email ??
+          raw.customerEmail ??
+          raw.customer_email ??
+          raw.email ??
+          "—",
+
+        product:
+          product.name ??
+          raw.productName ??
+          raw.product_name ??
+          (
+            typeof raw.product === "string"
+              ? raw.product
+              : "—"
+          ),
+
+        quantity:
+          quantity,
+
+        unitPrice:
+          unitPrice,
+
+        subtotal:
+          subtotal,
+
+        vat:
+          vat,
+
+        total:
+          total,
+
+        paymentMethod:
+          payment.method ??
+          raw.paymentMethod ??
+          raw.payment_method ??
+          "—",
+
+        paymentStatus:
+          payment.status ??
+          raw.paymentStatus ??
+          raw.payment_status ??
+          "Pending",
+
+        paymentProof:
+          payment.proofUrl ??
+          payment.proof_url ??
+          raw.paymentProof ??
+          raw.payment_proof ??
+          raw.proofUrl ??
+          raw.proof_url ??
+          null,
+
+        verifiedAt:
+          payment.verifiedAt ??
+          payment.verified_at ??
+          raw.verifiedAt ??
+          raw.verified_at ??
+          null,
+
+        verifiedBy:
+          payment.verifiedBy ??
+          payment.verified_by ??
+          raw.verifiedBy ??
+          raw.verified_by ??
+          null,
+
+        orderStatus:
+          raw.orderStatus ??
+          raw.order_status ??
+          raw.order?.status ??
+          raw.status ??
+          "Pending",
+
+        deliveryMethod:
+          delivery.method ??
+          raw.deliveryMethod ??
+          raw.delivery_method ??
+          "—",
+
+        deliveryDate:
+          delivery.schedule ??
+          delivery.date ??
+          raw.deliveryDate ??
+          raw.delivery_date ??
+          "—",
+
+        deliveryLocation:
+          delivery.location ??
+          raw.deliveryLocation ??
+          raw.delivery_location ??
+          "—",
+
+        date:
+          normalizeDate(
+            raw.createdAt ??
+            raw.created_at ??
+            raw.date
+          ),
+
+        activity:
+          Array.isArray(raw.activity)
+            ? raw.activity
+            : Array.isArray(raw.activities)
+              ? raw.activities
+              : []
+
+      };
+    }
+
+
+    /* =====================================================
+       RESPONSE HELPERS
+    ====================================================== */
+
+    function getTransactionArray(response) {
+
+      if (Array.isArray(response)) {
+        return response;
+      }
+
+      if (
+        Array.isArray(
+          response?.transactions
+        )
+      ) {
+        return response.transactions;
+      }
+
+      if (
+        Array.isArray(
+          response?.orders
+        )
+      ) {
+        return response.orders;
+      }
+
+      if (
+        Array.isArray(
+          response?.data
+        )
+      ) {
+        return response.data;
+      }
+
+      return [];
+    }
+
+
+    function getSingleTransaction(response) {
+
+      if (!response) {
+        return null;
+      }
+
+      if (response.transaction) {
+        return response.transaction;
+      }
+
+      if (response.order) {
+        return response.order;
+      }
+
+      if (
+        response.data &&
+        !Array.isArray(response.data)
+      ) {
+        return response.data;
+      }
+
+      return response;
+    }
+
+
+    /* =====================================================
+       HELPERS
+    ====================================================== */
+
+    function formatOrderId(id) {
+
+      if (
+        id === null ||
+        id === undefined ||
+        id === ""
+      ) {
+        return "#—";
+      }
+
+      const value =
+        String(id);
+
+      return value.startsWith("#")
+        ? value
+        : `#${value}`;
+    }
+
+
+    function formatPeso(value) {
+
+      return new Intl.NumberFormat(
+        "en-PH",
+        {
+          style: "currency",
+          currency: "PHP",
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      ).format(
+        Number(value || 0)
+      );
+    }
+
+
+    function normalizeDate(value) {
+
+      if (!value) {
+        return "";
+      }
+
+      const stringValue =
+        String(value);
+
+      if (
+        /^\d{4}-\d{2}-\d{2}$/.test(
+          stringValue
+        )
+      ) {
+        return stringValue;
+      }
+
+      const date =
+        new Date(value);
+
+      if (
+        Number.isNaN(
+          date.getTime()
+        )
+      ) {
+        return "";
+      }
+
+      const year =
+        date.getFullYear();
+
+      const month =
+        String(
+          date.getMonth() + 1
+        ).padStart(2, "0");
+
+      const day =
+        String(
+          date.getDate()
+        ).padStart(2, "0");
+
+      return `${year}-${month}-${day}`;
+    }
+
+
+    function formatDate(value) {
+
+      if (!value) {
+        return "—";
+      }
+
+      const date =
+        /^\d{4}-\d{2}-\d{2}$/.test(value)
+          ? new Date(`${value}T00:00:00`)
+          : new Date(value);
+
+      if (
+        Number.isNaN(
+          date.getTime()
+        )
+      ) {
+        return value;
+      }
+
+      return date.toLocaleDateString(
+        "en-US",
+        {
+          month: "2-digit",
+          day: "2-digit",
+          year: "numeric"
+        }
+      );
+    }
+
+
+    function formatDateTime(value) {
+
+      if (
+        !value ||
+        value === "—"
+      ) {
+        return "—";
+      }
+
+      const date =
+        new Date(value);
+
+      if (
+        Number.isNaN(
+          date.getTime()
+        )
+      ) {
+        return String(value);
+      }
+
+      return date.toLocaleString(
+        "en-US",
+        {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          hour: "numeric",
+          minute: "2-digit"
+        }
+      );
+    }
+
+
+    function escapeHtml(value) {
+
+      return String(
+        value ?? ""
+      )
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+
+    /* =====================================================
+       STATUS
+    ====================================================== */
+
+    function getStatusClass(status) {
+
+      const classes = {
+
+        verified:
+          "badge-verified",
+
+        paid:
+          "badge-verified",
+
+        pending:
+          "badge-pending",
+
+        rejected:
+          "badge-rejected",
+
+        processing:
+          "badge-processing",
+
+        shipped:
+          "badge-shipped",
+
+        received:
+          "badge-received",
+
+        completed:
+          "badge-completed",
+
+        cancelled:
+          "badge-cancelled",
+
+        "ready for pickup":
+          "badge-ready-for-pickup"
+
+      };
+
+      return (
+        classes[
+          String(
+            status || "Pending"
+          ).toLowerCase()
+        ] ||
+        "badge-pending"
+      );
+    }
+
+
+    function setDetailsBadge(
+      element,
+      status
+    ) {
+
+      if (!element) {
+        return;
+      }
+
+      element.className =
+        `badge details-status-badge ${getStatusClass(status)}`;
+
+      element.textContent =
+        status || "Pending";
+    }
+
+
+    /* =====================================================
+       TABLE MESSAGE
+    ====================================================== */
+
+    function showTableMessage(message) {
+
+      document.getElementById(
+        "transactionTableBody"
+      ).innerHTML = `
+        <tr>
+          <td
+            colspan="8"
+            class="empty-row"
+          >
+            ${escapeHtml(message)}
+          </td>
+        </tr>
+      `;
+    }
+
+
+    /* =====================================================
+       STATS
+    ====================================================== */
+
+    function updateOrderStats() {
+
+      const count =
+        (status) =>
+          transactions.filter(
+            transaction =>
+              String(
+                transaction.orderStatus || ""
+              ).toLowerCase() === status
+          ).length;
+
+
+      document.getElementById(
+        "statOrders"
+      ).textContent =
+        transactions.length;
+
+
+      document.getElementById(
+        "statPending"
+      ).textContent =
+        count("pending");
+
+
+      document.getElementById(
+        "statProcessing"
+      ).textContent =
+        count("processing");
+
+
+      document.getElementById(
+        "statShipped"
+      ).textContent =
+        count("shipped");
+
+
+      document.getElementById(
+        "statReceived"
+      ).textContent =
+        count("received");
+
+
+      document.getElementById(
+        "statCancelled"
+      ).textContent =
+        count("cancelled");
+    }
+
+
+    function resetOrderStats() {
+
+      [
+        "statOrders",
+        "statPending",
+        "statProcessing",
+        "statShipped",
+        "statReceived",
+        "statCancelled"
+      ].forEach(id => {
+
+        const element =
+          document.getElementById(id);
+
+        if (element) {
+          element.textContent = "0";
+        }
+
+      });
+    }
+
+
+    /* =====================================================
+       LOAD ORDERS
+    ====================================================== */
+
+    async function loadTransactions() {
+
+      showTableMessage(
+        "Loading orders..."
+      );
+
+      try {
+
+        const response =
+          await apiRequest(
+            ENDPOINTS.transactions
+          );
+
+        transactions =
+          getTransactionArray(
+            response
+          ).map(
+            normalizeTransaction
+          );
+
+        updateOrderStats();
+
+        renderTransactions(
+          getFilteredTransactions()
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Failed to load orders:",
+          error
+        );
+
+        transactions = [];
+
+        resetOrderStats();
+
+        showTableMessage(
+          "Unable to load orders."
+        );
+      }
+    }
+
+
+    /* =====================================================
+       LOAD SINGLE ORDER
+    ====================================================== */
+
+    async function fetchTransaction(
+      transaction
+    ) {
+
+      if (!transaction) {
+        return null;
+      }
+
+      try {
+
+        const response =
+          await apiRequest(
+            ENDPOINTS.transaction(
+              transaction.backendId
+            )
+          );
+
+        const data =
+          getSingleTransaction(
+            response
+          );
+
+        return data
+          ? normalizeTransaction(data)
+          : transaction;
+
+      } catch (error) {
+
+        console.warn(
+          "Unable to load full order details:",
+          error
+        );
+
+        return transaction;
+      }
+    }
+
+
+    /* =====================================================
+       FILTER
+    ====================================================== */
+
+    function getFilteredTransactions() {
+
+      const searchValue =
+        document
+          .getElementById(
+            "transactionSearch"
+          )
+          .value
+          .toLowerCase()
+          .trim();
+
+
+      const statusValue =
+        document
+          .getElementById(
+            "statusFilter"
+          )
+          .value
+          .toLowerCase();
+
+
+      const dateValue =
+        document
+          .getElementById(
+            "dateFilter"
+          )
+          .value;
+
+
+      return transactions.filter(
+        transaction => {
+
+          const searchable = [
+            transaction.id,
+            transaction.orderId,
+            transaction.customer,
+            transaction.email,
+            transaction.product,
+            transaction.paymentStatus,
+            transaction.orderStatus
+          ];
+
+
+          const matchesSearch =
+            !searchValue ||
+            searchable.some(
+              value =>
+                String(
+                  value || ""
+                )
+                  .toLowerCase()
+                  .includes(
+                    searchValue
+                  )
+            );
+
+
+          /*
+            Orders page:
+            Status dropdown now filters ORDER STATUS,
+            not payment status.
+          */
+
+          const matchesStatus =
+            statusValue === "all" ||
+            String(
+              transaction.orderStatus
+            ).toLowerCase() ===
+              statusValue;
+
+
+          const matchesDate =
+            !dateValue ||
+            transaction.date ===
+              dateValue;
+
+
+          return (
+            matchesSearch &&
+            matchesStatus &&
+            matchesDate
+          );
+        }
+      );
+    }
+
+
+    function filterTransactions() {
+
+      renderTransactions(
+        getFilteredTransactions()
+      );
+    }
+
+
+    /* =====================================================
+       RENDER TABLE
+    ====================================================== */
+
+    function renderTransactions(data) {
+
+      const tableBody =
+        document.getElementById(
+          "transactionTableBody"
+        );
+
+
+      if (
+        !data ||
+        data.length === 0
+      ) {
+
+        showTableMessage(
+          "No orders found."
+        );
+
+        return;
+      }
+
+
+      tableBody.innerHTML =
+        data
+          .map(
+            transaction => `
+              <tr>
+
+                <td>
+                  <strong>
+                    ${escapeHtml(transaction.id)}
+                  </strong>
+                </td>
+
+                <td>
+                  <div class="customer-cell">
+
+                    <strong>
+                      ${escapeHtml(
+                        transaction.customer
+                      )}
+                    </strong>
+
+                    <span>
+                      ${escapeHtml(
+                        transaction.email
+                      )}
+                    </span>
+
+                  </div>
+                </td>
+
+                <td>
+                  <div class="product-cell">
+
+                    <div class="product-thumb">
+                      IFC
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        ${escapeHtml(
+                          transaction.product
+                        )}
+                      </strong>
+
+                      <span>
+                        Qty:
+                        ${escapeHtml(
+                          transaction.quantity
+                        )}
+                      </span>
+
+                    </div>
+
+                  </div>
+                </td>
+
+                <td>
+                  <strong>
+                    ${formatPeso(
+                      transaction.total
+                    )}
+                  </strong>
+                </td>
+
+                <td>
+                  <span
+                    class="badge ${getStatusClass(
+                      transaction.paymentStatus
+                    )}"
+                  >
+                    ${escapeHtml(
+                      transaction.paymentStatus
+                    )}
+                  </span>
+                </td>
+
+                <td>
+                  <span
+                    class="badge ${getStatusClass(
+                      transaction.orderStatus
+                    )}"
+                  >
+                    ${escapeHtml(
+                      transaction.orderStatus
+                    )}
+                  </span>
+                </td>
+
+                <td>
+                  ${escapeHtml(
+                    formatDate(
+                      transaction.date
+                    )
+                  )}
+                </td>
+
+                <td>
+
+                  <button
+                    type="button"
+                    class="view-details-btn"
+                    data-transaction-id="${escapeHtml(
+                      transaction.backendId
+                    )}"
+                  >
+                    View Details
+                  </button>
+
+                </td>
+
+              </tr>
+            `
+          )
+          .join("");
+    }
+
+
+    /* =====================================================
+       ACTIVITY
+    ====================================================== */
+
+    function renderActivity() {
+
+      const activityList =
+        document.getElementById(
+          "activityList"
+        );
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+      const activity =
+        selectedTransaction.activity || [];
+
+
+      if (activity.length === 0) {
+
+        activityList.innerHTML = `
+          <div class="activity-empty">
+            No activity recorded yet.
+          </div>
+        `;
+
+        return;
+      }
+
+
+      const icons = {
+        payment: "✓",
+        status: "↻",
+        delivery: "⌖",
+        rejected: "×"
+      };
+
+
+      activityList.innerHTML =
+        activity
+          .map(
+            item => {
+
+              const type =
+                item.type || "status";
+
+              const text =
+                item.text ??
+                item.description ??
+                item.message ??
+                "Order updated";
+
+              const time =
+                item.time ??
+                item.createdAt ??
+                item.created_at ??
+                "";
+
+              return `
+                <div class="activity-item">
+
+                  <div class="activity-icon">
+                    ${icons[type] || "•"}
+                  </div>
+
+                  <div class="activity-content">
+
+                    <strong>
+                      ${escapeHtml(text)}
+                    </strong>
+
+                    <span>
+                      ${escapeHtml(
+                        formatDateTime(time)
+                      )}
+                    </span>
+
+                  </div>
+
+                </div>
+              `;
+            }
+          )
+          .join("");
+    }
+
+
+    /* =====================================================
+       REFRESH DETAILS
+    ====================================================== */
+
+    function refreshTransactionDetails() {
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+      const transaction =
+        selectedTransaction;
+
+
+      document.getElementById(
+        "detailTransactionId"
+      ).textContent =
+        transaction.id;
+
+
+      document.getElementById(
+        "detailProduct"
+      ).textContent =
+        transaction.product;
+
+
+      document.getElementById(
+        "detailQuantity"
+      ).textContent =
+        `Qty: ${transaction.quantity}`;
+
+
+      document.getElementById(
+        "detailProductPrice"
+      ).textContent =
+        formatPeso(
+          transaction.unitPrice
+        );
+
+
+      document.getElementById(
+        "detailSubtotal"
+      ).textContent =
+        formatPeso(
+          transaction.subtotal
+        );
+
+
+      document.getElementById(
+        "detailVat"
+      ).textContent =
+        formatPeso(
+          transaction.vat
+        );
+
+
+      document.getElementById(
+        "detailTotal"
+      ).textContent =
+        formatPeso(
+          transaction.total
+        );
+
+
+      document.getElementById(
+        "detailPaymentMethod"
+      ).textContent =
+        transaction.paymentMethod;
+
+
+      document.getElementById(
+        "detailVerifiedAt"
+      ).textContent =
+        formatDateTime(
+          transaction.verifiedAt
+        );
+
+
+      document.getElementById(
+        "detailVerifiedBy"
+      ).textContent =
+        transaction.verifiedBy ||
+        "—";
+
+
+      setDetailsBadge(
+        document.getElementById(
+          "detailPaymentStatus"
+        ),
+        transaction.paymentStatus
+      );
+
+
+      setDetailsBadge(
+        document.getElementById(
+          "detailOrderStatus"
+        ),
+        transaction.orderStatus
+      );
+
+
+      const statusSelect =
+        document.getElementById(
+          "orderStatusSelect"
+        );
+
+
+      if (
+        [
+          ...statusSelect.options
+        ].some(
+          option =>
+            option.value ===
+            transaction.orderStatus
+        )
+      ) {
+        statusSelect.value =
+          transaction.orderStatus;
+      }
+
+
+      document.getElementById(
+        "detailDeliveryMethod"
+      ).textContent =
+        transaction.deliveryMethod;
+
+
+      document.getElementById(
+        "detailDeliveryDate"
+      ).textContent =
+        transaction.deliveryDate;
+
+
+      document.getElementById(
+        "detailDeliveryLocation"
+      ).textContent =
+        transaction.deliveryLocation;
+
+
+      const paymentActions =
+        document.getElementById(
+          "paymentActions"
+        );
+
+
+      paymentActions.style.display =
+        String(
+          transaction.paymentStatus
+        ).toLowerCase() ===
+          "pending"
+          ? "block"
+          : "none";
+
+
+      const proofButton =
+        document.getElementById(
+          "viewProofBtn"
+        );
+
+
+      proofButton.disabled =
+        !transaction.paymentProof;
+
+
+      const thumbnail =
+        document.getElementById(
+          "proofThumbnail"
+        );
+
+
+      if (transaction.paymentProof) {
+
+        thumbnail.innerHTML = `
+          <img
+            src="${escapeHtml(transaction.paymentProof)}"
+            alt="Proof"
+            style="
+              width:100%;
+              height:100%;
+              object-fit:cover;
+              display:block;
+            "
+          >
+        `;
+
+      } else {
+
+        thumbnail.textContent =
+          "PROOF";
+      }
+
+
+      renderActivity();
+    }
+
+
+    /* =====================================================
+       OPEN DETAILS
+    ====================================================== */
+
+    async function openTransactionDetails(
+      transaction
+    ) {
+
+      selectedTransaction =
+        transaction;
+
+      cancelDeliveryEdit();
+
+      refreshTransactionDetails();
+
+      document
+        .getElementById(
+          "detailsOverlay"
+        )
+        .classList.add(
+          "open"
+        );
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+
+      const latest =
+        await fetchTransaction(
+          transaction
+        );
+
+
+      if (
+        latest &&
+        selectedTransaction
+      ) {
+
+        selectedTransaction =
+          latest;
+
+        updateLocalTransaction(
+          latest
+        );
+
+        refreshTransactionDetails();
+      }
+    }
+
+
+    function closeTransactionDetails() {
+
+      document
+        .getElementById(
+          "detailsOverlay"
+        )
+        .classList.remove(
+          "open"
+        );
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+      selectedTransaction =
+        null;
+    }
+
+
+    /* =====================================================
+       UPDATE LOCAL CACHE
+    ====================================================== */
+
+    function updateLocalTransaction(
+      transaction
+    ) {
+
+      const index =
+        transactions.findIndex(
+          item =>
+            String(
+              item.backendId
+            ) ===
+            String(
+              transaction.backendId
+            )
+        );
+
+
+      if (index !== -1) {
+        transactions[index] =
+          transaction;
+      }
+
+
+      updateOrderStats();
+
+      renderTransactions(
+        getFilteredTransactions()
+      );
+    }
+
+
+    async function refreshSelectedTransaction() {
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+      const latest =
+        await fetchTransaction(
+          selectedTransaction
+        );
+
+      if (!latest) {
+        return;
+      }
+
+      selectedTransaction =
+        latest;
+
+      updateLocalTransaction(
+        latest
+      );
+
+      refreshTransactionDetails();
+    }
+
+
+    /* =====================================================
+       PAYMENT PROOF
+    ====================================================== */
+
+    function openPaymentProof() {
+
+      if (
+        !selectedTransaction ||
+        !selectedTransaction.paymentProof
+      ) {
+        return;
+      }
+
+
+      document.getElementById(
+        "proofPreview"
+      ).innerHTML = `
+        <img
+          src="${escapeHtml(
+            selectedTransaction.paymentProof
+          )}"
+          alt="Payment Proof"
+          style="
+            width:100%;
+            max-height:70vh;
+            object-fit:contain;
+            display:block;
+            border-radius:10px;
+          "
+        >
+      `;
+
+
+      document
+        .getElementById(
+          "proofOverlay"
+        )
+        .classList.add(
+          "open"
+        );
+    }
+
+
+    function closePaymentProof() {
+
+      document
+        .getElementById(
+          "proofOverlay"
+        )
+        .classList.remove(
+          "open"
+        );
+    }
+
+
+    /* =====================================================
+       BUTTON LOADING
+    ====================================================== */
+
+    function setButtonLoading(
+      button,
+      loading,
+      text
+    ) {
+
+      if (!button) {
+        return;
+      }
+
+
+      if (loading) {
+
+        button.dataset.oldText =
+          button.textContent;
+
+        button.textContent =
+          text;
+
+        button.disabled =
+          true;
+
+      } else {
+
+        button.textContent =
+          button.dataset.oldText ||
+          button.textContent;
+
+        button.disabled =
+          false;
+      }
+    }
+
+
+    /* =====================================================
+       VERIFY PAYMENT
+    ====================================================== */
+
+    async function verifyPayment() {
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+      if (
+        String(
+          selectedTransaction.paymentStatus
+        ).toLowerCase() !==
+          "pending"
+      ) {
+        return;
+      }
+
+
+      const button =
+        document.getElementById(
+          "verifyPaymentBtn"
+        );
+
+
+      setButtonLoading(
+        button,
+        true,
+        "Verifying..."
+      );
+
+
+      try {
+
+        const response =
+          await apiRequest(
+            ENDPOINTS.payment(
+              selectedTransaction.backendId
+            ),
+            {
+              method: "PATCH",
+
+              body: JSON.stringify({
+                status: "Verified"
+              })
+            }
+          );
+
+
+        const returned =
+          getSingleTransaction(
+            response
+          );
+
+
+        if (returned) {
+
+          selectedTransaction =
+            normalizeTransaction(
+              returned
+            );
+
+          updateLocalTransaction(
+            selectedTransaction
+          );
+
+          refreshTransactionDetails();
+
+        } else {
+
+          await refreshSelectedTransaction();
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(
+          error.message ||
+          "Unable to verify payment."
+        );
+
+      } finally {
+
+        setButtonLoading(
+          button,
+          false
+        );
+      }
+    }
+
+
+    /* =====================================================
+       REJECT PAYMENT
+    ====================================================== */
+
+    async function rejectPayment() {
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+      if (
+        String(
+          selectedTransaction.paymentStatus
+        ).toLowerCase() !==
+          "pending"
+      ) {
+        return;
+      }
+
+
+      const button =
+        document.getElementById(
+          "rejectPaymentBtn"
+        );
+
+
+      setButtonLoading(
+        button,
+        true,
+        "Rejecting..."
+      );
+
+
+      try {
+
+        const response =
+          await apiRequest(
+            ENDPOINTS.payment(
+              selectedTransaction.backendId
+            ),
+            {
+              method: "PATCH",
+
+              body: JSON.stringify({
+                status: "Rejected"
+              })
+            }
+          );
+
+
+        const returned =
+          getSingleTransaction(
+            response
+          );
+
+
+        if (returned) {
+
+          selectedTransaction =
+            normalizeTransaction(
+              returned
+            );
+
+          updateLocalTransaction(
+            selectedTransaction
+          );
+
+          refreshTransactionDetails();
+
+        } else {
+
+          await refreshSelectedTransaction();
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(
+          error.message ||
+          "Unable to reject payment."
+        );
+
+      } finally {
+
+        setButtonLoading(
+          button,
+          false
+        );
+      }
+    }
+
+
+    /* =====================================================
+       UPDATE ORDER STATUS
+    ====================================================== */
+
+    async function updateOrderStatus() {
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+
+      const select =
+        document.getElementById(
+          "orderStatusSelect"
+        );
+
+
+      const newStatus =
+        select.value;
+
+
+      if (
+        newStatus ===
+        selectedTransaction.orderStatus
+      ) {
+        return;
+      }
+
+
+      const button =
+        document.getElementById(
+          "updateStatusBtn"
+        );
+
+
+      setButtonLoading(
+        button,
+        true,
+        "Updating..."
+      );
+
+
+      try {
+
+        const response =
+          await apiRequest(
+            ENDPOINTS.orderStatus(
+              selectedTransaction.orderId
+            ),
+            {
+              method: "PATCH",
+
+              body: JSON.stringify({
+                status: newStatus
+              })
+            }
+          );
+
+
+        const returned =
+          getSingleTransaction(
+            response
+          );
+
+
+        if (returned) {
+
+          selectedTransaction =
+            normalizeTransaction(
+              returned
+            );
+
+        } else {
+
+          selectedTransaction = {
+            ...selectedTransaction,
+            orderStatus: newStatus
+          };
+        }
+
+
+        updateLocalTransaction(
+          selectedTransaction
+        );
+
+        refreshTransactionDetails();
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        select.value =
+          selectedTransaction.orderStatus;
+
+        alert(
+          error.message ||
+          "Unable to update order status."
+        );
+
+      } finally {
+
+        setButtonLoading(
+          button,
+          false
+        );
+      }
+    }
+
+
+    /* =====================================================
+       DELIVERY EDIT
+    ====================================================== */
+
+    function toggleDeliveryEdit() {
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+
+      document.getElementById(
+        "editDeliveryMethod"
+      ).value =
+        selectedTransaction
+          .deliveryMethod === "—"
+          ? "Pickup"
+          : selectedTransaction
+              .deliveryMethod;
+
+
+      document.getElementById(
+        "editDeliveryDate"
+      ).value =
+        selectedTransaction
+          .deliveryDate === "—"
+          ? ""
+          : selectedTransaction
+              .deliveryDate;
+
+
+      document.getElementById(
+        "editDeliveryLocation"
+      ).value =
+        selectedTransaction
+          .deliveryLocation === "—"
+          ? ""
+          : selectedTransaction
+              .deliveryLocation;
+
+
+      document.getElementById(
+        "deliveryEditForm"
+      ).hidden =
+        false;
+
+
+      document.getElementById(
+        "editDeliveryBtn"
+      ).style.display =
+        "none";
+    }
+
+
+    function cancelDeliveryEdit() {
+
+      const form =
+        document.getElementById(
+          "deliveryEditForm"
+        );
+
+      const button =
+        document.getElementById(
+          "editDeliveryBtn"
+        );
+
+
+      if (form) {
+        form.hidden = true;
+      }
+
+      if (button) {
+        button.style.display = "";
+      }
+    }
+
+
+    /* =====================================================
+       SAVE DELIVERY
+    ====================================================== */
+
+    async function saveDeliveryChanges() {
+
+      if (!selectedTransaction) {
+        return;
+      }
+
+
+      const method =
+        document.getElementById(
+          "editDeliveryMethod"
+        ).value;
+
+
+      const schedule =
+        document.getElementById(
+          "editDeliveryDate"
+        ).value.trim();
+
+
+      const location =
+        document.getElementById(
+          "editDeliveryLocation"
+        ).value.trim();
+
+
+      if (!schedule) {
+
+        alert(
+          "Please enter the delivery date or schedule."
+        );
+
+        return;
+      }
+
+
+      if (!location) {
+
+        alert(
+          "Please enter the delivery location."
+        );
+
+        return;
+      }
+
+
+      const button =
+        document.getElementById(
+          "saveDeliveryBtn"
+        );
+
+
+      setButtonLoading(
+        button,
+        true,
+        "Saving..."
+      );
+
+
+      try {
+
+        const response =
+          await apiRequest(
+            ENDPOINTS.delivery(
+              selectedTransaction.orderId
+            ),
+            {
+              method: "PATCH",
+
+              body: JSON.stringify({
+                method,
+                schedule,
+                location
+              })
+            }
+          );
+
+
+        const returned =
+          getSingleTransaction(
+            response
+          );
+
+
+        if (returned) {
+
+          selectedTransaction =
+            normalizeTransaction(
+              returned
+            );
+
+        } else {
+
+          selectedTransaction = {
+            ...selectedTransaction,
+
+            deliveryMethod:
+              method,
+
+            deliveryDate:
+              schedule,
+
+            deliveryLocation:
+              location
+          };
+        }
+
+
+        updateLocalTransaction(
+          selectedTransaction
+        );
+
+        refreshTransactionDetails();
+
+        cancelDeliveryEdit();
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(
+          error.message ||
+          "Unable to save delivery information."
+        );
+
+      } finally {
+
+        setButtonLoading(
+          button,
+          false
+        );
+      }
+    }
+
+
+    /* =====================================================
+       TABLE VIEW DETAILS EVENT
+    ====================================================== */
+
+    document
+      .getElementById(
+        "transactionTableBody"
+      )
+      .addEventListener(
+        "click",
+        event => {
+
+          const button =
+            event.target.closest(
+              ".view-details-btn"
+            );
+
+          if (!button) {
+            return;
+          }
+
+
+          const transaction =
+            transactions.find(
+              item =>
+                String(
+                  item.backendId
+                ) ===
+                String(
+                  button.dataset.transactionId
+                )
+            );
+
+
+          if (transaction) {
+            openTransactionDetails(
+              transaction
+            );
+          }
+        }
+      );
+
+
+    /* =====================================================
+       FILTER EVENTS
+    ====================================================== */
+
+    document
+      .getElementById(
+        "transactionSearch"
+      )
+      .addEventListener(
+        "input",
+        filterTransactions
+      );
+
+
+    document
+      .getElementById(
+        "statusFilter"
+      )
+      .addEventListener(
+        "change",
+        function () {
+
+          updateActiveStatCard(
+            this.value
+          );
+
+          filterTransactions();
+        }
+      );
+
+
+    document
+      .getElementById(
+        "dateFilter"
+      )
+      .addEventListener(
+        "change",
+        filterTransactions
+      );
+
+
+    /* =====================================================
+       STAT CARD FILTERS
+    ====================================================== */
+
+    function updateActiveStatCard(
+      status
+    ) {
+
+      document
+        .querySelectorAll(
+          "[data-status-filter]"
+        )
+        .forEach(card => {
+
+          card.classList.toggle(
+            "active",
+            card.dataset.statusFilter ===
+              status
+          );
+
+        });
+    }
+
+
+    document
+      .querySelectorAll(
+        "[data-status-filter]"
+      )
+      .forEach(card => {
+
+        card.addEventListener(
+          "click",
+          () => {
+
+            const status =
+              card.dataset.statusFilter;
+
+
+            document.getElementById(
+              "statusFilter"
+            ).value =
+              status;
+
+
+            updateActiveStatCard(
+              status
+            );
+
+
+            filterTransactions();
+          }
+        );
+
+      });
+
+
+    /* =====================================================
+       DETAILS EVENTS
+    ====================================================== */
+
+    document
+      .getElementById(
+        "closeDetailsBtn"
+      )
+      .addEventListener(
+        "click",
+        closeTransactionDetails
+      );
+
+
+    document
+      .getElementById(
+        "closeDetailsFooterBtn"
+      )
+      .addEventListener(
+        "click",
+        closeTransactionDetails
+      );
+
+
+    /* =====================================================
+       PAYMENT EVENTS
+    ====================================================== */
+
+    document
+      .getElementById(
+        "viewProofBtn"
+      )
+      .addEventListener(
+        "click",
+        openPaymentProof
+      );
+
+
+    document
+      .getElementById(
+        "verifyPaymentBtn"
+      )
+      .addEventListener(
+        "click",
+        verifyPayment
+      );
+
+
+    document
+      .getElementById(
+        "rejectPaymentBtn"
+      )
+      .addEventListener(
+        "click",
+        rejectPayment
+      );
+
+
+    /* =====================================================
+       ORDER EVENT
+    ====================================================== */
+
+    document
+      .getElementById(
+        "updateStatusBtn"
+      )
+      .addEventListener(
+        "click",
+        updateOrderStatus
+      );
+
+
+    /* =====================================================
+       DELIVERY EVENTS
+    ====================================================== */
+
+    document
+      .getElementById(
+        "editDeliveryBtn"
+      )
+      .addEventListener(
+        "click",
+        toggleDeliveryEdit
+      );
+
+
+    document
+      .getElementById(
+        "cancelDeliveryBtn"
+      )
+      .addEventListener(
+        "click",
+        cancelDeliveryEdit
+      );
+
+
+    document
+      .getElementById(
+        "saveDeliveryBtn"
+      )
+      .addEventListener(
+        "click",
+        saveDeliveryChanges
+      );
+
+
+    /* =====================================================
+       PROOF MODAL EVENTS
+    ====================================================== */
+
+    document
+      .getElementById(
+        "closeProofXBtn"
+      )
+      .addEventListener(
+        "click",
+        closePaymentProof
+      );
+
+
+    document
+      .getElementById(
+        "closeProofBtn"
+      )
+      .addEventListener(
+        "click",
+        closePaymentProof
+      );
+
+
+    /* =====================================================
+       NOTIFICATION
+    ====================================================== */
+
+    document
+      .getElementById(
+        "notificationBtn"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          window.location.href =
+            "notifications.html";
+
+        }
+      );
+
+
+    /* =====================================================
+       CLICK OUTSIDE MODALS
+    ====================================================== */
+
+    document
+      .getElementById(
+        "detailsOverlay"
+      )
+      .addEventListener(
+        "click",
+        function (event) {
+
+          if (
+            event.target === this
+          ) {
+            closeTransactionDetails();
+          }
+
+        }
+      );
+
+
+    document
+      .getElementById(
+        "proofOverlay"
+      )
+      .addEventListener(
+        "click",
+        function (event) {
+
+          if (
+            event.target === this
+          ) {
+            closePaymentProof();
+          }
+
+        }
+      );
+
+
+    /* =====================================================
+       ESCAPE
+    ====================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key !== "Escape"
+        ) {
+          return;
+        }
+
+
+        const proof =
+          document.getElementById(
+            "proofOverlay"
+          );
+
+        const details =
+          document.getElementById(
+            "detailsOverlay"
+          );
+
+
+        if (
+          proof.classList.contains(
+            "open"
+          )
+        ) {
+
+          closePaymentProof();
+
+          return;
+        }
+
+
+        if (
+          details.classList.contains(
+            "open"
+          )
+        ) {
+
+          closeTransactionDetails();
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       INITIAL LOAD
+    ====================================================== */
+
+    loadTransactions();
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Notifications</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/notification.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">IFC CRAFTS</span>
+
+    </div>
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        onclick="window.location.href='notifications.html'"
+        aria-label="Notifications"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot" id="notificationDot"></span>
+
+      </button>
+
+      <button
+        type="button"
+        class="profile-chip"
+      >
+
+        <span class="avatar">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+
+        </span>
+
+        <span>Admin</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== PAGE SHELL ==================== -->
+
+  <div class="shell">
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+      <nav class="sidenav">
+
+        <!-- DASHBOARD -->
+
+        <a href="index.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+
+          <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a href="orders.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+
+          <span>Orders</span>
+
+        </a>
+
+
+        <!-- PRODUCTS & SERVICES -->
+
+        <a href="products_services.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+
+          <span>Products &amp; Services</span>
+
+        </a>
+
+
+        <!-- USERS -->
+
+        <a href="users.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <span>Users</span>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a href="messages.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+
+          <span>Messages</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a href="notifications.html" class="sidenav-link active">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+
+          <span>Notifications</span>
+
+          <span class="nav-count" id="sidebarNotificationCount">
+            4
+          </span>
+
+        </a>
+
+
+        <!-- REVIEWS -->
+
+        <a href="reviews.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+
+          <span>Reviews</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a href="reports.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+
+          <span>Reports</span>
+
+        </a>
+
+
+        <!-- AUDIT LOGS -->
+
+        <a href="audit_logs.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+
+          <span>Audit Logs</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a href="settings.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+
+          <span>Settings</span>
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main class="main">
+
+      <!-- ==================== PAGE HEADER ==================== -->
+
+      <section class="page-header">
+
+        <div>
+          <h1>NOTIFICATIONS</h1>
+          <p>
+            View updates about orders, requests, messages, reviews, and system activity.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="mark-all-btn"
+          id="markAllReadBtn"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m3 12 4 4L17 6"></path>
+            <path d="m11 14 2 2 8-8"></path>
+          </svg>
+
+          Mark all as read
+        </button>
+
+      </section>
+
+
+      <!-- ==================== SUMMARY ==================== -->
+
+      <section class="notification-stats">
+
+        <!-- ALL -->
+
+        <button
+          type="button"
+          class="notification-stat active"
+          data-filter="all"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="21"
+              height="21"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+              <path d="M10 21h4"></path>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>All Notifications</span>
+            <strong id="allCount">0</strong>
+          </div>
+
+        </button>
+
+
+        <!-- UNREAD -->
+
+        <button
+          type="button"
+          class="notification-stat"
+          data-filter="unread"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="21"
+              height="21"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>Unread</span>
+            <strong id="unreadCount">0</strong>
+          </div>
+
+        </button>
+
+
+        <!-- ORDERS -->
+
+        <button
+          type="button"
+          class="notification-stat"
+          data-filter="order"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="21"
+              height="21"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M6 2h12v20H6z"></path>
+              <path d="M9 6h6"></path>
+              <path d="M9 10h6"></path>
+              <path d="M9 14h4"></path>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>Orders</span>
+            <strong id="orderCount">0</strong>
+          </div>
+
+        </button>
+
+
+        <!-- MESSAGES -->
+
+        <button
+          type="button"
+          class="notification-stat"
+          data-filter="message"
+        >
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="21"
+              height="21"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            </svg>
+
+          </div>
+
+          <div class="stat-info">
+            <span>Messages</span>
+            <strong id="messageCount">0</strong>
+          </div>
+
+        </button>
+
+      </section>
+
+
+      <!-- ==================== TOOLBAR ==================== -->
+
+      <section class="notification-toolbar">
+
+        <div class="notification-tabs">
+
+          <button
+            type="button"
+            class="notification-tab active"
+            data-filter="all"
+          >
+            All
+          </button>
+
+          <button
+            type="button"
+            class="notification-tab"
+            data-filter="unread"
+          >
+            Unread
+          </button>
+
+          <button
+            type="button"
+            class="notification-tab"
+            data-filter="order"
+          >
+            Orders
+          </button>
+
+          <button
+            type="button"
+            class="notification-tab"
+            data-filter="request"
+          >
+            Requests
+          </button>
+
+          <button
+            type="button"
+            class="notification-tab"
+            data-filter="message"
+          >
+            Messages
+          </button>
+
+          <button
+            type="button"
+            class="notification-tab"
+            data-filter="review"
+          >
+            Reviews
+          </button>
+
+        </div>
+
+
+        <label class="notification-search">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
+
+          <input
+            type="search"
+            id="notificationSearch"
+            placeholder="Search notifications..."
+          >
+
+        </label>
+
+      </section>
+
+
+      <!-- ==================== NOTIFICATION LIST ==================== -->
+
+      <section class="notification-panel">
+
+        <div class="notification-panel-header">
+
+          <div>
+            <h2>Recent Notifications</h2>
+            <p id="resultText">Showing all notifications</p>
+          </div>
+
+        </div>
+
+
+        <div
+          class="notification-list"
+          id="notificationList"
+        >
+        </div>
+
+
+        <div
+          class="empty-notifications"
+          id="emptyNotifications"
+        >
+
+          <div class="empty-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="28"
+              height="28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+            >
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+              <path d="M10 21h4"></path>
+            </svg>
+
+          </div>
+
+          <strong>No notifications found</strong>
+
+          <span>
+            Notifications matching your filter will appear here.
+          </span>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- ==================== NOTIFICATION DETAILS MODAL ==================== -->
+
+  <div
+    class="modal-overlay"
+    id="notificationModal"
+    aria-hidden="true"
+  >
+
+    <section class="notification-modal">
+
+      <div class="modal-header">
+
+        <div>
+          <span class="modal-label">NOTIFICATION DETAILS</span>
+          <h2 id="modalTitle">Notification</h2>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close"
+          id="closeModalBtn"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+
+      </div>
+
+
+      <div class="modal-body">
+
+        <div class="modal-notification-type">
+
+          <div
+            class="modal-type-icon"
+            id="modalTypeIcon"
+          >
+          </div>
+
+          <div>
+
+            <strong id="modalType">
+              Notification
+            </strong>
+
+            <span id="modalTime">
+              Just now
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-section">
+
+          <span class="modal-section-label">
+            Details
+          </span>
+
+          <p id="modalMessage"></p>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-actions">
+
+        <button
+          type="button"
+          class="secondary-modal-btn"
+          id="modalMarkReadBtn"
+        >
+          Mark as Read
+        </button>
+
+        <button
+          type="button"
+          class="primary-modal-btn"
+          id="modalOpenBtn"
+        >
+          View Details
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <script>
+
+    /* ===============================================================
+       SAMPLE FRONTEND DATA
+       Replace this array with backend/API data later.
+    =============================================================== */
+
+    let notifications = [
+
+      {
+        id: 1,
+        type: "order",
+        title: "New Order Received",
+        message: "Maria Santos placed a new order for a custom necklace.",
+        time: "5 minutes ago",
+        unread: true,
+        target: "orders.html"
+      },
+
+      {
+        id: 2,
+        type: "request",
+        title: "New Customer Request",
+        message: "Angela Cruz submitted a new custom bracelet request.",
+        time: "18 minutes ago",
+        unread: true,
+        target: "messages.html"
+      },
+
+      {
+        id: 3,
+        type: "message",
+        title: "New Message",
+        message: "Joshua Reyes sent a new message regarding his order.",
+        time: "35 minutes ago",
+        unread: true,
+        target: "messages.html"
+      },
+
+      {
+        id: 4,
+        type: "review",
+        title: "New Customer Review",
+        message: "A customer submitted a new review for a completed order.",
+        time: "1 hour ago",
+        unread: true,
+        target: "reviews.html"
+      },
+
+      {
+        id: 5,
+        type: "order",
+        title: "Payment Submitted",
+        message: "Payment proof was submitted for Order #001 and is waiting for verification.",
+        time: "2 hours ago",
+        unread: false,
+        target: "orders.html"
+      },
+
+      {
+        id: 6,
+        type: "order",
+        title: "Order Status Updated",
+        message: "Order #004 has been marked as Ready for Pickup.",
+        time: "Yesterday",
+        unread: false,
+        target: "orders.html"
+      },
+
+      {
+        id: 7,
+        type: "message",
+        title: "Customer Replied",
+        message: "Maria Santos replied to your latest message.",
+        time: "Yesterday",
+        unread: false,
+        target: "messages.html"
+      },
+
+      {
+        id: 8,
+        type: "review",
+        title: "Review Submitted",
+        message: "A 5-star review was submitted for Order #008.",
+        time: "September 23, 2026",
+        unread: false,
+        target: "reviews.html"
+      }
+
+    ];
+
+
+    /* ===============================================================
+       ELEMENTS
+    =============================================================== */
+
+    const notificationList =
+      document.getElementById("notificationList");
+
+    const notificationSearch =
+      document.getElementById("notificationSearch");
+
+    const emptyNotifications =
+      document.getElementById("emptyNotifications");
+
+    const resultText =
+      document.getElementById("resultText");
+
+    const notificationModal =
+      document.getElementById("notificationModal");
+
+    const modalTitle =
+      document.getElementById("modalTitle");
+
+    const modalType =
+      document.getElementById("modalType");
+
+    const modalTime =
+      document.getElementById("modalTime");
+
+    const modalMessage =
+      document.getElementById("modalMessage");
+
+    const modalTypeIcon =
+      document.getElementById("modalTypeIcon");
+
+    const modalMarkReadBtn =
+      document.getElementById("modalMarkReadBtn");
+
+    const modalOpenBtn =
+      document.getElementById("modalOpenBtn");
+
+
+    let currentFilter = "all";
+    let selectedNotificationId = null;
+
+
+    /* ===============================================================
+       ICONS
+    =============================================================== */
+
+    function getNotificationIcon(type) {
+
+      if (type === "order") {
+
+        return `
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+        `;
+
+      }
+
+
+      if (type === "message") {
+
+        return `
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+          </svg>
+        `;
+
+      }
+
+
+      if (type === "request") {
+
+        return `
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M5 3h14v18H5z"></path>
+            <path d="M8 7h8"></path>
+            <path d="M8 11h8"></path>
+            <path d="M8 15h5"></path>
+          </svg>
+        `;
+
+      }
+
+
+      if (type === "review") {
+
+        return `
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+        `;
+
+      }
+
+
+      return `
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+          <path d="M10 21h4"></path>
+        </svg>
+      `;
+
+    }
+
+
+    function getTypeLabel(type) {
+
+      const labels = {
+        order: "Order",
+        message: "Message",
+        request: "Request",
+        review: "Review"
+      };
+
+      return labels[type] || "Notification";
+
+    }
+
+
+    /* ===============================================================
+       FILTER
+    =============================================================== */
+
+    function getFilteredNotifications() {
+
+      const search =
+        notificationSearch.value
+          .trim()
+          .toLowerCase();
+
+
+      return notifications.filter(notification => {
+
+        const matchesSearch =
+          notification.title
+            .toLowerCase()
+            .includes(search) ||
+
+          notification.message
+            .toLowerCase()
+            .includes(search);
+
+
+        let matchesFilter = true;
+
+
+        if (currentFilter === "unread") {
+
+          matchesFilter =
+            notification.unread;
+
+        }
+
+        else if (currentFilter !== "all") {
+
+          matchesFilter =
+            notification.type === currentFilter;
+
+        }
+
+
+        return matchesSearch && matchesFilter;
+
+      });
+
+    }
+
+
+    /* ===============================================================
+       RENDER NOTIFICATIONS
+    =============================================================== */
+
+    function renderNotifications() {
+
+      const filtered =
+        getFilteredNotifications();
+
+
+      notificationList.innerHTML = "";
+
+
+      emptyNotifications.style.display =
+        filtered.length === 0
+          ? "flex"
+          : "none";
+
+
+      resultText.textContent =
+        filtered.length === 1
+          ? "Showing 1 notification"
+          : `Showing ${filtered.length} notifications`;
+
+
+      filtered.forEach(notification => {
+
+        const item =
+          document.createElement("article");
+
+
+        item.className =
+          `notification-item ${
+            notification.unread
+              ? "unread"
+              : ""
+          }`;
+
+
+        item.innerHTML = `
+
+          <button
+            type="button"
+            class="notification-main"
+            data-id="${notification.id}"
+          >
+
+            <span class="notification-type-icon">
+              ${getNotificationIcon(notification.type)}
+            </span>
+
+
+            <span class="notification-content">
+
+              <span class="notification-title-row">
+
+                <strong>
+                  ${escapeHTML(notification.title)}
+                </strong>
+
+                ${
+                  notification.unread
+                    ? `
+                      <span
+                        class="unread-dot"
+                        title="Unread"
+                      ></span>
+                    `
+                    : ""
+                }
+
+              </span>
+
+
+              <span class="notification-message">
+                ${escapeHTML(notification.message)}
+              </span>
+
+
+              <span class="notification-meta">
+
+                <span class="notification-type-label">
+                  ${getTypeLabel(notification.type)}
+                </span>
+
+                <span>
+                  ${escapeHTML(notification.time)}
+                </span>
+
+              </span>
+
+            </span>
+
+          </button>
+
+
+          <div class="notification-more-wrapper">
+
+            <button
+              type="button"
+              class="notification-more-btn"
+              data-menu="${notification.id}"
+              aria-label="More options"
+            >
+              •••
+            </button>
+
+
+            <div
+              class="notification-menu"
+              id="notification-menu-${notification.id}"
+            >
+
+              <button
+                type="button"
+                data-action="read"
+                data-id="${notification.id}"
+              >
+                ${
+                  notification.unread
+                    ? "Mark as Read"
+                    : "Mark as Unread"
+                }
+              </button>
+
+
+              <button
+                type="button"
+                data-action="open"
+                data-id="${notification.id}"
+              >
+                View Details
+              </button>
+
+
+              <div class="menu-divider"></div>
+
+
+              <button
+                type="button"
+                class="delete-option"
+                data-action="delete"
+                data-id="${notification.id}"
+              >
+                Delete
+              </button>
+
+            </div>
+
+          </div>
+
+        `;
+
+
+        notificationList.appendChild(item);
+
+      });
+
+
+      updateCounts();
+
+    }
+
+
+    /* ===============================================================
+       COUNTS
+    =============================================================== */
+
+    function updateCounts() {
+
+      const unread =
+        notifications.filter(
+          notification => notification.unread
+        ).length;
+
+
+      document.getElementById(
+        "allCount"
+      ).textContent =
+        notifications.length;
+
+
+      document.getElementById(
+        "unreadCount"
+      ).textContent =
+        unread;
+
+
+      document.getElementById(
+        "orderCount"
+      ).textContent =
+        notifications.filter(
+          notification =>
+            notification.type === "order"
+        ).length;
+
+
+      document.getElementById(
+        "messageCount"
+      ).textContent =
+        notifications.filter(
+          notification =>
+            notification.type === "message"
+        ).length;
+
+
+      const sidebarCount =
+        document.getElementById(
+          "sidebarNotificationCount"
+        );
+
+
+      sidebarCount.textContent =
+        unread;
+
+
+      sidebarCount.style.display =
+        unread > 0
+          ? "inline-flex"
+          : "none";
+
+
+      document.getElementById(
+        "notificationDot"
+      ).style.display =
+        unread > 0
+          ? "block"
+          : "none";
+
+    }
+
+
+    /* ===============================================================
+       SET FILTER
+    =============================================================== */
+
+    function setFilter(filter) {
+
+      currentFilter = filter;
+
+
+      document.querySelectorAll(
+        ".notification-tab"
+      ).forEach(button => {
+
+        button.classList.toggle(
+          "active",
+          button.dataset.filter === filter
+        );
+
+      });
+
+
+      document.querySelectorAll(
+        ".notification-stat"
+      ).forEach(button => {
+
+        button.classList.toggle(
+          "active",
+          button.dataset.filter === filter
+        );
+
+      });
+
+
+      renderNotifications();
+
+    }
+
+
+    document.querySelectorAll(
+      ".notification-tab, .notification-stat"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          setFilter(
+            button.dataset.filter
+          );
+
+        }
+      );
+
+    });
+
+
+    notificationSearch.addEventListener(
+      "input",
+      renderNotifications
+    );
+
+
+    /* ===============================================================
+       MARK ALL READ
+    =============================================================== */
+
+    document.getElementById(
+      "markAllReadBtn"
+    ).addEventListener(
+      "click",
+      () => {
+
+        notifications.forEach(
+          notification => {
+
+            notification.unread = false;
+
+          }
+        );
+
+
+        renderNotifications();
+
+      }
+    );
+
+
+    /* ===============================================================
+       NOTIFICATION LIST EVENTS
+    =============================================================== */
+
+    notificationList.addEventListener(
+      "click",
+      event => {
+
+        const main =
+          event.target.closest(
+            ".notification-main"
+          );
+
+
+        if (main) {
+
+          openNotification(
+            Number(main.dataset.id)
+          );
+
+          return;
+
+        }
+
+
+        const menuButton =
+          event.target.closest(
+            ".notification-more-btn"
+          );
+
+
+        if (menuButton) {
+
+          event.stopPropagation();
+
+
+          const id =
+            menuButton.dataset.menu;
+
+
+          const menu =
+            document.getElementById(
+              `notification-menu-${id}`
+            );
+
+
+          document.querySelectorAll(
+            ".notification-menu"
+          ).forEach(item => {
+
+            if (item !== menu) {
+              item.classList.remove("open");
+            }
+
+          });
+
+
+          menu.classList.toggle("open");
+
+          return;
+
+        }
+
+
+        const actionButton =
+          event.target.closest(
+            "[data-action]"
+          );
+
+
+        if (!actionButton) {
+          return;
+        }
+
+
+        event.stopPropagation();
+
+
+        const id =
+          Number(actionButton.dataset.id);
+
+
+        const action =
+          actionButton.dataset.action;
+
+
+        if (action === "read") {
+
+          toggleRead(id);
+
+        }
+
+
+        if (action === "open") {
+
+          openNotification(id);
+
+        }
+
+
+        if (action === "delete") {
+
+          deleteNotification(id);
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       TOGGLE READ
+    =============================================================== */
+
+    function toggleRead(id) {
+
+      const notification =
+        notifications.find(
+          item => item.id === id
+        );
+
+
+      if (!notification) {
+        return;
+      }
+
+
+      notification.unread =
+        !notification.unread;
+
+
+      renderNotifications();
+
+    }
+
+
+    /* ===============================================================
+       DELETE
+    =============================================================== */
+
+    function deleteNotification(id) {
+
+      notifications =
+        notifications.filter(
+          item => item.id !== id
+        );
+
+
+      renderNotifications();
+
+    }
+
+
+    /* ===============================================================
+       OPEN DETAILS
+    =============================================================== */
+
+    function openNotification(id) {
+
+      const notification =
+        notifications.find(
+          item => item.id === id
+        );
+
+
+      if (!notification) {
+        return;
+      }
+
+
+      selectedNotificationId = id;
+
+      notification.unread = false;
+
+
+      modalTitle.textContent =
+        notification.title;
+
+
+      modalType.textContent =
+        getTypeLabel(
+          notification.type
+        );
+
+
+      modalTime.textContent =
+        notification.time;
+
+
+      modalMessage.textContent =
+        notification.message;
+
+
+      modalTypeIcon.innerHTML =
+        getNotificationIcon(
+          notification.type
+        );
+
+
+      modalMarkReadBtn.textContent =
+        "Mark as Read";
+
+
+      modalOpenBtn.textContent =
+        notification.type === "order"
+          ? "View Order"
+          : notification.type === "message"
+          ? "Open Message"
+          : notification.type === "request"
+          ? "View Request"
+          : notification.type === "review"
+          ? "View Review"
+          : "View Details";
+
+
+      notificationModal.classList.add(
+        "open"
+      );
+
+
+      notificationModal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+
+      renderNotifications();
+
+    }
+
+
+    /* ===============================================================
+       CLOSE MODAL
+    =============================================================== */
+
+    function closeModal() {
+
+      notificationModal.classList.remove(
+        "open"
+      );
+
+
+      notificationModal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+    }
+
+
+    document.getElementById(
+      "closeModalBtn"
+    ).addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    notificationModal.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target ===
+          notificationModal
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       MODAL MARK READ
+    =============================================================== */
+
+    modalMarkReadBtn.addEventListener(
+      "click",
+      () => {
+
+        const notification =
+          notifications.find(
+            item =>
+              item.id ===
+              selectedNotificationId
+          );
+
+
+        if (!notification) {
+          return;
+        }
+
+
+        notification.unread = false;
+
+        renderNotifications();
+
+      }
+    );
+
+
+    /* ===============================================================
+       OPEN RELATED PAGE
+    =============================================================== */
+
+    modalOpenBtn.addEventListener(
+      "click",
+      () => {
+
+        const notification =
+          notifications.find(
+            item =>
+              item.id ===
+              selectedNotificationId
+          );
+
+
+        if (
+          notification &&
+          notification.target
+        ) {
+
+          window.location.href =
+            notification.target;
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       CLOSE DROPDOWNS
+    =============================================================== */
+
+    document.addEventListener(
+      "click",
+      () => {
+
+        document.querySelectorAll(
+          ".notification-menu"
+        ).forEach(menu => {
+
+          menu.classList.remove("open");
+
+        });
+
+      }
+    );
+
+
+    /* ===============================================================
+       ESCAPE KEY
+    =============================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape" &&
+          notificationModal.classList.contains(
+            "open"
+          )
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       ESCAPE HTML
+    =============================================================== */
+
+    function escapeHTML(value) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent =
+        String(value ?? "");
+
+      return div.innerHTML;
+
+    }
+
+
+    /* ===============================================================
+       INITIALIZE
+    =============================================================== */
+
+    renderNotifications();
+
+  </script>
+
+</body>
+</html>

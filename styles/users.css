@@ -1,0 +1,1240 @@
+/* ===================================================================
+   IFC CRAFTS — USERS
+=================================================================== */
+
+:root {
+  --black: #111111;
+  --ink: #1c1c1c;
+  --bg: #ffffff;
+  --border: #111111;
+  --border-soft: #dddddd;
+  --text: #1c1c1c;
+  --text-muted: #6b6b6b;
+  --grey-pale: #eeeeee;
+  --maroon: #6f3c52;
+
+  --radius-lg: 14px;
+  --radius-md: 10px;
+}
+
+
+/* ===================================================================
+   RESET
+=================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: "Inter", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ===================================================================
+   TOPBAR
+=================================================================== */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: var(--black);
+  color: #ffffff;
+}
+
+.brand {
+  width: 220px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.nav-logo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.brand-name {
+  font-family: "The Seasons", Georgia, serif;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+/* ===================================================================
+   TOPBAR ACTIONS
+=================================================================== */
+
+.topbar-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-btn {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #ffffff;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.icon-dot {
+  position: absolute;
+
+  top: 7px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #e05a5a;
+  border: 1px solid var(--black);
+}
+
+.profile-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1.5px solid #ffffff;
+  border-radius: 50%;
+}
+
+
+/* ===================================================================
+   PAGE SHELL
+=================================================================== */
+
+.shell {
+  display: flex;
+  align-items: flex-start;
+
+  min-height: calc(100vh - 64px);
+}
+
+
+/* ===================================================================
+   SIDEBAR
+=================================================================== */
+
+.sidebar {
+  position: sticky;
+  top: 64px;
+
+  width: 220px;
+  min-height: calc(100vh - 64px);
+
+  flex-shrink: 0;
+
+  padding: 20px 14px;
+
+  background: #ffffff;
+
+  border-right: 1px solid var(--border-soft);
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.sidenav-link {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  color: var(--ink);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.sidenav-link:hover {
+  background: var(--grey-pale);
+}
+
+.sidenav-link.active {
+  background: var(--black);
+  color: #ffffff;
+}
+
+
+/* ===================================================================
+   MAIN
+=================================================================== */
+
+.main {
+  flex: 1;
+  min-width: 0;
+
+  padding: 26px 30px 60px;
+}
+
+
+/* ===================================================================
+   PAGE HEADER
+=================================================================== */
+
+.page-header {
+  width: 100%;
+
+  padding: 14px 18px;
+  margin-bottom: 10px;
+
+  border: 2px solid var(--black);
+  border-radius: var(--radius-lg);
+
+  background: #ffffff;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  line-height: 1.05;
+}
+
+.page-header p {
+  margin: 4px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 0.72rem;
+}
+
+
+/* ===================================================================
+   USER STAT CARDS
+=================================================================== */
+
+.user-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 28px;
+
+  padding: 0 5px;
+
+  margin-bottom: 10px;
+}
+
+.user-stat-card {
+  appearance: none;
+
+  min-width: 0;
+  height: 92px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  border: 2px solid var(--black);
+  border-radius: 16px;
+
+  background: #ffffff;
+  color: var(--ink);
+
+  text-align: left;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.user-stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.user-stat-card.active {
+  border-color: var(--black);
+}
+
+.user-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #111111;
+}
+
+.user-stat-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.user-stat-label {
+  color: #333333;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.user-stat-content strong {
+  color: #111111;
+
+  font-size: 1.7rem;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+/* ===================================================================
+   USER TABS
+=================================================================== */
+
+.user-tabs {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 16px;
+
+  padding: 0 6px;
+
+  border-bottom: 2px solid #cccccc;
+
+  margin-bottom: 18px;
+}
+
+.user-tab {
+  position: relative;
+
+  min-width: 70px;
+
+  padding: 0 8px 8px;
+
+  border: none;
+
+  background: transparent;
+  color: #555555;
+
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.user-tab:hover {
+  color: #111111;
+}
+
+.user-tab.active {
+  color: #111111;
+}
+
+.user-tab.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -2px;
+
+  height: 2px;
+
+  background: #111111;
+}
+
+
+/* ===================================================================
+   TOOLBAR
+=================================================================== */
+
+.user-toolbar {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 1fr)
+    180px
+    180px
+    180px;
+
+  gap: 14px;
+
+  margin-bottom: 12px;
+}
+
+
+/* SEARCH */
+
+.search-field {
+  min-width: 0;
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  border: 1.5px solid var(--black);
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #777777;
+}
+
+.search-field input {
+  width: 100%;
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 0.78rem;
+}
+
+.search-field input::placeholder {
+  color: #999999;
+}
+
+
+/* SELECT */
+
+.select-field {
+  width: 100%;
+  min-height: 38px;
+
+  padding: 8px 36px 8px 12px;
+
+  border: 1.5px solid var(--black);
+  border-radius: 4px;
+
+  background-color: #ffffff;
+
+  color: var(--text);
+
+  font-size: 0.78rem;
+
+  outline: none;
+
+  appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #111 50%),
+    linear-gradient(135deg, #111 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 17px) 50%,
+    calc(100% - 12px) 50%;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+}
+
+
+/* EXPORT */
+
+.export-btn {
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 8px 15px;
+
+  border: 1.5px solid var(--black);
+  border-radius: 4px;
+
+  background: var(--black);
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.export-btn:hover {
+  background: #2a2a2a;
+}
+
+
+/* ===================================================================
+   USERS PANEL
+=================================================================== */
+
+.users-panel {
+  width: 100%;
+
+  position: relative;
+
+  background: #ffffff;
+
+  border: 2px solid var(--black);
+  border-radius: var(--radius-lg);
+
+  overflow: visible;
+}
+
+.users-table-wrap {
+  width: 100%;
+
+  height: auto;
+  max-height: none;
+
+  overflow: visible;
+
+  border-radius: calc(var(--radius-lg) - 2px);
+}
+
+
+/* ===================================================================
+   USERS TABLE
+=================================================================== */
+
+.users-table {
+  width: 100%;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  font-size: 0.76rem;
+
+  border-radius:
+    calc(var(--radius-lg) - 2px);
+}
+
+.users-table th {
+  padding: 13px 10px;
+
+  text-align: left;
+
+  color: #111111;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  border-bottom: 2px solid #111111;
+
+  white-space: nowrap;
+}
+
+.users-table td {
+  padding: 11px 10px;
+
+  vertical-align: middle;
+
+  color: #333333;
+
+  border-bottom: 1px solid #cccccc;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.users-table tbody tr:hover {
+  background: #fafafa;
+}
+
+
+/* ===================================================================
+   CHECKBOX
+=================================================================== */
+
+.checkbox-column {
+  width: 38px;
+
+  text-align: center !important;
+}
+
+.users-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+
+  accent-color: #111111;
+
+  cursor: pointer;
+}
+
+
+/* ===================================================================
+   USER CELL
+=================================================================== */
+
+.user-cell {
+  min-width: 145px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.user-avatar-table {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #aaaaaa;
+  border-radius: 50%;
+
+  background: #f3f3f3;
+
+  color: #111111;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.user-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.user-info strong {
+  color: #333333;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.user-info span {
+  color: #8a8a8a;
+
+  font-size: 0.65rem;
+
+  white-space: nowrap;
+}
+
+.muted-cell {
+  color: #8a8a8a !important;
+}
+
+
+/* ===================================================================
+   ROLE BADGES
+=================================================================== */
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 58px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.role-customer {
+  background: #716b89;
+}
+
+.role-admin {
+  background: #333333;
+}
+
+
+/* ===================================================================
+   STATUS BADGES
+=================================================================== */
+
+.user-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 60px;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.status-active {
+  background: #3f695b;
+}
+
+.status-inactive {
+  background: #827b7e;
+}
+
+.status-banned {
+  background: #76283e;
+}
+
+
+/* ===================================================================
+   ACTION
+=================================================================== */
+
+.action-column {
+  width: 65px;
+
+  text-align: center !important;
+}
+
+.user-more-btn {
+  width: 38px;
+  height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 5px;
+
+  background: transparent;
+  color: #333333;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.user-more-btn:hover {
+  background: #eeeeee;
+}
+
+
+/* ===================================================================
+   EMPTY
+=================================================================== */
+
+.empty-row {
+  padding: 38px !important;
+
+  text-align: center;
+
+  color: var(--text-muted) !important;
+
+  font-weight: 600;
+}
+
+
+/* ===================================================================
+   MODAL OVERLAY
+=================================================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(17, 17, 17, 0.35);
+
+  z-index: 1000;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+
+/* ===================================================================
+   USER MODAL
+=================================================================== */
+
+.user-modal {
+  width: 100%;
+  max-width: 420px;
+
+  max-height: calc(100vh - 48px);
+
+  background: #ffffff;
+
+  border: 2px solid #111111;
+  border-radius: 14px;
+
+  overflow-y: auto;
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.18);
+}
+
+
+/* MODAL HEADER */
+
+.user-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 15px 17px;
+
+  border-bottom: 1px solid #cccccc;
+}
+
+.modal-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #111111;
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.user-modal-header h2 {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.modal-close-btn {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+  color: #111111;
+
+  font-size: 1.3rem;
+}
+
+
+/* MODAL BODY */
+
+.user-modal-body {
+  padding: 16px;
+}
+
+
+/* PROFILE */
+
+.modal-user-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.modal-user-avatar {
+  width: 50px;
+  height: 50px;
+
+  flex: 0 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #aaaaaa;
+  border-radius: 50%;
+
+  background: #f2f2f2;
+
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.modal-user-profile > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.modal-user-profile strong {
+  font-size: 0.86rem;
+}
+
+.modal-user-profile span {
+  color: #777777;
+
+  font-size: 0.7rem;
+}
+
+
+/* DETAILS */
+
+.user-detail-list {
+  padding: 12px 0;
+}
+
+.user-detail-row {
+  min-height: 29px;
+
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 0.7rem;
+}
+
+.user-detail-row span {
+  color: #777777;
+}
+
+.user-detail-row strong {
+  color: #222222;
+
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ADMIN BOX */
+
+.user-admin-box {
+  padding: 12px;
+
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+
+  background: #fafafa;
+}
+
+.admin-box-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #666666;
+
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.modal-select {
+  width: 100%;
+  height: 34px;
+
+  margin-bottom: 8px;
+
+  padding: 0 9px;
+
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  font-size: 0.7rem;
+}
+
+.update-user-btn {
+  width: 100%;
+  min-height: 34px;
+
+  border: 1px solid #111111;
+  border-radius: 5px;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+
+/* MODAL FOOTER */
+
+.user-modal-footer {
+  padding: 0 16px 16px;
+}
+
+.close-user-btn {
+  width: 100%;
+  min-height: 35px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+
+/* ===================================================================
+   FOCUS
+=================================================================== */
+
+.sidenav-link:focus-visible,
+.icon-btn:focus-visible,
+.profile-chip:focus-visible,
+.user-stat-card:focus-visible,
+.user-tab:focus-visible,
+.export-btn:focus-visible,
+.user-more-btn:focus-visible,
+.modal-close-btn:focus-visible,
+.update-user-btn:focus-visible,
+.close-user-btn:focus-visible,
+.select-field:focus-visible,
+.search-field:focus-within {
+  outline: 2px solid var(--maroon);
+  outline-offset: 2px;
+}
+
+
+/* ===================================================================
+   RESPONSIVE
+=================================================================== */
+
+@media (max-width: 1180px) {
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .brand {
+    width: 200px;
+  }
+
+  .user-stats {
+    gap: 14px;
+  }
+
+  .user-toolbar {
+    grid-template-columns:
+      minmax(220px, 1fr)
+      160px
+      160px;
+  }
+
+  .export-btn {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+@media (max-width: 950px) {
+
+  .user-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 760px) {
+
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .brand {
+    width: auto;
+  }
+
+  .brand-name {
+    font-size: 1.3rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    padding: 18px;
+  }
+
+  .user-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .export-btn {
+    grid-column: auto;
+  }
+
+  .users-panel {
+    overflow-x: auto;
+  }
+
+  .users-table {
+    min-width: 900px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .main {
+    padding: 14px;
+  }
+
+  .page-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .user-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .user-tabs {
+    overflow-x: auto;
+  }
+
+  .profile-chip > span:last-child {
+    display: none;
+  }
+
+}

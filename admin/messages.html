@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Messages</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/messages.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">
+        IFC CRAFTS
+      </span>
+
+    </div>
+
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        onclick="window.location.href='notifications.html'"
+        aria-label="Notifications"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot"></span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="profile-chip"
+      >
+
+        <span class="avatar">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+
+        </span>
+
+        <span>Admin</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== PAGE SHELL ==================== -->
+
+  <div class="shell">
+
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+      <nav class="sidenav">
+
+
+        <!-- DASHBOARD -->
+
+        <a href="index.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+
+          <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a href="orders.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+
+          <span>Orders</span>
+
+        </a>
+
+
+        <!-- PRODUCTS & SERVICES -->
+
+        <a href="products_services.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+
+          <span>Products &amp; Services</span>
+
+        </a>
+
+
+        <!-- USERS -->
+
+        <a href="users.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <span>Users</span>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a href="messages.html" class="sidenav-link active">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+
+          <span>Messages</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a href="notifications.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+
+          <span>Notifications</span>
+
+        </a>
+
+
+        <!-- REVIEWS -->
+
+        <a href="reviews.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+
+          <span>Reviews</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a href="reports.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+
+          <span>Reports</span>
+
+        </a>
+
+
+        <!-- AUDIT LOGS -->
+
+        <a href="audit_logs.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+
+          <span>Audit Logs</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a href="settings.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+
+          <span>Settings</span>
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main class="main">
+
+      <!-- PAGE HEADER -->
+
+      <section class="page-header">
+
+        <h1>MESSAGES</h1>
+
+        <p>
+          Manage customer conversations and order-related inquiries.
+        </p>
+
+      </section>
+
+
+      <!-- ==================== MESSAGES LAYOUT ==================== -->
+
+      <section class="messages-layout">
+
+
+        <!-- ==================== CONVERSATION LIST ==================== -->
+
+        <aside class="conversation-panel">
+
+          <div class="conversation-panel-header">
+
+            <h2>Conversations</h2>
+
+            <label class="conversation-search">
+
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.5-3.5"></path>
+              </svg>
+
+              <input
+                type="search"
+                id="conversationSearch"
+                placeholder="Search conversations..."
+              >
+
+            </label>
+
+
+            <div class="conversation-filters">
+
+              <button
+                type="button"
+                class="conversation-filter active"
+                data-filter="all"
+              >
+                All
+              </button>
+
+              <button
+                type="button"
+                class="conversation-filter"
+                data-filter="unread"
+              >
+                Unread
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div
+            class="conversation-list"
+            id="conversationList"
+          >
+          </div>
+
+        </aside>
+
+
+        <!-- ==================== CHAT PANEL ==================== -->
+
+        <section class="chat-panel">
+
+
+          <!-- CHAT HEADER -->
+
+          <div class="chat-header">
+
+            <button
+              type="button"
+              class="back-chat-btn"
+              aria-label="Back"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+            </button>
+
+
+            <div class="chat-avatar">
+              MS
+            </div>
+
+
+            <div class="chat-user-info">
+
+              <div class="chat-user-line">
+
+                <strong id="chatCustomerName">
+                  Maria Santos
+                </strong>
+
+                <span class="online-status">
+                  Active
+                </span>
+
+              </div>
+
+              <span id="chatOrderInfo">
+                Order #001 · Necklace
+              </span>
+
+            </div>
+
+
+           <div class="chat-more-wrapper">
+
+  <button
+    type="button"
+    class="chat-more-btn"
+    id="chatMoreBtn"
+    aria-label="More options"
+  >
+    •••
+  </button>
+
+  <div
+    class="chat-more-menu"
+    id="chatMoreMenu"
+  >
+
+    <button type="button" class="chat-menu-item">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+      </svg>
+      View Customer Profile
+    </button>
+
+    <button type="button" class="chat-menu-item">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M6 2h12v20H6z"></path>
+        <path d="M9 6h6"></path>
+        <path d="M9 10h6"></path>
+        <path d="M9 14h4"></path>
+      </svg>
+      View Order
+    </button>
+
+    <button type="button" class="chat-menu-item">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-3.5-3.5"></path>
+      </svg>
+      Search Conversation
+    </button>
+
+    <div class="chat-menu-divider"></div>
+
+    <button type="button" class="chat-menu-item">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M4 4h16v16H4z"></path>
+        <path d="m4 7 8 5 8-5"></path>
+      </svg>
+      Mark as Unread
+    </button>
+
+    <button type="button" class="chat-menu-item">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M3 6h18"></path>
+        <path d="M5 6v14h14V6"></path>
+        <path d="M8 3h8l1 3H7z"></path>
+      </svg>
+      Archive Conversation
+    </button>
+
+  </div>
+
+</div>
+
+          </div>
+
+
+          <!-- ==================== CHAT BODY ==================== -->
+
+          <div
+            class="chat-body"
+            id="chatBody"
+          >
+
+
+            <!-- CUSTOMER MESSAGE -->
+
+            <div class="message-row customer-message">
+
+              <div class="message-avatar">
+                MS
+              </div>
+
+              <div>
+
+                <div class="message-bubble">
+                  Hi! I would like to request a custom necklace.
+                </div>
+
+                <span class="message-time">
+                  10:30 AM
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 REQUEST / TICKET CARD
+            =================================================== -->
+
+            <div class="request-message">
+
+              <div
+                class="request-card"
+                id="requestCard"
+              >
+
+                <div class="request-card-top">
+
+                  <div class="request-card-icon">
+
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="20"
+                      height="20"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <path d="M6 2h12v20H6z"></path>
+                      <path d="M9 6h6"></path>
+                      <path d="M9 10h6"></path>
+                      <path d="M9 14h4"></path>
+                    </svg>
+
+                  </div>
+
+
+                  <div class="request-card-heading">
+
+                    <div class="request-title-row">
+
+                      <strong>
+                        Customer Request
+                      </strong>
+
+                      <span
+                        class="request-status status-open"
+                        id="requestStatus"
+                      >
+                        Open
+                      </span>
+
+                    </div>
+
+                    <span>
+                      Request #REQ-001
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <!-- SHORT PREVIEW -->
+
+                <div class="request-preview">
+
+                  <div>
+                    <span>Customer</span>
+                    <strong>Maria Santos</strong>
+                  </div>
+
+                  <div>
+                    <span>Request Type</span>
+                    <strong>Custom Order</strong>
+                  </div>
+
+                  <div>
+                    <span>Product</span>
+                    <strong>Custom Necklace</strong>
+                  </div>
+
+                </div>
+
+
+                <!-- TICKET BUTTONS -->
+
+                <div class="request-actions">
+
+                  <button
+                    type="button"
+                    class="request-action-btn view-request-btn"
+                    id="viewRequestBtn"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="15"
+                      height="15"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
+                      <circle cx="12" cy="12" r="2.5"></circle>
+                    </svg>
+
+                    View
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="request-action-btn claim-request-btn"
+                    id="claimRequestBtn"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="15"
+                      height="15"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <circle cx="12" cy="8" r="4"></circle>
+                      <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+                    </svg>
+
+                    Claim
+                  </button>
+
+
+                  <button
+                    type="button"
+                    class="request-action-btn close-request-btn"
+                    id="closeRequestBtn"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="15"
+                      height="15"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    >
+                      <circle cx="12" cy="12" r="9"></circle>
+                      <path d="m9 9 6 6"></path>
+                      <path d="m15 9-6 6"></path>
+                    </svg>
+
+                    Close
+                  </button>
+
+                </div>
+
+              </div>
+
+              <span class="request-message-time">
+                10:31 AM
+              </span>
+
+            </div>
+
+
+            <!-- ADMIN MESSAGE -->
+
+            <div class="message-row admin-message">
+
+              <div>
+
+                <div class="message-bubble">
+                  Thank you! I’ll check your request details.
+                </div>
+
+                <span class="message-time">
+                  10:35 AM
+                </span>
+
+              </div>
+
+              <div class="message-avatar admin-avatar">
+                A
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ==================== ATTACHMENT MENU ==================== -->
+
+          <div
+            class="attachment-menu"
+            id="attachmentMenu"
+          >
+
+            <button type="button">
+
+              <svg
+                viewBox="0 0 24 24"
+                width="17"
+                height="17"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M4 4h16v16H4z"></path>
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+              </svg>
+
+              Send File
+
+            </button>
+
+            <button type="button">
+
+              <svg
+                viewBox="0 0 24 24"
+                width="17"
+                height="17"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <path d="m21 15-5-5L5 21"></path>
+              </svg>
+
+              Send Picture
+
+            </button>
+
+          </div>
+
+
+          <!-- ==================== MESSAGE COMPOSER ==================== -->
+
+          <div class="message-composer">
+
+            <input
+              type="text"
+              id="messageInput"
+              placeholder="Send message..."
+            >
+
+
+            <button
+              type="button"
+              class="send-message-btn"
+              id="sendMessageBtn"
+              aria-label="Send message"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                width="17"
+                height="17"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+              </svg>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="attachment-btn"
+              id="attachmentBtn"
+              aria-label="Attach file"
+            >
+              +
+            </button>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- ===============================================================
+       REQUEST DETAILS MODAL
+  ================================================================ -->
+
+  <div
+    class="modal-overlay"
+    id="requestModal"
+    aria-hidden="true"
+  >
+
+    <section class="request-modal">
+
+      <div class="request-modal-header">
+
+        <div>
+
+          <span class="modal-eyebrow">
+            REQUEST DETAILS
+          </span>
+
+          <h2>
+            Request #REQ-001
+          </h2>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="closeRequestModal"
+        >
+          &times;
+        </button>
+
+      </div>
+
+
+      <div class="request-modal-body">
+
+
+        <!-- STATUS -->
+
+        <div class="request-detail-status">
+
+          <span
+            class="request-status status-open"
+            id="modalRequestStatus"
+          >
+            Open
+          </span>
+
+          <span id="claimedByText">
+            Not yet claimed
+          </span>
+
+        </div>
+
+
+        <!-- CUSTOMER -->
+
+        <section class="request-detail-section">
+
+          <h3>Customer Information</h3>
+
+          <div class="request-detail-grid">
+
+            <div class="request-detail-item">
+              <span>Customer</span>
+              <strong>Maria Santos</strong>
+            </div>
+
+            <div class="request-detail-item">
+              <span>Email</span>
+              <strong>maria@gmail.com</strong>
+            </div>
+
+            <div class="request-detail-item">
+              <span>Contact No.</span>
+              <strong>09567966487</strong>
+            </div>
+
+            <div class="request-detail-item">
+              <span>Date Submitted</span>
+              <strong>September 25, 2026</strong>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- REQUEST INFO -->
+
+        <section class="request-detail-section">
+
+          <h3>Request Information</h3>
+
+          <div class="request-detail-grid">
+
+            <div class="request-detail-item">
+              <span>Request Type</span>
+              <strong>Custom Order</strong>
+            </div>
+
+            <div class="request-detail-item">
+              <span>Product / Service</span>
+              <strong>Custom Necklace</strong>
+            </div>
+
+            <div class="request-detail-item">
+              <span>Preferred Material</span>
+              <strong>Beads &amp; Charms</strong>
+            </div>
+
+            <div class="request-detail-item">
+              <span>Quantity</span>
+              <strong>1</strong>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- DESCRIPTION -->
+
+        <section class="request-detail-section">
+
+          <h3>Request Description</h3>
+
+          <div class="request-description">
+
+            I would like a custom necklace with blue and white
+            beads. I would also like a small silver charm in the
+            center.
+
+          </div>
+
+        </section>
+
+
+        <!-- REFERENCE -->
+
+        <section class="request-detail-section">
+
+          <h3>Reference / Additional Notes</h3>
+
+          <div class="request-description">
+
+            Customer prefers a simple design and would like to
+            receive an estimated price before proceeding.
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- MODAL ACTIONS -->
+
+      <div class="request-modal-actions">
+
+        <button
+          type="button"
+          class="modal-claim-btn"
+          id="modalClaimBtn"
+        >
+          Claim Request
+        </button>
+
+        <button
+          type="button"
+          class="modal-close-request-btn"
+          id="modalCloseRequestBtn"
+        >
+          Close Request
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <script>
+
+    /* ===============================================================
+       SAMPLE CONVERSATIONS
+       Backend/database team can replace this later.
+    =============================================================== */
+
+    const conversations = [
+      {
+        id: 1,
+        name: "Maria Santos",
+        initials: "MS",
+        preview: "Order #001 · Necklace",
+        time: "10:35 AM",
+        unread: 2
+      },
+      {
+        id: 2,
+        name: "Angela Cruz",
+        initials: "AC",
+        preview: "Inquiry · Bracelet",
+        time: "Yesterday",
+        unread: 0
+      },
+      {
+        id: 3,
+        name: "Joshua Reyes",
+        initials: "JR",
+        preview: "Custom order request",
+        time: "Sep 24",
+        unread: 1
+      }
+    ];
+
+
+    const conversationList =
+      document.getElementById("conversationList");
+
+    const conversationSearch =
+      document.getElementById("conversationSearch");
+
+    const messageInput =
+      document.getElementById("messageInput");
+
+    const chatBody =
+      document.getElementById("chatBody");
+
+    const attachmentMenu =
+      document.getElementById("attachmentMenu");
+
+    const attachmentBtn =
+      document.getElementById("attachmentBtn");
+
+    const requestModal =
+      document.getElementById("requestModal");
+
+    const requestStatus =
+      document.getElementById("requestStatus");
+
+    const modalRequestStatus =
+      document.getElementById("modalRequestStatus");
+
+    const claimedByText =
+      document.getElementById("claimedByText");
+
+    const claimRequestBtn =
+      document.getElementById("claimRequestBtn");
+
+    const modalClaimBtn =
+      document.getElementById("modalClaimBtn");
+
+    const closeRequestBtn =
+      document.getElementById("closeRequestBtn");
+
+    const modalCloseRequestBtn =
+      document.getElementById("modalCloseRequestBtn");
+
+    const chatMoreBtn =
+    document.getElementById("chatMoreBtn");
+
+    const chatMoreMenu =
+    document.getElementById("chatMoreMenu");
+
+
+    chatMoreBtn.addEventListener("click", event => {
+
+    event.stopPropagation();
+
+    chatMoreMenu.classList.toggle("open");
+
+});
+
+
+    chatMoreMenu.addEventListener("click", event => {
+    event.stopPropagation();
+ });
+
+
+    document.addEventListener("click", () => {
+    chatMoreMenu.classList.remove("open");
+ });
+
+
+    let conversationFilter = "all";
+
+    let requestState = {
+      status: "Open",
+      claimed: false,
+      claimedBy: null
+    };
+
+
+    /* ===============================================================
+       CONVERSATION LIST
+    =============================================================== */
+
+    function renderConversations() {
+
+      const search =
+        conversationSearch.value
+          .trim()
+          .toLowerCase();
+
+
+      const filtered =
+        conversations.filter(conversation => {
+
+          const matchesSearch =
+            conversation.name
+              .toLowerCase()
+              .includes(search) ||
+
+            conversation.preview
+              .toLowerCase()
+              .includes(search);
+
+
+          const matchesFilter =
+            conversationFilter === "all" ||
+            (
+              conversationFilter === "unread" &&
+              conversation.unread > 0
+            );
+
+
+          return matchesSearch && matchesFilter;
+
+        });
+
+
+      conversationList.innerHTML =
+        filtered.map(conversation => `
+
+          <button
+            type="button"
+            class="conversation-item
+              ${conversation.id === 1 ? "active" : ""}"
+          >
+
+            <span class="conversation-avatar">
+              ${conversation.initials}
+            </span>
+
+
+            <span class="conversation-info">
+
+              <strong>
+                ${conversation.name}
+              </strong>
+
+              <span>
+                ${conversation.preview}
+              </span>
+
+            </span>
+
+
+            <span class="conversation-meta">
+
+              <small>
+                ${conversation.time}
+              </small>
+
+              ${
+                conversation.unread > 0
+                  ? `
+                    <span class="unread-count">
+                      ${conversation.unread}
+                    </span>
+                  `
+                  : ""
+              }
+
+            </span>
+
+          </button>
+
+        `).join("");
+
+    }
+
+
+    conversationSearch.addEventListener(
+      "input",
+      renderConversations
+    );
+
+
+    document.querySelectorAll(
+      ".conversation-filter"
+    ).forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          conversationFilter =
+            button.dataset.filter;
+
+
+          document.querySelectorAll(
+            ".conversation-filter"
+          ).forEach(item => {
+
+            item.classList.remove("active");
+
+          });
+
+
+          button.classList.add("active");
+
+          renderConversations();
+
+        }
+      );
+
+    });
+
+
+    /* ===============================================================
+       VIEW REQUEST
+    =============================================================== */
+
+    document.getElementById(
+      "viewRequestBtn"
+    ).addEventListener(
+      "click",
+      openRequestModal
+    );
+
+
+    function openRequestModal() {
+
+      requestModal.classList.add("open");
+
+      requestModal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+    function closeRequestModal() {
+
+      requestModal.classList.remove("open");
+
+      requestModal.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+    }
+
+
+    document.getElementById(
+      "closeRequestModal"
+    ).addEventListener(
+      "click",
+      closeRequestModal
+    );
+
+
+    requestModal.addEventListener(
+      "click",
+      event => {
+
+        if (event.target === requestModal) {
+          closeRequestModal();
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       CLAIM REQUEST
+    =============================================================== */
+
+    function claimRequest() {
+
+      if (requestState.status === "Closed") {
+        return;
+      }
+
+
+      requestState.claimed = true;
+      requestState.claimedBy = "Admin";
+      requestState.status = "Claimed";
+
+
+      updateRequestUI();
+
+    }
+
+
+    claimRequestBtn.addEventListener(
+      "click",
+      claimRequest
+    );
+
+
+    modalClaimBtn.addEventListener(
+      "click",
+      claimRequest
+    );
+
+
+    /* ===============================================================
+       CLOSE REQUEST
+    =============================================================== */
+
+    function closeRequest() {
+
+      requestState.status = "Closed";
+
+      updateRequestUI();
+
+    }
+
+
+    closeRequestBtn.addEventListener(
+      "click",
+      closeRequest
+    );
+
+
+    modalCloseRequestBtn.addEventListener(
+      "click",
+      closeRequest
+    );
+
+
+    /* ===============================================================
+       UPDATE REQUEST UI
+    =============================================================== */
+
+    function updateRequestUI() {
+
+      requestStatus.textContent =
+        requestState.status;
+
+      modalRequestStatus.textContent =
+        requestState.status;
+
+
+      requestStatus.className =
+        "request-status";
+
+      modalRequestStatus.className =
+        "request-status";
+
+
+      if (requestState.status === "Open") {
+
+        requestStatus.classList.add(
+          "status-open"
+        );
+
+        modalRequestStatus.classList.add(
+          "status-open"
+        );
+
+      }
+
+
+      if (requestState.status === "Claimed") {
+
+        requestStatus.classList.add(
+          "status-claimed"
+        );
+
+        modalRequestStatus.classList.add(
+          "status-claimed"
+        );
+
+      }
+
+
+      if (requestState.status === "Closed") {
+
+        requestStatus.classList.add(
+          "status-closed"
+        );
+
+        modalRequestStatus.classList.add(
+          "status-closed"
+        );
+
+      }
+
+
+      claimedByText.textContent =
+        requestState.claimed
+          ? `Claimed by ${requestState.claimedBy}`
+          : "Not yet claimed";
+
+
+      if (requestState.claimed) {
+
+        claimRequestBtn.textContent =
+          "Claimed";
+
+        modalClaimBtn.textContent =
+          "Claimed";
+
+        claimRequestBtn.disabled = true;
+        modalClaimBtn.disabled = true;
+
+      }
+
+
+      if (requestState.status === "Closed") {
+
+        closeRequestBtn.textContent =
+          "Closed";
+
+        modalCloseRequestBtn.textContent =
+          "Closed";
+
+        closeRequestBtn.disabled = true;
+        modalCloseRequestBtn.disabled = true;
+
+        claimRequestBtn.disabled = true;
+        modalClaimBtn.disabled = true;
+
+      }
+
+    }
+
+
+    /* ===============================================================
+       ATTACHMENT MENU
+    =============================================================== */
+
+    attachmentBtn.addEventListener(
+      "click",
+      event => {
+
+        event.stopPropagation();
+
+        attachmentMenu.classList.toggle(
+          "open"
+        );
+
+      }
+    );
+
+
+    document.addEventListener(
+      "click",
+      event => {
+
+        if (
+          !attachmentMenu.contains(event.target) &&
+          event.target !== attachmentBtn
+        ) {
+
+          attachmentMenu.classList.remove(
+            "open"
+          );
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       SEND MESSAGE
+    =============================================================== */
+
+    function sendMessage() {
+
+      const message =
+        messageInput.value.trim();
+
+
+      if (!message) {
+        return;
+      }
+
+
+      const row =
+        document.createElement("div");
+
+
+      row.className =
+        "message-row admin-message";
+
+
+      row.innerHTML = `
+
+        <div>
+
+          <div class="message-bubble">
+            ${escapeHTML(message)}
+          </div>
+
+          <span class="message-time">
+            Just now
+          </span>
+
+        </div>
+
+        <div class="message-avatar admin-avatar">
+          A
+        </div>
+
+      `;
+
+
+      chatBody.appendChild(row);
+
+      messageInput.value = "";
+
+      chatBody.scrollTop =
+        chatBody.scrollHeight;
+
+    }
+
+
+    document.getElementById(
+      "sendMessageBtn"
+    ).addEventListener(
+      "click",
+      sendMessage
+    );
+
+
+    messageInput.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Enter") {
+          sendMessage();
+        }
+
+      }
+    );
+
+
+    function escapeHTML(value) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent = value;
+
+      return div.innerHTML;
+
+    }
+
+
+    /* ===============================================================
+       ESCAPE
+    =============================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape" &&
+          requestModal.classList.contains("open")
+        ) {
+
+          closeRequestModal();
+
+        }
+
+      }
+    );
+
+
+    /* ===============================================================
+       INITIALIZE
+    =============================================================== */
+
+    renderConversations();
+    updateRequestUI();
+
+  </script>
+
+</body>
+</html>

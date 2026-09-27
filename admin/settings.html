@@ -1,0 +1,3382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Settings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/settings.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       TOPBAR
+  ========================================================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">
+        IFC CRAFTS
+      </span>
+
+    </div>
+
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        onclick="window.location.href='notifications.html'"
+        aria-label="Notifications"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot"></span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="profile-chip"
+      >
+
+        <span class="avatar">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+
+        </span>
+
+        <span>Admin</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================================================
+       PAGE SHELL
+  ========================================================== -->
+
+  <div class="shell">
+
+
+    <!-- =======================================================
+         SIDEBAR
+    ======================================================== -->
+
+    <aside class="sidebar">
+
+      <nav class="sidenav">
+
+        <a href="index.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+
+          <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="orders.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+
+          <span>Orders</span>
+
+        </a>
+
+
+        <a href="products_services.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+
+          <span>Products &amp; Services</span>
+
+        </a>
+
+
+        <a href="users.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <span>Users</span>
+
+        </a>
+
+
+        <a href="messages.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+
+          <span>Messages</span>
+
+        </a>
+
+
+        <a href="notifications.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+
+          <span>Notifications</span>
+
+        </a>
+
+
+        <a href="reviews.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+
+          <span>Reviews</span>
+
+        </a>
+
+
+        <a href="reports.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+
+          <span>Reports</span>
+
+        </a>
+
+
+        <a href="audit_logs.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+
+          <span>Audit Logs</span>
+
+        </a>
+
+
+        <a href="settings.html" class="sidenav-link active">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+
+          <span>Settings</span>
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- =======================================================
+         MAIN
+    ======================================================== -->
+
+    <main class="main">
+
+      <section class="page-header">
+
+        <div>
+          <h1>SETTINGS</h1>
+          <p>Manage system preferences, store information, payments, orders, notifications, security, and accounts.</p>
+        </div>
+
+      </section>
+
+
+      <section class="settings-container">
+
+        <!-- SETTINGS TABS -->
+
+        <div class="settings-tabs">
+
+          <button type="button" class="settings-tab active" data-target="generalSection">
+            General
+          </button>
+
+          <button type="button" class="settings-tab" data-target="businessSection">
+            Store Information
+          </button>
+
+          <button type="button" class="settings-tab" data-target="paymentSection">
+            Payment Settings
+          </button>
+
+          <button type="button" class="settings-tab" data-target="orderSection">
+            Order Settings
+          </button>
+
+          <button type="button" class="settings-tab" data-target="notificationSection">
+            Notifications
+          </button>
+
+          <button type="button" class="settings-tab" data-target="securitySection">
+            Security
+          </button>
+
+          <button type="button" class="settings-tab" data-target="accountSection">
+            Account Management
+          </button>
+
+        </div>
+
+
+        <div class="settings-content">
+
+
+          <!-- =================================================
+               GENERAL
+          ================================================== -->
+
+          <section class="settings-panel active" id="generalSection">
+
+            <div class="panel-heading">
+              <div>
+                <h2>General Settings</h2>
+                <p>Manage the general preferences used by IFC Crafts.</p>
+              </div>
+            </div>
+
+
+            <form class="settings-form" id="generalForm">
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label for="systemName">
+                    System Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="systemName"
+                    name="systemName"
+                    value="IFC Crafts"
+                    placeholder="Enter system name"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="currency">
+                    Currency
+                  </label>
+
+                  <select id="currency" name="currency">
+                    <option value="PHP">
+                      PHP — Philippine Peso
+                    </option>
+                  </select>
+
+                </div>
+
+              </div>
+
+
+              <div class="settings-divider"></div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>
+                    Maintenance Mode
+                  </strong>
+
+                  <p>
+                    Temporarily prevent customers from placing new orders while the store is under maintenance.
+                  </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                  <input
+                    type="checkbox"
+                    id="maintenanceMode"
+                    name="maintenanceMode"
+                  >
+
+                  <span class="slider"></span>
+
+                </label>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button type="reset" class="secondary-btn">
+                  Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                  Save Changes
+                </button>
+
+              </div>
+
+            </form>
+
+          </section>
+
+
+          <!-- =================================================
+               STORE INFORMATION
+          ================================================== -->
+
+          <section class="settings-panel" id="businessSection">
+
+            <div class="panel-heading">
+
+              <div>
+                <h2>Store Information</h2>
+                <p>Manage the business information displayed for IFC Crafts.</p>
+              </div>
+
+            </div>
+
+
+            <form class="settings-form" id="businessForm">
+
+              <div class="logo-setting">
+
+                <div class="business-logo-preview">
+
+                  <img
+                    src="images/ifc_crafts.jpg"
+                    alt="IFC Crafts Logo"
+                    id="businessLogoPreview"
+                  >
+
+                </div>
+
+
+                <div class="logo-info">
+
+                  <strong>
+                    Business Logo
+                  </strong>
+
+                  <span>
+                    Recommended image size: 500 × 500 pixels.
+                  </span>
+
+
+                  <div class="logo-actions">
+
+                    <label
+                      for="businessLogoInput"
+                      class="secondary-btn"
+                    >
+                      Change Logo
+                    </label>
+
+                    <input
+                      type="file"
+                      id="businessLogoInput"
+                      accept="image/png,image/jpeg,image/webp"
+                      hidden
+                    >
+
+                    <button
+                      type="button"
+                      class="text-btn"
+                      id="removeLogoBtn"
+                    >
+                      Remove
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="settings-divider"></div>
+
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label for="businessName">
+                    Business Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="businessName"
+                    name="businessName"
+                    value="IFC Crafts"
+                    placeholder="Enter business name"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="businessEmail">
+                    Business Email
+                  </label>
+
+                  <input
+                    type="email"
+                    id="businessEmail"
+                    name="businessEmail"
+                    placeholder="Enter business email"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="businessPhone">
+                    Contact Number
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="businessPhone"
+                    name="businessPhone"
+                    placeholder="Enter contact number"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="businessFacebook">
+                    Facebook Page
+                  </label>
+
+                  <input
+                    type="text"
+                    id="businessFacebook"
+                    name="businessFacebook"
+                    placeholder="Enter Facebook page"
+                  >
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                  <label for="businessAddress">
+                    Business Address
+                  </label>
+
+                  <textarea
+                    id="businessAddress"
+                    name="businessAddress"
+                    rows="3"
+                    placeholder="Enter business address"
+                  ></textarea>
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                  <label for="businessDescription">
+                    Business Description
+                  </label>
+
+                  <textarea
+                    id="businessDescription"
+                    name="businessDescription"
+                    rows="4"
+                    placeholder="Enter a short description about IFC Crafts"
+                  ></textarea>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button type="reset" class="secondary-btn">
+                  Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                  Save Changes
+                </button>
+
+              </div>
+
+            </form>
+
+          </section>
+
+
+          <!-- =================================================
+               PAYMENT SETTINGS
+          ================================================== -->
+
+          <section class="settings-panel" id="paymentSection">
+
+            <div class="panel-heading">
+
+              <div>
+                <h2>Payment Settings</h2>
+                <p>Manage the GCash payment information used for customer orders.</p>
+              </div>
+
+            </div>
+
+
+            <form class="settings-form" id="paymentForm">
+
+              <div class="payment-method">
+
+                <div class="payment-method-header">
+
+                  <div class="payment-name">
+
+                    <div class="payment-icon">
+                      ₱
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        GCash
+                      </strong>
+
+                      <span>
+                        Payment method accepted for IFC Crafts orders.
+                      </span>
+
+                    </div>
+
+                  </div>
+
+
+                  <span class="payment-status">
+                    Active
+                  </span>
+
+                </div>
+
+
+                <div class="payment-fields">
+
+                  <div class="form-group">
+
+                    <label for="gcashName">
+                      GCash Account Name
+                    </label>
+
+                    <input
+                      type="text"
+                      id="gcashName"
+                      name="gcashName"
+                      placeholder="Enter GCash account name"
+                    >
+
+                  </div>
+
+
+                  <div class="form-group">
+
+                    <label for="gcashNumber">
+                      GCash Number
+                    </label>
+
+                    <input
+                      type="tel"
+                      id="gcashNumber"
+                      name="gcashNumber"
+                      placeholder="09XXXXXXXXX"
+                      maxlength="11"
+                    >
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="settings-divider"></div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>
+                    Require Proof of Payment
+                  </strong>
+
+                  <p>
+                    Customers must upload their GCash payment receipt or screenshot before payment verification.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+
+                  <input
+                    type="checkbox"
+                    id="paymentProofRequired"
+                    name="paymentProofRequired"
+                    checked
+                  >
+
+                  <span class="slider"></span>
+
+                </label>
+
+              </div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>
+                    Manual Payment Verification
+                  </strong>
+
+                  <p>
+                    GCash payments must be reviewed by the administrator before the order proceeds.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+
+                  <input
+                    type="checkbox"
+                    id="manualPaymentVerification"
+                    name="manualPaymentVerification"
+                    checked
+                  >
+
+                  <span class="slider"></span>
+
+                </label>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button type="reset" class="secondary-btn">
+                  Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                  Save Changes
+                </button>
+
+              </div>
+
+            </form>
+
+          </section>
+
+
+          <!-- =================================================
+               ORDER SETTINGS
+          ================================================== -->
+
+          <section class="settings-panel" id="orderSection">
+
+            <div class="panel-heading">
+
+              <div>
+                <h2>Order Settings</h2>
+                <p>Configure how customer orders are handled.</p>
+              </div>
+
+            </div>
+
+
+            <form class="settings-form" id="orderForm">
+
+              <div class="form-grid">
+
+                <div class="form-group">
+
+                  <label for="orderPrefix">
+                    Order Number Prefix
+                  </label>
+
+                  <input
+                    type="text"
+                    id="orderPrefix"
+                    name="orderPrefix"
+                    value="IFC"
+                    placeholder="Example: IFC"
+                  >
+
+                  <small>
+                    Example: IFC-0001
+                  </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="defaultOrderStatus">
+                    Default Order Status
+                  </label>
+
+                  <select
+                    id="defaultOrderStatus"
+                    name="defaultOrderStatus"
+                  >
+                    <option value="Pending">
+                      Pending
+                    </option>
+
+                    <option value="Processing">
+                      Processing
+                    </option>
+                  </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="minimumOrder">
+                    Minimum Order Amount
+                  </label>
+
+                  <div class="input-prefix">
+
+                    <span>₱</span>
+
+                    <input
+                      type="number"
+                      id="minimumOrder"
+                      name="minimumOrder"
+                      min="0"
+                      value="0"
+                    >
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="settings-divider"></div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>
+                    Allow Order Cancellation
+                  </strong>
+
+                  <p>
+                    Allow customers to request cancellation while their order is still pending.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+
+                  <input
+                    type="checkbox"
+                    id="allowCancellation"
+                    name="allowCancellation"
+                    checked
+                  >
+
+                  <span class="slider"></span>
+
+                </label>
+
+              </div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>
+                    Require Payment Verification
+                  </strong>
+
+                  <p>
+                    Payments must be verified by an administrator before processing an order.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+
+                  <input
+                    type="checkbox"
+                    id="requireVerification"
+                    name="requireVerification"
+                    checked
+                  >
+
+                  <span class="slider"></span>
+
+                </label>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button type="reset" class="secondary-btn">
+                  Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                  Save Changes
+                </button>
+
+              </div>
+
+            </form>
+
+          </section>
+
+
+          <!-- =================================================
+               NOTIFICATIONS
+          ================================================== -->
+
+          <section class="settings-panel" id="notificationSection">
+
+            <div class="panel-heading">
+
+              <div>
+                <h2>Notification Preferences</h2>
+                <p>Choose which system activities should notify the administrator.</p>
+              </div>
+
+            </div>
+
+
+            <form class="settings-form" id="notificationForm">
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>New Orders</strong>
+
+                  <p>
+                    Receive a notification whenever a customer places a new order.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="newOrderNotification"
+                    name="newOrderNotification"
+                    checked
+                  >
+                  <span class="slider"></span>
+                </label>
+
+              </div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>New Messages</strong>
+
+                  <p>
+                    Receive a notification whenever a customer sends a new message.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="messageNotification"
+                    name="messageNotification"
+                    checked
+                  >
+                  <span class="slider"></span>
+                </label>
+
+              </div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>Payment Submitted</strong>
+
+                  <p>
+                    Notify the administrator when a customer submits GCash payment proof.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="paymentNotification"
+                    name="paymentNotification"
+                    checked
+                  >
+                  <span class="slider"></span>
+                </label>
+
+              </div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>New Reviews</strong>
+
+                  <p>
+                    Receive a notification whenever a customer submits a review.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="reviewNotification"
+                    name="reviewNotification"
+                    checked
+                  >
+                  <span class="slider"></span>
+                </label>
+
+              </div>
+
+
+              <div class="setting-row">
+
+                <div>
+
+                  <strong>Low Stock Alerts</strong>
+
+                  <p>
+                    Notify the administrator when a product reaches the low-stock threshold.
+                  </p>
+
+                </div>
+
+                <label class="switch">
+                  <input
+                    type="checkbox"
+                    id="stockNotification"
+                    name="stockNotification"
+                    checked
+                  >
+                  <span class="slider"></span>
+                </label>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button type="reset" class="secondary-btn">
+                  Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                  Save Changes
+                </button>
+
+              </div>
+
+            </form>
+
+          </section>
+
+
+          <!-- =================================================
+               SECURITY
+          ================================================== -->
+
+          <section class="settings-panel" id="securitySection">
+
+            <div class="panel-heading">
+
+              <div>
+                <h2>Security</h2>
+                <p>Manage administrator password and account security.</p>
+              </div>
+
+            </div>
+
+
+            <form class="settings-form" id="passwordForm">
+
+              <div class="security-heading">
+
+                <h3>
+                  Change Password
+                </h3>
+
+                <p>
+                  Use a strong password to keep the administrator account secure.
+                </p>
+
+              </div>
+
+
+              <div class="form-grid single-column">
+
+                <div class="form-group">
+
+                  <label for="currentPassword">
+                    Current Password
+                  </label>
+
+                  <div class="password-field">
+
+                    <input
+                      type="password"
+                      id="currentPassword"
+                      name="currentPassword"
+                      autocomplete="current-password"
+                      placeholder="Enter current password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-password-target="currentPassword"
+                      aria-label="Show password"
+                    >
+
+                      <svg viewBox="0 0 24 24">
+                        <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="newPassword">
+                    New Password
+                  </label>
+
+                  <div class="password-field">
+
+                    <input
+                      type="password"
+                      id="newPassword"
+                      name="newPassword"
+                      autocomplete="new-password"
+                      placeholder="Enter new password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-password-target="newPassword"
+                      aria-label="Show password"
+                    >
+
+                      <svg viewBox="0 0 24 24">
+                        <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+
+                    </button>
+
+                  </div>
+
+                  <small>
+                    Use at least 8 characters.
+                  </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="confirmPassword">
+                    Confirm New Password
+                  </label>
+
+                  <div class="password-field">
+
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      autocomplete="new-password"
+                      placeholder="Confirm new password"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle"
+                      data-password-target="confirmPassword"
+                      aria-label="Show password"
+                    >
+
+                      <svg viewBox="0 0 24 24">
+                        <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-actions">
+
+                <button type="reset" class="secondary-btn">
+                  Cancel
+                </button>
+
+                <button type="submit" class="primary-btn">
+                  Update Password
+                </button>
+
+              </div>
+
+            </form>
+
+
+            <div class="settings-divider outside-divider"></div>
+
+
+            <div class="security-option">
+
+              <div>
+
+                <strong>
+                  Login Activity
+                </strong>
+
+                <p>
+                  Administrator login and security activities are recorded in Audit Logs.
+                </p>
+
+              </div>
+
+              <button
+                type="button"
+                class="secondary-btn"
+                onclick="window.location.href='audit-logs.html'"
+              >
+                View Audit Logs
+              </button>
+
+            </div>
+
+          </section>
+
+
+          <!-- =================================================
+               ACCOUNT MANAGEMENT
+          ================================================== -->
+
+          <section class="settings-panel" id="accountSection">
+
+            <div class="panel-heading">
+
+              <div>
+                <h2>Account Management</h2>
+                <p>Create administrator accounts and manage access for registered users.</p>
+              </div>
+
+            </div>
+
+
+            <!-- CURRENT ADMIN PROFILE -->
+
+            <div class="account-management-section">
+
+              <div class="management-section-header">
+
+                <div>
+
+                  <h3>
+                    Current Admin Profile
+                  </h3>
+
+                  <p>
+                    Manage the profile information of the currently signed-in administrator.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <form id="accountForm">
+
+                <div class="account-profile">
+
+                  <div class="large-avatar">
+
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="30"
+                      height="30"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    >
+                      <circle cx="12" cy="8" r="4"></circle>
+                      <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+                    </svg>
+
+                  </div>
+
+                  <div>
+
+                    <strong>
+                      Administrator
+                    </strong>
+
+                    <span>
+                      IFC Crafts Admin Account
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                  <div class="form-group">
+
+                    <label for="adminName">
+                      Admin Name
+                    </label>
+
+                    <input
+                      type="text"
+                      id="adminName"
+                      name="adminName"
+                      value="Admin"
+                      placeholder="Enter admin name"
+                    >
+
+                  </div>
+
+
+                  <div class="form-group">
+
+                    <label for="adminEmail">
+                      Email Address
+                    </label>
+
+                    <input
+                      type="email"
+                      id="adminEmail"
+                      name="adminEmail"
+                      placeholder="Enter admin email"
+                    >
+
+                  </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                  <button
+                    type="reset"
+                    class="secondary-btn"
+                  >
+                    Cancel
+                  </button>
+
+                  <button
+                    type="submit"
+                    class="primary-btn"
+                  >
+                    Save Changes
+                  </button>
+
+                </div>
+
+              </form>
+
+            </div>
+
+
+            <div class="account-section-divider"></div>
+
+
+            <!-- ADMIN ACCOUNTS -->
+
+            <div class="account-management-section">
+
+              <div class="management-section-header">
+
+                <div>
+
+                  <h3>
+                    Admin Accounts
+                  </h3>
+
+                  <p>
+                    Create and manage administrator accounts for IFC Crafts.
+                  </p>
+
+                </div>
+
+
+                <button
+                  type="button"
+                  class="primary-btn"
+                  id="openCreateAdminBtn"
+                >
+                  + Create Admin Account
+                </button>
+
+              </div>
+
+
+              <div class="account-table-wrapper">
+
+                <table class="account-table">
+
+                  <thead>
+
+                    <tr>
+                      <th>Admin</th>
+                      <th>Email Address</th>
+                      <th>Role</th>
+                      <th>Status</th>
+                      <th class="action-column">Actions</th>
+                    </tr>
+
+                  </thead>
+
+
+                  <tbody id="adminAccountsTable">
+
+                    <tr data-account-status="active">
+
+                      <td>
+
+                        <div class="account-person">
+
+                          <div class="account-avatar">
+                            A
+                          </div>
+
+                          <div>
+                            <strong>Admin</strong>
+                            <span>Current Account</span>
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                      <td>admin@ifccrafts.com</td>
+
+                      <td>Administrator</td>
+
+                      <td>
+                        <span class="account-status active">
+                          Active
+                        </span>
+                      </td>
+
+                      <td class="action-column">
+
+                        <div class="account-action-menu">
+
+                          <button
+                            type="button"
+                            class="view-account-btn"
+                            data-name="Admin"
+                            data-email="admin@ifccrafts.com"
+                            data-role="Administrator"
+                            data-status="Active"
+                          >
+                            View Details
+                          </button>
+
+                          <button
+                            type="button"
+                            class="toggle-account-btn danger-action"
+                            data-account-type="Admin"
+                          >
+                            Disable Account
+                          </button>
+
+                        </div>
+
+                        </div>
+
+                      </td>
+
+                    </tr>
+
+
+                    <tr data-account-status="active">
+
+                      <td>
+
+                        <div class="account-person">
+
+                          <div class="account-avatar">
+                            J
+                          </div>
+
+                          <div>
+                            <strong>Juan Dela Cruz</strong>
+                            <span>Administrator</span>
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                      <td>juan@ifccrafts.com</td>
+
+                      <td>Administrator</td>
+
+                      <td>
+                        <span class="account-status active">
+                          Active
+                        </span>
+                      </td>
+
+                      <td class="action-column">
+
+                        <div class="account-actions">
+
+                          <button
+                            type="button"
+                            class="table-action-btn"
+                            data-menu-button
+                            aria-label="Admin actions"
+                          >
+                            ⋮
+                          </button>
+
+                          <div class="account-action-menu">
+
+                            <button
+                              type="button"
+                              class="view-account-btn"
+                              data-name="Juan Dela Cruz"
+                              data-email="juan@ifccrafts.com"
+                              data-role="Administrator"
+                              data-status="Active"
+                            >
+                              View Details
+                            </button>
+
+                            <button
+                              type="button"
+                              class="toggle-account-btn danger-action"
+                              data-account-type="Admin"
+                            >
+                              Disable Account
+                            </button>
+
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </div>
+
+
+            <div class="account-section-divider"></div>
+
+
+            <!-- USER ACCOUNTS -->
+
+            <div class="account-management-section">
+
+              <div class="management-section-header">
+
+                <div>
+
+                  <h3>
+                    User Accounts
+                  </h3>
+
+                  <p>
+                    Manage access for registered customer accounts.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="user-account-toolbar">
+
+                <div class="account-search">
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                  </svg>
+
+                  <input
+                    type="text"
+                    id="userAccountSearch"
+                    placeholder="Search user name or email..."
+                  >
+
+                </div>
+
+
+                <select
+                  class="account-filter"
+                  id="userStatusFilter"
+                >
+
+                  <option value="all">
+                    All Status
+                  </option>
+
+                  <option value="active">
+                    Active
+                  </option>
+
+                  <option value="disabled">
+                    Disabled
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="account-table-wrapper">
+
+                <table class="account-table">
+
+                  <thead>
+
+                    <tr>
+                      <th>User</th>
+                      <th>Email Address</th>
+                      <th>Contact No.</th>
+                      <th>Status</th>
+                      <th class="action-column">Actions</th>
+                    </tr>
+
+                  </thead>
+
+
+                  <tbody id="userAccountsTable">
+
+                    <tr data-account-status="active">
+
+                      <td>
+
+                        <div class="account-person">
+
+                          <div class="account-avatar">
+                            M
+                          </div>
+
+                          <div>
+                            <strong>Maria Santos</strong>
+                            <span>Customer</span>
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                      <td>maria@email.com</td>
+
+                      <td>09123456789</td>
+
+                      <td>
+                        <span class="account-status active">
+                          Active
+                        </span>
+                      </td>
+
+                      <td class="action-column">
+
+                        <div class="account-actions">
+
+                          <button
+                            type="button"
+                            class="table-action-btn"
+                            data-menu-button
+                            aria-label="User actions"
+                          >
+                            ⋮
+                          </button>
+
+                          <div class="account-action-menu">
+
+                            <button
+                              type="button"
+                              class="view-account-btn"
+                              data-name="Maria Santos"
+                              data-email="maria@email.com"
+                              data-contact="09123456789"
+                              data-role="Customer"
+                              data-status="Active"
+                            >
+                              View Details
+                            </button>
+
+                            <button
+                              type="button"
+                              class="toggle-account-btn danger-action"
+                              data-account-type="User"
+                            >
+                              Disable Account
+                            </button>
+
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                    </tr>
+
+
+                    <tr data-account-status="active">
+
+                      <td>
+
+                        <div class="account-person">
+
+                          <div class="account-avatar">
+                            J
+                          </div>
+
+                          <div>
+                            <strong>John Reyes</strong>
+                            <span>Customer</span>
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                      <td>john@email.com</td>
+
+                      <td>09987654321</td>
+
+                      <td>
+                        <span class="account-status active">
+                          Active
+                        </span>
+                      </td>
+
+                      <td class="action-column">
+
+                        <div class="account-actions">
+
+                          <button
+                            type="button"
+                            class="table-action-btn"
+                            data-menu-button
+                            aria-label="User actions"
+                          >
+                            ⋮
+                          </button>
+
+                          <div class="account-action-menu">
+
+                            <button
+                              type="button"
+                              class="view-account-btn"
+                              data-name="John Reyes"
+                              data-email="john@email.com"
+                              data-contact="09987654321"
+                              data-role="Customer"
+                              data-status="Active"
+                            >
+                              View Details
+                            </button>
+
+                            <button
+                              type="button"
+                              class="toggle-account-btn danger-action"
+                              data-account-type="User"
+                            >
+                              Disable Account
+                            </button>
+
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                    </tr>
+
+
+                    <tr data-account-status="disabled">
+
+                      <td>
+
+                        <div class="account-person">
+
+                          <div class="account-avatar">
+                            A
+                          </div>
+
+                          <div>
+                            <strong>Anna Cruz</strong>
+                            <span>Customer</span>
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                      <td>anna@email.com</td>
+
+                      <td>09111222333</td>
+
+                      <td>
+                        <span class="account-status disabled">
+                          Disabled
+                        </span>
+                      </td>
+
+                      <td class="action-column">
+
+                        <div class="account-actions">
+
+                          <button
+                            type="button"
+                            class="table-action-btn"
+                            data-menu-button
+                            aria-label="User actions"
+                          >
+                            ⋮
+                          </button>
+
+                          <div class="account-action-menu">
+
+                            <button
+                              type="button"
+                              class="view-account-btn"
+                              data-name="Anna Cruz"
+                              data-email="anna@email.com"
+                              data-contact="09111222333"
+                              data-role="Customer"
+                              data-status="Disabled"
+                            >
+                              View Details
+                            </button>
+
+                            <button
+                              type="button"
+                              class="toggle-account-btn enable-action"
+                              data-account-type="User"
+                            >
+                              Enable Account
+                            </button>
+
+                          </div>
+
+                        </div>
+
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+              </div>
+
+            </div>
+
+
+            <div class="account-section-divider"></div>
+
+
+            <!-- SIGN OUT -->
+
+            <div class="danger-zone">
+
+              <div>
+
+                <strong>
+                  Sign Out
+                </strong>
+
+                <p>
+                  End the current administrator session.
+                </p>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="danger-btn"
+                id="logoutBtn"
+              >
+                Sign Out
+              </button>
+
+            </div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================================================
+       TOAST
+  ========================================================== -->
+
+  <div class="toast" id="settingsToast">
+
+    <svg
+      viewBox="0 0 24 24"
+      width="17"
+      height="17"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path d="m5 12 4 4L19 6"></path>
+    </svg>
+
+    <span id="toastMessage">
+      Settings saved successfully.
+    </span>
+
+  </div>
+
+
+  <!-- =========================================================
+       CREATE ADMIN MODAL
+  ========================================================== -->
+
+  <div class="modal-overlay" id="createAdminModal">
+
+    <div class="account-modal">
+
+      <div class="account-modal-header">
+
+        <div>
+          <h3>Create Admin Account</h3>
+          <p>Create login credentials for another administrator.</p>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="closeCreateAdminBtn"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form id="createAdminForm">
+
+        <div class="account-modal-body">
+
+          <div class="form-group">
+
+            <label for="newAdminName">
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              id="newAdminName"
+              placeholder="Enter admin name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="newAdminEmail">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="newAdminEmail"
+              placeholder="Enter admin email"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="newAdminPassword">
+              Password
+            </label>
+
+            <input
+              type="password"
+              id="newAdminPassword"
+              placeholder="Enter password"
+              minlength="8"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="newAdminConfirmPassword">
+              Confirm Password
+            </label>
+
+            <input
+              type="password"
+              id="newAdminConfirmPassword"
+              placeholder="Confirm password"
+              minlength="8"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="account-modal-footer">
+
+          <button
+            type="button"
+            class="secondary-btn"
+            id="cancelCreateAdminBtn"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="primary-btn"
+          >
+            Create Account
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       ACCOUNT DETAILS MODAL
+  ========================================================== -->
+
+  <div class="modal-overlay" id="accountDetailsModal">
+
+    <div class="account-modal small-account-modal">
+
+      <div class="account-modal-header">
+
+        <div>
+          <h3>Account Details</h3>
+          <p>View account information.</p>
+        </div>
+
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="closeAccountDetailsBtn"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="account-details-body">
+
+        <div class="detail-row">
+          <span>Name</span>
+          <strong id="detailAccountName">—</strong>
+        </div>
+
+        <div class="detail-row">
+          <span>Email Address</span>
+          <strong id="detailAccountEmail">—</strong>
+        </div>
+
+        <div class="detail-row" id="detailContactRow">
+          <span>Contact Number</span>
+          <strong id="detailAccountContact">—</strong>
+        </div>
+
+        <div class="detail-row">
+          <span>Role</span>
+          <strong id="detailAccountRole">—</strong>
+        </div>
+
+        <div class="detail-row">
+          <span>Status</span>
+          <strong id="detailAccountStatus">—</strong>
+        </div>
+
+      </div>
+
+
+      <div class="account-modal-footer">
+
+        <button
+          type="button"
+          class="primary-btn"
+          id="doneAccountDetailsBtn"
+        >
+          Done
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       ACCOUNT STATUS MODAL
+  ========================================================== -->
+
+  <div class="modal-overlay" id="accountStatusModal">
+
+    <div class="confirm-modal">
+
+      <div class="confirm-icon">
+
+        <svg
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M8 8l8 8"></path>
+        </svg>
+
+      </div>
+
+      <h3 id="accountStatusModalTitle">
+        Disable Account?
+      </h3>
+
+      <p id="accountStatusModalText">
+        This account will no longer be able to access the system.
+      </p>
+
+
+      <div class="confirm-actions">
+
+        <button
+          type="button"
+          class="secondary-btn"
+          id="cancelAccountStatusBtn"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          class="danger-btn"
+          id="confirmAccountStatusBtn"
+        >
+          Disable Account
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       LOGOUT MODAL
+  ========================================================== -->
+
+  <div class="modal-overlay" id="logoutModal">
+
+    <div class="confirm-modal">
+
+      <div class="confirm-icon">
+
+        <svg
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M10 17l5-5-5-5"></path>
+          <path d="M15 12H3"></path>
+          <path d="M14 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5"></path>
+        </svg>
+
+      </div>
+
+      <h3>
+        Sign Out?
+      </h3>
+
+      <p>
+        Are you sure you want to sign out of the administrator account?
+      </p>
+
+
+      <div class="confirm-actions">
+
+        <button
+          type="button"
+          class="secondary-btn"
+          id="cancelLogoutBtn"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          class="danger-btn"
+          id="confirmLogoutBtn"
+        >
+          Sign Out
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script>
+
+    /* ==========================================================
+       SETTINGS TABS
+    ========================================================== */
+
+    const settingsTabs =
+      document.querySelectorAll(".settings-tab");
+
+    const settingsPanels =
+      document.querySelectorAll(".settings-panel");
+
+
+    settingsTabs.forEach(tab => {
+
+      tab.addEventListener("click", () => {
+
+        const target =
+          tab.dataset.target;
+
+        settingsTabs.forEach(item => {
+          item.classList.remove("active");
+        });
+
+        settingsPanels.forEach(panel => {
+          panel.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+
+        document
+          .getElementById(target)
+          .classList.add("active");
+
+      });
+
+    });
+
+
+    /* ==========================================================
+       TOAST
+    ========================================================== */
+
+    const settingsToast =
+      document.getElementById("settingsToast");
+
+    const toastMessage =
+      document.getElementById("toastMessage");
+
+    let toastTimer;
+
+
+    function showToast(message) {
+
+      toastMessage.textContent = message;
+
+      settingsToast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        settingsToast.classList.remove("show");
+      }, 2500);
+
+    }
+
+
+    /* ==========================================================
+       SETTINGS FORMS
+    ========================================================== */
+
+    const settingsForms = [
+
+      {
+        id: "generalForm",
+        message: "General settings saved."
+      },
+
+      {
+        id: "businessForm",
+        message: "Store information saved."
+      },
+
+      {
+        id: "paymentForm",
+        message: "Payment settings saved."
+      },
+
+      {
+        id: "orderForm",
+        message: "Order settings saved."
+      },
+
+      {
+        id: "notificationForm",
+        message: "Notification preferences saved."
+      },
+
+      {
+        id: "accountForm",
+        message: "Admin profile updated."
+      }
+
+    ];
+
+
+    settingsForms.forEach(formInfo => {
+
+      const form =
+        document.getElementById(formInfo.id);
+
+      if (!form) {
+        return;
+      }
+
+      form.addEventListener("submit", event => {
+
+        event.preventDefault();
+
+        /*
+          BACKEND:
+          Connect this form to your settings API/database.
+        */
+
+        showToast(formInfo.message);
+
+      });
+
+    });
+
+
+    /* ==========================================================
+       BUSINESS LOGO PREVIEW
+    ========================================================== */
+
+    const businessLogoInput =
+      document.getElementById("businessLogoInput");
+
+    const businessLogoPreview =
+      document.getElementById("businessLogoPreview");
+
+    const removeLogoBtn =
+      document.getElementById("removeLogoBtn");
+
+
+    businessLogoInput.addEventListener("change", event => {
+
+      const file =
+        event.target.files[0];
+
+      if (!file) {
+        return;
+      }
+
+      const reader =
+        new FileReader();
+
+      reader.onload = event => {
+
+        businessLogoPreview.src =
+          event.target.result;
+
+      };
+
+      reader.readAsDataURL(file);
+
+    });
+
+
+    removeLogoBtn.addEventListener("click", () => {
+
+      businessLogoPreview.src =
+        "images/ifc_crafts.jpg";
+
+      businessLogoInput.value =
+        "";
+
+    });
+
+
+    /* ==========================================================
+       PASSWORD VISIBILITY
+    ========================================================== */
+
+    document
+      .querySelectorAll(".password-toggle")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          const target =
+            document.getElementById(
+              button.dataset.passwordTarget
+            );
+
+          target.type =
+            target.type === "password"
+              ? "text"
+              : "password";
+
+        });
+
+      });
+
+
+    /* ==========================================================
+       PASSWORD FORM
+    ========================================================== */
+
+    const passwordForm =
+      document.getElementById("passwordForm");
+
+
+    passwordForm.addEventListener("submit", event => {
+
+      event.preventDefault();
+
+      const currentPassword =
+        document.getElementById("currentPassword").value;
+
+      const newPassword =
+        document.getElementById("newPassword").value;
+
+      const confirmPassword =
+        document.getElementById("confirmPassword").value;
+
+
+      if (
+        !currentPassword ||
+        !newPassword ||
+        !confirmPassword
+      ) {
+
+        showToast(
+          "Please complete all password fields."
+        );
+
+        return;
+
+      }
+
+
+      if (newPassword.length < 8) {
+
+        showToast(
+          "New password must contain at least 8 characters."
+        );
+
+        return;
+
+      }
+
+
+      if (newPassword !== confirmPassword) {
+
+        showToast(
+          "New passwords do not match."
+        );
+
+        return;
+
+      }
+
+
+      /*
+        BACKEND:
+        Verify current password and update securely.
+      */
+
+      passwordForm.reset();
+
+      showToast(
+        "Password update is ready for backend integration."
+      );
+
+    });
+
+
+    /* ==========================================================
+       CREATE ADMIN
+    ========================================================== */
+
+    const createAdminModal =
+      document.getElementById("createAdminModal");
+
+    const createAdminForm =
+      document.getElementById("createAdminForm");
+
+    const openCreateAdminBtn =
+      document.getElementById("openCreateAdminBtn");
+
+    const closeCreateAdminBtn =
+      document.getElementById("closeCreateAdminBtn");
+
+    const cancelCreateAdminBtn =
+      document.getElementById("cancelCreateAdminBtn");
+
+    const adminAccountsTable =
+      document.getElementById("adminAccountsTable");
+
+
+    function openCreateAdminModal() {
+
+      createAdminModal.classList.add("show");
+
+    }
+
+
+    function closeCreateAdminModal() {
+
+      createAdminModal.classList.remove("show");
+
+      createAdminForm.reset();
+
+    }
+
+
+    openCreateAdminBtn.addEventListener(
+      "click",
+      openCreateAdminModal
+    );
+
+
+    closeCreateAdminBtn.addEventListener(
+      "click",
+      closeCreateAdminModal
+    );
+
+
+    cancelCreateAdminBtn.addEventListener(
+      "click",
+      closeCreateAdminModal
+    );
+
+
+    createAdminForm.addEventListener("submit", event => {
+
+      event.preventDefault();
+
+
+      const name =
+        document
+          .getElementById("newAdminName")
+          .value
+          .trim();
+
+      const email =
+        document
+          .getElementById("newAdminEmail")
+          .value
+          .trim();
+
+      const password =
+        document
+          .getElementById("newAdminPassword")
+          .value;
+
+      const confirmPassword =
+        document
+          .getElementById("newAdminConfirmPassword")
+          .value;
+
+
+      if (password !== confirmPassword) {
+
+        showToast("Passwords do not match.");
+
+        return;
+
+      }
+
+
+      if (password.length < 8) {
+
+        showToast(
+          "Password must contain at least 8 characters."
+        );
+
+        return;
+
+      }
+
+
+      const safeName =
+        escapeHTML(name);
+
+      const safeEmail =
+        escapeHTML(email);
+
+      const firstLetter =
+        safeName.charAt(0).toUpperCase();
+
+
+      const row =
+        document.createElement("tr");
+
+      row.dataset.accountStatus =
+        "active";
+
+
+      row.innerHTML = `
+        <td>
+          <div class="account-person">
+
+            <div class="account-avatar">
+              ${firstLetter}
+            </div>
+
+            <div>
+              <strong>${safeName}</strong>
+              <span>Administrator</span>
+            </div>
+
+          </div>
+        </td>
+
+        <td>${safeEmail}</td>
+
+        <td>Administrator</td>
+
+        <td>
+          <span class="account-status active">
+            Active
+          </span>
+        </td>
+
+        <td class="action-column">
+
+          <div class="account-actions">
+
+            <button
+              type="button"
+              class="table-action-btn"
+              data-menu-button
+            >
+              ⋮
+            </button>
+
+            <div class="account-action-menu">
+
+              <button
+                type="button"
+                class="view-account-btn"
+                data-name="${safeName}"
+                data-email="${safeEmail}"
+                data-role="Administrator"
+                data-status="Active"
+              >
+                View Details
+              </button>
+
+              <button
+                type="button"
+                class="toggle-account-btn danger-action"
+                data-account-type="Admin"
+              >
+                Disable Account
+              </button>
+
+            </div>
+
+          </div>
+
+        </td>
+      `;
+
+
+      adminAccountsTable.appendChild(row);
+
+
+      /*
+        BACKEND:
+        Replace frontend-only creation with POST request.
+
+        Example data:
+        {
+          name,
+          email,
+          password,
+          role: "admin"
+        }
+      */
+
+
+      closeCreateAdminModal();
+
+      showToast(
+        "Admin account created."
+      );
+
+    });
+
+
+    function escapeHTML(value) {
+
+      return value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+    }
+
+
+    /* ==========================================================
+       THREE DOT MENUS
+    ========================================================== */
+
+    document.addEventListener("click", event => {
+
+      const menuButton =
+        event.target.closest("[data-menu-button]");
+
+
+      document
+        .querySelectorAll(".account-action-menu.show")
+        .forEach(menu => {
+
+          if (
+            !menuButton ||
+            menu !== menuButton.nextElementSibling
+          ) {
+
+            menu.classList.remove("show");
+
+          }
+
+        });
+
+
+      if (menuButton) {
+
+        event.stopPropagation();
+
+        menuButton
+          .nextElementSibling
+          .classList
+          .toggle("show");
+
+      }
+
+    });
+
+
+    /* ==========================================================
+       ACCOUNT DETAILS
+    ========================================================== */
+
+    const accountDetailsModal =
+      document.getElementById("accountDetailsModal");
+
+    const closeAccountDetailsBtn =
+      document.getElementById("closeAccountDetailsBtn");
+
+    const doneAccountDetailsBtn =
+      document.getElementById("doneAccountDetailsBtn");
+
+
+    function closeAccountDetailsModal() {
+
+      accountDetailsModal.classList.remove("show");
+
+    }
+
+
+    document.addEventListener("click", event => {
+
+      const button =
+        event.target.closest(".view-account-btn");
+
+      if (!button) {
+        return;
+      }
+
+
+      document.getElementById(
+        "detailAccountName"
+      ).textContent =
+        button.dataset.name || "—";
+
+
+      document.getElementById(
+        "detailAccountEmail"
+      ).textContent =
+        button.dataset.email || "—";
+
+
+      document.getElementById(
+        "detailAccountRole"
+      ).textContent =
+        button.dataset.role || "—";
+
+
+      document.getElementById(
+        "detailAccountStatus"
+      ).textContent =
+        button.dataset.status || "—";
+
+
+      const contactRow =
+        document.getElementById("detailContactRow");
+
+      const contact =
+        button.dataset.contact;
+
+
+      if (contact) {
+
+        contactRow.style.display =
+          "flex";
+
+        document.getElementById(
+          "detailAccountContact"
+        ).textContent =
+          contact;
+
+      } else {
+
+        contactRow.style.display =
+          "none";
+
+      }
+
+
+      accountDetailsModal.classList.add("show");
+
+      button
+        .closest(".account-action-menu")
+        ?.classList.remove("show");
+
+    });
+
+
+    closeAccountDetailsBtn.addEventListener(
+      "click",
+      closeAccountDetailsModal
+    );
+
+
+    doneAccountDetailsBtn.addEventListener(
+      "click",
+      closeAccountDetailsModal
+    );
+
+
+    /* ==========================================================
+       ENABLE / DISABLE ACCOUNT
+    ========================================================== */
+
+    const accountStatusModal =
+      document.getElementById("accountStatusModal");
+
+    const accountStatusModalTitle =
+      document.getElementById("accountStatusModalTitle");
+
+    const accountStatusModalText =
+      document.getElementById("accountStatusModalText");
+
+    const cancelAccountStatusBtn =
+      document.getElementById("cancelAccountStatusBtn");
+
+    const confirmAccountStatusBtn =
+      document.getElementById("confirmAccountStatusBtn");
+
+
+    let selectedAccountRow = null;
+    let selectedStatusButton = null;
+    let selectedAccountAction = null;
+
+
+    document.addEventListener("click", event => {
+
+      const button =
+        event.target.closest(".toggle-account-btn");
+
+      if (!button) {
+        return;
+      }
+
+
+      selectedStatusButton =
+        button;
+
+      selectedAccountRow =
+        button.closest("tr");
+
+
+      selectedAccountAction =
+        selectedAccountRow.dataset.accountStatus === "active"
+          ? "disable"
+          : "enable";
+
+
+      const accountType =
+        button.dataset.accountType || "User";
+
+
+      if (selectedAccountAction === "disable") {
+
+        accountStatusModalTitle.textContent =
+          `Disable ${accountType} Account?`;
+
+        accountStatusModalText.textContent =
+          "This account will no longer be able to access the system until it is enabled again.";
+
+        confirmAccountStatusBtn.textContent =
+          "Disable Account";
+
+        confirmAccountStatusBtn.className =
+          "danger-btn";
+
+      } else {
+
+        accountStatusModalTitle.textContent =
+          `Enable ${accountType} Account?`;
+
+        accountStatusModalText.textContent =
+          "This account will be allowed to access the system again.";
+
+        confirmAccountStatusBtn.textContent =
+          "Enable Account";
+
+        confirmAccountStatusBtn.className =
+          "primary-btn";
+
+      }
+
+
+      accountStatusModal.classList.add("show");
+
+      button
+        .closest(".account-action-menu")
+        ?.classList.remove("show");
+
+    });
+
+
+    function closeAccountStatusModal() {
+
+      accountStatusModal.classList.remove("show");
+
+      selectedAccountRow = null;
+      selectedStatusButton = null;
+      selectedAccountAction = null;
+
+    }
+
+
+    cancelAccountStatusBtn.addEventListener(
+      "click",
+      closeAccountStatusModal
+    );
+
+
+    confirmAccountStatusBtn.addEventListener("click", () => {
+
+      if (
+        !selectedAccountRow ||
+        !selectedStatusButton
+      ) {
+
+        return;
+
+      }
+
+
+      const statusBadge =
+        selectedAccountRow.querySelector(".account-status");
+
+      const viewButton =
+        selectedAccountRow.querySelector(".view-account-btn");
+
+
+      if (selectedAccountAction === "disable") {
+
+        selectedAccountRow.dataset.accountStatus =
+          "disabled";
+
+        statusBadge.textContent =
+          "Disabled";
+
+        statusBadge.className =
+          "account-status disabled";
+
+        selectedStatusButton.textContent =
+          "Enable Account";
+
+        selectedStatusButton.className =
+          "toggle-account-btn enable-action";
+
+        if (viewButton) {
+          viewButton.dataset.status = "Disabled";
+        }
+
+        showToast(
+          "Account disabled successfully."
+        );
+
+      } else {
+
+        selectedAccountRow.dataset.accountStatus =
+          "active";
+
+        statusBadge.textContent =
+          "Active";
+
+        statusBadge.className =
+          "account-status active";
+
+        selectedStatusButton.textContent =
+          "Disable Account";
+
+        selectedStatusButton.className =
+          "toggle-account-btn danger-action";
+
+        if (viewButton) {
+          viewButton.dataset.status = "Active";
+        }
+
+        showToast(
+          "Account enabled successfully."
+        );
+
+      }
+
+
+      /*
+        BACKEND:
+        Send the account ID and updated status
+        to the database/API here.
+      */
+
+
+      filterUserAccounts();
+
+      closeAccountStatusModal();
+
+    });
+
+
+    /* ==========================================================
+       USER SEARCH + FILTER
+    ========================================================== */
+
+    const userAccountSearch =
+      document.getElementById("userAccountSearch");
+
+    const userStatusFilter =
+      document.getElementById("userStatusFilter");
+
+    const userAccountsTable =
+      document.getElementById("userAccountsTable");
+
+
+    function filterUserAccounts() {
+
+      const searchValue =
+        userAccountSearch
+          .value
+          .toLowerCase()
+          .trim();
+
+      const statusValue =
+        userStatusFilter.value;
+
+
+      userAccountsTable
+        .querySelectorAll("tr")
+        .forEach(row => {
+
+          const text =
+            row.textContent.toLowerCase();
+
+          const status =
+            row.dataset.accountStatus;
+
+
+          const matchesSearch =
+            text.includes(searchValue);
+
+          const matchesStatus =
+            statusValue === "all" ||
+            status === statusValue;
+
+
+          row.style.display =
+            matchesSearch && matchesStatus
+              ? ""
+              : "none";
+
+        });
+
+    }
+
+
+    userAccountSearch.addEventListener(
+      "input",
+      filterUserAccounts
+    );
+
+    userStatusFilter.addEventListener(
+      "change",
+      filterUserAccounts
+    );
+
+
+    /* ==========================================================
+       LOGOUT
+    ========================================================== */
+
+    const logoutBtn =
+      document.getElementById("logoutBtn");
+
+    const logoutModal =
+      document.getElementById("logoutModal");
+
+    const cancelLogoutBtn =
+      document.getElementById("cancelLogoutBtn");
+
+    const confirmLogoutBtn =
+      document.getElementById("confirmLogoutBtn");
+
+
+    function closeLogoutModal() {
+
+      logoutModal.classList.remove("show");
+
+    }
+
+
+    logoutBtn.addEventListener("click", () => {
+
+      logoutModal.classList.add("show");
+
+    });
+
+
+    cancelLogoutBtn.addEventListener(
+      "click",
+      closeLogoutModal
+    );
+
+
+    confirmLogoutBtn.addEventListener("click", () => {
+
+      closeLogoutModal();
+
+      showToast(
+        "Logout is ready for backend integration."
+      );
+
+    });
+
+
+    /* ==========================================================
+       CLOSE MODALS ON BACKDROP
+    ========================================================== */
+
+    [
+      createAdminModal,
+      accountDetailsModal,
+      accountStatusModal,
+      logoutModal
+    ].forEach(modal => {
+
+      modal.addEventListener("click", event => {
+
+        if (event.target !== modal) {
+          return;
+        }
+
+        modal.classList.remove("show");
+
+      });
+
+    });
+
+
+    /* ==========================================================
+       ESCAPE
+    ========================================================== */
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key !== "Escape") {
+        return;
+      }
+
+      createAdminModal.classList.remove("show");
+      accountDetailsModal.classList.remove("show");
+      accountStatusModal.classList.remove("show");
+      logoutModal.classList.remove("show");
+
+    });
+
+  </script>
+
+</body>
+</html>

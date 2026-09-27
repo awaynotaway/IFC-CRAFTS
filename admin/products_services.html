@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Products & Services</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/products_services.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">
+        IFC CRAFTS
+      </span>
+
+    </div>
+
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        onclick="window.location.href='notifications.html'"
+        aria-label="Notifications"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot"></span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="profile-chip"
+      >
+
+        <span class="avatar">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+
+        </span>
+
+        <span>Admin</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== PAGE SHELL ==================== -->
+
+  <div class="shell">
+
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+      <nav class="sidenav">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+          href="index.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+
+          <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a
+          href="orders.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+
+          <span>Orders</span>
+
+        </a>
+
+
+        <!-- PRODUCTS & SERVICES -->
+
+        <a
+          href="products_services.html"
+          class="sidenav-link active"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+
+          <span>Products &amp; Services</span>
+
+        </a>
+
+
+        <!-- USERS -->
+
+        <a
+          href="users.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <span>Users</span>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a
+          href="messages.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+
+          <span>Messages</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a
+          href="notifications.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+
+          <span>Notifications</span>
+
+        </a>
+
+
+        <!-- REVIEWS -->
+
+        <a
+          href="reviews.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+
+          <span>Reviews</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a
+          href="reports.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+
+          <span>Reports</span>
+
+        </a>
+
+
+        <!-- AUDIT LOGS -->
+
+        <a
+          href="audit-logs.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+
+          <span>Audit Logs</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a
+          href="settings.html"
+          class="sidenav-link"
+        >
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+
+          <span>Settings</span>
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main class="main">
+
+
+      <!-- PAGE HEADER -->
+
+      <section class="page-header">
+
+        <h1>
+          PRODUCTS &amp; SERVICES
+        </h1>
+
+        <p>
+          Manage your products, services, pricing &amp; stock.
+        </p>
+
+      </section>
+
+
+      <!-- ==================== SUMMARY ==================== -->
+
+      <section class="product-stats">
+
+
+        <!-- TOTAL PRODUCTS -->
+
+        <article class="stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+              <path d="m3.3 7 8.7 5 8.7-5"></path>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>Total Products</span>
+            <strong id="totalProducts">0</strong>
+          </div>
+
+        </article>
+
+
+        <!-- ACTIVE -->
+
+        <article class="stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="m8 12 2.5 2.5L16 9"></path>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>Active</span>
+            <strong id="activeProducts">0</strong>
+          </div>
+
+        </article>
+
+
+        <!-- OUT OF STOCK -->
+
+        <article class="stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M8 12h8"></path>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>Out of Stock</span>
+            <strong id="outOfStockProducts">0</strong>
+          </div>
+
+        </article>
+
+
+        <!-- CATEGORIES -->
+
+        <article class="stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>Categories</span>
+            <strong id="totalCategories">0</strong>
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- ==================== FILTERS ==================== -->
+
+      <section class="product-toolbar">
+
+
+        <!-- SEARCH -->
+
+        <label class="search-field">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="17"
+            height="17"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M20 20l-4-4"></path>
+          </svg>
+
+          <input
+            type="search"
+            id="productSearch"
+            placeholder="Search products..."
+          >
+
+        </label>
+
+
+        <!-- CATEGORY -->
+
+        <select
+          id="categoryFilter"
+          class="select-field"
+        >
+          <option value="all">
+            All Categories
+          </option>
+
+          <option value="Necklace">
+            Necklace
+          </option>
+
+          <option value="Bracelet">
+            Bracelet
+          </option>
+
+          <option value="Keychain">
+            Keychain
+          </option>
+
+          <option value="Henna Art">
+            Henna Art
+          </option>
+        </select>
+
+
+        <!-- STATUS -->
+
+        <select
+          id="statusFilter"
+          class="select-field"
+        >
+          <option value="all">
+            All Status
+          </option>
+
+          <option value="Active">
+            Active
+          </option>
+
+          <option value="Out of Stock">
+            Out of Stock
+          </option>
+        </select>
+
+
+        <!-- ADD PRODUCT -->
+
+        <button
+          type="button"
+          class="add-product-btn"
+          id="openAddProductBtn"
+        >
+          <span>+</span>
+          Add Product
+        </button>
+
+      </section>
+
+
+      <!-- ==================== PRODUCTS TABLE ==================== -->
+
+      <section class="products-panel">
+
+        <div class="table-scroll">
+
+          <table class="products-table">
+
+            <thead>
+
+              <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Last Updated</th>
+                <th></th>
+              </tr>
+
+            </thead>
+
+            <tbody id="productsTableBody">
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================================================
+       ADD PRODUCT MODAL
+  ========================================================== -->
+
+  <div
+    class="modal-overlay"
+    id="addProductModal"
+  >
+
+    <section
+      class="product-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="addProductTitle"
+    >
+
+
+      <!-- MODAL HEADER -->
+
+      <header class="product-modal-header">
+
+        <h2 id="addProductTitle">
+          Add Product
+        </h2>
+
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="closeAddProductBtn"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+      </header>
+
+
+      <!-- FORM -->
+
+      <form id="addProductForm">
+
+
+        <!-- IMAGE -->
+
+        <div class="form-group">
+
+          <label>
+            Product Image
+            <span>*</span>
+          </label>
+
+
+          <label
+            class="upload-box"
+            for="productImage"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              width="28"
+              height="28"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <path d="M12 16V4"></path>
+              <path d="m7 9 5-5 5 5"></path>
+              <path d="M5 20h14"></path>
+            </svg>
+
+            <strong>
+              Upload reference image
+            </strong>
+
+            <span>
+              JPG, PNG (Max 25MB)
+            </span>
+
+          </label>
+
+
+          <input
+            type="file"
+            id="productImage"
+            accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+            hidden
+          >
+
+
+          <div
+            class="image-preview-wrap"
+            id="imagePreviewWrap"
+            hidden
+          >
+
+            <img
+              src=""
+              alt="Product Preview"
+              id="imagePreview"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- PRODUCT NAME -->
+
+        <div class="form-group">
+
+          <label for="productName">
+            Product Name
+            <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="productName"
+            placeholder="Enter product name..."
+            required
+          >
+
+        </div>
+
+
+        <!-- CATEGORY -->
+
+        <div class="form-group">
+
+          <label for="productCategory">
+            Category
+            <span>*</span>
+          </label>
+
+          <select
+            id="productCategory"
+            required
+          >
+
+            <option value="">
+              Select Category
+            </option>
+
+            <option value="Necklace">
+              Necklace
+            </option>
+
+            <option value="Bracelet">
+              Bracelet
+            </option>
+
+            <option value="Keychain">
+              Keychain
+            </option>
+
+            <option value="Henna Art">
+              Henna Art
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="form-group">
+
+          <label for="productDescription">
+            Description
+            <span>*</span>
+          </label>
+
+          <textarea
+            id="productDescription"
+            rows="4"
+            placeholder="Enter product description..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <!-- PRICE + STOCK -->
+
+        <div class="form-row">
+
+
+          <!-- PRICE -->
+
+          <div class="form-group">
+
+            <label for="productPrice">
+              Price
+              <span>*</span>
+            </label>
+
+            <div class="price-input">
+
+              <span>₱</span>
+
+              <input
+                type="number"
+                id="productPrice"
+                min="0"
+                step="0.01"
+                placeholder="0.00"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- STOCK -->
+
+          <div class="form-group">
+
+            <label for="productStock">
+              Stock
+              <span>*</span>
+            </label>
+
+            <input
+              type="number"
+              id="productStock"
+              min="0"
+              placeholder="Enter Quantity"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div class="form-group">
+
+          <label for="productStatus">
+            Status
+            <span>*</span>
+          </label>
+
+          <select
+            id="productStatus"
+            required
+          >
+
+            <option value="">
+              Select status
+            </option>
+
+            <option value="Active">
+              Active
+            </option>
+
+            <option value="Out of Stock">
+              Out of Stock
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="cancel-product-btn"
+            id="cancelAddProductBtn"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="save-product-btn"
+          >
+            Save Product
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+  </div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script>
+
+
+    /* =========================================================
+       TEST DATA
+    ========================================================= */
+
+    const products = [
+      {
+        id: 1,
+        name: "Heart",
+        category: "Necklace",
+        description: "Heart necklace",
+        price: 100,
+        stock: 17,
+        status: "Active",
+        image: "images/ifc_crafts.jpg",
+        updated: "08/15/2025"
+      }
+    ];
+
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
+
+    const modal =
+      document.getElementById("addProductModal");
+
+    const openModalBtn =
+      document.getElementById("openAddProductBtn");
+
+    const closeModalBtn =
+      document.getElementById("closeAddProductBtn");
+
+    const cancelModalBtn =
+      document.getElementById("cancelAddProductBtn");
+
+    const form =
+      document.getElementById("addProductForm");
+
+    const tableBody =
+      document.getElementById("productsTableBody");
+
+    const searchInput =
+      document.getElementById("productSearch");
+
+    const categoryFilter =
+      document.getElementById("categoryFilter");
+
+    const statusFilter =
+      document.getElementById("statusFilter");
+
+    const imageInput =
+      document.getElementById("productImage");
+
+    const imagePreview =
+      document.getElementById("imagePreview");
+
+    const imagePreviewWrap =
+      document.getElementById("imagePreviewWrap");
+
+    let selectedImage = "";
+
+
+    /* =========================================================
+       PRICE FORMATTER
+    ========================================================= */
+
+    function formatPeso(value) {
+
+      return new Intl.NumberFormat(
+        "en-PH",
+        {
+          style: "currency",
+          currency: "PHP"
+        }
+      ).format(value);
+
+    }
+
+
+    /* =========================================================
+       MODAL
+    ========================================================= */
+
+    function openModal() {
+
+      modal.classList.add("open");
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+    function closeModal() {
+
+      modal.classList.remove("open");
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+      form.reset();
+
+      selectedImage = "";
+
+      imagePreview.src = "";
+
+      imagePreviewWrap.hidden = true;
+
+    }
+
+
+    openModalBtn.addEventListener(
+      "click",
+      openModal
+    );
+
+
+    closeModalBtn.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    cancelModalBtn.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    modal.addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === modal) {
+          closeModal();
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       IMAGE PREVIEW
+    ========================================================= */
+
+    imageInput.addEventListener(
+      "change",
+      function () {
+
+        const file =
+          this.files[0];
+
+
+        if (!file) {
+          return;
+        }
+
+
+        if (
+          file.size >
+          25 * 1024 * 1024
+        ) {
+
+          alert(
+            "Image must not exceed 25MB."
+          );
+
+          this.value = "";
+
+          return;
+
+        }
+
+
+        const reader =
+          new FileReader();
+
+
+        reader.onload =
+          function (event) {
+
+            selectedImage =
+              event.target.result;
+
+            imagePreview.src =
+              selectedImage;
+
+            imagePreviewWrap.hidden =
+              false;
+
+          };
+
+
+        reader.readAsDataURL(file);
+
+      }
+    );
+
+
+    /* =========================================================
+       UPDATE STATS
+    ========================================================= */
+
+    function updateStats() {
+
+
+      /* TOTAL PRODUCTS */
+
+      document.getElementById(
+        "totalProducts"
+      ).textContent =
+        products.length;
+
+
+      /* ACTIVE */
+
+      document.getElementById(
+        "activeProducts"
+      ).textContent =
+        products.filter(
+          function (product) {
+
+            return (
+              product.status === "Active"
+            );
+
+          }
+        ).length;
+
+
+      /* OUT OF STOCK */
+
+      document.getElementById(
+        "outOfStockProducts"
+      ).textContent =
+        products.filter(
+          function (product) {
+
+            return (
+              product.status ===
+              "Out of Stock"
+            );
+
+          }
+        ).length;
+
+
+      /* CATEGORIES */
+
+      const categories =
+        new Set(
+          products.map(
+            function (product) {
+
+              return product.category;
+
+            }
+          )
+        );
+
+
+      document.getElementById(
+        "totalCategories"
+      ).textContent =
+        categories.size;
+
+    }
+
+
+    /* =========================================================
+       RENDER PRODUCTS
+    ========================================================= */
+
+    function renderProducts() {
+
+
+      const search =
+        searchInput.value
+          .toLowerCase()
+          .trim();
+
+
+      const selectedCategory =
+        categoryFilter.value;
+
+
+      const selectedStatus =
+        statusFilter.value;
+
+
+      /* FILTER PRODUCTS */
+
+      const filteredProducts =
+        products.filter(
+          function (product) {
+
+
+            const matchesSearch =
+              product.name
+                .toLowerCase()
+                .includes(search) ||
+
+              product.category
+                .toLowerCase()
+                .includes(search);
+
+
+            const matchesCategory =
+              selectedCategory === "all" ||
+              product.category ===
+                selectedCategory;
+
+
+            const matchesStatus =
+              selectedStatus === "all" ||
+              product.status ===
+                selectedStatus;
+
+
+            return (
+              matchesSearch &&
+              matchesCategory &&
+              matchesStatus
+            );
+
+          }
+        );
+
+
+      /* EMPTY */
+
+      if (
+        filteredProducts.length === 0
+      ) {
+
+        tableBody.innerHTML = `
+          <tr>
+
+            <td
+              colspan="8"
+              class="empty-row"
+            >
+              No products found.
+            </td>
+
+          </tr>
+        `;
+
+        updateStats();
+
+        return;
+
+      }
+
+
+      /* PRODUCT ROWS */
+
+      tableBody.innerHTML =
+        filteredProducts
+          .map(
+            function (product) {
+
+
+              const statusClass =
+                product.status === "Active"
+                  ? "status-active"
+                  : "status-out";
+
+
+              return `
+                <tr>
+
+
+                  <!-- IMAGE -->
+
+                  <td>
+
+                    <img
+                      src="${product.image}"
+                      alt="${product.name}"
+                      class="product-image"
+                    >
+
+                  </td>
+
+
+                  <!-- NAME -->
+
+                  <td>
+
+                    <strong>
+                      ${product.name}
+                    </strong>
+
+                  </td>
+
+
+                  <!-- CATEGORY -->
+
+                  <td>
+
+                    <span
+                      class="category-badge"
+                    >
+                      ${product.category}
+                    </span>
+
+                  </td>
+
+
+                  <!-- PRICE -->
+
+                  <td>
+                    ${formatPeso(
+                      product.price
+                    )}
+                  </td>
+
+
+                  <!-- STOCK -->
+
+                  <td>
+                    ${product.stock}
+                  </td>
+
+
+                  <!-- STATUS -->
+
+                  <td>
+
+                    <span
+                      class="status-badge ${statusClass}"
+                    >
+                      ${product.status}
+                    </span>
+
+                  </td>
+
+
+                  <!-- UPDATED -->
+
+                  <td>
+                    ${product.updated}
+                  </td>
+
+
+                  <!-- ACTIONS -->
+
+                  <td class="action-cell">
+
+                    <div
+                      class="product-action-menu"
+                    >
+
+
+                      <!-- THREE DOT BUTTON -->
+
+                      <button
+                        type="button"
+                        class="more-btn"
+                        aria-label="Product options"
+                      >
+                        •••
+                      </button>
+
+
+                      <!-- ACTION DROPDOWN -->
+
+                      <div
+                        class="action-dropdown"
+                      >
+
+
+                        <!-- ACTIVE -->
+
+                        <button
+                          type="button"
+                          class="status-option"
+                          data-product-id="${product.id}"
+                          data-status="Active"
+                        >
+                          Active
+                        </button>
+
+
+                        <!-- OUT OF STOCK -->
+
+                        <button
+                          type="button"
+                          class="status-option"
+                          data-product-id="${product.id}"
+                          data-status="Out of Stock"
+                        >
+                          Out of Stock
+                        </button>
+
+
+                        <!-- DIVIDER -->
+
+                        <div
+                          class="action-divider"
+                        ></div>
+
+
+                        <!-- DELETE -->
+
+                        <button
+                          type="button"
+                          class="delete-option"
+                          data-product-id="${product.id}"
+                        >
+                          Delete
+                        </button>
+
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+              `;
+
+            }
+          )
+          .join("");
+
+
+      updateStats();
+
+    }
+
+
+    /* =========================================================
+       THREE DOT ACTION MENU
+    ========================================================= */
+
+    tableBody.addEventListener(
+      "click",
+      function (event) {
+
+
+        /* =====================================================
+           THREE DOT BUTTON
+        ===================================================== */
+
+        const moreButton =
+          event.target.closest(
+            ".more-btn"
+          );
+
+
+        if (moreButton) {
+
+          event.stopPropagation();
+
+
+          const currentMenu =
+            moreButton
+              .closest(
+                ".product-action-menu"
+              )
+              .querySelector(
+                ".action-dropdown"
+              );
+
+
+          /* CLOSE OTHER MENUS */
+
+          document
+            .querySelectorAll(
+              ".action-dropdown.open"
+            )
+            .forEach(
+              function (menu) {
+
+                if (
+                  menu !== currentMenu
+                ) {
+
+                  menu.classList.remove(
+                    "open"
+                  );
+
+                }
+
+              }
+            );
+
+
+          /* TOGGLE CURRENT MENU */
+
+          currentMenu.classList.toggle(
+            "open"
+          );
+
+
+          return;
+
+        }
+
+
+        /* =====================================================
+           ACTIVE / OUT OF STOCK
+        ===================================================== */
+
+        const statusOption =
+          event.target.closest(
+            ".status-option"
+          );
+
+
+        if (statusOption) {
+
+          event.stopPropagation();
+
+
+          const productId =
+            Number(
+              statusOption.dataset
+                .productId
+            );
+
+
+          const selectedStatus =
+            statusOption.dataset.status;
+
+
+          const product =
+            products.find(
+              function (item) {
+
+                return (
+                  item.id ===
+                  productId
+                );
+
+              }
+            );
+
+
+          if (!product) {
+            return;
+          }
+
+
+          /*
+            IMPORTANT:
+
+            Active / Out of Stock
+            changes STATUS ONLY.
+
+            Product is NOT removed.
+          */
+
+          product.status =
+            selectedStatus;
+
+
+          /* UPDATE DATE */
+
+          product.updated =
+            new Date()
+              .toLocaleDateString(
+                "en-US"
+              );
+
+
+          /* CLOSE MENU */
+
+          document
+            .querySelectorAll(
+              ".action-dropdown.open"
+            )
+            .forEach(
+              function (menu) {
+
+                menu.classList.remove(
+                  "open"
+                );
+
+              }
+            );
+
+
+          /* REFRESH TABLE */
+
+          renderProducts();
+
+
+          return;
+
+        }
+
+
+        /* =====================================================
+           DELETE PRODUCT
+        ===================================================== */
+
+        const deleteOption =
+          event.target.closest(
+            ".delete-option"
+          );
+
+
+        if (deleteOption) {
+
+          event.stopPropagation();
+
+
+          const productId =
+            Number(
+              deleteOption.dataset
+                .productId
+            );
+
+
+          const product =
+            products.find(
+              function (item) {
+
+                return (
+                  item.id ===
+                  productId
+                );
+
+              }
+            );
+
+
+          if (!product) {
+            return;
+          }
+
+
+          /* CONFIRM FIRST */
+
+          const confirmed =
+            window.confirm(
+              `Are you sure you want to delete "${product.name}"?`
+            );
+
+
+          if (!confirmed) {
+
+            return;
+
+          }
+
+
+          /* FIND PRODUCT */
+
+          const productIndex =
+            products.findIndex(
+              function (item) {
+
+                return (
+                  item.id ===
+                  productId
+                );
+
+              }
+            );
+
+
+          if (
+            productIndex === -1
+          ) {
+
+            return;
+
+          }
+
+
+          /* DELETE PRODUCT */
+
+          products.splice(
+            productIndex,
+            1
+          );
+
+
+          /* CLOSE MENU */
+
+          document
+            .querySelectorAll(
+              ".action-dropdown.open"
+            )
+            .forEach(
+              function (menu) {
+
+                menu.classList.remove(
+                  "open"
+                );
+
+              }
+            );
+
+
+          /* REFRESH TABLE */
+
+          renderProducts();
+
+
+          return;
+
+        }
+
+      }
+    );
+
+
+    /* =========================================================
+       CLOSE ACTION MENU WHEN CLICKING OUTSIDE
+    ========================================================= */
+
+    document.addEventListener(
+      "click",
+      function () {
+
+        document
+          .querySelectorAll(
+            ".action-dropdown.open"
+          )
+          .forEach(
+            function (menu) {
+
+              menu.classList.remove(
+                "open"
+              );
+
+            }
+          );
+
+      }
+    );
+
+
+    /* =========================================================
+       ADD PRODUCT
+    ========================================================= */
+
+    form.addEventListener(
+      "submit",
+      function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+          document
+            .getElementById(
+              "productName"
+            )
+            .value
+            .trim();
+
+
+        const category =
+          document
+            .getElementById(
+              "productCategory"
+            )
+            .value;
+
+
+        const description =
+          document
+            .getElementById(
+              "productDescription"
+            )
+            .value
+            .trim();
+
+
+        const price =
+          Number(
+            document
+              .getElementById(
+                "productPrice"
+              )
+              .value
+          );
+
+
+        const stock =
+          Number(
+            document
+              .getElementById(
+                "productStock"
+              )
+              .value
+          );
+
+
+        const status =
+          document
+            .getElementById(
+              "productStatus"
+            )
+            .value;
+
+
+        const today =
+          new Date()
+            .toLocaleDateString(
+              "en-US"
+            );
+
+
+        /* ADD PRODUCT */
+
+        products.push({
+
+          id: Date.now(),
+
+          name: name,
+
+          category: category,
+
+          description: description,
+
+          price: price,
+
+          stock: stock,
+
+          status: status,
+
+          image:
+            selectedImage ||
+            "images/ifc_crafts.jpg",
+
+          updated: today
+
+        });
+
+
+        renderProducts();
+
+        closeModal();
+
+      }
+    );
+
+
+    /* =========================================================
+       FILTERS
+    ========================================================= */
+
+    searchInput.addEventListener(
+      "input",
+      renderProducts
+    );
+
+
+    categoryFilter.addEventListener(
+      "change",
+      renderProducts
+    );
+
+
+    statusFilter.addEventListener(
+      "change",
+      renderProducts
+    );
+
+
+    /* =========================================================
+       ESCAPE KEY
+    ========================================================= */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key !== "Escape"
+        ) {
+
+          return;
+
+        }
+
+
+        /* CLOSE MODAL */
+
+        if (
+          modal.classList.contains(
+            "open"
+          )
+        ) {
+
+          closeModal();
+
+        }
+
+
+        /* CLOSE ACTION MENUS */
+
+        document
+          .querySelectorAll(
+            ".action-dropdown.open"
+          )
+          .forEach(
+            function (dropdown) {
+
+              dropdown.classList.remove(
+                "open"
+              );
+
+            }
+          );
+
+      }
+    );
+
+
+    /* =========================================================
+       INITIAL RENDER
+    ========================================================= */
+
+    renderProducts();
+
+  </script>
+
+</body>
+
+</html>

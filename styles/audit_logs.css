@@ -1,0 +1,946 @@
+/* ===============================================================
+   IFC CRAFTS — AUDIT LOGS
+================================================================ */
+
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --text: #222222;
+  --muted: #777777;
+  --line: #dddddd;
+  --soft: #f5f5f5;
+}
+
+
+/* ===============================================================
+   RESET
+================================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100%;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  background: #ffffff;
+  color: var(--text);
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ===============================================================
+   TOPBAR
+================================================================ */
+
+.topbar {
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: #111111;
+  color: #ffffff;
+}
+
+.brand {
+  width: 220px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+}
+
+.nav-logo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.brand-name {
+  color: #ffffff;
+
+  font-family: Georgia, serif;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.topbar-actions {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.icon-btn {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #ffffff;
+}
+
+.icon-dot {
+  position: absolute;
+
+  top: 6px;
+  right: 7px;
+
+  width: 7px;
+  height: 7px;
+
+  border: 1px solid #111111;
+  border-radius: 50%;
+
+  background: #df5b5b;
+}
+
+.profile-chip {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1.5px solid #ffffff;
+  border-radius: 50%;
+}
+
+
+/* ===============================================================
+   SHELL
+================================================================ */
+
+.shell {
+  display: flex;
+  align-items: flex-start;
+
+  min-height: calc(100vh - 64px);
+}
+
+
+/* ===============================================================
+   SIDEBAR
+================================================================ */
+
+.sidebar {
+  position: sticky;
+  top: 64px;
+
+  width: 220px;
+  min-height: calc(100vh - 64px);
+
+  flex-shrink: 0;
+
+  padding: 20px 14px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #dddddd;
+}
+
+.sidenav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.sidenav-link {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  color: #1c1c1c;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.sidenav-link:hover {
+  background: #eeeeee;
+}
+
+.sidenav-link.active {
+  background: #111111;
+  color: #ffffff;
+}
+
+
+/* ===============================================================
+   MAIN
+================================================================ */
+
+.main {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 26px 30px 40px;
+}
+
+
+/* ===============================================================
+   PAGE HEADER
+================================================================ */
+
+.page-header {
+  width: 100%;
+
+  margin-bottom: 14px;
+
+  padding: 14px 18px;
+
+  border: 2px solid #111111;
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  line-height: 1.05;
+}
+
+.page-header p {
+  margin: 4px 0 0;
+
+  color: #777777;
+
+  font-size: 0.72rem;
+}
+
+
+/* ===============================================================
+   SUMMARY CARDS
+================================================================ */
+
+.audit-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 14px;
+}
+
+.audit-stat-card {
+  min-width: 0;
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 15px 17px;
+
+  border: 2px solid #111111;
+  border-radius: 14px;
+
+  background: #ffffff;
+}
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1.5px solid #111111;
+  border-radius: 50%;
+}
+
+.audit-stat-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.audit-stat-card span {
+  color: #666666;
+
+  font-size: 0.63rem;
+  font-weight: 700;
+}
+
+.audit-stat-card strong {
+  color: #111111;
+
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+
+/* ===============================================================
+   TOOLBAR
+================================================================ */
+
+.audit-toolbar {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 1fr)
+    180px
+    200px
+    175px;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+
+  padding: 12px 14px;
+
+  border: 1.5px solid #111111;
+  border-radius: 10px;
+
+  background: #ffffff;
+}
+
+.search-field {
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 11px;
+
+  border: 1px solid #999999;
+  border-radius: 6px;
+
+  background: #ffffff;
+}
+
+.search-field svg {
+  flex-shrink: 0;
+
+  color: #777777;
+}
+
+.search-field input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #444444;
+
+  font-size: 0.65rem;
+}
+
+.search-field input::placeholder {
+  color: #aaaaaa;
+}
+
+
+/* ===============================================================
+   FILTER SELECT
+================================================================ */
+
+.filter-select {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 42px 0 13px;
+
+  border: 1px solid #999999;
+  border-radius: 6px;
+
+  outline: none;
+
+  background-color: #ffffff;
+  color: #555555;
+
+  font-size: 0.65rem;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' fill='none' stroke='%23444' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  background-repeat: no-repeat;
+
+  /* Arrow is intentionally slightly inside */
+  background-position: right 18px center;
+
+  background-size: 11px 7px;
+}
+
+.date-filter {
+  width: 100%;
+  height: 38px;
+
+  padding: 0 12px;
+
+  border: 1px solid #999999;
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #555555;
+
+  font-size: 0.65rem;
+}
+
+
+/* ===============================================================
+   TABLE CARD
+================================================================ */
+
+.audit-table-card {
+  width: 100%;
+
+  border: 2px solid #111111;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  /*
+    Important:
+    We don't use overflow:hidden here because it can clip
+    future dropdown menus / action menus.
+  */
+}
+
+.table-heading {
+  min-height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 12px 16px;
+
+  border-bottom: 1px solid #cccccc;
+}
+
+.table-heading h2 {
+  margin: 0;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.table-heading p {
+  margin: 3px 0 0;
+
+  color: #999999;
+
+  font-size: 0.56rem;
+}
+
+.export-btn {
+  height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 17px;
+
+  border: 1.5px solid #111111;
+  border-radius: 6px;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+
+/* ===============================================================
+   TABLE
+================================================================ */
+
+.table-wrapper {
+  width: 100%;
+
+  /*
+    Desktop table itself won't have that annoying vertical scroll.
+    Horizontal scroll only appears if screen becomes too small.
+  */
+
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.audit-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+.audit-table th {
+  padding: 12px 14px;
+
+  border-bottom: 1px solid #cccccc;
+
+  color: #333333;
+
+  font-size: 0.59rem;
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+.audit-table td {
+  padding: 13px 14px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  color: #666666;
+
+  font-size: 0.58rem;
+
+  vertical-align: middle;
+}
+
+.audit-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* TABLE COLUMN WIDTHS */
+
+.audit-table th:nth-child(1) {
+  width: 145px;
+}
+
+.audit-table th:nth-child(2) {
+  width: 175px;
+}
+
+.audit-table th:nth-child(3) {
+  width: 115px;
+}
+
+.audit-table th:nth-child(4) {
+  width: 145px;
+}
+
+.audit-table th:nth-child(6) {
+  width: 125px;
+}
+
+
+/* ===============================================================
+   USER CELL
+================================================================ */
+
+.user-cell {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.user-avatar {
+  width: 31px;
+  height: 31px;
+
+  flex: 0 0 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #111111;
+  border-radius: 50%;
+}
+
+.user-cell > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.user-cell strong {
+  overflow: hidden;
+
+  color: #333333;
+
+  font-size: 0.59rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-cell small {
+  color: #999999;
+
+  font-size: 0.5rem;
+}
+
+
+/* ===============================================================
+   ACTION BADGES
+================================================================ */
+
+.action-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 66px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: #eeeeee;
+  color: #444444;
+
+  font-size: 0.51rem;
+  font-weight: 700;
+}
+
+.action-badge.login {
+  background: #eeeeee;
+  color: #333333;
+}
+
+.action-badge.logout {
+  background: #e6e6e6;
+  color: #555555;
+}
+
+.action-badge.create {
+  background: #222222;
+  color: #ffffff;
+}
+
+.action-badge.update {
+  background: #666666;
+  color: #ffffff;
+}
+
+.action-badge.status {
+  background: #888888;
+  color: #ffffff;
+}
+
+.action-badge.delete {
+  background: #f6e5e5;
+  color: #8c2727;
+}
+
+
+/* ===============================================================
+   OTHER TABLE CELLS
+================================================================ */
+
+.date-cell,
+.ip-cell {
+  color: #888888 !important;
+
+  white-space: nowrap;
+}
+
+.description-cell {
+  line-height: 1.45;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ===============================================================
+   EMPTY STATE
+================================================================ */
+
+.empty-table-row td {
+  padding: 0 !important;
+}
+
+.empty-state {
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #aaaaaa;
+}
+
+.empty-state svg {
+  color: #999999;
+}
+
+.empty-state strong {
+  color: #555555;
+
+  font-size: 0.7rem;
+}
+
+.empty-state span {
+  color: #999999;
+
+  font-size: 0.55rem;
+}
+
+
+/* ===============================================================
+   TABLE FOOTER
+================================================================ */
+
+.table-footer {
+  min-height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 10px 15px;
+
+  border-top: 1px solid #dddddd;
+}
+
+.table-footer > span {
+  color: #888888;
+
+  font-size: 0.56rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.page-btn,
+.page-number {
+  height: 29px;
+
+  padding: 0 10px;
+
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+
+  background: #ffffff;
+  color: #555555;
+
+  font-size: 0.53rem;
+  font-weight: 600;
+}
+
+.page-number {
+  min-width: 29px;
+
+  padding: 0;
+}
+
+.page-number.active {
+  border-color: #111111;
+
+  background: #111111;
+  color: #ffffff;
+}
+
+.page-btn:disabled {
+  color: #bbbbbb;
+
+  background: #f7f7f7;
+
+  cursor: not-allowed;
+}
+
+
+/* ===============================================================
+   RESPONSIVE
+================================================================ */
+
+@media (max-width: 1200px) {
+
+  .audit-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .audit-toolbar {
+    grid-template-columns:
+      minmax(240px, 1fr)
+      1fr
+      1fr;
+  }
+
+  .date-filter {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 190px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .audit-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-field {
+    grid-column: 1 / -1;
+  }
+
+  .date-filter {
+    grid-column: auto;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .audit-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .search-field,
+  .date-filter {
+    grid-column: auto;
+  }
+
+  .table-heading,
+  .table-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .export-btn {
+    width: 100%;
+  }
+
+}

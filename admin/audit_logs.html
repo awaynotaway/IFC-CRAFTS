@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IFC Crafts — Audit Logs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles/audit_logs.css">
+</head>
+
+<body>
+
+  <!-- ==================== TOPBAR ==================== -->
+
+  <header class="topbar">
+
+    <div class="brand">
+
+      <div class="brand-mark">
+        <img
+          src="images/ifc_crafts.jpg"
+          alt="IFC Crafts"
+          class="nav-logo"
+        >
+      </div>
+
+      <span class="brand-name">
+        IFC CRAFTS
+      </span>
+
+    </div>
+
+
+    <div class="topbar-actions">
+
+      <button
+        type="button"
+        class="icon-btn"
+        onclick="window.location.href='notifications.html'"
+        aria-label="Notifications"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+          <path d="M10 21h4"/>
+        </svg>
+
+        <span class="icon-dot"></span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="profile-chip"
+      >
+
+        <span class="avatar">
+
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+
+        </span>
+
+        <span>Admin</span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== PAGE SHELL ==================== -->
+
+  <div class="shell">
+
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+      <nav class="sidenav">
+
+
+        <!-- DASHBOARD -->
+
+        <a href="index.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+          </svg>
+
+          <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a href="orders.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 2h12v20H6z"></path>
+            <path d="M9 6h6"></path>
+            <path d="M9 10h6"></path>
+            <path d="M9 14h4"></path>
+          </svg>
+
+          <span>Orders</span>
+
+        </a>
+
+
+        <!-- PRODUCTS & SERVICES -->
+
+        <a href="products_services.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
+
+          <span>Products &amp; Services</span>
+
+        </a>
+
+
+        <!-- USERS -->
+
+        <a href="users.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+
+          <span>Users</span>
+
+        </a>
+
+
+        <!-- MESSAGES -->
+
+        <a href="messages.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
+            <path d="M8 12h.01"></path>
+            <path d="M12 12h.01"></path>
+            <path d="M16 12h.01"></path>
+          </svg>
+
+          <span>Messages</span>
+
+        </a>
+
+
+        <!-- NOTIFICATIONS -->
+
+        <a href="notifications.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+
+          <span>Notifications</span>
+
+        </a>
+
+
+        <!-- REVIEWS -->
+
+        <a href="reviews.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
+          </svg>
+
+          <span>Reviews</span>
+
+        </a>
+
+
+        <!-- REPORTS -->
+
+        <a href="reports.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19V5"></path>
+            <path d="M4 5h16l-2 4 2 4H4"></path>
+          </svg>
+
+          <span>Reports</span>
+
+        </a>
+
+
+        <!-- AUDIT LOGS -->
+
+        <a href="audit_logs.html" class="sidenav-link active">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 3h18v18H3z"></path>
+            <path d="M7 7h10"></path>
+            <path d="M7 11h10"></path>
+            <path d="M7 15h6"></path>
+          </svg>
+
+          <span>Audit Logs</span>
+
+        </a>
+
+
+        <!-- SETTINGS -->
+
+        <a href="settings.html" class="sidenav-link">
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+          </svg>
+
+          <span>Settings</span>
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main class="main">
+
+
+      <!-- ==================== PAGE HEADER ==================== -->
+
+      <section class="page-header">
+
+        <div>
+          <h1>AUDIT LOGS</h1>
+          <p>Track administrator activities and important changes made in the system.</p>
+        </div>
+
+      </section>
+
+
+      <!-- ==================== SUMMARY CARDS ==================== -->
+
+      <section class="audit-stats">
+
+        <article class="audit-stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M3 3h18v18H3z"></path>
+              <path d="M7 7h10"></path>
+              <path d="M7 11h10"></path>
+              <path d="M7 15h6"></path>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>Total Logs</span>
+            <strong id="totalLogs">0</strong>
+          </div>
+
+        </article>
+
+
+        <article class="audit-stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 7v5l3 2"></path>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>Today</span>
+            <strong id="todayLogs">0</strong>
+          </div>
+
+        </article>
+
+
+        <article class="audit-stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>Admin Actions</span>
+            <strong id="adminActions">0</strong>
+          </div>
+
+        </article>
+
+
+        <article class="audit-stat-card">
+
+          <div class="stat-icon">
+
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M12 3v18"></path>
+              <path d="M3 12h18"></path>
+            </svg>
+
+          </div>
+
+          <div>
+            <span>System Changes</span>
+            <strong id="systemChanges">0</strong>
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <!-- ==================== FILTERS ==================== -->
+
+      <section class="audit-toolbar">
+
+        <div class="search-field">
+
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
+
+          <input
+            type="text"
+            id="auditSearch"
+            placeholder="Search audit logs..."
+          >
+
+        </div>
+
+
+        <select
+          id="actionFilter"
+          class="filter-select"
+        >
+          <option value="all">All Actions</option>
+          <option value="login">Login</option>
+          <option value="logout">Logout</option>
+          <option value="create">Create</option>
+          <option value="update">Update</option>
+          <option value="delete">Delete</option>
+          <option value="status">Status Change</option>
+        </select>
+
+
+        <select
+          id="moduleFilter"
+          class="filter-select"
+        >
+          <option value="all">All Modules</option>
+          <option value="orders">Orders</option>
+          <option value="products">Products & Services</option>
+          <option value="users">Users</option>
+          <option value="reviews">Reviews</option>
+          <option value="settings">Settings</option>
+          <option value="authentication">Authentication</option>
+        </select>
+
+
+        <input
+          type="date"
+          id="dateFilter"
+          class="date-filter"
+        >
+
+      </section>
+
+
+      <!-- ==================== AUDIT TABLE ==================== -->
+
+      <section class="audit-table-card">
+
+        <div class="table-heading">
+
+          <div>
+            <h2>Activity History</h2>
+            <p>System and administrator activity records.</p>
+          </div>
+
+          <button
+            type="button"
+            class="export-btn"
+            id="exportAuditBtn"
+          >
+
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 3v12"></path>
+              <path d="m7 10 5 5 5-5"></path>
+              <path d="M5 21h14"></path>
+            </svg>
+
+            Export
+
+          </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+          <table class="audit-table">
+
+            <thead>
+
+              <tr>
+                <th>Date &amp; Time</th>
+                <th>Admin / User</th>
+                <th>Action</th>
+                <th>Module</th>
+                <th>Description</th>
+                <th>IP Address</th>
+              </tr>
+
+            </thead>
+
+            <tbody id="auditTableBody">
+
+              <tr class="empty-table-row">
+
+                <td colspan="6">
+
+                  <div class="empty-state">
+
+                    <svg
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M3 3h18v18H3z"></path>
+                      <path d="M7 7h10"></path>
+                      <path d="M7 11h10"></path>
+                      <path d="M7 15h6"></path>
+                    </svg>
+
+                    <strong>No audit logs yet</strong>
+
+                    <span>
+                      System activities will appear here.
+                    </span>
+
+                  </div>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+        <!-- ==================== TABLE FOOTER ==================== -->
+
+        <div class="table-footer">
+
+          <span id="resultCount">
+            Showing 0 logs
+          </span>
+
+          <div class="pagination">
+
+            <button
+              type="button"
+              class="page-btn"
+              disabled
+            >
+              Previous
+            </button>
+
+            <button
+              type="button"
+              class="page-number active"
+            >
+              1
+            </button>
+
+            <button
+              type="button"
+              class="page-btn"
+              disabled
+            >
+              Next
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script>
+
+    /* ==========================================================
+       FRONTEND PLACEHOLDER
+
+       Backend team can replace this array with API/database data.
+    ========================================================== */
+
+    const auditLogs = [];
+
+
+    /* ==========================================================
+       ELEMENTS
+    ========================================================== */
+
+    const auditTableBody =
+      document.getElementById("auditTableBody");
+
+    const auditSearch =
+      document.getElementById("auditSearch");
+
+    const actionFilter =
+      document.getElementById("actionFilter");
+
+    const moduleFilter =
+      document.getElementById("moduleFilter");
+
+    const dateFilter =
+      document.getElementById("dateFilter");
+
+    const resultCount =
+      document.getElementById("resultCount");
+
+
+    /* ==========================================================
+       FORMAT DATE
+    ========================================================== */
+
+    function formatDateTime(value) {
+
+      if (!value) {
+        return "—";
+      }
+
+      const date =
+        new Date(value);
+
+      return date.toLocaleString(
+        "en-PH",
+        {
+          month: "2-digit",
+          day: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit"
+        }
+      );
+
+    }
+
+
+    /* ==========================================================
+       ACTION CLASS
+    ========================================================== */
+
+    function getActionClass(action) {
+
+      const normalized =
+        String(action || "")
+          .toLowerCase();
+
+      if (normalized.includes("delete")) {
+        return "delete";
+      }
+
+      if (normalized.includes("create")) {
+        return "create";
+      }
+
+      if (normalized.includes("update")) {
+        return "update";
+      }
+
+      if (normalized.includes("login")) {
+        return "login";
+      }
+
+      if (normalized.includes("logout")) {
+        return "logout";
+      }
+
+      if (normalized.includes("status")) {
+        return "status";
+      }
+
+      return "default";
+
+    }
+
+
+    /* ==========================================================
+       FILTER AUDIT LOGS
+    ========================================================== */
+
+    function getFilteredLogs() {
+
+      const search =
+        auditSearch.value
+          .trim()
+          .toLowerCase();
+
+      const action =
+        actionFilter.value;
+
+      const module =
+        moduleFilter.value;
+
+      const selectedDate =
+        dateFilter.value;
+
+
+      return auditLogs.filter(log => {
+
+        const searchableText = [
+          log.user,
+          log.action,
+          log.module,
+          log.description,
+          log.ipAddress
+        ]
+          .join(" ")
+          .toLowerCase();
+
+
+        const matchesSearch =
+          !search ||
+          searchableText.includes(search);
+
+
+        const matchesAction =
+          action === "all" ||
+          String(log.action || "")
+            .toLowerCase()
+            .includes(action);
+
+
+        const matchesModule =
+          module === "all" ||
+          String(log.module || "")
+            .toLowerCase()
+            .includes(module);
+
+
+        let matchesDate = true;
+
+
+        if (selectedDate && log.date) {
+
+          const logDate =
+            new Date(log.date)
+              .toISOString()
+              .split("T")[0];
+
+          matchesDate =
+            logDate === selectedDate;
+
+        }
+
+
+        return (
+          matchesSearch &&
+          matchesAction &&
+          matchesModule &&
+          matchesDate
+        );
+
+      });
+
+    }
+
+
+    /* ==========================================================
+       RENDER TABLE
+    ========================================================== */
+
+    function renderAuditLogs() {
+
+      const filteredLogs =
+        getFilteredLogs();
+
+
+      auditTableBody.innerHTML = "";
+
+
+      if (filteredLogs.length === 0) {
+
+        auditTableBody.innerHTML = `
+
+          <tr class="empty-table-row">
+
+            <td colspan="6">
+
+              <div class="empty-state">
+
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M3 3h18v18H3z"></path>
+                  <path d="M7 7h10"></path>
+                  <path d="M7 11h10"></path>
+                  <path d="M7 15h6"></path>
+                </svg>
+
+                <strong>No audit logs found</strong>
+
+                <span>
+                  No activities match the selected filters.
+                </span>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        `;
+
+
+        resultCount.textContent =
+          "Showing 0 logs";
+
+
+        return;
+
+      }
+
+
+      filteredLogs.forEach(log => {
+
+        const row =
+          document.createElement("tr");
+
+
+        row.innerHTML = `
+
+          <td class="date-cell">
+            ${escapeHTML(formatDateTime(log.date))}
+          </td>
+
+          <td>
+
+            <div class="user-cell">
+
+              <span class="user-avatar">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <circle cx="12" cy="8" r="4"></circle>
+                  <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+                </svg>
+
+              </span>
+
+              <div>
+
+                <strong>
+                  ${escapeHTML(log.user || "Unknown")}
+                </strong>
+
+                <small>
+                  ${escapeHTML(log.role || "User")}
+                </small>
+
+              </div>
+
+            </div>
+
+          </td>
+
+          <td>
+
+            <span
+              class="action-badge ${getActionClass(log.action)}"
+            >
+              ${escapeHTML(log.action || "Activity")}
+            </span>
+
+          </td>
+
+          <td>
+            ${escapeHTML(log.module || "—")}
+          </td>
+
+          <td class="description-cell">
+            ${escapeHTML(log.description || "—")}
+          </td>
+
+          <td class="ip-cell">
+            ${escapeHTML(log.ipAddress || "—")}
+          </td>
+
+        `;
+
+
+        auditTableBody.appendChild(row);
+
+      });
+
+
+      resultCount.textContent =
+        `Showing ${filteredLogs.length} ${
+          filteredLogs.length === 1
+            ? "log"
+            : "logs"
+        }`;
+
+    }
+
+
+    /* ==========================================================
+       STATISTICS
+    ========================================================== */
+
+    function updateStatistics() {
+
+      const today =
+        new Date()
+          .toISOString()
+          .split("T")[0];
+
+
+      const todayLogs =
+        auditLogs.filter(log => {
+
+          if (!log.date) {
+            return false;
+          }
+
+
+          return (
+            new Date(log.date)
+              .toISOString()
+              .split("T")[0] === today
+          );
+
+        }).length;
+
+
+      const adminActions =
+        auditLogs.filter(log =>
+          String(log.role || "")
+            .toLowerCase() === "admin"
+        ).length;
+
+
+      const systemChanges =
+        auditLogs.filter(log => {
+
+          const action =
+            String(log.action || "")
+              .toLowerCase();
+
+
+          return (
+            action.includes("create") ||
+            action.includes("update") ||
+            action.includes("delete") ||
+            action.includes("status")
+          );
+
+        }).length;
+
+
+      document.getElementById(
+        "totalLogs"
+      ).textContent =
+        auditLogs.length;
+
+
+      document.getElementById(
+        "todayLogs"
+      ).textContent =
+        todayLogs;
+
+
+      document.getElementById(
+        "adminActions"
+      ).textContent =
+        adminActions;
+
+
+      document.getElementById(
+        "systemChanges"
+      ).textContent =
+        systemChanges;
+
+    }
+
+
+    /* ==========================================================
+       ESCAPE HTML
+    ========================================================== */
+
+    function escapeHTML(value) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent =
+        String(value ?? "");
+
+      return div.innerHTML;
+
+    }
+
+
+    /* ==========================================================
+       FILTER EVENTS
+    ========================================================== */
+
+    auditSearch.addEventListener(
+      "input",
+      renderAuditLogs
+    );
+
+
+    actionFilter.addEventListener(
+      "change",
+      renderAuditLogs
+    );
+
+
+    moduleFilter.addEventListener(
+      "change",
+      renderAuditLogs
+    );
+
+
+    dateFilter.addEventListener(
+      "change",
+      renderAuditLogs
+    );
+
+
+    /* ==========================================================
+       EXPORT
+    ========================================================== */
+
+    document.getElementById(
+      "exportAuditBtn"
+    ).addEventListener(
+      "click",
+      () => {
+
+        alert(
+          "Audit log export will be connected to the backend."
+        );
+
+      }
+    );
+
+
+    /* ==========================================================
+       INITIALIZE
+    ========================================================== */
+
+    updateStatistics();
+
+    renderAuditLogs();
+
+  </script>
+
+</body>
+</html>
