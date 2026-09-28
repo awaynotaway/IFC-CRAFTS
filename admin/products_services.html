@@ -15,6 +15,7 @@
   >
 
   <link rel="stylesheet" href="styles/products_services.css">
+  <link rel="stylesheet" href="styles/mobile-nav.css">
 </head>
 
 <body>
@@ -22,6 +23,7 @@
   <!-- ==================== TOPBAR ==================== -->
 
   <header class="topbar">
+    <button type="button" class="mobile-menu-button" aria-label="Open navigation" aria-controls="mobileSidebar" aria-expanded="false">☰</button>
 
     <div class="brand">
 
@@ -103,7 +105,7 @@
 
     <!-- ==================== SIDEBAR ==================== -->
 
-    <aside class="sidebar">
+    <aside class="sidebar" id="mobileSidebar">
 
       <nav class="sidenav">
 
@@ -578,6 +580,8 @@
         </select>
 
 
+        <button type="button" class="add-product-btn category-add-btn" id="openAddCategoryBtn"><span>+</span> Add Category</button>
+
         <!-- ADD PRODUCT -->
 
         <button
@@ -925,6 +929,23 @@
   </div>
 
 
+
+  <div class="modal-overlay" id="addCategoryModal">
+    <section class="product-modal category-modal" role="dialog" aria-modal="true" aria-labelledby="addCategoryTitle">
+      <header class="product-modal-header"><h2 id="addCategoryTitle">Add Category</h2><button type="button" class="modal-close-btn" id="closeAddCategoryBtn" aria-label="Close">×</button></header>
+      <form id="addCategoryForm">
+        <div class="form-group"><label for="newCategoryName">Category Name <span>*</span></label><input id="newCategoryName" type="text" maxlength="60" placeholder="e.g. Earrings or Custom Service" required></div>
+        <p class="category-error" id="categoryError" role="alert" hidden></p>
+        <div class="modal-actions"><button type="button" class="cancel-product-btn" id="cancelAddCategoryBtn">Cancel</button><button type="submit" class="save-product-btn">Save Category</button></div>
+      </form>
+      <div class="category-list-section">
+        <h3>Manage Categories</h3>
+        <p>Categories used by products cannot be deleted.</p>
+        <ul id="categoryList" class="category-list"></ul>
+      </div>
+    </section>
+  </div>
+
   <!-- =========================================================
        JAVASCRIPT
   ========================================================== -->
@@ -1198,10 +1219,12 @@
       document.getElementById(
         "totalCategories"
       ).textContent =
-        categories.size;
+        categoryNames.length;
 
     }
 
+
+    function escapeText(value) { const node = document.createElement('span'); node.textContent = String(value ?? ''); return node.innerHTML; }
 
     /* =========================================================
        RENDER PRODUCTS
@@ -1313,7 +1336,7 @@
 
                     <img
                       src="${product.image}"
-                      alt="${product.name}"
+                      alt="${escapeText(product.name)}"
                       class="product-image"
                     >
 
@@ -1325,7 +1348,7 @@
                   <td>
 
                     <strong>
-                      ${product.name}
+                      ${escapeText(product.name)}
                     </strong>
 
                   </td>
@@ -1338,7 +1361,7 @@
                     <span
                       class="category-badge"
                     >
-                      ${product.category}
+                      ${escapeText(product.category)}
                     </span>
 
                   </td>
@@ -1952,6 +1975,87 @@
     );
 
 
+
+    /* Categories are frontend demo data until the backend connects. */
+    const categoryModal = document.getElementById('addCategoryModal');
+    const categoryForm = document.getElementById('addCategoryForm');
+    const categoryName = document.getElementById('newCategoryName');
+    const categoryError = document.getElementById('categoryError');
+    const productCategorySelect = document.getElementById('productCategory');
+    const defaultCategories = [...productCategorySelect.options].map(o => o.value).filter(Boolean);
+    let savedCategories = [];
+    try { savedCategories = JSON.parse(localStorage.getItem('ifcDemoCategories') || '[]'); } catch (_) {}
+    let deletedCategories = [];
+    try { deletedCategories = JSON.parse(localStorage.getItem('ifcDemoDeletedCategories') || '[]'); } catch (_) {}
+    if (!Array.isArray(deletedCategories)) deletedCategories = [];
+    const categoryNames = defaultCategories.filter(name => !deletedCategories.includes(name));
+    if (Array.isArray(savedCategories)) savedCategories.forEach(name => {
+      if (typeof name === 'string' && !deletedCategories.includes(name) && !categoryNames.some(c => c.toLowerCase() === name.toLowerCase())) categoryNames.push(name);
+    });
+    function refreshCategoryOptions() {
+      const filterValue = categoryFilter.value;
+      const productValue = productCategorySelect.value;
+      categoryFilter.replaceChildren(new Option('All Categories', 'all'));
+      productCategorySelect.replaceChildren(new Option('Select Category', ''));
+      categoryNames.forEach(name => {
+        categoryFilter.add(new Option(name, name));
+        productCategorySelect.add(new Option(name, name));
+      });
+      categoryFilter.value = filterValue;
+      productCategorySelect.value = productValue;
+      document.getElementById('totalCategories').textContent = categoryNames.length;
+      renderCategoryList();
+    }
+    function renderCategoryList() {
+      const list = document.getElementById('categoryList');
+      list.replaceChildren();
+      categoryNames.forEach(name => {
+        const inUse = products.some(product => product.category === name);
+        const row = document.createElement('li');
+        const label = document.createElement('span');
+        label.textContent = name;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = 'Delete';
+        button.disabled = inUse;
+        button.title = inUse ? 'This category is used by a product' : `Delete ${name}`;
+        button.setAttribute('aria-label', `Delete ${name}`);
+        button.addEventListener('click', () => {
+          if (products.some(product => product.category === name)) return;
+          if (!window.confirm(`Delete category "${name}"?`)) return;
+          categoryNames.splice(categoryNames.indexOf(name), 1);
+          if (defaultCategories.includes(name) && !deletedCategories.includes(name)) deletedCategories.push(name);
+          try {
+            localStorage.setItem('ifcDemoCategories', JSON.stringify(categoryNames));
+            localStorage.setItem('ifcDemoDeletedCategories', JSON.stringify(deletedCategories));
+          } catch (_) {}
+          refreshCategoryOptions();
+          renderProducts();
+        });
+        row.append(label, button);
+        list.append(row);
+      });
+    }
+    function closeCategoryModal() { categoryModal.classList.remove('open'); categoryForm.reset(); categoryError.hidden = true; if (!modal.classList.contains('open')) document.body.classList.remove('modal-open'); }
+    document.getElementById('openAddCategoryBtn').addEventListener('click', () => { renderCategoryList(); categoryModal.classList.add('open'); document.body.classList.add('modal-open'); categoryName.focus(); });
+    document.getElementById('closeAddCategoryBtn').addEventListener('click', closeCategoryModal);
+    document.getElementById('cancelAddCategoryBtn').addEventListener('click', closeCategoryModal);
+    categoryModal.addEventListener('click', e => { if (e.target === categoryModal) closeCategoryModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && categoryModal.classList.contains('open')) closeCategoryModal(); });
+    categoryForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = categoryName.value.trim().replace(/\s+/g, ' ');
+      if (!name || categoryNames.some(c => c.toLowerCase() === name.toLowerCase())) { categoryError.textContent = 'Please enter a new category name.'; categoryError.hidden = false; return; }
+      categoryNames.push(name);
+      deletedCategories = deletedCategories.filter(c => c !== name);
+      try { localStorage.setItem('ifcDemoCategories', JSON.stringify(categoryNames)); } catch (_) {}
+      try { localStorage.setItem('ifcDemoDeletedCategories', JSON.stringify(deletedCategories)); } catch (_) {}
+      refreshCategoryOptions();
+      productCategorySelect.value = name;
+      closeCategoryModal();
+    });
+    refreshCategoryOptions();
+
     /* =========================================================
        INITIAL RENDER
     ========================================================= */
@@ -1960,6 +2064,8 @@
 
   </script>
 
+  <div class="mobile-nav-backdrop" aria-hidden="true"></div>
+  <script src="mobile-nav.js"></script>
 </body>
 
 </html>
