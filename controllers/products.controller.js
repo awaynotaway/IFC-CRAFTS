@@ -1,4 +1,6 @@
 const db = require("../config/db");
+const fs = require("fs");
+const path = require("path");
 
 const CodeGenerator = require(
     "../services/codeGenerator.service"
@@ -14,13 +16,17 @@ class ProductController {
 
         try {
 
-            const [products] = await db.execute(
-                `
-                SELECT *
-                FROM products
-                ORDER BY created_at DESC
-                `
-            );
+           const [products] = await db.execute(
+    `
+    SELECT
+        p.*,
+        c.category_name
+    FROM products p
+    LEFT JOIN categories c
+        ON c.id = p.category_id
+    ORDER BY p.created_at DESC
+    `
+);
 
             return res.status(200).json({
                 success: true,
@@ -199,7 +205,9 @@ class ProductController {
             } = req.body;
 const [products] = await db.execute(
     `
-    SELECT product_name
+    SELECT
+        product_name,
+        product_image
     FROM products
     WHERE id = ?
     `,
@@ -281,7 +289,40 @@ const [products] = await db.execute(
 
 const productName =
     products[0].product_name;
+    const productImage =
+    products[0].product_image;
 
+    if (
+    productImage &&
+    productImage.startsWith(
+        "/uploads/products/"
+    )
+) {
+
+    const imagePath =
+        path.join(
+            __dirname,
+            "..",
+            productImage.replace(
+                "/uploads/",
+                "uploads/"
+            )
+        );
+
+    if (
+        fs.existsSync(imagePath)
+    ) {
+
+        fs.unlinkSync(imagePath);
+
+        console.log(
+            "Deleted Image:",
+            imagePath
+        );
+
+    }
+
+}
             await db.execute(
                 `
                 DELETE FROM products

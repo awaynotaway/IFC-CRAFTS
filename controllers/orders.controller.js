@@ -516,6 +516,68 @@ async shipOrder(req, res) {
 
 }
 
+async getAdminOrders(req, res) {
+
+    try {
+
+        const [orders] =
+            await db.execute(`
+                SELECT
+                    o.id,
+                    o.order_code,
+
+                    CONCAT(
+                        u.first_name,
+                        ' ',
+                        u.last_name
+                    ) AS customer_name,
+                    u.email,
+                    GROUP_CONCAT(
+                        DISTINCT p.product_name
+                        SEPARATOR ', '
+                    ) AS product_name,
+
+                    SUM(oi.quantity) AS quantity,
+
+
+                    o.total_amount,
+                    o.status,
+                    o.created_at
+
+                FROM orders o
+
+                LEFT JOIN users u
+                    ON u.id = o.user_id
+
+                LEFT JOIN order_items oi
+                    ON oi.order_id = o.id
+
+                LEFT JOIN products p
+                    ON p.id = oi.product_id
+
+                GROUP BY o.id
+
+                ORDER BY o.created_at DESC
+            `);
+
+        return res.status(200).json({
+            success: true,
+            data: orders
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+            success: false,
+            message:
+                "Failed to fetch orders."
+        });
+
+    }
+}
+
 }
 
 module.exports =

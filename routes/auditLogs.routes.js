@@ -25,4 +25,11 @@ router.get(
     AuditLogController.getLogs
 );
 
+router.get(
+    "/export",
+    authenticate,
+    authorize("admin"),
+    AuditLogController.exportLogs
+);
+
 module.exports = router;

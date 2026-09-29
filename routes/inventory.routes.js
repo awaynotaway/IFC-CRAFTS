@@ -26,6 +26,13 @@ router.get(
 );
 
 router.get(
+    "/transactions/:id",
+    authenticate,
+    authorize("admin"),
+    InventoryController.getTransactions
+);
+
+router.get(
     "/low-stock",
     authenticate,
     authorize("admin"),

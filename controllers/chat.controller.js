@@ -108,19 +108,41 @@ class ChatController {
                 req.user.userId;
 
             const [chats] =
-                await db.execute(
-                    `
-                    SELECT *
-                    FROM chats
-                    WHERE customer_id = ?
-                    OR admin_id = ?
-                    ORDER BY updated_at DESC
-                    `,
-                    [
-                        userId,
-                        userId
-                    ]
-                );
+    await db.execute(
+        `
+        SELECT
+            c.id,
+            c.chat_code,
+            c.customer_id,
+            c.admin_id,
+            c.updated_at,
+
+            u.first_name,
+            u.last_name,
+
+            (
+                SELECT message
+                FROM messages m
+                WHERE m.chat_id = c.id
+                ORDER BY m.created_at DESC
+                LIMIT 1
+            ) AS last_message
+
+        FROM chats c
+
+        INNER JOIN users u
+            ON u.id = c.customer_id
+
+        WHERE c.customer_id = ?
+        OR c.admin_id = ?
+
+        ORDER BY c.updated_at DESC
+        `,
+        [
+            userId,
+            userId
+        ]
+    );
 
             return res.status(200).json({
                 success: true,
@@ -152,10 +174,19 @@ class ChatController {
             const [messages] =
                 await db.execute(
                     `
-                    SELECT *
-                    FROM messages
-                    WHERE chat_id = ?
-                    ORDER BY created_at ASC
+                    SELECT
+    m.*,
+    u.first_name,
+    u.last_name
+FROM messages m
+
+INNER JOIN users u
+    ON u.id = m.sender_id
+
+WHERE m.chat_id = ?
+
+ORDER BY m.created_at ASC
+
                     `,
                     [id]
                 );

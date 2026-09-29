@@ -29,4 +29,13 @@ router.get(
     ReportController.getTopProducts
 );
 
+router.get(
+  "/dashboard",
+  ReportController.dashboard
+);
+
+router.get(
+    "/export",
+    ReportController.exportReport
+);
 module.exports = router;

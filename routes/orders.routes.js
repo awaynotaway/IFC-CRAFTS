@@ -34,6 +34,14 @@ router.get(
 );
 
 router.get(
+    "/admin/all",
+    authenticate,
+    authorize("admin"),
+    OrderController.getAdminOrders
+);
+
+
+router.get(
     "/:id",
     authenticate,
     OrderController.getOrderById

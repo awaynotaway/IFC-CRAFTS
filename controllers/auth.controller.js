@@ -262,6 +262,21 @@ const accountId =
 
             }
 
+            if (
+    account.status === "banned"
+) {
+
+    return res.status(403).json({
+
+        success: false,
+
+        message:
+            "Your account has been banned. Please contact the administrator."
+
+    });
+
+}
+
             const token = jwt.sign(
                 {
                     userId: account.user_id,
