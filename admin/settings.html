@@ -14,8 +14,13 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles/settings.css">
+  <link rel="stylesheet" href="styles/admin-common.css">
+  <link rel="stylesheet" href="styles/admin-account.css">
+  <script src="js/admin-account.js" defer></script>
 </head>
 
 <body>
@@ -114,204 +119,145 @@
 
       <nav class="sidenav">
 
-        <a href="index.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Dashboard -->
+        <a href="adminDashboard.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
             <rect x="3" y="14" width="7" height="7"></rect>
             <rect x="14" y="14" width="7" height="7"></rect>
           </svg>
-
           <span>Dashboard</span>
-
         </a>
 
-
+        <!-- Orders -->
         <a href="orders.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2h12v20H6z"></path>
             <path d="M9 6h6"></path>
             <path d="M9 10h6"></path>
             <path d="M9 14h4"></path>
           </svg>
-
           <span>Orders</span>
-
         </a>
 
-
+        <!-- Custom Orders -->
+          <a href="custom_orders.html" class="sidenav-link">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="m14 2 6 6v3"></path>
+              <path d="M8 12h4"></path>
+              <path d="M8 16h2"></path>
+              <path d="m16 20 5-5-2-2-5 5-.5 2.5Z"></path>
+            </svg>
+            <span>Custom Orders</span>
+          </a>
+        <!-- Products & Services -->
         <a href="products_services.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
             <path d="m3.3 7 8.7 5 8.7-5"></path>
             <path d="M12 22V12"></path>
           </svg>
-
           <span>Products &amp; Services</span>
-
         </a>
 
-
+        <!-- Users -->
         <a href="users.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-
           <span>Users</span>
-
         </a>
 
-
+        <!-- Messages -->
         <a href="messages.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
             <path d="M8 12h.01"></path>
             <path d="M12 12h.01"></path>
             <path d="M16 12h.01"></path>
           </svg>
-
           <span>Messages</span>
-
         </a>
 
-
+        <!-- Notifications -->
         <a href="notifications.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-
           <span>Notifications</span>
-
         </a>
 
-
+        <!-- Reviews -->
         <a href="reviews.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
           </svg>
-
           <span>Reviews</span>
-
         </a>
 
-
+        <!-- Reports -->
         <a href="reports.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19V5"></path>
             <path d="M4 5h16l-2 4 2 4H4"></path>
           </svg>
-
           <span>Reports</span>
-
         </a>
 
-
+        <!-- Audit Logs -->
         <a href="audit_logs.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 3h18v18H3z"></path>
             <path d="M7 7h10"></path>
             <path d="M7 11h10"></path>
             <path d="M7 15h6"></path>
           </svg>
-
           <span>Audit Logs</span>
-
         </a>
 
-
-        <a href="settings.html" class="sidenav-link active">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+        <!-- Settings -->
+        <a href="settings.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
           </svg>
-
           <span>Settings</span>
-
         </a>
 
       </nav>
-
     </aside>
 
 
@@ -1363,7 +1309,7 @@
 
               <div>
                 <h2>Account Management</h2>
-                <p>Create administrator accounts and manage access for registered users.</p>
+                <p>Create administrator accounts and manage administrator access.</p>
               </div>
 
             </div>
@@ -1536,456 +1482,6 @@
 
 
                   <tbody id="adminAccountsTable">
-
-                    <tr data-account-status="active">
-
-                      <td>
-
-                        <div class="account-person">
-
-                          <div class="account-avatar">
-                            A
-                          </div>
-
-                          <div>
-                            <strong>Admin</strong>
-                            <span>Current Account</span>
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                      <td>admin@ifccrafts.com</td>
-
-                      <td>Administrator</td>
-
-                      <td>
-                        <span class="account-status active">
-                          Active
-                        </span>
-                      </td>
-
-                      <td class="action-column">
-
-                        <div class="account-action-menu">
-
-                          <button
-                            type="button"
-                            class="view-account-btn"
-                            data-name="Admin"
-                            data-email="admin@ifccrafts.com"
-                            data-role="Administrator"
-                            data-status="Active"
-                          >
-                            View Details
-                          </button>
-
-                          <button
-                            type="button"
-                            class="toggle-account-btn danger-action"
-                            data-account-type="Admin"
-                          >
-                            Disable Account
-                          </button>
-
-                        </div>
-
-                        </div>
-
-                      </td>
-
-                    </tr>
-
-
-                    <tr data-account-status="active">
-
-                      <td>
-
-                        <div class="account-person">
-
-                          <div class="account-avatar">
-                            J
-                          </div>
-
-                          <div>
-                            <strong>Juan Dela Cruz</strong>
-                            <span>Administrator</span>
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                      <td>juan@ifccrafts.com</td>
-
-                      <td>Administrator</td>
-
-                      <td>
-                        <span class="account-status active">
-                          Active
-                        </span>
-                      </td>
-
-                      <td class="action-column">
-
-                        <div class="account-actions">
-
-                          <button
-                            type="button"
-                            class="table-action-btn"
-                            data-menu-button
-                            aria-label="Admin actions"
-                          >
-                            ⋮
-                          </button>
-
-                          <div class="account-action-menu">
-
-                            <button
-                              type="button"
-                              class="view-account-btn"
-                              data-name="Juan Dela Cruz"
-                              data-email="juan@ifccrafts.com"
-                              data-role="Administrator"
-                              data-status="Active"
-                            >
-                              View Details
-                            </button>
-
-                            <button
-                              type="button"
-                              class="toggle-account-btn danger-action"
-                              data-account-type="Admin"
-                            >
-                              Disable Account
-                            </button>
-
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                    </tr>
-
-                  </tbody>
-
-                </table>
-
-              </div>
-
-            </div>
-
-
-            <div class="account-section-divider"></div>
-
-
-            <!-- USER ACCOUNTS -->
-
-            <div class="account-management-section">
-
-              <div class="management-section-header">
-
-                <div>
-
-                  <h3>
-                    User Accounts
-                  </h3>
-
-                  <p>
-                    Manage access for registered customer accounts.
-                  </p>
-
-                </div>
-
-              </div>
-
-
-              <div class="user-account-toolbar">
-
-                <div class="account-search">
-
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                  >
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <path d="m20 20-3.5-3.5"></path>
-                  </svg>
-
-                  <input
-                    type="text"
-                    id="userAccountSearch"
-                    placeholder="Search user name or email..."
-                  >
-
-                </div>
-
-
-                <select
-                  class="account-filter"
-                  id="userStatusFilter"
-                >
-
-                  <option value="all">
-                    All Status
-                  </option>
-
-                  <option value="active">
-                    Active
-                  </option>
-
-                  <option value="disabled">
-                    Disabled
-                  </option>
-
-                </select>
-
-              </div>
-
-
-              <div class="account-table-wrapper">
-
-                <table class="account-table">
-
-                  <thead>
-
-                    <tr>
-                      <th>User</th>
-                      <th>Email Address</th>
-                      <th>Contact No.</th>
-                      <th>Status</th>
-                      <th class="action-column">Actions</th>
-                    </tr>
-
-                  </thead>
-
-
-                  <tbody id="userAccountsTable">
-
-                    <tr data-account-status="active">
-
-                      <td>
-
-                        <div class="account-person">
-
-                          <div class="account-avatar">
-                            M
-                          </div>
-
-                          <div>
-                            <strong>Maria Santos</strong>
-                            <span>Customer</span>
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                      <td>maria@email.com</td>
-
-                      <td>09123456789</td>
-
-                      <td>
-                        <span class="account-status active">
-                          Active
-                        </span>
-                      </td>
-
-                      <td class="action-column">
-
-                        <div class="account-actions">
-
-                          <button
-                            type="button"
-                            class="table-action-btn"
-                            data-menu-button
-                            aria-label="User actions"
-                          >
-                            ⋮
-                          </button>
-
-                          <div class="account-action-menu">
-
-                            <button
-                              type="button"
-                              class="view-account-btn"
-                              data-name="Maria Santos"
-                              data-email="maria@email.com"
-                              data-contact="09123456789"
-                              data-role="Customer"
-                              data-status="Active"
-                            >
-                              View Details
-                            </button>
-
-                            <button
-                              type="button"
-                              class="toggle-account-btn danger-action"
-                              data-account-type="User"
-                            >
-                              Disable Account
-                            </button>
-
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                    </tr>
-
-
-                    <tr data-account-status="active">
-
-                      <td>
-
-                        <div class="account-person">
-
-                          <div class="account-avatar">
-                            J
-                          </div>
-
-                          <div>
-                            <strong>John Reyes</strong>
-                            <span>Customer</span>
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                      <td>john@email.com</td>
-
-                      <td>09987654321</td>
-
-                      <td>
-                        <span class="account-status active">
-                          Active
-                        </span>
-                      </td>
-
-                      <td class="action-column">
-
-                        <div class="account-actions">
-
-                          <button
-                            type="button"
-                            class="table-action-btn"
-                            data-menu-button
-                            aria-label="User actions"
-                          >
-                            ⋮
-                          </button>
-
-                          <div class="account-action-menu">
-
-                            <button
-                              type="button"
-                              class="view-account-btn"
-                              data-name="John Reyes"
-                              data-email="john@email.com"
-                              data-contact="09987654321"
-                              data-role="Customer"
-                              data-status="Active"
-                            >
-                              View Details
-                            </button>
-
-                            <button
-                              type="button"
-                              class="toggle-account-btn danger-action"
-                              data-account-type="User"
-                            >
-                              Disable Account
-                            </button>
-
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                    </tr>
-
-
-                    <tr data-account-status="disabled">
-
-                      <td>
-
-                        <div class="account-person">
-
-                          <div class="account-avatar">
-                            A
-                          </div>
-
-                          <div>
-                            <strong>Anna Cruz</strong>
-                            <span>Customer</span>
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                      <td>anna@email.com</td>
-
-                      <td>09111222333</td>
-
-                      <td>
-                        <span class="account-status disabled">
-                          Disabled
-                        </span>
-                      </td>
-
-                      <td class="action-column">
-
-                        <div class="account-actions">
-
-                          <button
-                            type="button"
-                            class="table-action-btn"
-                            data-menu-button
-                            aria-label="User actions"
-                          >
-                            ⋮
-                          </button>
-
-                          <div class="account-action-menu">
-
-                            <button
-                              type="button"
-                              class="view-account-btn"
-                              data-name="Anna Cruz"
-                              data-email="anna@email.com"
-                              data-contact="09111222333"
-                              data-role="Customer"
-                              data-status="Disabled"
-                            >
-                              View Details
-                            </button>
-
-                            <button
-                              type="button"
-                              class="toggle-account-btn enable-action"
-                              data-account-type="User"
-                            >
-                              Enable Account
-                            </button>
-
-                          </div>
-
-                        </div>
-
-                      </td>
-
-                    </tr>
-
                   </tbody>
 
                 </table>
@@ -2122,44 +1618,87 @@
 
           </div>
 
+<div class="form-group">
 
-          <div class="form-group">
+  <label for="newAdminUsername">
+    Username
+  </label>
 
-            <label for="newAdminPassword">
-              Password
-            </label>
+  <input
+    type="text"
+    id="newAdminUsername"
+    placeholder="Enter username"
+    required
+  >
 
-            <input
-              type="password"
-              id="newAdminPassword"
-              placeholder="Enter password"
-              minlength="8"
-              required
-            >
+</div>
 
-          </div>
+<div class="form-group">
+
+  <label for="newAdminContact">
+    Contact Number
+  </label>
+
+  <input
+    type="text"
+    id="newAdminContact"
+    placeholder="09XXXXXXXXX"
+    required
+  >
+
+</div>
+
+<div class="form-group">
+
+  <label for="newAdminPassword">
+    Password
+  </label>
+
+  <input
+    type="password"
+    id="newAdminPassword"
+    placeholder="Enter password"
+    minlength="8"
+    required
+  >
+
+</div>
+
+<div class="form-group">
+
+  <label for="newAdminConfirmPassword">
+    Confirm Password
+  </label>
+
+  <input
+    type="password"
+    id="newAdminConfirmPassword"
+    placeholder="Confirm password"
+    minlength="8"
+    required
+  >
+
+</div>
 
 
-          <div class="form-group">
+<div class="form-group full-width">
 
-            <label for="newAdminConfirmPassword">
-              Confirm Password
-            </label>
+  <label for="newAdminAddress">
+    Address
+  </label>
 
-            <input
-              type="password"
-              id="newAdminConfirmPassword"
-              placeholder="Confirm password"
-              minlength="8"
-              required
-            >
+  <textarea
+    id="newAdminAddress"
+    rows="3"
+    placeholder="Enter address"
+    required
+  ></textarea>
 
-          </div>
+</div>
 
-        </div>
+</div>
 
-
-        <div class="account-modal-footer">
+ <div class="account-modal-footer">
 
           <button
             type="button"
@@ -2178,6 +1717,11 @@
 
         </div>
 
+        
+        </div>
+
+
+       
       </form>
 
     </div>
@@ -2720,6 +2264,18 @@
       event.preventDefault();
 
 
+      const contactNumber =
+    document
+        .getElementById("newAdminContact")
+        .value
+        .trim();
+
+const address =
+    document
+        .getElementById("newAdminAddress")
+        .value
+        .trim();
+
       const name =
         document
           .getElementById("newAdminName")
@@ -2731,6 +2287,12 @@
           .getElementById("newAdminEmail")
           .value
           .trim();
+          
+          const username =
+    document
+        .getElementById("newAdminUsername")
+        .value
+        .trim();
 
       const password =
         document
@@ -2763,106 +2325,72 @@
       }
 
 
-      const safeName =
-        escapeHTML(name);
-
-      const safeEmail =
-        escapeHTML(email);
-
-      const firstLetter =
-        safeName.charAt(0).toUpperCase();
+      
 
 
-      const row =
-        document.createElement("tr");
+    const token =
+    localStorage.getItem(
+        "token"
+    );
 
-      row.dataset.accountStatus =
-        "active";
+fetch(
+    "http://localhost:5000/api/settings/admins",
+    {
+        method: "POST",
 
+        headers: {
+            "Content-Type":
+                "application/json",
 
-      row.innerHTML = `
-        <td>
-          <div class="account-person">
+            Authorization:
+                `Bearer ${token}`
+        },
 
-            <div class="account-avatar">
-              ${firstLetter}
-            </div>
+        body: JSON.stringify({
 
-            <div>
-              <strong>${safeName}</strong>
-              <span>Administrator</span>
-            </div>
+    fullName: name,
 
-          </div>
-        </td>
+    email: email,
 
-        <td>${safeEmail}</td>
+    username: username,
 
-        <td>Administrator</td>
+    contactNumber: contactNumber,
 
-        <td>
-          <span class="account-status active">
-            Active
-          </span>
-        </td>
+    address: address,
 
-        <td class="action-column">
+    password: password
 
-          <div class="account-actions">
+})
+    }
+)
+.then(response =>
+    response.json()
+)
+.then(result => {
 
-            <button
-              type="button"
-              class="table-action-btn"
-              data-menu-button
-            >
-              ⋮
-            </button>
+    if (
+        !result.success
+    ) {
 
-            <div class="account-action-menu">
+        throw new Error(
+            result.message
+        );
 
-              <button
-                type="button"
-                class="view-account-btn"
-                data-name="${safeName}"
-                data-email="${safeEmail}"
-                data-role="Administrator"
-                data-status="Active"
-              >
-                View Details
-              </button>
-
-              <button
-                type="button"
-                class="toggle-account-btn danger-action"
-                data-account-type="Admin"
-              >
-                Disable Account
-              </button>
-
-            </div>
-
-          </div>
-
-        </td>
-      `;
+    }
 
 
-      adminAccountsTable.appendChild(row);
+    loadAdminAccounts();
 
+})
+.catch(error => {
 
-      /*
-        BACKEND:
-        Replace frontend-only creation with POST request.
+    console.error(error);
 
-        Example data:
-        {
-          name,
-          email,
-          password,
-          role: "admin"
-        }
-      */
+    showToast(
+        error.message
+    );
 
+});
 
       closeCreateAdminModal();
 
@@ -3214,77 +2742,10 @@
       */
 
 
-      filterUserAccounts();
 
       closeAccountStatusModal();
 
     });
-
-
-    /* ==========================================================
-       USER SEARCH + FILTER
-    ========================================================== */
-
-    const userAccountSearch =
-      document.getElementById("userAccountSearch");
-
-    const userStatusFilter =
-      document.getElementById("userStatusFilter");
-
-    const userAccountsTable =
-      document.getElementById("userAccountsTable");
-
-
-    function filterUserAccounts() {
-
-      const searchValue =
-        userAccountSearch
-          .value
-          .toLowerCase()
-          .trim();
-
-      const statusValue =
-        userStatusFilter.value;
-
-
-      userAccountsTable
-        .querySelectorAll("tr")
-        .forEach(row => {
-
-          const text =
-            row.textContent.toLowerCase();
-
-          const status =
-            row.dataset.accountStatus;
-
-
-          const matchesSearch =
-            text.includes(searchValue);
-
-          const matchesStatus =
-            statusValue === "all" ||
-            status === statusValue;
-
-
-          row.style.display =
-            matchesSearch && matchesStatus
-              ? ""
-              : "none";
-
-        });
-
-    }
-
-
-    userAccountSearch.addEventListener(
-      "input",
-      filterUserAccounts
-    );
-
-    userStatusFilter.addEventListener(
-      "change",
-      filterUserAccounts
-    );
 
 
     /* ==========================================================
@@ -3325,15 +2786,14 @@
 
 
     confirmLogoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
 
-      closeLogoutModal();
+      sessionStorage.removeItem("token");
+      sessionStorage.removeItem("user");
 
-      showToast(
-        "Logout is ready for backend integration."
-      );
-
+      window.location.replace("../login.html");
     });
-
 
     /* ==========================================================
        CLOSE MODALS ON BACKDROP
@@ -3375,6 +2835,139 @@
       logoutModal.classList.remove("show");
 
     });
+
+    async function loadAdminAccounts() {
+
+    try {
+
+        const token =
+            localStorage.getItem(
+                "token"
+            );
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/settings/admins",
+                {
+                    headers: {
+                        Authorization:
+                            `Bearer ${token}`
+                    }
+                }
+            );
+
+        const result =
+            await response.json();
+
+        if (!result.success) {
+
+            throw new Error(
+                result.message
+            );
+
+        }
+
+        renderAdminAccounts(
+            result.data
+        );
+
+    }
+
+    catch(error) {
+
+        console.error(
+            error
+        );
+
+    }
+
+}
+
+function renderAdminAccounts(
+    admins
+) {
+
+    adminAccountsTable.innerHTML =
+        admins.map(admin => {
+
+            const firstLetter =
+                admin.name
+                    .charAt(0)
+                    .toUpperCase();
+
+            return `
+
+                <tr>
+
+                    <td>
+
+                        <div class="account-person">
+
+                            <div class="account-avatar">
+                                ${firstLetter}
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    ${admin.name}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                    <td>
+                        ${admin.email}
+                    </td>
+
+                    <td>
+                        Administrator
+                    </td>
+
+                    <td>
+
+                        <span
+                            class="account-status ${admin.status}"
+                        >
+                            ${admin.status}
+                        </span>
+
+                    </td>
+
+                    <td class="action-column">
+
+                        <div class="account-actions">
+
+                            <button
+                                type="button"
+                                class="table-action-btn"
+                            >
+                                ⋮
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }).join("");
+
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        loadAdminAccounts();
+
+    }
+);
 
   </script>
 

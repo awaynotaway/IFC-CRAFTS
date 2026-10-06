@@ -1,0 +1,525 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.cdnfonts.com/css/the-seasons");
+
+/* SHARED ADMIN DESIGN */
+
+body {
+  --black: #000000;
+  --ink: #0f172a;
+  --text: #0f172a;
+  --text-muted: #64748b;
+
+  --border: #cbd5e1;
+  --border-soft: #e2e8f0;
+
+  --grey-light: #f8fafc;
+  --grey-pale: #f1f5f9;
+
+  --radius-lg: 12px;
+  --radius-md: 8px;
+
+  font-family: "Inter", Arial, sans-serif;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+body :is(button, input, select, textarea) {
+  font-family: inherit;
+}
+
+/* HEADER */
+
+body .topbar {
+  height: 78px;
+  padding: 0 5%;
+  background: #000000;
+  color: #ffffff;
+  border-bottom: 1px solid #111827;
+}
+
+body .brand {
+  width: auto;
+  gap: 12px;
+}
+
+body .brand-mark {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body .nav-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+body .brand-name {
+  font-family: "The Seasons", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+body .topbar-actions {
+  gap: 12px;
+}
+
+body .icon-btn {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  color: #ffffff;
+  background: transparent;
+}
+
+body .icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body .profile-chip {
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body .profile-chip:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* SIDEBAR */
+
+body .shell {
+  min-height: calc(100vh - 78px);
+}
+
+body .sidebar {
+  width: 260px;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  top: 78px;
+  min-height: calc(100vh - 78px);
+}
+
+body .sidenav {
+  gap: 5px;
+}
+
+body .sidenav-link {
+  padding: 12px 18px;
+  gap: 15px;
+  min-height: 44px;
+  border-radius: 8px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+body .sidenav-link:hover {
+  background: #f1f5f9;
+  color: #000000;
+}
+
+body .sidenav-link.active,
+body .sidenav-link[aria-current="page"] {
+  background: #000000;
+  color: #ffffff;
+}
+
+body .sidenav-link[href="custom_orders.html"] {
+  width: auto;
+  margin-left: 36px;
+  padding: 10px 14px;
+  min-height: auto;
+  font-size: 13px;
+}
+
+/* MAIN CONTENT */
+
+body .main {
+  padding: 40px;
+  min-width: 0;
+  background: #ffffff;
+}
+
+/* PAGE HEADER */
+
+body .page-header {
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+body .page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+body .page-header p {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* PANELS ACROSS ALL ADMIN PAGES */
+
+body :is(
+  .panel,
+  .transaction-panel,
+  .products-panel,
+  .users-panel,
+  .report-card,
+  .audit-table-card,
+  .notification-panel,
+  .reviews-panel,
+  .settings-panel,
+  .conversation-panel,
+  .chat-panel
+) {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+/* STAT CARDS */
+
+body :is(
+  .stat-card,
+  .user-stat-card,
+  .report-stat-card,
+  .audit-stat-card,
+  .notification-stat
+) {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: none;
+  padding: 20px;
+}
+
+body .stat-card {
+  height: auto;
+  min-height: 130px;
+}
+
+body :is(.stat-card, .notification-stat).active {
+  background: #f1f5f9;
+  border-color: #000000;
+  color: #0f172a;
+}
+
+body :is(.stat-card, .notification-stat):hover {
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body :is(.stat-icon, .user-stat-icon, .report-stat-icon) {
+  background: #f1f5f9;
+  color: #334155;
+  border: 0;
+  border-radius: 50%;
+}
+
+body :is(.stat-value, .stat-number) {
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+body .stat-label {
+  color: #64748b;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+/* PANEL HEADINGS */
+
+body :is(
+  .panel-header,
+  .panel-heading,
+  .table-heading,
+  .notification-panel-header,
+  .reviews-panel-header,
+  .conversation-panel-header
+) {
+  border-color: #e2e8f0;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+body :is(.text-link, .view-all-link) {
+  color: #000000;
+  font-weight: 600;
+}
+
+body :is(.text-link, .view-all-link):hover {
+  text-decoration: underline;
+}
+
+/* PRIMARY BUTTONS */
+
+body :is(
+  .quick-btn.primary,
+  .add-product-btn,
+  .save-product-btn,
+  .primary-btn,
+  .primary-modal-btn,
+  .update-user-btn,
+  .export-btn,
+  .mark-all-btn,
+  .claim-request-btn,
+  .modal-claim-btn
+) {
+  color: #ffffff;
+  background: #000000;
+  border: 1px solid #000000;
+  border-radius: 30px;
+}
+
+body :is(
+  .quick-btn.primary,
+  .add-product-btn,
+  .save-product-btn,
+  .primary-btn,
+  .primary-modal-btn,
+  .update-user-btn,
+  .export-btn,
+  .mark-all-btn,
+  .claim-request-btn,
+  .modal-claim-btn
+):hover {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+/* SECONDARY BUTTONS */
+
+body :is(
+  .quick-btn:not(.primary),
+  .secondary-btn,
+  .secondary-modal-btn,
+  .cancel-product-btn,
+  .close-user-btn,
+  .close-details-btn
+) {
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+}
+
+/* INPUTS */
+
+body :is(
+  .form-group input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  .form-group select,
+  .form-group textarea,
+  .admin-input,
+  .admin-select,
+  .report-select,
+  .filter-select,
+  .modal-select
+) {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+body .form-group label {
+  color: #475569;
+  font-weight: 600;
+}
+
+body :is(
+  .search-field,
+  .select-field,
+  .date-field,
+  .date-filter,
+  .notification-search,
+  .conversation-search,
+  .account-search
+) {
+  border-color: #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+/* MODALS */
+
+body :is(
+  .product-modal,
+  .user-modal,
+  .review-modal,
+  .notification-modal,
+  .account-modal,
+  .confirm-modal,
+  .request-modal,
+  .proof-modal
+) {
+  border-color: #e2e8f0;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.2);
+}
+
+body :is(
+  th,
+  td,
+  .modal-header,
+  .modal-footer,
+  .product-modal-header,
+  .user-modal-header,
+  .user-modal-footer,
+  .account-modal-header,
+  .account-modal-footer
+) {
+  border-color: #e2e8f0;
+}
+
+/* TABLES */
+
+body th {
+  background: #f8fafc;
+  color: #475569;
+}
+
+body :is(
+  .table-wrap,
+  .table-wrapper,
+  .report-table-wrap,
+  .account-table-wrapper
+) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* KEYBOARD FOCUS */
+
+body :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #64748b;
+  outline-offset: 3px;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  body .sidebar {
+    width: 220px;
+    padding: 24px 14px;
+  }
+
+  body .main {
+    padding: 28px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+  body .sidebar {
+    display: none;
+  }
+
+  body .main {
+    padding: 20px;
+  }
+
+  body .topbar {
+    padding: 0 20px;
+  }
+
+  body .page-header {
+    padding: 22px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 520px) {
+  body .topbar {
+    height: 70px;
+    padding: 0 14px;
+  }
+
+  body .brand-name {
+    font-size: 1.1rem;
+  }
+
+  body .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  body .topbar-actions {
+    gap: 6px;
+  }
+
+  body .profile-chip {
+    padding: 5px;
+  }
+
+  body .profile-chip > span:last-child {
+    display: none;
+  }
+
+  body .main {
+    padding: 14px;
+  }
+
+  body .page-header {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  body .page-header h1 {
+    font-size: 1.4rem;
+  }
+
+  body .page-header p {
+    font-size: 0.85rem;
+  }
+
+  body :is(
+    .stat-card,
+    .user-stat-card,
+    .report-stat-card,
+    .audit-stat-card,
+    .notification-stat
+  ) {
+    padding: 16px;
+  }
+}
+
+body .sidenav-link.custom-orders-link {
+  width: auto;
+  margin-left: 36px;
+  padding: 10px 14px;
+  min-height: auto;
+  font-size: 13px;
+}
+
+body .sidebar .sidenav a.sidenav-link[href="custom_orders.html"] {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-left: 0;
+  padding: 12px 18px;
+  min-height: 44px;
+  gap: 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}

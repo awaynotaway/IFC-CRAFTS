@@ -13,8 +13,14 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles/reports.css">
+  <link rel="stylesheet" href="styles/admin-common.css">
+  <link rel="stylesheet" href="styles/admin-account.css">
+<script src="js/admin-account.js" defer></script>
+
 </head>
 
 <body>
@@ -108,224 +114,145 @@
       <nav class="sidenav">
 
 
-        <!-- DASHBOARD -->
-
-        <a href="index.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Dashboard -->
+        <a href="adminDashboard.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
             <rect x="3" y="14" width="7" height="7"></rect>
             <rect x="14" y="14" width="7" height="7"></rect>
           </svg>
-
           <span>Dashboard</span>
-
         </a>
 
-
-        <!-- ORDERS -->
-
+        <!-- Orders -->
         <a href="orders.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2h12v20H6z"></path>
             <path d="M9 6h6"></path>
             <path d="M9 10h6"></path>
             <path d="M9 14h4"></path>
           </svg>
-
           <span>Orders</span>
-
         </a>
 
-
-        <!-- PRODUCTS & SERVICES -->
-
+        <!-- Custom Orders -->
+          <a href="custom_orders.html" class="sidenav-link">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="m14 2 6 6v3"></path>
+              <path d="M8 12h4"></path>
+              <path d="M8 16h2"></path>
+              <path d="m16 20 5-5-2-2-5 5-.5 2.5Z"></path>
+            </svg>
+            <span>Custom Orders</span>
+          </a>
+        <!-- Products & Services -->
         <a href="products_services.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
             <path d="m3.3 7 8.7 5 8.7-5"></path>
             <path d="M12 22V12"></path>
           </svg>
-
           <span>Products &amp; Services</span>
-
         </a>
 
-
-        <!-- USERS -->
-
+        <!-- Users -->
         <a href="users.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-
           <span>Users</span>
-
         </a>
 
-
-        <!-- MESSAGES -->
-
+        <!-- Messages -->
         <a href="messages.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
             <path d="M8 12h.01"></path>
             <path d="M12 12h.01"></path>
             <path d="M16 12h.01"></path>
           </svg>
-
           <span>Messages</span>
-
         </a>
 
-
-        <!-- NOTIFICATIONS -->
-
+        <!-- Notifications -->
         <a href="notifications.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-
           <span>Notifications</span>
-
         </a>
 
-
-        <!-- REVIEWS -->
-
+        <!-- Reviews -->
         <a href="reviews.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
           </svg>
-
           <span>Reviews</span>
-
         </a>
 
-
-        <!-- REPORTS -->
-
-        <a href="reports.html" class="sidenav-link active">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Reports -->
+        <a href="reports.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19V5"></path>
             <path d="M4 5h16l-2 4 2 4H4"></path>
           </svg>
-
           <span>Reports</span>
-
         </a>
 
-
-        <!-- AUDIT LOGS -->
-
+        <!-- Audit Logs -->
         <a href="audit_logs.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 3h18v18H3z"></path>
             <path d="M7 7h10"></path>
             <path d="M7 11h10"></path>
             <path d="M7 15h6"></path>
           </svg>
-
           <span>Audit Logs</span>
-
         </a>
 
-
-        <!-- SETTINGS -->
-
+        <!-- Settings -->
         <a href="settings.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
           </svg>
-
           <span>Settings</span>
-
         </a>
 
       </nav>
-
     </aside>
 
 
@@ -390,20 +317,7 @@
         </div>
 
 
-        <div class="filter-group">
-
-          <label for="reportType">
-            Report Type
-          </label>
-
-          <select id="reportType" class="report-select">
-            <option value="all">All Reports</option>
-            <option value="sales">Sales</option>
-            <option value="orders">Orders</option>
-            <option value="products">Products</option>
-          </select>
-
-        </div>
+    
 
 
         <div class="filter-group date-filter">
@@ -777,6 +691,7 @@
                   <th>Category</th>
                   <th>Orders</th>
                   <th>Revenue</th>
+<th>VAT</th>
                 </tr>
 
               </thead>
@@ -784,7 +699,7 @@
               <tbody id="topProductsBody">
 
                 <tr>
-                  <td colspan="4" class="empty-row">
+                  <td colspan="5" class="empty-row">
                     No report data available.
                   </td>
                 </tr>
@@ -819,18 +734,19 @@
               <thead>
 
                 <tr>
-                  <th>Order</th>
-                  <th>Customer</th>
-                  <th>Amount</th>
-                  <th>Date</th>
-                </tr>
+    <th>Order</th>
+    <th>Customer</th>
+    <th>Amount</th>
+    <th>VAT</th>
+    <th>Date</th>
+</tr>
 
               </thead>
 
               <tbody id="recentSalesBody">
 
                 <tr>
-                  <td colspan="4" class="empty-row">
+                  <td colspan="5" class="empty-row">
                     No recent sales available.
                   </td>
                 </tr>
@@ -858,7 +774,7 @@
        Backend team can replace this with database/API data later.
     =============================================================== */
 
-    const reportData = {
+    let reportData = {
 
       totalSales: 0,
 
@@ -876,7 +792,9 @@
 
       topProducts: [],
 
-      recentSales: []
+      recentSales: [],
+
+      salesOverview: []
 
     };
 
@@ -1074,25 +992,30 @@
 
           row.innerHTML = `
 
-            <td>
-              <strong>
-                ${escapeHTML(product.name)}
-              </strong>
-            </td>
+    <td>
+      <strong>
+        ${escapeHTML(product.name)}
+      </strong>
+    </td>
 
-            <td>
-              ${escapeHTML(product.category)}
-            </td>
+    <td>
+      ${escapeHTML(product.category)}
+    </td>
 
-            <td>
-              ${product.orders}
-            </td>
+    <td>
+      ${product.orders}
+    </td>
 
-            <td>
-              ${formatCurrency(product.revenue)}
-            </td>
+    <td>
+      ${formatCurrency(product.revenue)}
+    </td>
 
-          `;
+    <td>
+      ${formatCurrency(product.vat || 0)}
+    </td>
+
+`;
+``
 
 
           tbody.appendChild(row);
@@ -1142,33 +1065,36 @@
 
 
       reportData.recentSales
-        .forEach(sale => {
+.slice(0, 5)
+.forEach(sale => {
 
           const row =
             document.createElement("tr");
 
 
           row.innerHTML = `
+    <td>
+        <strong>
+            ${escapeHTML(sale.order)}
+        </strong>
+    </td>
 
-            <td>
-              <strong>
-                ${escapeHTML(sale.order)}
-              </strong>
-            </td>
+    <td>
+        ${escapeHTML(sale.customer)}
+    </td>
 
-            <td>
-              ${escapeHTML(sale.customer)}
-            </td>
+    <td>
+        ${formatCurrency(sale.amount)}
+    </td>
 
-            <td>
-              ${formatCurrency(sale.amount)}
-            </td>
+    <td>
+        ${formatCurrency(sale.vat || 0)}
+    </td>
 
-            <td>
-              ${escapeHTML(sale.date)}
-            </td>
-
-          `;
+    <td>
+        ${escapeHTML(sale.date)}
+    </td>
+`;
 
 
           tbody.appendChild(row);
@@ -1183,36 +1109,55 @@
     =============================================================== */
 
     document.getElementById(
-      "reportPeriod"
-    ).addEventListener(
-      "change",
-      event => {
+  "reportPeriod"
+).addEventListener(
+  "change",
+  event => {
 
-        const dateInput =
-          document.getElementById(
-            "reportDate"
-          );
+    const period =
+      event.target.value;
 
+    const dateInput =
+      document.getElementById(
+        "reportDate"
+      );
 
-        dateInput.disabled =
-          event.target.value !== "custom";
+    dateInput.disabled =
+      period !== "custom";
 
-      }
+    loadReportData(
+      period,
+      dateInput.value
     );
 
+  }
+);
 
-    document.getElementById(
-      "reportType"
-    ).addEventListener(
-      "change",
-      () => {
+document.getElementById(
+  "reportDate"
+).addEventListener(
+  "change",
+  event => {
 
-        /*
-          Backend/API filtering can be connected here.
-        */
+    const period =
+      document.getElementById(
+        "reportPeriod"
+      ).value;
 
-      }
-    );
+    if (period === "custom") {
+
+      loadReportData(
+        "custom",
+        event.target.value
+      );
+
+    }
+
+  }
+);
+
+
+   
 
 
     /* ===============================================================
@@ -1220,22 +1165,30 @@
     =============================================================== */
 
     document.getElementById(
-      "exportReportBtn"
-    ).addEventListener(
-      "click",
-      () => {
+  "exportReportBtn"
+).addEventListener(
+  "click",
+  () => {
 
-        /*
-          Backend can replace this with:
-          PDF / CSV / Excel report generation.
-        */
+    const period =
+      document.getElementById(
+        "reportPeriod"
+      ).value;
 
-        alert(
-          "Report export will be connected to the backend."
-        );
+    const date =
+      document.getElementById(
+        "reportDate"
+      ).value;
 
-      }
+    window.open(
+      `http://localhost:5000/api/reports/export?period=${period}&date=${date}`,
+      "_blank"
     );
+
+  }
+);
+
+
 
 
     /* ===============================================================
@@ -1256,24 +1209,171 @@
 
     }
 
+async function loadReportData(
+    period = "month",
+    date = ""
+)
+ {
 
-    /* ===============================================================
-       INITIALIZE
-    =============================================================== */
+  try {
 
-    document.getElementById(
-      "reportDate"
-    ).disabled = true;
+    const response = await fetch(
+  `http://localhost:5000/api/reports/dashboard?period=${period}&date=${date}`
+);
 
+    const result = await response.json();
+
+    console.log(result);
+
+    reportData.totalSales =
+      Number(result.data.totalSales);
+
+    reportData.totalOrders =
+      result.data.totalOrders;
+
+    reportData.completedOrders =
+      result.data.completedOrders;
+
+    reportData.topProducts =
+      result.data.topProducts || [];
+
+    reportData.recentSales =
+      result.data.recentSales || [];
+
+      reportData.salesOverview =
+    result.data.salesOverview || [];
+
+    reportData.statuses = {
+      pending: 0,
+      processing: 0,
+      shipped: 0,
+      completed: 0,
+      cancelled: 0
+    };
+
+    result.data.statuses.forEach(status => {
+
+      if (status.status === "received") {
+
+        reportData.statuses.completed =
+          status.total;
+
+      } else if (
+        reportData.statuses[status.status]
+        !== undefined
+      ) {
+
+        reportData.statuses[status.status] =
+          status.total;
+
+      }
+
+    });
 
     renderSummary();
-
     renderOrderStatus();
-
     renderTopProducts();
-
     renderRecentSales();
+    renderSalesChart();
 
+  } catch (error) {
+
+    console.error(
+      "Failed to load report data:",
+      error
+    );
+
+  }
+
+}
+
+function renderSalesChart() {
+
+    const chart =
+        document.getElementById(
+            "salesChart"
+        );
+
+    chart.innerHTML = "";
+
+    if (
+        reportData.salesOverview.length === 0
+    ) {
+        return;
+    }
+
+    const maxSales =
+        Math.max(
+            ...reportData.salesOverview.map(
+                item =>
+                    Number(
+                        item.totalSales
+                    )
+            )
+        );
+
+    reportData.salesOverview.forEach(item => {
+
+        const percentage =
+            maxSales > 0
+                ? (
+                    Number(item.totalSales)
+                    / maxSales
+                  ) * 100
+                : 0;
+
+        const column =
+            document.createElement("div");
+
+        column.className =
+            "bar-column";
+
+        column.innerHTML = `
+            <div
+                class="bar"
+                style="
+                    height:${percentage}%;
+                "
+            ></div>
+
+            <span>
+                ${
+                    new Date(
+                        item.salesDate
+                    )
+                    .toLocaleDateString(
+                        "en-US",
+                        {
+                            month:
+                                "short",
+                            day:
+                                "numeric"
+                        }
+                    )
+                }
+            </span>
+        `;
+
+        chart.appendChild(
+            column
+        );
+
+    });
+
+}
+   /* ===============================================================
+   INITIALIZE
+=============================================================== */
+
+document.getElementById(
+  "reportDate"
+).disabled = true;
+
+loadReportData();
+
+renderTopProducts();
+
+renderRecentSales();
   </script>
 
 </body>

@@ -13,8 +13,11 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles/users.css">
+  <link rel="stylesheet" href="styles/admin-common.css">
 </head>
 
 <body>
@@ -108,254 +111,145 @@
       <nav class="sidenav">
 
 
-        <!-- DASHBOARD -->
-
-        <a
-          href="index.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Dashboard -->
+        <a href="adminDashboard.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
             <rect x="3" y="14" width="7" height="7"></rect>
             <rect x="14" y="14" width="7" height="7"></rect>
           </svg>
-
           <span>Dashboard</span>
-
         </a>
 
-
-        <!-- ORDERS -->
-
-        <a
-          href="orders.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Orders -->
+        <a href="orders.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2h12v20H6z"></path>
             <path d="M9 6h6"></path>
             <path d="M9 10h6"></path>
             <path d="M9 14h4"></path>
           </svg>
-
           <span>Orders</span>
-
         </a>
 
-
-        <!-- PRODUCTS & SERVICES -->
-
-        <a
-          href="products_services.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Custom Orders -->
+          <a href="custom_orders.html" class="sidenav-link">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="m14 2 6 6v3"></path>
+              <path d="M8 12h4"></path>
+              <path d="M8 16h2"></path>
+              <path d="m16 20 5-5-2-2-5 5-.5 2.5Z"></path>
+            </svg>
+            <span>Custom Orders</span>
+          </a>
+        <!-- Products & Services -->
+        <a href="products_services.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
             <path d="m3.3 7 8.7 5 8.7-5"></path>
             <path d="M12 22V12"></path>
           </svg>
-
           <span>Products &amp; Services</span>
-
         </a>
 
-
-        <!-- USERS -->
-
-        <a
-          href="users.html"
-          class="sidenav-link active"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Users -->
+        <a href="users.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-
           <span>Users</span>
-
         </a>
 
-
-        <!-- MESSAGES -->
-
-        <a
-          href="messages.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Messages -->
+        <a href="messages.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
             <path d="M8 12h.01"></path>
             <path d="M12 12h.01"></path>
             <path d="M16 12h.01"></path>
           </svg>
-
           <span>Messages</span>
-
         </a>
 
-
-        <!-- NOTIFICATIONS -->
-
-        <a
-          href="notifications.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Notifications -->
+        <a href="notifications.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-
           <span>Notifications</span>
-
         </a>
 
-
-        <!-- REVIEWS -->
-
-        <a
-          href="reviews.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Reviews -->
+        <a href="reviews.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
           </svg>
-
           <span>Reviews</span>
-
         </a>
 
-
-        <!-- REPORTS -->
-
-        <a
-          href="reports.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Reports -->
+        <a href="reports.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19V5"></path>
             <path d="M4 5h16l-2 4 2 4H4"></path>
           </svg>
-
           <span>Reports</span>
-
         </a>
 
-
-        <!-- AUDIT LOGS -->
-
-        <a
-          href="audit_logs.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Audit Logs -->
+        <a href="audit_logs.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 3h18v18H3z"></path>
             <path d="M7 7h10"></path>
             <path d="M7 11h10"></path>
             <path d="M7 15h6"></path>
           </svg>
-
           <span>Audit Logs</span>
-
         </a>
 
-
-        <!-- SETTINGS -->
-
-        <a
-          href="settings.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+        <!-- Settings -->
+        <a href="settings.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
           </svg>
-
           <span>Settings</span>
-
         </a>
 
       </nav>
-
     </aside>
 
 
@@ -450,39 +344,7 @@
         </button>
 
 
-        <!-- INACTIVE -->
-
-        <button
-          type="button"
-          class="user-stat-card"
-          data-user-filter="inactive"
-        >
-
-          <span class="user-stat-icon">
-
-            <svg
-              viewBox="0 0 24 24"
-              width="27"
-              height="27"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-            >
-              <circle cx="12" cy="6" r="3"/>
-              <path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
-              <rect x="5" y="15" width="14" height="7" rx="2"/>
-              <path d="m10 17 4 3"/>
-              <path d="m14 17-4 3"/>
-            </svg>
-
-          </span>
-
-          <span class="user-stat-content">
-            <span class="user-stat-label">Inactive</span>
-            <strong id="statInactiveUsers">0</strong>
-          </span>
-
-        </button>
+       
 
 
         <!-- BANNED -->
@@ -596,8 +458,13 @@
           class="select-field"
         >
           <option value="all">All Roles</option>
-          <option value="Customer">Customer</option>
-          <option value="Admin">Admin</option>
+          <option value="customer">
+  Customer
+</option>
+
+<option value="admin">
+  Admin
+</option>
         </select>
 
 
@@ -608,9 +475,14 @@
           class="select-field"
         >
           <option value="all">Status</option>
-          <option value="Active">Active</option>
-          <option value="Inactive">Inactive</option>
-          <option value="Banned">Banned</option>
+          <option value="active">
+  Active
+</option>
+
+
+<option value="banned">
+  Banned
+</option>
         </select>
 
 
@@ -804,9 +676,14 @@
             id="modalStatusSelect"
             class="modal-select"
           >
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-            <option value="Banned">Banned</option>
+            <option value="active">
+  Active
+</option>
+
+
+<option value="banned">
+  Banned
+</option>
           </select>
 
           <button
@@ -848,55 +725,9 @@
        Replace this array with database/API data later.
     =============================================================== */
 
-    const users = [
-      {
-        id: 1,
-        name: "Maria Santos",
-        username: "@maria_santos",
-        email: "maria@gmail.com",
-        contact: "09567966487",
-        address: "Taytay, Rizal",
-        role: "Customer",
-        status: "Active",
-        joined: "08/15/2025"
-      },
+    let users = [];
 
-      {
-        id: 2,
-        name: "Angela Cruz",
-        username: "@angela_cruz",
-        email: "angela@gmail.com",
-        contact: "09171234567",
-        address: "Antipolo, Rizal",
-        role: "Customer",
-        status: "Inactive",
-        joined: "08/20/2025"
-      },
-
-      {
-        id: 3,
-        name: "IFC Administrator",
-        username: "@ifc_admin",
-        email: "admin@ifccrafts.com",
-        contact: "09181234567",
-        address: "Rizal",
-        role: "Admin",
-        status: "Active",
-        joined: "07/10/2025"
-      },
-
-      {
-        id: 4,
-        name: "Sample User",
-        username: "@sample_user",
-        email: "sample@gmail.com",
-        contact: "09991234567",
-        address: "Cainta, Rizal",
-        role: "Customer",
-        status: "Banned",
-        joined: "09/01/2025"
-      }
-    ];
+const API_BASE_URL = "/api";
 
 
     /* ===============================================================
@@ -924,8 +755,6 @@
     const statActiveUsers =
       document.getElementById("statActiveUsers");
 
-    const statInactiveUsers =
-      document.getElementById("statInactiveUsers");
 
     const statBannedUsers =
       document.getElementById("statBannedUsers");
@@ -1006,9 +835,6 @@
         case "active":
           return "status-active";
 
-        case "inactive":
-          return "status-inactive";
-
         case "banned":
           return "status-banned";
 
@@ -1032,7 +858,88 @@
     /* ===============================================================
        STAT COUNTS
     =============================================================== */
+async function loadUsers() {
 
+  try {
+
+    const response =
+      await fetch(
+        `${API_BASE_URL}/users`
+      );
+
+    const result =
+      await response.json();
+
+ if (!response.ok) {
+
+  console.log(
+    await response.text()
+  );
+
+  throw new Error(
+    "Access forbidden."
+  );
+
+}
+
+    users = result.data.map(
+      user => ({
+
+        id:
+          user.id,
+
+        name:
+          `${user.first_name} ${user.last_name}`,
+
+        username:
+          `@${user.user_code.toLowerCase()}`,
+
+        email:
+          user.email,
+
+        contact:
+          user.contact_number,
+
+        address:
+          user.address,
+
+        role:
+          user.role === "admin"
+            ? "Admin"
+            : "Customer",
+
+        status:
+          user.status.charAt(0)
+            .toUpperCase() +
+          user.status.slice(1),
+
+        joined:
+          new Date(
+            user.created_at
+          ).toLocaleDateString(
+            "en-US"
+          ),
+
+        image:
+          user.profile_image
+
+      })
+    );
+
+    updateStats();
+
+    renderUsers();
+
+  } catch (error) {
+
+    console.error(
+      "Users Error:",
+      error
+    );
+
+  }
+
+}
     function updateStats() {
 
       statTotalUsers.textContent =
@@ -1041,11 +948,6 @@
       statActiveUsers.textContent =
         users.filter(
           user => normalize(user.status) === "active"
-        ).length;
-
-      statInactiveUsers.textContent =
-        users.filter(
-          user => normalize(user.status) === "inactive"
         ).length;
 
       statBannedUsers.textContent =
@@ -1367,35 +1269,68 @@
        UPDATE USER STATUS
     =============================================================== */
 
-    updateUserStatusBtn.addEventListener(
-      "click",
-      () => {
+updateUserStatusBtn.addEventListener(
+  "click",
+  async () => {
 
-        const user =
-          users.find(
-            item =>
-              item.id === selectedUserId
-          );
+    try {
 
+      const response =
+        await fetch(
+          `${API_BASE_URL}/users/${selectedUserId}/status`,
+          {
+            method: "PUT",
 
-        if (!user) {
-          return;
-        }
+            headers: {
+              "Content-Type":
+                "application/json",
 
+              Authorization:
+                `Bearer ${localStorage.getItem("token")}`
+            },
 
-        user.status =
-          modalStatusSelect.value;
+            body: JSON.stringify({
 
+              status:
+                modalStatusSelect.value
 
-        modalUserStatus.textContent =
-          user.status;
+            })
 
+          }
+        );
 
-        updateStats();
-        renderUsers();
+      const result =
+        await response.json();
+
+      if (!result.success) {
+
+        throw new Error(
+          result.message
+        );
 
       }
-    );
+
+      await loadUsers();
+
+      closeUserModal();
+
+      alert(
+        "User status updated."
+      );
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(
+        error.message ||
+        "Failed to update user."
+      );
+
+    }
+
+  }
+);
 
 
     /* ===============================================================
@@ -1710,8 +1645,7 @@
        INITIAL RENDER
     =============================================================== */
 
-    updateStats();
-    renderUsers();
+    loadUsers();
 
   </script>
 

@@ -4,29 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>IFC Crafts — Orders</title>
+<title>IFC Crafts — Custom Orders</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <link rel="stylesheet" href="styles/orders.css">
+
   <link rel="stylesheet" href="styles/admin-common.css">
+  <link rel="stylesheet" href="styles/custom_orders.css">
   <link rel="stylesheet" href="styles/admin-account.css">
 <script src="js/admin-account.js" defer></script>
 
-
-<style>
-.orders-retry-btn { margin-top: 12px; padding: 9px 16px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; color: #111827; cursor: pointer; font: inherit; }
-.orders-retry-btn:hover { background: #f1f5f9; }
-.orders-retry-btn:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
-</style>
 </head>
 
-<body>
+<body class="custom-orders-page">
 
   <!-- ==================== TOPBAR ==================== -->
   <header class="topbar">
@@ -122,7 +115,7 @@
         </a>
 
         <!-- Custom Orders -->
-          <a href="custom_orders.html" class="sidenav-link">
+          <a href="custom_orders.html" class="sidenav-link active" aria-current="page">
             <svg
               width="20"
               height="20"
@@ -240,83 +233,68 @@
     <!-- ==================== MAIN ==================== -->
     <main class="main">
 
-      <section class="page-header">
-        <h1>Orders</h1>
-        <p>View and manage customer orders, payments, and order status.</p>
-      </section>
+      <header class="page-header">
+        <div><span class="page-eyebrow">ORDER MANAGEMENT</span>
+        <h1>Custom Orders</h1>
+        <p>Manage custom requests, quotations, and order progress.</p></div>
+      </header>
 
 
       <!-- ==================== STAT CARDS ==================== -->
-      <section class="stat-grid stat-grid-6">
+<section class="stat-grid stat-grid-3">
 
-        <button type="button" class="stat-card active" data-status-filter="all">
-          <div class="stat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M4 6H20V19H4V6Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M8 10H16M8 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="stat-label">Orders</span>
-          <strong class="stat-value" id="statOrders">0</strong>
-        </button>
+  <button
+    type="button"
+    class="stat-card active"
+    data-status-filter="all"
+  >
+    <span class="stat-label">
+      Custom Orders
+    </span>
 
-        <button type="button" class="stat-card" data-status-filter="pending">
-          <div class="stat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M12 7V12L15 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="stat-label">Pending</span>
-          <strong class="stat-value" id="statPending">0</strong>
-        </button>
+    <strong
+      class="stat-value"
+      id="statOrders"
+    >
+      0
+    </strong>
+  </button>
 
-        <button type="button" class="stat-card" data-status-filter="processing">
-          <div class="stat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M8 12H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="stat-label">Processing</span>
-          <strong class="stat-value" id="statProcessing">0</strong>
-        </button>
+  <button
+    type="button"
+    class="stat-card"
+    data-status-filter="pending"
+  >
+    <span class="stat-label">
+      Pending
+    </span>
 
-        <button type="button" class="stat-card" data-status-filter="shipped">
-          <div class="stat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M3 6H15V17H3V6Z" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M15 10H19L21 13V17H15V10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-              <circle cx="7" cy="18" r="1.5" stroke="currentColor" stroke-width="1.8"/>
-              <circle cx="18" cy="18" r="1.5" stroke="currentColor" stroke-width="1.8"/>
-            </svg>
-          </div>
-          <span class="stat-label">Shipped</span>
-          <strong class="stat-value" id="statShipped">0</strong>
-        </button>
+    <strong
+      class="stat-value"
+      id="statPending"
+    >
+      0
+    </strong>
+  </button>
 
-        <button type="button" class="stat-card" data-status-filter="received">
-          <div class="stat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <span class="stat-label">Received</span>
-          <strong class="stat-value" id="statReceived">0</strong>
-        </button>
+  <button
+    type="button"
+    class="stat-card"
+    data-status-filter="rejected"
+  >
+    <span class="stat-label">
+      Rejected
+    </span>
 
-        <button type="button" class="stat-card" data-status-filter="cancelled">
-          <div class="stat-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/>
-              <path d="M9 9L15 15M15 9L9 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <span class="stat-label">Cancelled</span>
-          <strong class="stat-value" id="statCancelled">0</strong>
-        </button>
+    <strong
+      class="stat-value"
+      id="statRejected"
+    >
+      0
+    </strong>
+  </button>
 
-      </section>
+</section>
 
 
       <!-- ==================== TOOLBAR ==================== -->
@@ -345,10 +323,7 @@
         <select id="statusFilter" class="select-field">
   <option value="all">All Status</option>
   <option value="pending">Pending</option>
-  <option value="processing">Processing</option>
-  <option value="shipped">Shipped</option>
-  <option value="received">Received</option>
-  <option value="cancelled">Cancelled</option>
+ <option value="rejected">Rejected</option>
 </select>
 
         <input
@@ -369,14 +344,15 @@
 
             <thead>
               <tr>
-                <th>Order ID</th>
-                <th>Customer</th>
-                <th>Product(s)</th>
-                <th>Amount</th>
-                <th>Payment Status</th>
-                <th>Order Status</th>
-                <th>Date</th>
-                <th>Action</th>
+                <th>Request Code</th>
+<th>Customer</th>
+
+<th>Reference</th>
+<th>Request Type</th>
+<th>Preferred Date</th>
+<th>Status</th>
+<th>Date Created</th>
+<th>Action</th>
               </tr>
             </thead>
 
@@ -413,11 +389,12 @@
 
         <div>
           <span class="details-label">
-            Order Details
-          </span>
+  Custom Request Details
+</span>
 
           <h2 id="detailsTitle">
-            Order
+  Request
+
             <span id="detailTransactionId">#—</span>
           </h2>
         </div>
@@ -428,162 +405,98 @@
           id="closeDetailsBtn"
           aria-label="Close"
         >
-          ×
+          &times;
         </button>
 
       </header>
 
+<section
+  class="details-section"
+  id="customRequestSection"
 
-      <!-- PRODUCT -->
-      <section class="details-section">
-
-        <h3>Product</h3>
-
-        <div class="details-product">
-
-          <div
-  class="details-product-image"
-  id="detailProductImage"
 >
-  IFC
+
+<section
+  class="details-section"
+  id="quotationSection"
+>
+
+  <h3>Quotation</h3>
+
+  <input
+    type="number"
+    id="quotationPrice"
+    class="admin-input"
+    placeholder="Enter quotation amount"
+  >
+
+
+
+  <button
+    type="button"
+    id="saveQuotationBtn"
+    class="admin-btn update-btn"
+  >
+    Save Quotation
+  </button>
+
+</section>
+
+  <h3>Custom Request Information</h3>
+
+  <div class="details-row">
+    <span>Request Code</span>
+    <strong id="detailRequestCode">—</strong>
+  </div>
+
+  <div class="details-row">
+    <span>Request Type</span>
+    <strong id="detailRequestType">—</strong>
+  </div>
+
+  <div class="details-row">
+    <span>Preferred Date</span>
+    <strong id="detailPreferredDate">—</strong>
+  </div>
+
+  <div class="details-row">
+    <span>Description</span>
+    <strong id="detailRequestDescription">—</strong>
+  </div>
+
+  <div class="details-row">
+    <span>Notes</span>
+    <strong id="detailRequestNotes">—</strong>
+  </div>
+
+
+
+  <div class="reference-image-wrap">
+
+  <img
+    id="detailReferenceImage"
+    src=""
+    alt="Reference Image"
+    class="reference-image"
+  >
+
+
+
+  <button
+    type="button"
+    id="viewFullImageBtn"
+    class="admin-btn"
+
+  >
+    View Full Image
+  </button>
+
 </div>
 
-          <div class="details-product-name">
-            <strong id="detailProduct">—</strong>
-            <span id="detailQuantity">Qty: —</span>
-            <button
-  type="button"
-  id="viewItemsBtn"
-  class="admin-btn update-btn"
-  style="margin-top:8px;"
->
-  View Items
-</button>
-          </div>
-
-          <strong
-            class="details-product-price"
-            id="detailProductPrice"
-          >
-            ₱0.00
-          </strong>
-
-        </div>
-
-      </section>
+</section>
 
 
-      <!-- PRICE -->
-      <section class="details-section compact-section">
 
-        <h3>Price Summary</h3>
-
-        <div class="details-row">
-          <span>Subtotal</span>
-          <strong id="detailSubtotal">₱0.00</strong>
-        </div>
-
-        <div class="details-row">
-          <span>VAT (12%)</span>
-          <strong id="detailVat">₱0.00</strong>
-        </div>
-
-        <div class="details-row total-row">
-          <span>Total</span>
-          <strong id="detailTotal">₱0.00</strong>
-        </div>
-
-      </section>
-
-
-      <!-- PAYMENT -->
-      <section class="details-section">
-
-        <h3>Payment Information</h3>
-
-        <div class="details-row">
-          <span>Method</span>
-          <strong id="detailPaymentMethod">—</strong>
-        </div>
-
-        <div class="details-row">
-          <span>Payment Status</span>
-
-          <span
-            id="detailPaymentStatus"
-            class="badge details-status-badge badge-pending"
-          >
-            Pending
-          </span>
-        </div>
-
-        <div class="payment-proof-row">
-
-          <span>Proof of Payment</span>
-
-          <div class="proof-area">
-
-            <div
-              class="proof-thumbnail"
-              id="proofThumbnail"
-            >
-              PROOF
-            </div>
-
-            <button
-              type="button"
-              class="view-proof-btn"
-              id="viewProofBtn"
-            >
-              View Proof
-            </button>
-
-          </div>
-
-        </div>
-
-        <div class="details-row">
-          <span>Verified At</span>
-          <strong id="detailVerifiedAt">—</strong>
-        </div>
-
-        <div class="details-row">
-          <span>Verified By</span>
-          <strong id="detailVerifiedBy">—</strong>
-        </div>
-
-        <div
-          class="admin-action-box"
-          id="paymentActions"
-        >
-
-          <span class="admin-action-label">
-            Payment Action
-          </span>
-
-          <div class="admin-action-buttons">
-
-            <button
-              type="button"
-              class="admin-btn verify-btn"
-              id="verifyPaymentBtn"
-            >
-              Verify Payment
-            </button>
-
-            <button
-              type="button"
-              class="admin-btn reject-btn"
-              id="rejectPaymentBtn"
-            >
-              Reject Payment
-            </button>
-
-          </div>
-
-        </div>
-
-      </section>
 
 
       <!-- ORDER -->
@@ -604,130 +517,12 @@
 
         </div>
 
-        <div class="admin-action-box">
 
-          <span class="admin-action-label">
-            Update Order Status
-          </span>
 
-          <div class="status-update-row">
 
-            <select
-  id="orderStatusSelect"
-  class="admin-select"
->
-  <option value="Pending">Pending</option>
-  <option value="Processing">Processing</option>
-  <option value="Shipped">Shipped</option>
-  <option value="Received">Received</option>
-  <option value="Cancelled">Cancelled</option>
-</select>
 
-            <button
-              type="button"
-              class="admin-btn update-btn"
-              id="updateStatusBtn"
-            >
-              Update
-            </button>
-
-          </div>
-
-        </div>
 
       </section>
-
-
-      <!-- DELIVERY -->
-      <section class="details-section">
-
-        <div class="section-heading-row">
-
-          <h3>Delivery Information</h3>
-
-          
-
-        </div>
-
-        <div class="details-row">
-          <span>Method</span>
-          <strong id="detailDeliveryMethod">—</strong>
-        </div>
-
-  <div class="details-row">
- 
-<span>
-Delivery Link
-</span>
- 
-<a
-id="detailDeliveryLink">        —
-    </a>
-</div>
-
-        <div
-          class="delivery-edit-form"
-          id="deliveryEditForm"
- 
-        >
-
-          <label>
-            Delivery Method
-
-            <select
-  id="editDeliveryMethod"
-  class="admin-select"
->
-  <option value="Delivery" selected>
-    Delivery
-  </option>
-</select>
-          </label>
-
-          <label>
-  Delivery Link
-
-  <input
-    type="text"
-    id="editDeliveryLink"
-    class="admin-input"
-    placeholder="Paste delivery tracking link"
-  >
-</label>
-
-         <div class="delivery-edit-actions">
-
-    <button
-        type="button"
-        class="admin-btn update-btn"
-        id="saveDeliveryBtn"
-    >
-        Save
-    </button>
-
-</div>
-        </div>
-
-      </section>
-
-
-      <!-- ACTIVITY -->
-      <section class="details-section activity-section">
-
-        <h3>Activity History</h3>
-
-        <div
-          class="activity-list"
-          id="activityList"
-        >
-          <div class="activity-empty">
-            No activity recorded yet.
-          </div>
-        </div>
-
-      </section>
-
-
       <footer class="details-footer">
 
         <button
@@ -795,45 +590,7 @@ id="detailDeliveryLink">        —
     </section>
 
   </div>
-<div id="successModal" class="success-modal">
-  <div class="success-modal-content">
-    <div class="success-icon">✅</div>
 
-    <h3>Success</h3>
-
-    <p>Delivery link updated successfully.</p>
-
-    <button
-      type="button"
-      id="closeSuccessModal"
-      class="admin-btn update-btn"
-    >
-      OK
-    </button>
-  </div>
-</div>
-
-<div
-  id="itemsOverlay"
-  class="proof-overlay"
->
-  <section class="proof-modal">
-
-    <header class="proof-modal-header">
-      <h2>Order Items</h2>
-
-      <button
-        type="button"
-        id="closeItemsBtn"
-      >
-        ×
-      </button>
-    </header>
-
-    <div id="itemsContainer"></div>
-
-  </section>
-</div>
 
   <script>
 
@@ -841,13 +598,7 @@ id="detailDeliveryLink">        —
        BACKEND CONFIG
     ====================================================== */
 
-    // Use the configured backend; local preview ports connect to port 5000.
-    const configuredApi = window.IFC_API_BASE || window.API_URL;
-    const localPreview = ["localhost", "127.0.0.1"].includes(location.hostname)
-      && location.port !== "5000";
-    const API_BASE_URL = String(configuredApi ||
-      (localPreview ? `${location.protocol}//${location.hostname}:5000/api` : "/api")
-    ).replace(/\/+$/, "");
+    const API_BASE_URL = "/api";
 
     /*
       IMPORTANT:
@@ -861,11 +612,11 @@ id="detailDeliveryLink">        —
     const ENDPOINTS = {
 
 transactions:
-    "/orders/admin/all",
+"/custom-requests/admin/custom-orders",
 
       transaction:
-  (id) =>
-    `/orders/${encodeURIComponent(id)}`,
+(id) =>
+`/custom-requests/${encodeURIComponent(id)}`,
 
       payment:
   (id) =>
@@ -893,54 +644,87 @@ transactions:
     ====================================================== */
 
     async function apiRequest(endpoint, options = {}) {
-      const token = localStorage.getItem("token");
-      const headers = {
-        Accept: "application/json",
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        ...(options.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
-        ...(options.headers || {})
+const token =
+  localStorage.getItem("token");
+      const config = {
+        credentials: "include",
+        ...options,
+
+        headers: {
+  Accept: "application/json",
+
+  Authorization:
+    `Bearer ${token}`,
+
+  ...(options.body instanceof FormData
+    ? {}
+    : {
+        "Content-Type": "application/json"
+      }),
+
+  ...(options.headers || {})
+}
       };
-      let response;
-      try {
-        response = await fetch(`${API_BASE_URL}${endpoint}`, {
-          credentials: "include", ...options, headers
-        });
-      } catch (error) {
-        throw new Error("Cannot connect to the backend. Check that the server is running on port 5000 and allows this frontend origin.");
-      }
-      if (response.status === 204) return null;
-      const text = await response.text();
-      let data;
-      try { data = text ? JSON.parse(text) : null; } catch (_) { data = null; }
+
+
+      const response =
+        await fetch(
+          `${API_BASE_URL}${endpoint}`,
+          config
+        );
+
+
       if (!response.ok) {
-        const detail = data?.message || data?.error;
-        const fallback = response.status === 401 ? "Session expired. Please log in again."
-          : response.status === 403 ? "This account is not allowed to access admin orders."
-          : response.status === 404 ? "The backend orders route was not found."
-          : "The backend could not complete the request.";
-        throw new Error(`HTTP ${response.status}: ${typeof detail === "string" ? detail : fallback}`);
+
+        let message =
+          `Request failed (${response.status})`;
+
+        try {
+
+          const errorData =
+            await response.json();
+
+          message =
+            errorData.message ||
+            errorData.error ||
+            message;
+
+        } catch (error) {
+          // Response is not JSON.
+        }
+
+        throw new Error(message);
       }
-      if (data === null) {
-        throw new Error("The server returned an empty or non-JSON response. Check the backend URL and route.");
+
+
+      if (response.status === 204) {
+        return null;
       }
-      return data;
+
+
+      const contentType =
+        response.headers.get(
+          "content-type"
+        ) || "";
+
+
+      if (
+        contentType.includes(
+          "application/json"
+        )
+      ) {
+        return response.json();
+      }
+
+
+      return null;
     }
+
 
     /* =====================================================
        DATA NORMALIZER
     ====================================================== */
-function formatTitle(text) {
 
-  return String(text || "")
-    .replaceAll("_", " ")
-    .split(" ")
-    .map(word =>
-      word.charAt(0).toUpperCase() +
-      word.slice(1).toLowerCase()
-    )
-    .join(" ");
-
-}
     function normalizeTransaction(raw = {}) {
 
       const customer =
@@ -987,32 +771,32 @@ function formatTitle(text) {
         );
 
 
-      const totalAmount =
-Number(
-    raw.total_amount ??
-    raw.total ??
-    0
-);
+      const subtotal =
+    Number(
+        pricing.subtotal ??
+        raw.subtotal ??
+        raw.total_amount ??
+        raw.amount ??
+        0
+    );
 
-const vat =
-Number(
-    raw.vat_amount ??
-    raw.vat ??
-    (totalAmount / 1.12) * 0.12
-);
 
-const subtotal =
-Number(
-    raw.subtotal ??
-    (totalAmount - vat)
-);
-const total =
-Number(
-    pricing.total ??
-    raw.total_amount ??
-    raw.total ??
-    subtotal + vat
-);
+
+      const vat =
+        Number(
+          pricing.vat ??
+          raw.vat ??
+          subtotal * VAT_RATE
+        );
+
+
+    const total =
+    Number(
+        pricing.total ??
+        raw.total ??
+        raw.total_amount ??
+        subtotal + vat
+    );
 
 
       const unitPrice =
@@ -1042,14 +826,14 @@ Number(
     formatOrderId(orderId),
 
         customer:
-          customer.name ??
-          raw.customerName ??
-          raw.customer_name ??
-          (
-            typeof raw.customer === "string"
-              ? raw.customer
-              : "—"
-          ),
+    raw.customer_name ??
+    customer.name ??
+    raw.customerName ??
+    (
+        typeof raw.customer === "string"
+            ? raw.customer
+            : "—"
+    ),
 
         email:
           customer.email ??
@@ -1059,21 +843,15 @@ Number(
           "—",
 
         product:
-  formatTitle(
-    product.name ??
-    raw.productName ??
-    raw.product_name ??
-    (
-      raw.custom_request_id
-        ? raw.request_type
-        : null
-    ) ??
-    (
-      typeof raw.product === "string"
-        ? raw.product
-        : "—"
-    )
-  ),
+          product.name ??
+          raw.productName ??
+          raw.product_name ??
+          (
+            typeof raw.product === "string"
+              ? raw.product
+              : "—"
+          ),
+
           productImage:
   raw.product_image
     ? `/${raw.product_image.replace(/^\/+/, "")}`
@@ -1134,14 +912,23 @@ Number(
           "Pending",
 
         deliveryMethod:
-  raw.delivery_method ??
-  "Delivery",
+          delivery.method ??
+          raw.deliveryMethod ??
+          raw.delivery_method ??
+          "—",
 
-        deliveryLink:
-  raw.delivery_link ??
-  raw.deliveryLink ??
-  delivery.link ??
-  "—",
+        deliveryDate:
+          delivery.schedule ??
+          delivery.date ??
+          raw.deliveryDate ??
+          raw.delivery_date ??
+          "—",
+
+        deliveryLocation:
+          delivery.location ??
+          raw.deliveryLocation ??
+          raw.delivery_location ??
+          "—",
 
         date:
           normalizeDate(
@@ -1157,14 +944,12 @@ Number(
               ? raw.activities
               : [],
 
-          
+
 requestCode:
     raw.request_code || null,
 
 requestType:
-raw.custom_request_id
-? raw.request_type
-: null,
+    raw.request_type || null,
 
 preferredDate:
     raw.preferred_date || null,
@@ -1176,10 +961,10 @@ requestNotes:
     raw.additional_notes || null,
 
 referenceImage:
-raw.custom_request_id &&
-raw.reference_image
-? `/${raw.reference_image.replace(/^\/+/, "")}`
-: null,
+    raw.reference_image
+        ? `/${raw.reference_image.replace(/^\/+/, "")}`
+        : null,
+
 
       };
     }
@@ -1190,11 +975,36 @@ raw.reference_image
     ====================================================== */
 
     function getTransactionArray(response) {
-      const candidates = [response, response?.orders, response?.transactions,
-        response?.data, response?.data?.orders, response?.data?.transactions];
-      const rows = candidates.find(Array.isArray);
-      if (!rows) throw new Error("The orders API response does not contain an orders array.");
-      return rows.filter(row => row && typeof row === "object");
+
+      if (Array.isArray(response)) {
+        return response;
+      }
+
+      if (
+        Array.isArray(
+          response?.transactions
+        )
+      ) {
+        return response.transactions;
+      }
+
+      if (
+        Array.isArray(
+          response?.orders
+        )
+      ) {
+        return response.orders;
+      }
+
+      if (
+        Array.isArray(
+          response?.data
+        )
+      ) {
+        return response.data;
+      }
+
+      return [];
     }
 
 
@@ -1476,65 +1286,41 @@ raw.reference_image
        STATS
     ====================================================== */
 
-    function updateOrderStats() {
+   function updateOrderStats() {
 
-      const count =
-        (status) =>
-          transactions.filter(
-            transaction =>
-              String(
-                transaction.orderStatus || ""
-              ).toLowerCase() === status
-          ).length;
+  const count =
+    (status) =>
+      transactions.filter(
+        transaction =>
+          String(
+            transaction.orderStatus || ""
+          ).toLowerCase() === status
+      ).length;
 
+  document.getElementById(
+    "statOrders"
+  ).textContent =
+    transactions.length;
 
-      document.getElementById(
-        "statOrders"
-      ).textContent =
-        transactions.length;
+  document.getElementById(
+    "statPending"
+  ).textContent =
+    count("pending");
 
-
-      document.getElementById(
-        "statPending"
-      ).textContent =
-        count("pending");
-
-
-      document.getElementById(
-        "statProcessing"
-      ).textContent =
-        count("processing");
-
-
-      document.getElementById(
-        "statShipped"
-      ).textContent =
-        count("shipped");
-
-
-      document.getElementById(
-        "statReceived"
-      ).textContent =
-        count("received");
-
-
-      document.getElementById(
-        "statCancelled"
-      ).textContent =
-        count("cancelled");
-    }
+  document.getElementById(
+    "statRejected"
+  ).textContent =
+    count("rejected");
+}
 
 
     function resetOrderStats() {
 
       [
-        "statOrders",
-        "statPending",
-        "statProcessing",
-        "statShipped",
-        "statReceived",
-        "statCancelled"
-      ].forEach(id => {
+  "statOrders",
+  "statPending",
+  "statRejected"
+].forEach(id => {
 
         const element =
           document.getElementById(id);
@@ -1559,10 +1345,15 @@ raw.reference_image
 
       try {
 
-        const response =
-          await apiRequest(
-            ENDPOINTS.transactions
-          );
+       const response =
+await apiRequest(
+  ENDPOINTS.transactions
+);
+
+console.log(
+  "CUSTOM ORDERS:",
+  response
+);
 
         transactions =
           getTransactionArray(
@@ -1570,7 +1361,7 @@ raw.reference_image
           ).map(
             normalizeTransaction
           );
-
+          console.log(transactions);
 
         updateOrderStats();
 
@@ -1588,21 +1379,10 @@ raw.reference_image
         transactions = [];
 
         resetOrderStats();
-        ["statOrders", "statPending", "statProcessing", "statShipped", "statReceived", "statCancelled"]
-          .forEach(id => { const el = document.getElementById(id); if (el) el.textContent = "—"; });
 
         showTableMessage(
-          `Unable to load orders: ${error.message}`
+          "Unable to load orders."
         );
-        const cell = document.querySelector("#transactionTableBody .empty-row");
-        if (cell) {
-          const retry = document.createElement("button");
-          retry.type = "button";
-          retry.textContent = "Retry loading orders";
-          retry.className = "orders-retry-btn";
-          retry.addEventListener("click", loadTransactions);
-          cell.append(document.createElement("br"), retry);
-        }
       }
     }
 
@@ -1628,70 +1408,14 @@ raw.reference_image
             )
           );
 
-        if (!response.order) {
-    return transaction;
-}
+        const data =
+          getSingleTransaction(
+            response
+          );
 
-const items =
-    response.items || [];
-
-return {
-
-    ...normalizeTransaction({
-
-        ...response.order,
-
-        product_name:
-            items.length
-                ? items
-                    .map(item => item.product_name)
-                    .join(", ")
-                : (
-                    response.order.request_type ||
-                    response.order.product_name ||
-                    "Custom Item"
-                ),
-
-        product_image:
-            items[0]?.product_image || null,
-
-        quantity:
-            items.length
-                ? items.reduce(
-                    (total, item) =>
-                        total +
-                        Number(item.quantity || 0),
-                    0
-                )
-                : 1
-
-    }),
-
-    items
-
-};
-
-return normalizeTransaction({
-
-    ...response.order,
-
-    product_name:
-        items
-            .map(item => item.product_name)
-            .join(", "),
-
-    product_image:
-        items[0]?.product_image || null,
-
-    quantity:
-        items.reduce(
-            (total, item) =>
-                total + Number(item.quantity || 0),
-            0
-        )
-
-});
-
+        return data
+          ? normalizeTransaction(data)
+          : transaction;
 
       } catch (error) {
 
@@ -1808,168 +1532,133 @@ return normalizeTransaction({
        RENDER TABLE
     ====================================================== */
 
-    function renderTransactions(data) {
+function renderTransactions(data) {
 
-      const tableBody =
+    const tableBody =
         document.getElementById(
-          "transactionTableBody"
+            "transactionTableBody"
         );
 
-
-      if (
+    if (
         !data ||
         data.length === 0
-      ) {
+    ) {
 
         showTableMessage(
-          "No orders found."
+            "No orders found."
         );
 
         return;
-      }
+    }
 
-
-      tableBody.innerHTML =
+    tableBody.innerHTML =
         data
-          .map(
-            transaction => `
-              <tr>
+            .map(
+                transaction => `
 
-                <td>
-                  <strong>
-                    ${escapeHtml(transaction.id)}
-                  </strong>
-                </td>
+<tr>
 
-                <td>
-                  <div class="customer-cell">
-
-                    <strong>
-                      ${escapeHtml(
-                        transaction.customer
-                      )}
-                    </strong>
-
-                    <span>
-                      ${escapeHtml(
-                        transaction.email
-                      )}
-                    </span>
-
-                  </div>
-                </td>
-
-                <td>
-                  <div class="product-cell">
-
-     <div class="product-thumb">
+<td>
+    <strong>
+        ${escapeHtml(
+            transaction.requestCode || "—"
+        )}
+    </strong>
+</td>
+<td>
+    ${escapeHtml(
+        transaction.customer || "—"
+    )}
+</td>
+<td>
 
 ${
-    transaction.requestType &&
-    transaction.referenceImage
-
-        ? `
-            <img
-                src="http://localhost:5000${transaction.referenceImage}"
-                alt="Reference Image"
-                class="product-thumb-img"
-            >
-          `
-        : transaction.productImage
-            ? `
-                <img
-                    src="${transaction.productImage}"
-                    alt="${escapeHtml(transaction.product)}"
-                    class="product-thumb-img"
-                >
-              `
-            : `IFC`
+transaction.referenceImage
+? `
+<img
+    src="http://localhost:5000${transaction.referenceImage}"
+    alt="Reference"
+    style="
+        width:60px;
+        height:60px;
+        object-fit:cover;
+        border-radius:8px;
+        border:1px solid #ddd;
+    "
+>
+`
+: `
+<div
+    style="
+        width:60px;
+      5;
+    "
+>
+    —
+</div>
+`
 }
 
-</div>
+</td>
 
 
 
+<td>
+    ${escapeHtml(
+        (transaction.requestType || "—")
+            .replaceAll("_", " ")
+            .replace(/\b\w/g, c => c.toUpperCase())
+    )}
+</td>
 
-                    <div>
+<td>
+    ${escapeHtml(
+        formatDate(
+            transaction.preferredDate
+        )
+    )}
+</td>
 
-                      <strong>
-                        ${escapeHtml(
-                          transaction.product
-                        )}
-                      </strong>
+<td>
+    <span
+        class="badge ${getStatusClass(
+            transaction.orderStatus
+        )}"
+    >
+        ${escapeHtml(
+            transaction.orderStatus || "Pending"
+        )}
+    </span>
+</td>
 
-                      <span>
-                        Qty:
-                        ${escapeHtml(
-                          transaction.quantity
-                        )}
-                      </span>
+<td>
+    ${escapeHtml(
+        formatDate(
+            transaction.date
+        )
+    )}
+</td>
 
-                    </div>
+<td>
 
-                  </div>
-                </td>
+<button
+    type="button"
+    class="view-details-btn"
+    data-transaction-id="${escapeHtml(
+        transaction.backendId
+    )}"
+>
+    View Details
+</button>
 
-                <td>
-                  <strong>
-                    ${formatPeso(
-                      transaction.total
-                    )}
-                  </strong>
-                </td>
+</td>
 
-                <td>
-                  <span
-                    class="badge ${getStatusClass(
-                      transaction.paymentStatus
-                    )}"
-                  >
-                    ${escapeHtml(
-                      transaction.paymentStatus
-                    )}
-                  </span>
-                </td>
+</tr>
 
-                <td>
-                  <span
-                    class="badge ${getStatusClass(
-                      transaction.orderStatus
-                    )}"
-                  >
-                    ${escapeHtml(
-                      transaction.orderStatus
-                    )}
-                  </span>
-                </td>
-
-                <td>
-                  ${escapeHtml(
-                    formatDate(
-                      transaction.date
-                    )
-                  )}
-                </td>
-
-                <td>
-
-                  <button
-                    type="button"
-                    class="view-details-btn"
-                    data-transaction-id="${escapeHtml(
-                      transaction.backendId
-                    )}"
-                  >
-                    View Details
-                  </button>
-
-                </td>
-
-              </tr>
-            `
-          )
-          .join("");
-    }
+`
+            )
+            .join("");
+}
 
 
     /* =====================================================
@@ -2073,42 +1762,117 @@ ${
       const transaction =
         selectedTransaction;
 
-        
-        const productImageContainer =
+        const quotationSection =
+    document.getElementById(
+        "quotationSection"
+    );
+
+const status =
+    String(
+        transaction.orderStatus || ""
+    ).toLowerCase();
+
+quotationSection.style.display =
+    (
+        status === "approved" ||
+        status === "rejected"
+    )
+        ? "none"
+        : "block";
+
+        const requestSection =
+    document.getElementById(
+        "customRequestSection"
+    );
+
+const referenceImage =
+    document.getElementById(
+        "detailReferenceImage"
+    );
+
+    const viewFullImageBtn =
 document.getElementById(
-    "detailProductImage"
+    "viewFullImageBtn"
 );
 
 if (
-    transaction.requestType &&
     transaction.referenceImage
 ) {
 
-    productImageContainer.innerHTML = `
-        <img
-            src="http://localhost:5000${transaction.referenceImage}"
-            alt="Reference Image"
-            class="product-thumb-img"
-        >
-    `;
+    referenceImage.src =
+    `http://localhost:5000${transaction.referenceImage}`;
+
+referenceImage.style.display =
+    "block";
+
+    requestSection.style.display =
+        "block";
+
+    document.getElementById(
+        "detailRequestCode"
+    ).textContent =
+        transaction.requestCode || "—";
+
+    document.getElementById(
+        "detailRequestType"
+    ).textContent =
+        transaction.requestType || "—";
+
+    document.getElementById(
+    "detailPreferredDate"
+).textContent =
+    formatDate(
+        transaction.preferredDate
+    );
+
+    document.getElementById(
+        "detailRequestDescription"
+    ).textContent =
+        transaction.requestDescription || "—";
+
+    document.getElementById(
+        "detailRequestNotes"
+    ).textContent =
+        transaction.requestNotes || "—";
+
+        console.log(
+    "IMAGE PATH:",
+    transaction.referenceImage
+);
+
+referenceImage.src =
+    `http://localhost:5000${transaction.referenceImage}`;
+
+referenceImage.style.display =
+    "block";
+
+viewFullImageBtn.style.display =
+    "inline-block";
+
+viewFullImageBtn.onclick =
+    () => {
+
+        window.open(
+            `http://localhost:5000${transaction.referenceImage}`,
+            "_blank"
+        );
+
+    };
+
+
+} else {
+
+    requestSection.style.display =
+        "none";
+
+    referenceImage.style.display =
+        "none";
+
+    viewFullImageBtn.style.display =
+        "none";
 
 }
-else if (transaction.productImage) {
 
-    productImageContainer.innerHTML = `
-        <img
-            src="${transaction.productImage}"
-            alt="${escapeHtml(transaction.product)}"
-            class="product-thumb-img"
-        >
-    `;
-
-}
-else {
-
-    productImageContainer.innerHTML = "IFC";
-
-}
 
       document.getElementById(
         "detailTransactionId"
@@ -2116,77 +1880,13 @@ else {
         transaction.id;
 
 
-      document.getElementById(
-        "detailProduct"
-      ).textContent =
-        transaction.product;
 
 
-      document.getElementById(
-        "detailQuantity"
-      ).textContent =
-        `Qty: ${transaction.quantity}`;
 
 
-      document.getElementById(
-    "detailProductPrice"
-).textContent =
-    formatPeso(
-        transaction.subtotal
-    );
 
 
-      document.getElementById(
-        "detailSubtotal"
-      ).textContent =
-        formatPeso(
-          transaction.subtotal
-        );
 
-
-      document.getElementById(
-        "detailVat"
-      ).textContent =
-        formatPeso(
-          transaction.vat
-        );
-
-
-      document.getElementById(
-        "detailTotal"
-      ).textContent =
-        formatPeso(
-          transaction.total
-        );
-
-
-      document.getElementById(
-        "detailPaymentMethod"
-      ).textContent =
-        transaction.paymentMethod;
-
-
-      document.getElementById(
-        "detailVerifiedAt"
-      ).textContent =
-        formatDateTime(
-          transaction.verifiedAt
-        );
-
-
-      document.getElementById(
-        "detailVerifiedBy"
-      ).textContent =
-        transaction.verifiedBy ||
-        "—";
-
-
-      setDetailsBadge(
-        document.getElementById(
-          "detailPaymentStatus"
-        ),
-        transaction.paymentStatus
-      );
 
 
       setDetailsBadge(
@@ -2197,138 +1897,34 @@ else {
       );
 
 
-      const statusSelect =
-        document.getElementById(
-          "orderStatusSelect"
-        );
-
-
-      if (
-        [
-          ...statusSelect.options
-        ].some(
-          option =>
-            option.value ===
-            transaction.orderStatus
-        )
-      ) {
-        statusSelect.value =
-          transaction.orderStatus;
-      }
-
-
-      document.getElementById(
-        "detailDeliveryMethod"
-      ).textContent =
-        transaction.deliveryMethod;
-
-        document.getElementById(
-  "editDeliveryMethod"
-).value =
-  transaction.deliveryMethod || "Delivery";
-
-document.getElementById(
-  "editDeliveryLink"
-).value =
-  transaction.deliveryLink === "—"
-    ? ""
-    : transaction.deliveryLink;
-
-      const deliveryLinkElement =
-  document.getElementById(
-    "detailDeliveryLink"
-  );
-
-if (
-  transaction.deliveryLink &&
-  transaction.deliveryLink !== "—"
-) {
-
-  deliveryLinkElement.href =
-    transaction.deliveryLink;
-
-  deliveryLinkElement.textContent =
-    "Open Delivery Link";
-
-}
-else {
-
-  deliveryLinkElement.href =
-    "#";
-
-  deliveryLinkElement.textContent =
-    "—";
-
-}
 
 
 
-      const paymentActions =
-        document.getElementById(
-          "paymentActions"
-        );
 
 
-      paymentActions.style.display =
-        String(
-          transaction.paymentStatus
-        ).toLowerCase() ===
-          "pending"
-          ? "block"
-          : "none";
+
+    //   const paymentActions =
+    //     document.getElementById(
+    //       "paymentActions"
+    //     );
 
 
-      const proofButton =
-        document.getElementById(
-          "viewProofBtn"
-        );
+    //   paymentActions.style.display =
+    //     String(
+    //       transaction.paymentStatus
+    //     ).toLowerCase() ===
+    //       "pending"
+    //       ? "block"
+    //       : "none";
 
 
-      proofButton.disabled =
-        !transaction.paymentProof;
 
 
-      const thumbnail =
-        document.getElementById(
-          "proofThumbnail"
-        );
 
 
-      if (transaction.paymentProof) {
-
-        thumbnail.innerHTML = `
-          <img
-            src="${escapeHtml(transaction.paymentProof)}"
-            alt="Proof"
-            style="
-              width:100%;
-              height:100%;
-              object-fit:cover;
-              display:block;
-            "
-          >
-        `;
-
-      } else {
-
-        thumbnail.textContent =
-          "PROOF";
-      }
-
-      const itemsButton =
-    document.getElementById(
-        "viewItemsBtn"
-    );
-
-itemsButton.style.display =
-    selectedTransaction.items &&
-    selectedTransaction.items.length > 1
-        ? "inline-block"
-        : "none";
-
-
-      renderActivity();
     }
+
+
 
 
     /* =====================================================
@@ -2342,7 +1938,6 @@ itemsButton.style.display =
       selectedTransaction =
         transaction;
 
-   
 
       refreshTransactionDetails();
 
@@ -2360,20 +1955,25 @@ itemsButton.style.display =
 
 
       const latest =
-    await fetchTransaction(
-      transaction
-    );
+        await fetchTransaction(
+          transaction
+        );
 
-if (
-    latest &&
-    selectedTransaction
-) {
 
-    selectedTransaction =
-        latest;
+      if (
+        latest &&
+        selectedTransaction
+      ) {
 
-    refreshTransactionDetails();
-}
+        selectedTransaction =
+          latest;
+
+        updateLocalTransaction(
+          latest
+        );
+
+        refreshTransactionDetails();
+      }
     }
 
 
@@ -2448,7 +2048,9 @@ if (
       selectedTransaction =
         latest;
 
-     
+      updateLocalTransaction(
+        latest
+      );
 
       refreshTransactionDetails();
     }
@@ -2817,9 +2419,77 @@ refreshTransactionDetails();
        DELIVERY EDIT
     ====================================================== */
 
-  
+    function toggleDeliveryEdit() {
+
+      if (!selectedTransaction) {
+        return;
+      }
 
 
+      document.getElementById(
+        "editDeliveryMethod"
+      ).value =
+        selectedTransaction
+          .deliveryMethod === "—"
+          ? "Pickup"
+          : selectedTransaction
+              .deliveryMethod;
+
+
+      document.getElementById(
+        "editDeliveryDate"
+      ).value =
+        selectedTransaction
+          .deliveryDate === "—"
+          ? ""
+          : selectedTransaction
+              .deliveryDate;
+
+
+      document.getElementById(
+        "editDeliveryLocation"
+      ).value =
+        selectedTransaction
+          .deliveryLocation === "—"
+          ? ""
+          : selectedTransaction
+              .deliveryLocation;
+
+
+      document.getElementById(
+        "deliveryEditForm"
+      ).hidden =
+        false;
+
+
+      document.getElementById(
+        "editDeliveryBtn"
+      ).style.display =
+        "none";
+    }
+
+
+    function cancelDeliveryEdit() {
+
+      const form =
+        document.getElementById(
+          "deliveryEditForm"
+        );
+
+      const button =
+        document.getElementById(
+          "editDeliveryBtn"
+        );
+
+
+      if (form) {
+        form.hidden = true;
+      }
+
+      if (button) {
+        button.style.display = "";
+      }
+    }
 
 
     /* =====================================================
@@ -2839,14 +2509,36 @@ refreshTransactionDetails();
         ).value;
 
 
-      const link =
-  document.getElementById(
-    "editDeliveryLink"
-  ).value.trim();
+      const schedule =
+        document.getElementById(
+          "editDeliveryDate"
+        ).value.trim();
 
 
- 
+      const location =
+        document.getElementById(
+          "editDeliveryLocation"
+        ).value.trim();
 
+
+      if (!schedule) {
+
+        alert(
+          "Please enter the delivery date or schedule."
+        );
+
+        return;
+      }
+
+
+      if (!location) {
+
+        alert(
+          "Please enter the delivery location."
+        );
+
+        return;
+      }
 
 
       const button =
@@ -2873,9 +2565,10 @@ refreshTransactionDetails();
               method: "PUT",
 
               body: JSON.stringify({
-  method,
-  link
-})
+                method,
+                schedule,
+                location
+              })
             }
           );
 
@@ -2886,30 +2579,38 @@ refreshTransactionDetails();
           );
 
 
-       selectedTransaction = {
-    ...selectedTransaction,
-    deliveryMethod: method,
-    deliveryLink: link
-};
+        if (returned) {
 
-document.getElementById(
-  "detailDeliveryLink"
-).href = link;
+          selectedTransaction =
+            normalizeTransaction(
+              returned
+            );
 
-document.getElementById(
-  "detailDeliveryLink"
-).textContent =
-  "Open Delivery Link";
+        } else {
 
-updateLocalTransaction(
-  selectedTransaction
-);
+          selectedTransaction = {
+            ...selectedTransaction,
 
-document
-  .getElementById("successModal")
-  .classList.add("show");
+            deliveryMethod:
+              method,
 
-refreshTransactionDetails();
+            deliveryDate:
+              schedule,
+
+            deliveryLocation:
+              location
+          };
+        }
+
+
+        updateLocalTransaction(
+          selectedTransaction
+        );
+
+        refreshTransactionDetails();
+
+
+
 
       } catch (error) {
 
@@ -3098,102 +2799,17 @@ refreshTransactionDetails();
        PAYMENT EVENTS
     ====================================================== */
 
-    document
-      .getElementById(
-        "viewProofBtn"
-      )
-      .addEventListener(
-        "click",
-        openPaymentProof
-      );
 
 
-    document
-      .getElementById(
-        "verifyPaymentBtn"
-      )
-      .addEventListener(
-        "click",
-        verifyPayment
-      );
-
-
-    document
-      .getElementById(
-        "rejectPaymentBtn"
-      )
-      .addEventListener(
-        "click",
-        rejectPayment
-      );
 
 
     /* =====================================================
        ORDER EVENT
     ====================================================== */
 
-    document
-      .getElementById(
-        "updateStatusBtn"
-      )
-      .addEventListener(
-        "click",
-        updateOrderStatus
-      );
-
-
-    /* =====================================================
-       DELIVERY EVENTS
-    ====================================================== */
 
 
 
- 
-
-
-    document
-      .getElementById(
-        "saveDeliveryBtn"
-      )
-      .addEventListener(
-        "click",
-        saveDeliveryChanges
-      );
-
-
-    /* =====================================================
-       PROOF MODAL EVENTS
-    ====================================================== */
-
-    document
-      .getElementById(
-        "closeProofXBtn"
-      )
-      .addEventListener(
-        "click",
-        closePaymentProof
-      );
-
-
-    document
-      .getElementById(
-        "closeProofBtn"
-      )
-      .addEventListener(
-        "click",
-        closePaymentProof
-      );
-
-      document
-  .getElementById("closeSuccessModal")
-  .addEventListener(
-    "click",
-    () => {
-      document
-        .getElementById("successModal")
-        .classList.remove("show");
-    }
-  );
 
 
     /* =====================================================
@@ -3305,133 +2921,123 @@ refreshTransactionDetails();
       }
     );
 
-function showOrderItems() {
+    async function saveQuotation() {
 
-    if (
-        !selectedTransaction ||
-        !selectedTransaction.items
-    ) {
+    if (!selectedTransaction) {
+
+        alert(
+            "Select request first."
+        );
+
         return;
+
     }
 
-    const container =
-        document.getElementById(
-            "itemsContainer"
+    const quotationAmount =
+        Number(
+            document
+                .getElementById(
+                    "quotationPrice"
+                )
+                .value
         );
 
-        console.table(selectedTransaction.items);
+    if (
+        !quotationAmount
+    ) {
 
-    container.innerHTML =
-        selectedTransaction.items
-            .map(item => `
-            
-
-                <div
-                    style="
-                        display:flex;
-                        gap:12px;
-                        padding:12px;
-                        border-bottom:1px solid #eee;
-                        align-items:center;
-                    "
-                >
-
-                    ${
-                        item.product_image
-                            ? `
-                                <img
-                                    src="http://localhost:5000${item.product_image}"
-onerror="this.onerror=null;this.src='/images/ifc_crafts.jpg';"
-                                    alt="${item.product_name || "Product"}"
-                                    style="
-                                        width:70px;
-                                        height:70px;
-                                        object-fit:cover;
-                                        border-radius:8px;
-                                    "
-                                >
-                              `
-                            : `
-                                <div
-                                    style="
-                                        width:70px;
-                                        height:70px;
-                                        display:flex;
-                                        align-items:center;
-                                        justify-content:center;
-                                        background:#f1f5f9;
-                                        border-radius:8px;
-                                    "
-                                >
-                                    IFC
-                                </div>
-                              `
-                    }
-
-                    <div>
-
-                        <strong>
-                            ${item.product_name || "Product"}
-                        </strong>
-
-                        <br>
-
-                        ₱${Number(
-                            item.unit_price || 0
-                        ).toFixed(2)}
-
-                        <br>
-
-                        Qty: ${item.quantity || 0}
-
-                    </div>
-
-                </div>
-
-            `)
-            .join("");
-
-    document
-        .getElementById(
-            "itemsOverlay"
-        )
-        .classList.add(
-            "open"
+        alert(
+            "Enter quotation amount."
         );
+
+        return;
+
+    }
+
+    try {
+
+        const token =
+            localStorage.getItem(
+                "token"
+            );
+
+        const response =
+            await fetch(
+
+                `http://localhost:5000/api/custom-requests/${selectedTransaction.backendId}/quotation`,
+
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+                        Authorization:
+                            `Bearer ${token}`
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            quotationAmount
+
+                        })
+
+                }
+
+            );
+
+        const result =
+            await response.json();
+
+        if (!response.ok) {
+
+            throw new Error(
+                result.message
+            );
+
+        }
+
+        alert(
+            "Quotation saved successfully."
+        );
+
+        closeTransactionDetails();
+
+        loadTransactions();
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            error.message
+        );
+
+    }
+
 }
 
-document
-  .getElementById(
-      "viewItemsBtn"
-  )
-  .addEventListener(
-      "click",
-      showOrderItems
-  );
 
-document
-  .getElementById(
-      "closeItemsBtn"
-  )
-  .addEventListener(
-      "click",
-      () => {
-
-          document
-              .getElementById(
-                  "itemsOverlay"
-              )
-              .classList.remove(
-                  "open"
-              );
-
-      }
-  );
     /* =====================================================
        INITIAL LOAD
     ====================================================== */
 
     loadTransactions();
+
+    document
+    .getElementById(
+        "saveQuotationBtn"
+    )
+    .addEventListener(
+        "click",
+        saveQuotation
+    );
 
   </script>
 

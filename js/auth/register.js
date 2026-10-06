@@ -1,4 +1,4 @@
-console.log("REGISTER JS LOADED");
+
 async function registerUser(userData) {
 
     try {
@@ -116,18 +116,18 @@ document.addEventListener(
                             password
                         });
 
-                    if (
-                        result.success
-                    ) {
+                   if (
+    result.success
+) {
 
-                        alert(
-                            "Registration successful!"
-                        );
+    alert(
+        result.message
+    );
 
-                        window.location.href =
-                            "login.html";
+    window.location.href =
+        `verify.html?email=${encodeURIComponent(email)}`;
 
-                    } else {
+} else {
 
                         alert(
                             result.message

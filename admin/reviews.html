@@ -13,8 +13,14 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles/reviews.css">
+  <link rel="stylesheet" href="styles/admin-common.css">
+  <link rel="stylesheet" href="styles/admin-account.css">
+<script src="js/admin-account.js" defer></script>
+
 </head>
 
 <body>
@@ -108,254 +114,145 @@
       <nav class="sidenav">
 
 
-        <!-- DASHBOARD -->
-
-        <a
-          href="index.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Dashboard -->
+        <a href="adminDashboard.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
             <rect x="3" y="14" width="7" height="7"></rect>
             <rect x="14" y="14" width="7" height="7"></rect>
           </svg>
-
           <span>Dashboard</span>
-
         </a>
 
-
-        <!-- ORDERS -->
-
-        <a
-          href="orders.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Orders -->
+        <a href="orders.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2h12v20H6z"></path>
             <path d="M9 6h6"></path>
             <path d="M9 10h6"></path>
             <path d="M9 14h4"></path>
           </svg>
-
           <span>Orders</span>
-
         </a>
 
-
-        <!-- PRODUCTS & SERVICES -->
-
-        <a
-          href="products_services.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Custom Orders -->
+          <a href="custom_orders.html" class="sidenav-link">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="m14 2 6 6v3"></path>
+              <path d="M8 12h4"></path>
+              <path d="M8 16h2"></path>
+              <path d="m16 20 5-5-2-2-5 5-.5 2.5Z"></path>
+            </svg>
+            <span>Custom Orders</span>
+          </a>
+        <!-- Products & Services -->
+        <a href="products_services.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
             <path d="m3.3 7 8.7 5 8.7-5"></path>
             <path d="M12 22V12"></path>
           </svg>
-
           <span>Products &amp; Services</span>
-
         </a>
 
-
-        <!-- USERS -->
-
-        <a
-          href="users.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Users -->
+        <a href="users.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-
           <span>Users</span>
-
         </a>
 
-
-        <!-- MESSAGES -->
-
-        <a
-          href="messages.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Messages -->
+        <a href="messages.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
             <path d="M8 12h.01"></path>
             <path d="M12 12h.01"></path>
             <path d="M16 12h.01"></path>
           </svg>
-
           <span>Messages</span>
-
         </a>
 
-
-        <!-- NOTIFICATIONS -->
-
-        <a
-          href="notifications.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Notifications -->
+        <a href="notifications.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-
           <span>Notifications</span>
-
         </a>
 
-
-        <!-- REVIEWS -->
-
-        <a
-          href="reviews.html"
-          class="sidenav-link active"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Reviews -->
+        <a href="reviews.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
           </svg>
-
           <span>Reviews</span>
-
         </a>
 
-
-        <!-- REPORTS -->
-
-        <a
-          href="reports.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Reports -->
+        <a href="reports.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19V5"></path>
             <path d="M4 5h16l-2 4 2 4H4"></path>
           </svg>
-
           <span>Reports</span>
-
         </a>
 
-
-        <!-- AUDIT LOGS -->
-
-        <a
-          href="audit_logs.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Audit Logs -->
+        <a href="audit_logs.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 3h18v18H3z"></path>
             <path d="M7 7h10"></path>
             <path d="M7 11h10"></path>
             <path d="M7 15h6"></path>
           </svg>
-
           <span>Audit Logs</span>
-
         </a>
 
-
-        <!-- SETTINGS -->
-
-        <a
-          href="settings.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+        <!-- Settings -->
+        <a href="settings.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
           </svg>
-
           <span>Settings</span>
-
         </a>
 
       </nav>
-
     </aside>
 
 
@@ -547,15 +444,13 @@
 
 
         <select
-          class="filter-select"
-          id="productFilter"
-        >
-          <option value="all">All Products</option>
-          <option value="Necklace">Necklace</option>
-          <option value="Bracelet">Bracelet</option>
-          <option value="Keychain">Keychain</option>
-          <option value="Henna Art">Henna Art</option>
-        </select>
+  class="filter-select"
+  id="categoryFilter"
+>
+  <option value="all">
+    All Categories
+  </option>
+</select>
 
 
         <select
@@ -755,63 +650,63 @@
        Backend team can replace this later with API/database data.
     =============================================================== */
 
-    let reviews = [
-      {
-        id: 1,
-        customer: "Maria Santos",
-        initials: "MS",
-        order: "#001",
-        product: "Necklace",
-        rating: 5,
-        comment: "The necklace is so pretty and the quality is really nice. I love how the final design turned out!",
-        date: "08/15/2026",
-        status: "visible"
-      },
-      {
-        id: 2,
-        customer: "Angela Cruz",
-        initials: "AC",
-        order: "#004",
-        product: "Bracelet",
-        rating: 5,
-        comment: "Very cute bracelet! The seller was also easy to communicate with. Thank you!",
-        date: "08/12/2026",
-        status: "visible"
-      },
-      {
-        id: 3,
-        customer: "Joshua Reyes",
-        initials: "JR",
-        order: "#007",
-        product: "Keychain",
-        rating: 4,
-        comment: "The keychain looks great and arrived in good condition.",
-        date: "08/10/2026",
-        status: "visible"
-      },
-      {
-        id: 4,
-        customer: "Nicole Garcia",
-        initials: "NG",
-        order: "#010",
-        product: "Henna Art",
-        rating: 5,
-        comment: "I really loved the design. It was exactly what I requested.",
-        date: "08/08/2026",
-        status: "visible"
-      },
-      {
-        id: 5,
-        customer: "Carla Mendoza",
-        initials: "CM",
-        order: "#012",
-        product: "Necklace",
-        rating: 3,
-        comment: "",
-        date: "08/05/2026",
-        status: "hidden"
-      }
-    ];
+    let reviews = [];
+
+async function loadReviews() {
+
+  try {
+
+    const response = await fetch(
+      "http://localhost:5000/api/reviews"
+    );
+
+    const result = await response.json();
+
+    console.log(result);
+
+    reviews = result.data.map(item => ({
+
+      id: item.id,
+
+      customer:
+        `${item.first_name} ${item.last_name}`,
+
+      initials:
+        `${item.first_name[0]}${item.last_name[0]}`,
+
+      order:
+        item.order_id,
+
+      product:
+        item.product_id,
+
+      rating:
+        item.rating,
+
+      comment:
+        item.review,
+
+      date:
+        new Date(
+          item.created_at
+        ).toLocaleDateString(),
+
+      status: "visible"
+
+    }));
+
+    renderReviews();
+
+  } catch (error) {
+
+    console.error(
+      "Failed to load reviews:",
+      error
+    );
+
+  }
+
+}
 
 
     /* ===============================================================
@@ -827,8 +722,8 @@
     const ratingFilter =
       document.getElementById("ratingFilter");
 
-    const productFilter =
-      document.getElementById("productFilter");
+   const categoryFilter =
+  document.getElementById("categoryFilter");
 
     const statusFilter =
       document.getElementById("statusFilter");
@@ -883,8 +778,8 @@
       const rating =
         ratingFilter.value;
 
-      const product =
-        productFilter.value;
+     const category =
+  categoryFilter.value;
 
       const status =
         statusFilter.value;
@@ -915,9 +810,7 @@
           review.rating === Number(rating);
 
 
-        const matchesProduct =
-          product === "all" ||
-          review.product === product;
+        const matchesCategory = true;
 
 
         const matchesStatus =
@@ -934,12 +827,12 @@
 
 
         return (
-          matchesSearch &&
-          matchesRating &&
-          matchesProduct &&
-          matchesStatus &&
-          matchesSpecial
-        );
+  matchesSearch &&
+  matchesRating &&
+  matchesCategory &&
+  matchesStatus &&
+  matchesSpecial
+);
 
       });
 
@@ -1221,10 +1114,10 @@
     );
 
 
-    productFilter.addEventListener(
-      "change",
-      renderReviews
-    );
+    categoryFilter.addEventListener(
+  "change",
+  renderReviews
+);
 
 
     statusFilter.addEventListener(
@@ -1662,12 +1555,53 @@
 
     }
 
+    async function loadCategories() {
+
+    try {
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/categories"
+            );
+
+        const result =
+            await response.json();
+
+        const categoryFilter =
+            document.getElementById(
+                "categoryFilter"
+            );
+
+        categoryFilter.innerHTML =
+            `<option value="all">
+                All Categories
+            </option>`;
+
+        result.data.forEach(category => {
+
+            categoryFilter.innerHTML += `
+                <option value="${category.category_name}">
+                    ${category.category_name}
+                </option>
+            `;
+
+        });
+
+    } catch(error) {
+
+        console.error(error);
+
+    }
+
+}
+
 
     /* ===============================================================
        INITIAL LOAD
     =============================================================== */
 
-    renderReviews();
+loadCategories();
+loadReviews();
 
   </script>
 

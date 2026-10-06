@@ -9,13 +9,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/admin-common.css">
+  <link rel="stylesheet" href="styles/admin-account.css">
+  <script src="js/admin-account.js" defer></script>
+
 </head>
 
 <body>
@@ -26,14 +28,10 @@
 
   <header class="topbar">
 
-    <a href="dashboard.html" class="brand">
+    <a href="adminDashboard.html" class="brand">
 
       <div class="brand-mark">
-        <img
-          src="images/ifc_crafts.jpg"
-          alt="IFC Crafts"
-          class="nav-logo"
-        >
+        <img src="images/ifc_crafts.jpg" alt="IFC Crafts" class="nav-logo">
       </div>
 
       <span class="brand-name">
@@ -45,22 +43,11 @@
 
     <div class="topbar-actions">
 
-      <a
-        href="notifications.html"
-        class="icon-btn"
-        aria-label="Notifications"
-      >
+      <a href="notifications.html" class="icon-btn" aria-label="Notifications">
 
-        <svg
-          viewBox="0 0 24 24"
-          width="18"
-          height="18"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        >
-          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
-          <path d="M10 21h4"/>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+          <path d="M10 21h4" />
         </svg>
 
         <span class="icon-dot"></span>
@@ -68,23 +55,13 @@
       </a>
 
 
-      <a
-        href="settings.html"
-        class="profile-chip"
-      >
+      <a href="settings.html" class="profile-chip">
 
         <span class="avatar">
 
-          <svg
-            viewBox="0 0 24 24"
-            width="16"
-            height="16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-          >
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
           </svg>
 
         </span>
@@ -114,254 +91,131 @@
       <nav class="sidenav">
 
 
-        <!-- DASHBOARD -->
-
-        <a
-          href="dashboard.html"
-          class="sidenav-link active"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Dashboard -->
+        <a href="adminDashboard.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
             <rect x="3" y="14" width="7" height="7"></rect>
             <rect x="14" y="14" width="7" height="7"></rect>
           </svg>
-
           <span>Dashboard</span>
-
         </a>
 
-
-        <!-- ORDERS -->
-
-        <a
-          href="orders.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Orders -->
+        <a href="orders.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2h12v20H6z"></path>
             <path d="M9 6h6"></path>
             <path d="M9 10h6"></path>
             <path d="M9 14h4"></path>
           </svg>
-
           <span>Orders</span>
-
         </a>
 
-
-        <!-- PRODUCTS & SERVICES -->
-
-        <a
-          href="products_services.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+        <!-- Custom Orders -->
+        <a href="custom_orders.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"></path>
+            <path d="M14 2v6h6"></path>
+            <path d="m14 2 6 6v3"></path>
+            <path d="M8 12h4"></path>
+            <path d="M8 16h2"></path>
+            <path d="m16 20 5-5-2-2-5 5-.5 2.5Z"></path>
+          </svg>
+          <span>Custom Orders</span>
+        </a>
+        <!-- Products & Services -->
+        <a href="products_services.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+            </path>
             <path d="m3.3 7 8.7 5 8.7-5"></path>
             <path d="M12 22V12"></path>
           </svg>
-
           <span>Products &amp; Services</span>
-
         </a>
 
-
-        <!-- USERS -->
-
-        <a
-          href="users.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Users -->
+        <a href="users.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-
           <span>Users</span>
-
         </a>
 
-
-        <!-- MESSAGES -->
-
-        <a
-          href="messages.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Messages -->
+        <a href="messages.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
             <path d="M8 12h.01"></path>
             <path d="M12 12h.01"></path>
             <path d="M16 12h.01"></path>
           </svg>
-
           <span>Messages</span>
-
         </a>
 
-
-        <!-- NOTIFICATIONS -->
-
-        <a
-          href="notifications.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Notifications -->
+        <a href="notifications.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-
           <span>Notifications</span>
-
         </a>
 
-
-        <!-- REVIEWS -->
-
-        <a
-          href="reviews.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Reviews -->
+        <a href="reviews.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
           </svg>
-
           <span>Reviews</span>
-
         </a>
 
-
-        <!-- REPORTS -->
-
-        <a
-          href="reports.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Reports -->
+        <a href="reports.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19V5"></path>
             <path d="M4 5h16l-2 4 2 4H4"></path>
           </svg>
-
           <span>Reports</span>
-
         </a>
 
-
-        <!-- AUDIT LOGS -->
-
-        <a
-          href="audit-logs.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Audit Logs -->
+        <a href="audit_logs.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 3h18v18H3z"></path>
             <path d="M7 7h10"></path>
             <path d="M7 11h10"></path>
             <path d="M7 15h6"></path>
           </svg>
-
           <span>Audit Logs</span>
-
         </a>
 
-
-        <!-- SETTINGS -->
-
-        <a
-          href="settings.html"
-          class="sidenav-link"
-        >
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+        <!-- Settings -->
+        <a href="settings.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z" />
           </svg>
-
           <span>Settings</span>
-
         </a>
 
       </nav>
-
     </aside>
 
 
@@ -395,113 +249,102 @@
 
       <div class="stats-grid">
 
-  <!-- TOTAL ORDERS -->
-  <a href="orders.html" class="stat-card">
-    <div class="stat-top">
-      <span class="stat-icon">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
-             stroke="currentColor" stroke-width="1.7">
-          <path d="M6 7h12l-1 13H7L6 7Z"/>
-          <path d="M9 7V5a3 3 0 0 1 6 0v2"/>
-        </svg>
-      </span>
+        <!-- TOTAL ORDERS -->
+        <a href="orders.html" class="stat-card">
+          <div class="stat-top">
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M6 7h12l-1 13H7L6 7Z" />
+                <path d="M9 7V5a3 3 0 0 1 6 0v2" />
+              </svg>
+            </span>
 
-      <span class="stat-label">Total Orders</span>
-    </div>
+            <span class="stat-label">Total Orders</span>
+          </div>
 
-    <strong class="stat-number" id="totalOrders">
-    0
-</strong>
-  </a>
-
-
-  <!-- PENDING ORDERS -->
-  <a href="orders.html" class="stat-card">
-    <div class="stat-top">
-      <span class="stat-icon">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
-             stroke="currentColor" stroke-width="1.7">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="M12 7v5l3 2"/>
-        </svg>
-      </span>
-
-      <span class="stat-label">Pending Orders</span>
-    </div>
-
-    <strong class="stat-number" id="pendingOrders">
-    0
-</strong>
-  </a>
+          <strong class="stat-number" id="totalOrders">
+            0
+          </strong>
+        </a>
 
 
-  <!-- COMPLETED ORDERS -->
-  <a href="orders.html" class="stat-card">
-    <div class="stat-top">
-      <span class="stat-icon">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
-             stroke="currentColor" stroke-width="1.7">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="m8 12 2.5 2.5L16 9"/>
-        </svg>
-      </span>
+        <!-- PENDING ORDERS -->
+        <a href="orders.html" class="stat-card">
+          <div class="stat-top">
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+            </span>
 
-      <span class="stat-label">Completed Orders</span>
-    </div>
+            <span class="stat-label">Pending Orders</span>
+          </div>
 
-    <strong
-    class="stat-number"
-    id="completedOrders"
->
-    0
-</strong>
-
-  </a>
+          <strong class="stat-number" id="pendingOrders">
+            0
+          </strong>
+        </a>
 
 
-  <!-- REGISTERED USERS -->
-  <a href="users.html" class="stat-card">
-    <div class="stat-top">
-      <span class="stat-icon">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
-             stroke="currentColor" stroke-width="1.7">
-          <circle cx="12" cy="8" r="4"/>
-          <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
-        </svg>
-      </span>
+        <!-- COMPLETED ORDERS -->
+        <a href="orders.html" class="stat-card">
+          <div class="stat-top">
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="12" cy="12" r="9" />
+                <path d="m8 12 2.5 2.5L16 9" />
+              </svg>
+            </span>
 
-      <span class="stat-label">Registered Users</span>
-    </div>
+            <span class="stat-label">Completed Orders</span>
+          </div>
 
-    <strong class="stat-number" id="totalUsers">0</strong>
+          <strong class="stat-number" id="completedOrders">
+            0
+          </strong>
 
-  </a>
+        </a>
 
 
-  <!-- PENDING PAYMENTS -->
-  <a href="orders.html" class="stat-card">
-    <div class="stat-top">
-      <span class="stat-icon">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
-             stroke="currentColor" stroke-width="1.7">
-          <path d="M7 3h10v18H7z"/>
-          <path d="M9 7h6M9 11h6M9 15h3"/>
-        </svg>
-      </span>
+        <!-- REGISTERED USERS -->
+        <a href="users.html" class="stat-card">
+          <div class="stat-top">
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" />
+              </svg>
+            </span>
 
-      <span class="stat-label">Pending Payments</span>
-    </div>
+            <span class="stat-label">Registered Users</span>
+          </div>
 
-    <strong
-    class="stat-number"
-    id="pendingPayments"
->
-    0
-</strong>
+          <strong class="stat-number" id="totalUsers">0</strong>
 
-  </a>
+        </a>
 
-</div>
+
+        <!-- PENDING PAYMENTS -->
+        <a href="orders.html" class="stat-card">
+          <div class="stat-top">
+            <span class="stat-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M7 3h10v18H7z" />
+                <path d="M9 7h6M9 11h6M9 15h3" />
+              </svg>
+            </span>
+
+            <span class="stat-label">Pending Payments</span>
+          </div>
+
+          <strong class="stat-number" id="pendingPayments">
+            0
+          </strong>
+
+        </a>
+
+      </div>
 
 
       <!-- =================================================
@@ -527,10 +370,7 @@
 
             </div>
 
-            <a
-              href="orders.html"
-              class="text-link"
-            >
+            <a href="orders.html" class="text-link">
               View All
             </a>
 
@@ -538,23 +378,11 @@
 
 
           <div class="chart-legend">
-
-            <span>
-              <i class="legend-dot dot-necklace"></i>
-              Necklace
-            </span>
-
-            <span>
-              <i class="legend-dot dot-bracelet"></i>
-              Bracelet
-            </span>
-
-            <span>
-              <i class="legend-dot dot-keychain"></i>
-              Keychain
-            </span>
-
-          </div>
+  <span>
+    <i class="legend-dot dot-necklace"></i>
+    Monthly Orders
+  </span>
+</div>
 
 
           <div class="chart-area">
@@ -580,27 +408,17 @@
 
 
               <svg
-                class="dashboard-chart"
-                viewBox="0 0 700 260"
-                preserveAspectRatio="none"
-              >
+    class="dashboard-chart"
+    viewBox="0 0 700 260"
+    preserveAspectRatio="none">
 
-                <polyline
-                  class="chart-line necklace-line"
-                  points="0,210 110,170 220,185 330,115 440,130 550,75 700,95"
-                />
+    <polyline
+        id="ordersOverviewLine"
+        class="chart-line necklace-line"
+        points=""
+    />
 
-                <polyline
-                  class="chart-line bracelet-line"
-                  points="0,225 110,210 220,155 330,180 440,120 550,145 700,105"
-                />
-
-                <polyline
-                  class="chart-line keychain-line"
-                  points="0,235 110,190 220,205 330,160 440,175 550,125 700,150"
-                />
-
-              </svg>
+</svg>
 
 
               <div class="chart-months">
@@ -612,6 +430,11 @@
                 <span>May</span>
                 <span>Jun</span>
                 <span>Jul</span>
+                <span>Aug</span>
+                <span>Sep</span>
+                <span>Oct</span>
+                <span>Nov</span>
+                <span>Dec</span>
 
               </div>
 
@@ -677,18 +500,18 @@
 
             </div>
 
-<div class="status-row">
+            <div class="status-row">
 
-  <span>
-    <i class="status-dot shipped"></i>
-    Shipped
-  </span>
+              <span>
+                <i class="status-dot shipped"></i>
+                Shipped
+              </span>
 
-  <strong id="shippedPercent">
-    0%
-  </strong>
+              <strong id="shippedPercent">
+                0%
+              </strong>
 
-</div>
+            </div>
             <div class="status-row">
 
               <span>
@@ -751,10 +574,7 @@
 
             </div>
 
-            <a
-              href="orders.html"
-              class="text-link"
-            >
+            <a href="orders.html" class="text-link">
               View All
             </a>
 
@@ -866,24 +686,13 @@
 
           <div class="quick-actions">
 
-            <button
-              type="button"
-              class="quick-btn primary"
-              id="openAddProductModalBtn"
-            >
+            <button type="button" class="quick-btn primary" id="openAddProductModalBtn">
 
               <span class="quick-icon">
 
-                <svg
-                  viewBox="0 0 24 24"
-                  width="18"
-                  height="18"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14"/>
-                  <path d="M5 12h14"/>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14" />
+                  <path d="M5 12h14" />
                 </svg>
 
               </span>
@@ -903,24 +712,14 @@
             </button>
 
 
-            <a
-              href="orders.html"
-              class="quick-btn"
-            >
+            <a href="orders.html" class="quick-btn">
 
               <span class="quick-icon">
 
-                <svg
-                  viewBox="0 0 24 24"
-                  width="18"
-                  height="18"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M6 2h12v20H6z"/>
-                  <path d="M9 6h6"/>
-                  <path d="M9 10h6"/>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2h12v20H6z" />
+                  <path d="M9 6h6" />
+                  <path d="M9 10h6" />
                 </svg>
 
               </span>
@@ -940,24 +739,14 @@
             </a>
 
 
-            <a
-              href="users.html"
-              class="quick-btn"
-            >
+            <a href="users.html" class="quick-btn">
 
               <span class="quick-icon">
 
-                <svg
-                  viewBox="0 0 24 24"
-                  width="18"
-                  height="18"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <circle cx="9" cy="7" r="4"/>
-                  <path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/>
-                  <path d="M17 11a4 4 0 0 1 5 4v2"/>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" />
+                  <path d="M17 11a4 4 0 0 1 5 4v2" />
                 </svg>
 
               </span>
@@ -991,18 +780,9 @@
        ADD PRODUCT MODAL
   ====================================================== -->
 
-  <div
-    class="modal-overlay"
-    id="addProductModal"
-    aria-hidden="true"
-  >
+  <div class="modal-overlay" id="addProductModal" aria-hidden="true">
 
-    <section
-      class="product-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="addProductTitle"
-    >
+    <section class="product-modal" role="dialog" aria-modal="true" aria-labelledby="addProductTitle">
 
       <header class="product-modal-header">
 
@@ -1010,12 +790,7 @@
           Add Product
         </h2>
 
-        <button
-          type="button"
-          class="modal-close-btn"
-          id="closeAddProductBtn"
-          aria-label="Close"
-        >
+        <button type="button" class="modal-close-btn" id="closeAddProductBtn" aria-label="Close">
           ×
         </button>
 
@@ -1034,19 +809,9 @@
             <span>*</span>
           </label>
 
-          <label
-            class="upload-box"
-            for="productImage"
-          >
+          <label class="upload-box" for="productImage">
 
-            <svg
-              viewBox="0 0 24 24"
-              width="28"
-              height="28"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.6"
-            >
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M12 16V4"></path>
               <path d="m7 9 5-5 5 5"></path>
               <path d="M5 20h14"></path>
@@ -1062,25 +827,11 @@
 
           </label>
 
-          <input
-            type="file"
-            id="productImage"
-            accept=".jpg,.jpeg,.png,image/jpeg,image/png"
-            hidden
-            required
-          >
+          <input type="file" id="productImage" accept=".jpg,.jpeg,.png,image/jpeg,image/png" hidden required>
 
-          <div
-            class="image-preview-wrap"
-            id="imagePreviewWrap"
-            hidden
-          >
+          <div class="image-preview-wrap" id="imagePreviewWrap" hidden>
 
-            <img
-              src=""
-              alt="Product Preview"
-              id="imagePreview"
-            >
+            <img src="" alt="Product Preview" id="imagePreview">
 
           </div>
 
@@ -1096,12 +847,7 @@
             <span>*</span>
           </label>
 
-          <input
-            type="text"
-            id="productName"
-            placeholder="Enter product name..."
-            required
-          >
+          <input type="text" id="productName" placeholder="Enter product name..." required>
 
         </div>
 
@@ -1115,10 +861,7 @@
             <span>*</span>
           </label>
 
-          <select
-            id="productCategory"
-            required
-          >
+          <select id="productCategory" required>
 
             <option value="">
               Select Category
@@ -1154,12 +897,7 @@
             <span>*</span>
           </label>
 
-          <textarea
-            id="productDescription"
-            rows="4"
-            placeholder="Enter product description..."
-            required
-          ></textarea>
+          <textarea id="productDescription" rows="4" placeholder="Enter product description..." required></textarea>
 
         </div>
 
@@ -1179,14 +917,7 @@
 
               <span>₱</span>
 
-              <input
-                type="number"
-                id="productPrice"
-                min="0"
-                step="0.01"
-                placeholder="0.00"
-                required
-              >
+              <input type="number" id="productPrice" min="0" step="0.01" placeholder="0.00" required>
 
             </div>
 
@@ -1200,13 +931,7 @@
               <span>*</span>
             </label>
 
-            <input
-              type="number"
-              id="productStock"
-              min="0"
-              placeholder="Enter Quantity"
-              required
-            >
+            <input type="number" id="productStock" min="0" placeholder="Enter Quantity" required>
 
           </div>
 
@@ -1222,10 +947,7 @@
             <span>*</span>
           </label>
 
-          <select
-            id="productStatus"
-            required
-          >
+          <select id="productStatus" required>
 
             <option value="">
               Select status
@@ -1248,18 +970,11 @@
 
         <div class="modal-actions">
 
-          <button
-            type="button"
-            class="cancel-product-btn"
-            id="cancelAddProductBtn"
-          >
+          <button type="button" class="cancel-product-btn" id="cancelAddProductBtn">
             Cancel
           </button>
 
-          <button
-            type="submit"
-            class="save-product-btn"
-          >
+          <button type="submit" class="save-product-btn">
             Save Product
           </button>
 
@@ -1541,128 +1256,189 @@
     );
 
   </script>
-<script>
+  <script>
 
-async function loadDashboard() {
+    async function loadDashboard() {
 
-    try {
+      try {
 
         const token =
-            localStorage.getItem("token");
+          localStorage.getItem("token");
 
-        const response =
-            await fetch(
-                "/api/dashboard",
-                {
-                    headers: {
-                        Authorization:
-                            `Bearer ${token}`
-                    }
-                }
-            );
+        const response = await fetch(
+          "http://localhost:5000/api/dashboard",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
 
         const result =
-            await response.json();
+          await response.json();
 
         if (!result.success) {
-            throw new Error(
-                result.message
-            );
+          throw new Error(
+            result.message
+          );
         }
 
         const stats =
-            result.data;
-            const total =
-    stats.totalOrders || 0;
-
-    renderRecentOrders(
-    stats.recentOrders || []
+          result.data;
+          console.log(
+    "ORDERS OVERVIEW:",
+    stats.ordersOverview
 );
 
-document.getElementById(
-    "orderTotal"
-).textContent = total;
+const monthlyTotals = {};
 
-const completed =
-    stats.completedOrders || 0;
+stats.ordersOverview.forEach(item => {
 
-const pending =
-    stats.pendingOrders || 0;
+  monthlyTotals[item.month] =
+    (monthlyTotals[item.month] || 0)
+    + Number(item.total);
 
-const processing =
-    stats.processingOrders || 0;
+});
 
-const cancelled =
-    stats.cancelledOrders || 0;
+console.log(
+  "MONTHLY TOTALS:",
+  monthlyTotals
+);
 
-    const shipped =
-    stats.shippedOrders || 0;
+const months =
+    [1,2,3,4,5,6,7,8,9,10,11,12];
 
-    document.getElementById(
-    "completedPercent"
-).textContent =
-    total
-        ? Math.round(
-            (completed / total) * 100
-          ) + "%"
-        : "0%";
+const values =
+    months.map(
+        month =>
+            monthlyTotals[month] || 0
+    );
 
-document.getElementById(
-    "pendingPercent"
-).textContent =
-    total
-        ? Math.round(
-            (pending / total) * 100
-          ) + "%"
-        : "0%";
+const max =
+    Math.max(
+        ...values,
+        1
+    );
 
-document.getElementById(
-    "processingPercent"
-).textContent =
-    total
-        ? Math.round(
-            (processing / total) * 100
-          ) + "%"
-        : "0%";
+const points =
+    values.map(
+        (value, index) => {
 
-document.getElementById(
-    "cancelledPercent"
-).textContent =
-    total
-        ? Math.round(
-            (cancelled / total) * 100
-          ) + "%"
-        : "0%";
+            const x =
+                index * 63;
+
+            const y =
+                240 -
+                (
+                    (
+                        value / max
+                    ) * 180
+                );
+
+            return `${x},${y}`;
+
+        }
+    ).join(" ");
+
+document
+    .getElementById(
+        "ordersOverviewLine"
+    )
+    .setAttribute(
+        "points",
+        points
+    );
+        const total =
+          stats.totalOrders || 0;
+
+        renderRecentOrders(
+          stats.recentOrders || []
+        );
 
         document.getElementById(
-    "shippedPercent"
-).textContent =
-    total
-        ? Math.round(
-            (shipped / total) * 100
-          ) + "%"
-        : "0%";
+          "orderTotal"
+        ).textContent = total;
+
+        const completed =
+          stats.completedOrders || 0;
+
+        const pending =
+          stats.pendingOrders || 0;
+
+        const processing =
+          stats.processingOrders || 0;
+
+        const cancelled =
+          stats.cancelledOrders || 0;
+
+        const shipped =
+          stats.shippedOrders || 0;
+
+        document.getElementById(
+          "completedPercent"
+        ).textContent =
+          total
+            ? Math.round(
+              (completed / total) * 100
+            ) + "%"
+            : "0%";
+
+        document.getElementById(
+          "pendingPercent"
+        ).textContent =
+          total
+            ? Math.round(
+              (pending / total) * 100
+            ) + "%"
+            : "0%";
+
+        document.getElementById(
+          "processingPercent"
+        ).textContent =
+          total
+            ? Math.round(
+              (processing / total) * 100
+            ) + "%"
+            : "0%";
+
+        document.getElementById(
+          "cancelledPercent"
+        ).textContent =
+          total
+            ? Math.round(
+              (cancelled / total) * 100
+            ) + "%"
+            : "0%";
+
+        document.getElementById(
+          "shippedPercent"
+        ).textContent =
+          total
+            ? Math.round(
+              (shipped / total) * 100
+            ) + "%"
+            : "0%";
 
 
         const completedDeg =
-    (completed / total) * 360;
+          (completed / total) * 360;
 
-const pendingDeg =
-    (pending / total) * 360;
+        const pendingDeg =
+          (pending / total) * 360;
 
-const processingDeg =
-    (processing / total) * 360;
+        const processingDeg =
+          (processing / total) * 360;
 
-const cancelledDeg =
-    (cancelled / total) * 360;
+        const cancelledDeg =
+          (cancelled / total) * 360;
 
-    const shippedDeg =
-    (shipped / total) * 360;
+        const shippedDeg =
+          (shipped / total) * 360;
 
-document.querySelector(
-    ".donut-chart"
-).style.background =
-    `conic-gradient(
+        document.querySelector(
+          ".donut-chart"
+        ).style.background =
+          `conic-gradient(
         #65495d 0deg ${completedDeg}deg,
         #696969 ${completedDeg}deg ${completedDeg + pendingDeg}deg,
         #c9bec2 ${completedDeg + pendingDeg}deg ${completedDeg + pendingDeg + processingDeg}deg,
@@ -1671,55 +1447,55 @@ document.querySelector(
     )`;
 
         document.getElementById(
-            "totalOrders"
+          "totalOrders"
         ).textContent =
-            stats.totalOrders;
+          stats.totalOrders;
 
         document.getElementById(
-            "pendingOrders"
+          "pendingOrders"
         ).textContent =
-            stats.pendingOrders;
+          stats.pendingOrders;
 
-            document.getElementById(
-    "completedOrders"
-).textContent =
-    stats.completedOrders;
+        document.getElementById(
+          "completedOrders"
+        ).textContent =
+          stats.completedOrders;
 
-    document.getElementById(
-    "totalUsers"
-).textContent =
-    stats.totalUsers;
+        document.getElementById(
+          "totalUsers"
+        ).textContent =
+          stats.totalUsers;
 
-    document.getElementById(
-    "pendingPayments"
-).textContent =
-    stats.pendingPayments;
+        document.getElementById(
+          "pendingPayments"
+        ).textContent =
+          stats.pendingPayments;
 
         console.log(
-            "Dashboard Stats:",
-            stats
+          "Dashboard Stats:",
+          stats
         );
 
-    } catch (error) {
+      } catch (error) {
 
         console.error(
-            "Dashboard Error:",
-            error
+          "Dashboard Error:",
+          error
         );
 
+      }
     }
-}
 
-function renderRecentOrders(
-    orders
-) {
+    function renderRecentOrders(
+      orders
+    ) {
 
-    const tbody =
+      const tbody =
         document.getElementById(
-            "recentOrdersBody"
+          "recentOrdersBody"
         );
 
-    if (!orders.length) {
+      if (!orders.length) {
 
         tbody.innerHTML = `
             <tr>
@@ -1730,9 +1506,9 @@ function renderRecentOrders(
         `;
 
         return;
-    }
+      }
 
-    tbody.innerHTML =
+      tbody.innerHTML =
         orders.map(order => `
 
             <tr>
@@ -1751,8 +1527,8 @@ function renderRecentOrders(
 
                 <td>
                     ₱${Number(
-                        order.total_amount
-                    ).toFixed(2)}
+          order.total_amount
+        ).toFixed(2)}
                 </td>
 
                 <td>
@@ -1768,14 +1544,14 @@ function renderRecentOrders(
             </tr>
 
         `).join("");
-}
+    }
 
-document.addEventListener(
-    "DOMContentLoaded",
-    loadDashboard
-);
+    document.addEventListener(
+      "DOMContentLoaded",
+      loadDashboard
+    );
 
-</script>
+  </script>
 </body>
 
 </html>

@@ -621,9 +621,7 @@ a {
   width: 145px;
 }
 
-.audit-table th:nth-child(6) {
-  width: 125px;
-}
+
 
 
 /* ===============================================================
@@ -735,8 +733,7 @@ a {
    OTHER TABLE CELLS
 ================================================================ */
 
-.date-cell,
-.ip-cell {
+.date-cell {
   color: #888888 !important;
 
   white-space: nowrap;

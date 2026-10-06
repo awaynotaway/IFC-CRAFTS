@@ -13,8 +13,14 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <link rel="stylesheet" href="styles/messages.css">
+  <link rel="stylesheet" href="styles/admin-common.css">
+  <link rel="stylesheet" href="styles/admin-account.css">
+<script src="js/admin-account.js" defer></script>
+
 </head>
 
 <body>
@@ -108,224 +114,145 @@
       <nav class="sidenav">
 
 
-        <!-- DASHBOARD -->
-
-        <a href="index.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Dashboard -->
+        <a href="adminDashboard.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
             <rect x="3" y="14" width="7" height="7"></rect>
             <rect x="14" y="14" width="7" height="7"></rect>
           </svg>
-
           <span>Dashboard</span>
-
         </a>
 
-
-        <!-- ORDERS -->
-
+        <!-- Orders -->
         <a href="orders.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2h12v20H6z"></path>
             <path d="M9 6h6"></path>
             <path d="M9 10h6"></path>
             <path d="M9 14h4"></path>
           </svg>
-
           <span>Orders</span>
-
         </a>
 
-
-        <!-- PRODUCTS & SERVICES -->
-
+        <!-- Custom Orders -->
+          <a href="custom_orders.html" class="sidenav-link">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h7"></path>
+              <path d="M14 2v6h6"></path>
+              <path d="m14 2 6 6v3"></path>
+              <path d="M8 12h4"></path>
+              <path d="M8 16h2"></path>
+              <path d="m16 20 5-5-2-2-5 5-.5 2.5Z"></path>
+            </svg>
+            <span>Custom Orders</span>
+          </a>
+        <!-- Products & Services -->
         <a href="products_services.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
             <path d="m3.3 7 8.7 5 8.7-5"></path>
             <path d="M12 22V12"></path>
           </svg>
-
           <span>Products &amp; Services</span>
-
         </a>
 
-
-        <!-- USERS -->
-
+        <!-- Users -->
         <a href="users.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
             <circle cx="9" cy="7" r="4"></circle>
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-
           <span>Users</span>
-
         </a>
 
-
-        <!-- MESSAGES -->
-
-        <a href="messages.html" class="sidenav-link active">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+        <!-- Messages -->
+        <a href="messages.html" class="sidenav-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-4.9A8.5 8.5 0 1 1 21 11.5Z"></path>
             <path d="M8 12h.01"></path>
             <path d="M12 12h.01"></path>
             <path d="M16 12h.01"></path>
           </svg>
-
           <span>Messages</span>
-
         </a>
 
-
-        <!-- NOTIFICATIONS -->
-
+        <!-- Notifications -->
         <a href="notifications.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-
           <span>Notifications</span>
-
         </a>
 
-
-        <!-- REVIEWS -->
-
+        <!-- Reviews -->
         <a href="reviews.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path>
           </svg>
-
           <span>Reviews</span>
-
         </a>
 
-
-        <!-- REPORTS -->
-
+        <!-- Reports -->
         <a href="reports.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 19V5"></path>
             <path d="M4 5h16l-2 4 2 4H4"></path>
           </svg>
-
           <span>Reports</span>
-
         </a>
 
-
-        <!-- AUDIT LOGS -->
-
+        <!-- Audit Logs -->
         <a href="audit_logs.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 3h18v18H3z"></path>
             <path d="M7 7h10"></path>
             <path d="M7 11h10"></path>
             <path d="M7 15h6"></path>
           </svg>
-
           <span>Audit Logs</span>
-
         </a>
 
-
-        <!-- SETTINGS -->
-
+        <!-- Settings -->
         <a href="settings.html" class="sidenav-link">
-
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19.43 12.98c.04-.32.07-.65.07-.98s-.02-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.37-.31-.6-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98L14.5 2.42C14.47 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42L9.12 5.07c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.08-.48 0-.6.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.08.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.37.31.6.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.61-.25 1.17-.58 1.69-.98l2.49 1c.23.08.48 0 .6-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
           </svg>
-
           <span>Settings</span>
-
         </a>
 
       </nav>
-
     </aside>
 
 
@@ -441,9 +368,12 @@
             </button>
 
 
-            <div class="chat-avatar">
-              MS
-            </div>
+            <div
+  class="chat-avatar"
+  id="chatAvatar"
+>
+  MS
+</div>
 
 
             <div class="chat-user-info">
@@ -630,18 +560,15 @@
 
                   <div>
                     <span>Customer</span>
-                    <strong>Maria Santos</strong>
+                    <strong></strong>
                   </div>
 
                   <div>
                     <span>Request Type</span>
-                    <strong>Custom Order</strong>
+                    <strong></strong>
                   </div>
 
-                  <div>
-                    <span>Product</span>
-                    <strong>Custom Necklace</strong>
-                  </div>
+                
 
                 </div>
 
@@ -895,16 +822,9 @@
 
         <div class="request-detail-status">
 
-          <span
-            class="request-status status-open"
-            id="modalRequestStatus"
-          >
-            Open
-          </span>
+         
 
-          <span id="claimedByText">
-            Not yet claimed
-          </span>
+          
 
         </div>
 
@@ -919,22 +839,22 @@
 
             <div class="request-detail-item">
               <span>Customer</span>
-              <strong>Maria Santos</strong>
+              <strong id="modalCustomerName"></strong>
             </div>
 
             <div class="request-detail-item">
               <span>Email</span>
-              <strong>maria@gmail.com</strong>
+              <strong id="modalCustomerEmail"></strong>
             </div>
 
             <div class="request-detail-item">
               <span>Contact No.</span>
-              <strong>09567966487</strong>
+              <strong id="modalCustomerContact"></strong>
             </div>
 
             <div class="request-detail-item">
               <span>Date Submitted</span>
-              <strong>September 25, 2026</strong>
+              <strong id="modalDateSubmitted"></strong>
             </div>
 
           </div>
@@ -951,24 +871,19 @@
           <div class="request-detail-grid">
 
             <div class="request-detail-item">
-              <span>Request Type</span>
-              <strong>Custom Order</strong>
-            </div>
+    <span>Request Type</span>
+    <strong id="modalRequestType"></strong>
+</div>
 
-            <div class="request-detail-item">
-              <span>Product / Service</span>
-              <strong>Custom Necklace</strong>
-            </div>
+<div class="request-detail-item">
+    <span>Preferred Date</span>
+    <strong id="modalPreferredDate"></strong>
+</div>
 
-            <div class="request-detail-item">
-              <span>Preferred Material</span>
-              <strong>Beads &amp; Charms</strong>
-            </div>
-
-            <div class="request-detail-item">
-              <span>Quantity</span>
-              <strong>1</strong>
-            </div>
+<div class="request-detail-item">
+    <span>Quantity</span>
+    <strong id="modalQuantity"></strong>
+</div>
 
           </div>
 
@@ -981,13 +896,10 @@
 
           <h3>Request Description</h3>
 
-          <div class="request-description">
-
-            I would like a custom necklace with blue and white
-            beads. I would also like a small silver charm in the
-            center.
-
-          </div>
+         <div
+    class="request-description"
+    id="modalDescription"
+></div>
 
         </section>
 
@@ -998,78 +910,111 @@
 
           <h3>Reference / Additional Notes</h3>
 
-          <div class="request-description">
-
-            Customer prefers a simple design and would like to
-            receive an estimated price before proceeding.
-
-          </div>
+          <div
+    class="request-description"
+    id="modalNotes"
+></div>
 
         </section>
+
+        <section class="request-detail-section">
+
+    <h3>
+        Reference Image
+    </h3>
+
+    <img
+        id="modalReferenceImage"
+        src=""
+        alt="Reference Image"
+        style="
+            width:100%;
+            max-height:350px;
+            object-fit:contain;
+            border:1px solid #d1d5db;
+            border-radius:12px;
+            display:none;
+        "
+    >
+
+</section>
 
       </div>
 
 
       <!-- MODAL ACTIONS -->
 
-      <div class="request-modal-actions">
-
-        <button
-          type="button"
-          class="modal-claim-btn"
-          id="modalClaimBtn"
-        >
-          Claim Request
-        </button>
-
-        <button
-          type="button"
-          class="modal-close-request-btn"
-          id="modalCloseRequestBtn"
-        >
-          Close Request
-        </button>
-
-      </div>
+    
 
     </section>
 
   </div>
 
 
+  <div
+    class="modal-overlay"
+    id="rejectModal"
+>
+    <div class="request-modal">
+
+        <div class="request-modal-header">
+            <h2>Reject Request</h2>
+
+            <button
+                type="button"
+                id="closeRejectModal"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="request-modal-body">
+
+            <label>
+                Reason
+            </label>
+
+            <textarea
+                id="rejectReason"
+                rows="5"
+                style="
+                    width:100%;
+                    resize:none;
+                    padding:12px;
+                "
+            ></textarea>
+
+            <br><br>
+
+            <button
+                type="button"
+                id="submitRejectBtn"
+            >
+                Submit
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
   <script>
 
+let selectedRejectRequestId =
+    null;
     /* ===============================================================
        SAMPLE CONVERSATIONS
        Backend/database team can replace this later.
     =============================================================== */
 
-    const conversations = [
-      {
-        id: 1,
-        name: "Maria Santos",
-        initials: "MS",
-        preview: "Order #001 · Necklace",
-        time: "10:35 AM",
-        unread: 2
-      },
-      {
-        id: 2,
-        name: "Angela Cruz",
-        initials: "AC",
-        preview: "Inquiry · Bracelet",
-        time: "Yesterday",
-        unread: 0
-      },
-      {
-        id: 3,
-        name: "Joshua Reyes",
-        initials: "JR",
-        preview: "Custom order request",
-        time: "Sep 24",
-        unread: 1
-      }
-    ];
+    let conversations = [];
+
+const API_BASE_URL = "/api";
+
+const token =
+  localStorage.getItem("token");
+
+let activeChatId = null;
 
 
     const conversationList =
@@ -1105,14 +1050,10 @@
     const claimRequestBtn =
       document.getElementById("claimRequestBtn");
 
-    const modalClaimBtn =
-      document.getElementById("modalClaimBtn");
 
     const closeRequestBtn =
       document.getElementById("closeRequestBtn");
 
-    const modalCloseRequestBtn =
-      document.getElementById("modalCloseRequestBtn");
 
     const chatMoreBtn =
     document.getElementById("chatMoreBtn");
@@ -1147,6 +1088,370 @@
       claimed: false,
       claimedBy: null
     };
+
+    function renderMessage(message) {
+
+    try {
+
+        const data =
+            JSON.parse(
+                message.message
+            );
+
+        if (
+            data.type ===
+            "request_card"
+        ) {
+          const status =
+    String(
+        data.status || ""
+    ).toLowerCase();
+
+const disabledAttr =
+(
+    status === "rejected" ||
+    status === "claimed" ||
+    status === "reviewing"
+)
+    ? "disabled"
+    : "";
+            return `
+
+            <div class="request-message">
+
+                <div class="request-card">
+
+                    <div class="request-card-top">
+
+                        <div class="request-card-icon">
+                            📋
+                        </div>
+
+                        <div class="request-card-heading">
+
+                            <div class="request-title-row">
+
+                                <strong>
+                                    Customer Request
+                                </strong>
+
+                                <span
+    class="request-status ${
+    data.status === "rejected"
+        ? "status-closed"
+        : (
+            data.status === "claimed" ||
+            data.status === "reviewing"
+        )
+        ? "status-claimed"
+        : "status-open"
+}"
+>
+    ${data.status || "pending"}
+</span>
+
+                            </div>
+
+                            <span>
+                                Request #${data.requestCode}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="request-preview">
+
+                        <div>
+
+                            <span>
+                                Customer
+                            </span>
+
+                            <strong>
+                                ${document.getElementById(
+                                    "chatCustomerName"
+                                ).textContent}
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Request Type
+                            </span>
+
+                            <strong>
+                                ${data.requestType}
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong>
+    ${
+    (
+        data.status === "claimed" ||
+        data.status === "reviewing"
+    )
+        ? "Claimed"
+        : data.status === "rejected"
+        ? "Rejected"
+        : "Pending"
+}
+</strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="request-actions">
+
+                        <button
+                            type="button"
+                            class="request-action-btn view-request-btn"
+                            onclick="openRequestModal(${data.requestId})"
+                        >
+                            View
+                        </button>
+
+                        <button
+    type="button"
+    class="request-action-btn claim-request-btn"
+    onclick="claimRequest(${data.requestId})"
+    ${disabledAttr}
+>
+    Claim
+</button>
+
+                        <button
+    type="button"
+    class="request-action-btn close-request-btn"
+    onclick="openRejectModal(${data.requestId})"
+    ${disabledAttr}
+>
+    Reject
+</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            `;
+
+        }
+
+    }
+    catch {
+
+    }
+
+    return `
+
+    <div class="message-bubble">
+        ${message.message}
+    </div>
+
+`;
+
+}
+
+    async function loadMessages(chatId) {
+
+  try {
+
+    activeChatId = chatId;
+
+    const response =
+      await fetch(
+        `${API_BASE_URL}/chats/${chatId}/messages`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
+        }
+      );
+
+    const result =
+      await response.json();
+
+    if (!result.success) {
+      return;
+    }
+
+    chatBody.innerHTML = "";
+
+   const currentUser =
+  JSON.parse(
+    localStorage.getItem("user")
+  ) || {};
+
+
+
+    result.data.forEach(message => {
+
+      const isAdmin =
+        Number(message.sender_id) ===
+        Number(currentUser.id);
+
+      chatBody.innerHTML += `
+
+        <div class="message-row ${
+          isAdmin
+            ? "admin-message"
+            : "customer-message"
+        }">
+
+          ${
+            !isAdmin
+              ? `
+                <div class="message-avatar">
+                  ${message.first_name[0]}${message.last_name[0]}
+                </div>
+              `
+              : ""
+          }
+
+          <div>
+
+            ${renderMessage(message)}
+
+            <span class="message-time">
+              ${new Date(
+                message.created_at
+              ).toLocaleTimeString()}
+            </span>
+
+          </div>
+
+          ${
+            isAdmin
+              ? `
+                <div class="message-avatar admin-avatar">
+                  A
+                </div>
+              `
+              : ""
+          }
+
+        </div>
+
+      `;
+
+    });
+
+    chatBody.scrollTop =
+      chatBody.scrollHeight;
+
+  } catch (error) {
+
+    console.error(
+      "Load Messages Error:",
+      error
+    );
+
+  }
+
+}
+
+    async function loadChats() {
+
+  try {
+
+    const response =
+      await fetch(
+        `${API_BASE_URL}/chats`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
+        }
+      );
+
+    const result =
+      await response.json();
+
+    if (!result.success) {
+      return;
+    }
+
+    conversations =
+      result.data.map(
+        chat => ({
+
+          id:
+            chat.id,
+
+          name:
+            `${chat.first_name} ${chat.last_name}`,
+
+          initials:
+            (
+              chat.first_name[0] +
+              chat.last_name[0]
+            ).toUpperCase(),
+
+          preview:
+            chat.last_message ||
+            "No messages yet",
+
+          time:
+            new Date(
+              chat.updated_at
+            ).toLocaleDateString(),
+
+          unread: 0
+
+        })
+      );
+
+    renderConversations();
+
+if (
+  conversations.length > 0 &&
+  !activeChatId
+) {
+
+  const firstChat =
+    conversations[0];
+
+  activeChatId =
+    firstChat.id;
+
+  document.getElementById(
+    "chatCustomerName"
+  ).textContent =
+    firstChat.name;
+document.getElementById(
+  "chatAvatar"
+).textContent =
+  firstChat.initials;
+  loadMessages(
+    firstChat.id
+  );
+
+}
+
+  } catch (error) {
+
+    console.error(
+      "Load Chats Error:",
+      error
+    );
+
+  }
+
+}
 
 
     /* ===============================================================
@@ -1191,10 +1496,10 @@
         filtered.map(conversation => `
 
           <button
-            type="button"
-            class="conversation-item
-              ${conversation.id === 1 ? "active" : ""}"
-          >
+  type="button"
+  class="conversation-item"
+  data-chat-id="${conversation.id}"
+>
 
             <span class="conversation-avatar">
               ${conversation.initials}
@@ -1275,6 +1580,52 @@
 
     });
 
+    conversationList.addEventListener(
+  "click",
+  event => {
+
+    const item =
+      event.target.closest(
+        ".conversation-item"
+      );
+
+    if (!item) {
+      return;
+    }
+
+    document
+      .querySelectorAll(
+        ".conversation-item"
+      )
+      .forEach(button => {
+
+        button.classList.remove(
+          "active"
+        );
+
+      });
+
+    item.classList.add(
+      "active"
+    );
+
+    loadMessages(
+      item.dataset.chatId
+    );
+    const chat =
+  conversations.find(
+    conversation =>
+      conversation.id ==
+      item.dataset.chatId
+  );
+
+document.getElementById(
+  "chatCustomerName"
+).textContent =
+  chat.name;
+
+  }
+);
 
     /* ===============================================================
        VIEW REQUEST
@@ -1288,21 +1639,135 @@
     );
 
 
-    function openRequestModal() {
+    async function openRequestModal(
+    requestId
+) {
 
-      requestModal.classList.add("open");
+    try {
 
-      requestModal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
+        const response =
+            await fetch(
+                `${API_BASE_URL}/custom-requests/${requestId}`,
+                {
+                    headers: {
+                        Authorization:
+                            `Bearer ${token}`
+                    }
+                }
+            );
 
-      document.body.classList.add(
-        "modal-open"
-      );
+        const result =
+            await response.json();
+
+        if (!result.success) {
+            return;
+        }
+
+        const request =
+            result.data;
+
+        document.querySelector(
+            ".request-modal-header h2"
+        ).textContent =
+            `Request #${request.request_code}`;
+
+        document.getElementById(
+            "modalCustomerName"
+        ).textContent =
+            request.customer_name || "N/A";
+
+        document.getElementById(
+            "modalCustomerEmail"
+        ).textContent =
+            request.email || "N/A";
+
+        document.getElementById(
+            "modalCustomerContact"
+        ).textContent =
+            request.contact_number || "N/A";
+
+        document.getElementById(
+            "modalDateSubmitted"
+        ).textContent =
+            new Date(
+                request.created_at
+            ).toLocaleDateString();
+            document.getElementById(
+    "modalRequestType"
+).textContent =
+    request.request_type || "N/A";
+
+    document.getElementById(
+    "modalPreferredDate"
+).textContent =
+    request.preferred_date
+        ? new Date(
+              request.preferred_date
+          ).toLocaleDateString()
+        : "N/A";
+
+
+
+
+        document.getElementById(
+            "modalQuantity"
+        ).textContent =
+            request.quantity || 0;
+
+        document.getElementById(
+            "modalDescription"
+        ).textContent =
+            request.description || "No description";
+
+        document.getElementById(
+            "modalNotes"
+        ).textContent =
+            request.additional_notes || "None";
+const referenceImage =
+    document.getElementById(
+        "modalReferenceImage"
+    );
+
+if (
+    request.reference_image
+) {
+
+    referenceImage.src =
+        `http://localhost:5000${request.reference_image}`;
+
+    referenceImage.style.display =
+        "block";
+
+} else {
+
+    referenceImage.style.display =
+        "none";
+
+}
+        requestModal.classList.add(
+            "open"
+        );
+
+        requestModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "modal-open"
+        );
+
+    }
+    catch(error) {
+
+        console.error(
+            "VIEW REQUEST ERROR:",
+            error
+        );
 
     }
 
+}
 
     function closeRequestModal() {
 
@@ -1344,21 +1809,53 @@
        CLAIM REQUEST
     =============================================================== */
 
-    function claimRequest() {
+    async function claimRequest(
+    requestId
+) {
 
-      if (requestState.status === "Closed") {
-        return;
-      }
+    try {
+
+        const response =
+            await fetch(
+                `${API_BASE_URL}/custom-requests/${requestId}/claim`,
+                {
+                    method:"PUT",
+
+                    headers:{
+                        Authorization:
+                            `Bearer ${token}`
+                    }
+                }
+            );
+
+        const result =
+            await response.json();
+
+        if (
+            result.success
+        ) {
+
+            alert(
+    "Custom request claimed successfully."
+);
 
 
-      requestState.claimed = true;
-      requestState.claimedBy = "Admin";
-      requestState.status = "Claimed";
+            await loadMessages(
+                activeChatId
+            );
 
-
-      updateRequestUI();
+        }
 
     }
+    catch(error) {
+
+        console.error(
+            error
+        );
+
+    }
+
+}
 
 
     claimRequestBtn.addEventListener(
@@ -1367,36 +1864,61 @@
     );
 
 
-    modalClaimBtn.addEventListener(
-      "click",
-      claimRequest
-    );
-
+  
 
     /* ===============================================================
        CLOSE REQUEST
     =============================================================== */
 
-    function closeRequest() {
+   async function closeRequest(
+    requestId
+) {
 
-      requestState.status = "Closed";
+    try {
 
-      updateRequestUI();
+        const response =
+            await fetch(
+                `${API_BASE_URL}/custom-requests/${requestId}/reject`,
+                {
+                    method: "PUT",
+                    headers: {
+                        Authorization:
+                            `Bearer ${token}`
+                    }
+                }
+            );
+
+        const result =
+            await response.json();
+
+        if (
+            result.success
+        ) {
+
+            alert(
+                "Request rejected successfully."
+            );
+
+            await loadMessages(
+                activeChatId
+            );
+
+        }
+
+    }
+    catch (error) {
+
+        console.error(
+            error
+        );
 
     }
 
-
-    closeRequestBtn.addEventListener(
-      "click",
-      closeRequest
-    );
+}
 
 
-    modalCloseRequestBtn.addEventListener(
-      "click",
-      closeRequest
-    );
 
+    
 
     /* ===============================================================
        UPDATE REQUEST UI
@@ -1468,11 +1990,9 @@
         claimRequestBtn.textContent =
           "Claimed";
 
-        modalClaimBtn.textContent =
-          "Claimed";
 
         claimRequestBtn.disabled = true;
-        modalClaimBtn.disabled = true;
+
 
       }
 
@@ -1482,14 +2002,11 @@
         closeRequestBtn.textContent =
           "Closed";
 
-        modalCloseRequestBtn.textContent =
-          "Closed";
-
         closeRequestBtn.disabled = true;
-        modalCloseRequestBtn.disabled = true;
+
 
         claimRequestBtn.disabled = true;
-        modalClaimBtn.disabled = true;
+
 
       }
 
@@ -1533,58 +2050,164 @@
     );
 
 
+    document
+.getElementById(
+    "submitRejectBtn"
+)
+.addEventListener(
+    "click",
+    submitRejectRequest
+);
+
+async function submitRejectRequest() {
+
+    const reason =
+        document
+        .getElementById(
+            "rejectReason"
+        )
+        .value
+        .trim();
+
+    if (!reason) {
+
+        alert(
+            "Please enter a reason."
+        );
+
+        return;
+    }
+
+    try {
+
+        const response =
+            await fetch(
+                `${API_BASE_URL}/custom-requests/${selectedRejectRequestId}/reject`,
+                {
+                    method: "PUT",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json",
+
+                        Authorization:
+                            `Bearer ${token}`
+                    },
+
+                    body: JSON.stringify({
+                        reason
+                    })
+                }
+            );
+
+        const result =
+            await response.json();
+
+        if (result.success) {
+
+            alert(
+                "Request rejected successfully."
+            );
+
+            document
+                .getElementById(
+                    "rejectModal"
+                )
+                .classList.remove(
+                    "open"
+                );
+
+            document
+                .getElementById(
+                    "rejectReason"
+                )
+                .value = "";
+
+            await loadMessages(
+                activeChatId
+            );
+
+        }
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+    }
+
+}
+
     /* ===============================================================
        SEND MESSAGE
     =============================================================== */
 
-    function sendMessage() {
+    async function sendMessage() {
 
-      const message =
-        messageInput.value.trim();
+  const message =
+    messageInput.value.trim();
 
+  if (
+    !message ||
+    !activeChatId
+  ) {
+    return;
+  }
 
-      if (!message) {
-        return;
-      }
+  try {
 
+    const response =
+      await fetch(
+        `${API_BASE_URL}/chats/${activeChatId}/messages`,
+        {
+          method: "POST",
 
-      const row =
-        document.createElement("div");
+          headers: {
 
+            "Content-Type":
+              "application/json",
 
-      row.className =
-        "message-row admin-message";
+            Authorization:
+              `Bearer ${token}`
 
+          },
 
-      row.innerHTML = `
+          body: JSON.stringify({
 
-        <div>
+            message
 
-          <div class="message-bubble">
-            ${escapeHTML(message)}
-          </div>
+          })
 
-          <span class="message-time">
-            Just now
-          </span>
+        }
+      );
 
-        </div>
+    const result =
+      await response.json();
 
-        <div class="message-avatar admin-avatar">
-          A
-        </div>
+    if (!result.success) {
 
-      `;
-
-
-      chatBody.appendChild(row);
-
-      messageInput.value = "";
-
-      chatBody.scrollTop =
-        chatBody.scrollHeight;
+      throw new Error(
+        "Failed to send message."
+      );
 
     }
+
+    messageInput.value = "";
+
+    await loadMessages(
+      activeChatId
+    );
+
+
+  } catch (error) {
+
+    console.error(
+      error
+    );
+
+  }
+
+}
 
 
     document.getElementById(
@@ -1639,14 +2262,48 @@
       }
     );
 
+    function openRejectModal(
+    requestId
+) {
+
+    selectedRejectRequestId =
+        requestId;
+
+    document
+        .getElementById(
+            "rejectModal"
+        )
+        .classList.add(
+            "open"
+        );
+
+}
+
+document
+.getElementById(
+    "closeRejectModal"
+)
+.addEventListener(
+    "click",
+    () => {
+
+        document
+        .getElementById(
+            "rejectModal"
+        )
+        .classList.remove(
+            "open"
+        );
+
+    }
+);
+
 
     /* ===============================================================
        INITIALIZE
     =============================================================== */
-
-    renderConversations();
-    updateRequestUI();
-
+loadChats();
+updateRequestUI();
   </script>
 
 </body>

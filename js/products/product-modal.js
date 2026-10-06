@@ -1,3 +1,4 @@
+let activeProduct = null;
 function showProductModal(
     productId
 ) {
@@ -11,6 +12,7 @@ function showProductModal(
 
     if (!product)
         return;
+    activeProduct = product;
 
     document.getElementById(
         "modalTitle"
@@ -22,10 +24,18 @@ function showProductModal(
     ).textContent =
         `₱${product.price}`;
 
+const modalImage =
     document.getElementById(
         "modalImage"
-    ).src =
-        product.image_url;
+    );
+
+modalImage.src =
+    product.product_image.startsWith("/")
+        ? `http://localhost:5000${product.product_image}`
+        : product.product_image;
+
+modalImage.alt =
+    product.product_name;
 
     document.getElementById(
         "modalDescription"

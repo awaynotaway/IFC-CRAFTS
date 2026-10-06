@@ -580,7 +580,7 @@ a {
 
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
+justify-content: flex-start;
 
   gap: 12px;
 
