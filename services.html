@@ -9,35 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=The+Seasons&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/services.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
 </head>
 <body>
-
 <header class="navbar">
     <div class="nav-container">
         <div class="logo-area">
             <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="nav-logo">
             <span class="brand-name">IFC CRAFTS</span>
         </div>
-        
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </label>
-
         <nav class="nav-links">
             <a href="index.html">HOME</a>
             <a href="products.html">PRODUCTS</a>
             <a href="services.html" class="active">SERVICES</a>
             <a href="reviews.html">REVIEWS</a> 
         </nav>
-
         <div class="nav-right-actions" id="navRightActions">
         </div>
     </div>
 </header>
-
 <div id="hellobar-bar" class="regular closable">
     <div class="hb-content-wrapper">
         <div class="hb-text-wrapper">
@@ -50,9 +47,7 @@
         <a href="javascript:void(0);" class="icon-close" onclick="$('#hellobar-bar').fadeOut()">&#10006;</a>
     </div>
 </div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <main class="main-wrapper">
 <section class="reminders-section">
     <div class="section-container reminders-wrapper">
@@ -72,7 +67,6 @@
                 </div>
             </div>
         </div>
-
         <div class="bottom-cards">
             <div class="henna-card glow-container collapsible-card">
                 <div class="card-header">
@@ -90,7 +84,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="tos-card glow-container collapsible-card">
                 <div class="card-header">
                     <h2 class="card-title">Terms of Service</h2>
@@ -104,36 +97,31 @@
         </div>
     </div>
 </section>
-
 <hr class="section-divider">
-
 <section class="gallery-section">
-    <div class="gallery-header"><h2>Minimalistic Designs (30 PHP)</h2></div>
+    <div class="gallery-header"><h2>Minimalistic Designs</h2></div>
     <div class="carousel-wrapper">
         <button class="carousel-btn prev"><i class="fas fa-arrow-left"></i></button>
         <div class="carousel-track" id="minimalistic-track"></div>
         <button class="carousel-btn next"><i class="fas fa-arrow-right"></i></button>
     </div>
 </section>
-
 <section class="gallery-section">
-    <div class="gallery-header"><h2>Simple Designs (45 PHP)</h2></div>
+    <div class="gallery-header"><h2>Simple Designs</h2></div>
     <div class="carousel-wrapper">
         <button class="carousel-btn prev"><i class="fas fa-arrow-left"></i></button>
         <div class="carousel-track" id="simple-track"></div>
         <button class="carousel-btn next"><i class="fas fa-arrow-right"></i></button>
     </div>
 </section>
-
 <section class="gallery-section">
-    <div class="gallery-header"><h2>Complex Designs (60 PHP)</h2></div>
+    <div class="gallery-header"><h2>Complex Designs</h2></div>
     <div class="carousel-wrapper">
         <button class="carousel-btn prev"><i class="fas fa-arrow-left"></i></button>
         <div class="carousel-track" id="complex-track"></div>
         <button class="carousel-btn next"><i class="fas fa-arrow-right"></i></button>
     </div>
 </section>
-
 <section class="gallery-section">
     <div class="gallery-header"><h2>Matching Designs</h2></div>
     <div class="carousel-wrapper">
@@ -142,8 +130,14 @@
         <button class="carousel-btn next"><i class="fas fa-arrow-right"></i></button>
     </div>
 </section>
+<section class="custom-request-section">
+    <div class="custom-request-container glow-container">
+        <h2>Need Something Custom?</h2>
+        <p>Request a custom henna design, matching henna, henna service booking, or custom handmade item.</p>
+        <button type="button" class="request-service-btn" id="openRequestModal">Request Service</button>
+    </div>
+</section>
 </main>
-
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-brand">
@@ -168,14 +162,111 @@
         <p>&copy; 2026 IFC Crafts. All Rights Reserved.</p>
     </div>
 </footer>
+<!-- SUBMIT REQUEST MODAL -->
+<div class="custom-modal-overlay" id="requestModal" style="display: none;">
+    <div class="custom-modal-content">
+        <div class="custom-modal-header">
+            <h3>Submit Request</h3>
+            <button type="button" class="close-custom-modal" id="closeRequestModal">&times;</button>
+        </div>
+        <form id="serviceRequestForm" class="custom-modal-body">
+            <div class="form-group">
+                <label for="requestType">Request Type <span style="color: red;">*</span></label>
+                <select id="requestType" class="form-control-custom" required>
+                    <option value="" disabled selected>Select Request Type</option>
+                    <option value="custom_henna_design">Custom Henna Design</option>
+                    <option value="matching_henna_design">Matching Henna</option>
+                    <option value="henna_service">Henna Service Booking</option>
+                    <option value="custom_item_order">Custom Handmade Item</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label id="preferredDateLabel" for="preferredDate">Preferred Date <span style="color: red;">*</span></label>
+                <input type="date" id="preferredDate" class="form-control-custom" required>
+            </div>
+            <div class="form-group">
+                <label id="quantityLabel" for="quantity">Quantity / Participants <span style="color: red;">*</span></label>
+                <input type="number" id="quantity" class="form-control-custom" value="1" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Request Description <span style="color: red;">*</span></label>
+                <textarea id="description" class="form-control-custom" rows="3" placeholder="Describe your request..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="referenceImage">Reference Image <span style="color: red;">*</span></label>
+                <div class="file-upload-wrapper">
+                    <label for="referenceImage" class="choose-file-btn">Choose File</label>
+                    <span id="reqFileName" class="file-name-display">No file chosen</span>
+                    <input type="file" id="referenceImage" accept="image/*" style="position: absolute; width: 1px; height: 1px; opacity: 0;" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" class="form-control-custom" rows="2" placeholder="Any additional notes..."></textarea>
+            </div>
+            <button type="submit" id="submitRequestBtn" class="submit-request-action-btn">Submit Request</button>
+        </form>
+    </div>
+</div>
+<!-- CUSTOM ALERT MODAL -->
+<div class="custom-modal-overlay" id="customAlertModalOverlay" style="display: none; z-index: 1300;">
+    <div class="custom-modal-content" style="max-width: 400px; text-align: center;">
+        <div class="custom-modal-header" style="justify-content: center; position: relative;">
+            <h3 id="customAlertTitle" style="margin: 0;">Notification</h3>
+        </div>
+        <div class="custom-modal-body" style="gap: 15px;">
+            <p id="customAlertMessage" style="font-size: 0.95rem; color: #334155; margin: 0; line-height: 1.5;"></p>
+            <button type="button" id="customAlertOkBtn" class="submit-request-action-btn" style="margin-top: 5px;">OK</button>
+        </div>
+    </div>
+</div>
 
 <script src="scripts/script.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const isLoggedIn =
     !!localStorage.getItem("token");
+    document
+    .getElementById(
+        "openRequestModal"
+    )
+    ?.addEventListener(
+        "click",
+        () => {
+            const token =
+                localStorage.getItem(
+                    "token"
+                );
+            if (!token) {
+                showServiceAlert("Please login first to request a service.", () => {
+                    window.location.href = "login.html";
+                });
+                return;
+            }
+            document
+                .getElementById(
+                    "requestModal"
+                )
+                .style.display =
+                "flex";
+        }
+    );
+document
+    .getElementById(
+        "closeRequestModal"
+    )
+    ?.addEventListener(
+        "click",
+        () => {
+            document
+                .getElementById(
+                    "requestModal"
+                )
+                .style.display =
+                "none";
+        }
+    );
         const navRightActions = document.getElementById('navRightActions');
-
         if (navRightActions) {
             if (isLoggedIn) {
                 navRightActions.innerHTML = `
@@ -202,9 +293,7 @@
                 `;
             }
         }
-        
         loadGallery();
-
         const collapseButtons = document.querySelectorAll(".collapse-btn");
         collapseButtons.forEach(button => {
             button.addEventListener("click", () => {
@@ -221,25 +310,21 @@
             });
         });
     });
-
     async function loadGallery() {
         const response = await fetch("hennadesigns.json");
         const data = await response.json();
-
         const sections = {
             minimalistic: document.getElementById("minimalistic-track"),
             simple: document.getElementById("simple-track"),
             complex: document.getElementById("complex-track"),
             matching: document.getElementById("matching-track")
         };
-
         function createCard(item) {
             const card = document.createElement("div");
             card.className = "gallery-card";
             card.innerHTML = `<img src="${item.image}" alt="${item.name}" loading="lazy">`;
             return card;
         }
-
         data.forEach(item => {
             const path = item.image.toLowerCase();
             if (path.includes("/minimalistic/")) {
@@ -252,10 +337,8 @@
                 sections.matching.appendChild(createCard(item));
             }
         });
-
         initializeCarousels();
     }
-
     function initializeCarousels() {
         const wrappers = document.querySelectorAll(".carousel-wrapper");
         wrappers.forEach(wrapper => {
@@ -263,7 +346,6 @@
             const prevBtn = wrapper.querySelector(".prev");
             const nextBtn = wrapper.querySelector(".next");
             let isHovered = false;
-
             requestAnimationFrame(() => {
                 Array.from(track.children).forEach(child => {
                     track.appendChild(child.cloneNode(true));
@@ -277,7 +359,6 @@
                     }
                 }, 15);
             });
-
             wrapper.addEventListener("mouseenter", () => { isHovered = true; });
             wrapper.addEventListener("mouseleave", () => { isHovered = false; });
             prevBtn.addEventListener("click", () => {
@@ -291,6 +372,116 @@
                 setTimeout(() => { isHovered = false; }, 1500);
             });
         });
+    }
+    document.getElementById("serviceRequestForm").addEventListener("submit", submitRequest);
+
+    let requestBusy = false;
+    async function submitRequest(event) {
+        event.preventDefault();
+        const form = document.getElementById("serviceRequestForm");
+        if (requestBusy || !form.reportValidity()) return;
+        const token = localStorage.getItem("token");
+        if (!token) {
+            showServiceAlert("Please login first to request a service.", () => {
+                window.location.href = "login.html";
+            });
+            return;
+        }
+        const description = document.getElementById("description").value.trim();
+        if (!description) {
+            showServiceAlert("Please describe your request.");
+            return;
+        }
+        const image = document.getElementById("referenceImage").files[0];
+        if (!image || !image.type.startsWith("image/")) {
+            showServiceAlert("Please choose a reference image.");
+            return;
+        }
+        const formData = new FormData();
+        formData.append("requestType", document.getElementById("requestType").value);
+        formData.append("preferredDate", document.getElementById("preferredDate").value);
+        formData.append("quantity", document.getElementById("quantity").value);
+        formData.append("description", description);
+        formData.append("notes", document.getElementById("notes").value.trim());
+        formData.append("referenceImage", image);
+        const submit = document.getElementById("submitRequestBtn");
+        requestBusy = true;
+        submit.disabled = true;
+        submit.textContent = "Submitting…";
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+        try {
+            const apiBase = String(window.IFC_API_BASE || "http://localhost:5000/api").replace(/\/$/, "");
+            const response = await fetch(apiBase + "/custom-requests", {
+                method: "POST",
+                headers: { Authorization: `Bearer ${token}` },
+                body: formData,
+                signal: controller.signal
+            });
+            let result;
+            try {
+                result = await response.json();
+            } catch {
+                throw new Error("The server returned an unexpected response. Please check the backend endpoint.");
+            }
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || "Failed to submit request.");
+            }
+            document.getElementById("requestModal").style.display = "none";
+            form.reset();
+            updateRequestFields();
+            document.getElementById("reqFileName").textContent = "No file chosen";
+            showServiceAlert("Request submitted successfully!", () => {
+                if (result.chatId !== undefined && result.chatId !== null && result.chatId !== "") {
+                    window.location.href = "user/userMessage.html?chatId=" + encodeURIComponent(result.chatId);
+                }
+            });
+        } catch (error) {
+            console.error("Service request error:", error);
+            showServiceAlert(error.name === "AbortError"
+                ? "The request timed out. Check your messages before submitting again."
+                : error instanceof TypeError
+                    ? "Cannot connect to the backend. Make sure it is running."
+                    : error.message);
+        } finally {
+            clearTimeout(timeout);
+            requestBusy = false;
+            submit.disabled = false;
+            submit.textContent = "Submit Request";
+        }
+    }
+
+    function updateRequestFields() {
+        const customItem = document.getElementById("requestType").value === "custom_item_order";
+        const date = document.getElementById("preferredDate");
+        date.disabled = customItem;
+        date.required = !customItem;
+        date.closest(".form-group").style.display = customItem ? "none" : "block";
+        if (customItem) date.value = "";
+        document.getElementById("quantityLabel").textContent = customItem ? "Quantity *" : "Quantity / Participants *";
+    }
+    document.getElementById("requestType").addEventListener("change", updateRequestFields);
+    updateRequestFields();
+    document.getElementById("referenceImage").addEventListener("change", (event) => {
+        document.getElementById("reqFileName").textContent = event.target.files[0]?.name || "No file chosen";
+    });
+    document.getElementById("requestModal").addEventListener("click", (event) => {
+        if (event.target.id === "requestModal" && !requestBusy) event.target.style.display = "none";
+    });
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !requestBusy) document.getElementById("requestModal").style.display = "none";
+    });
+
+    function showServiceAlert(message, callback = null) {
+        const overlay = document.getElementById("customAlertModalOverlay");
+        document.getElementById("customAlertMessage").textContent = message;
+        overlay.style.display = "flex";
+        const button = document.getElementById("customAlertOkBtn");
+        button.onclick = () => {
+            overlay.style.display = "none";
+            if (callback) callback();
+        };
+        button.focus();
     }
 </script>
 </body>

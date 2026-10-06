@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Login</title>
+</head>
+<body>
+
+<script>
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const token =
+    params.get("token");
+
+const firstName =
+    params.get("firstName");
+
+const email =
+    params.get("email");
+
+if (token) {
+
+    localStorage.removeItem(
+        "token"
+    );
+
+    localStorage.removeItem(
+        "user"
+    );
+
+    localStorage.setItem(
+        "token",
+        token
+    );
+
+    const lastName =
+    params.get("lastName");
+
+localStorage.setItem(
+    "user",
+    JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        role: "customer"
+    })
+);
+
+    window.location.href =
+        "/user/userDashboard.html";
+
+}
+else {
+
+    window.location.href =
+        "/login.html";
+
+}
+
+</script>
+</body>
+</html>

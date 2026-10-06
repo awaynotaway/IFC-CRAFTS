@@ -92,16 +92,94 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('menu-toggle').checked = false;
-            });
-        });
 
-        document.getElementById('verifyForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            window.location.href = "createNewPassword.html";
-        });
-    </script>
+document.querySelectorAll(
+    '.nav-links a'
+).forEach(link => {
+
+    link.addEventListener(
+        'click',
+        () => {
+
+            document.getElementById(
+                'menu-toggle'
+            ).checked = false;
+
+        }
+    );
+
+});
+
+const email =
+new URLSearchParams(
+    window.location.search
+).get("email");
+
+console.log(
+    "EMAIL:",
+    email
+);
+
+document
+.getElementById(
+    "verifyForm"
+)
+.addEventListener(
+    "submit",
+    async function(e) {
+
+        e.preventDefault();
+
+        const code =
+            document
+            .getElementById(
+                "code"
+            )
+            .value
+            .trim();
+
+        const response =
+            await fetch(
+                "http://localhost:5000/api/auth/verify-reset-code",
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
+
+                    body:JSON.stringify({
+                        email,
+                        code
+                    })
+                }
+            );
+
+        const result =
+            await response.json();
+
+        if (
+            result.success
+        ) {
+
+            window.location.href =
+            `createNewPassword.html?email=${encodeURIComponent(
+                email
+            )}`;
+
+        }
+        else {
+
+            alert(
+                result.message
+            );
+
+        }
+
+    }
+);
+
+</script>
 </body>
 </html>

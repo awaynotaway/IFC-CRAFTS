@@ -10,30 +10,38 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+dialog.login-notice { position: fixed; inset: 0; margin: auto; width: min(390px, calc(100vw - 36px)); max-height: calc(100dvh - 36px); height: fit-content; overflow-y: auto; box-sizing: border-box; padding: 30px 24px 24px; border: 0; border-radius: 20px; background: #fff; color: #252932; text-align: center; font-family: 'Inter', sans-serif; box-shadow: 0 24px 70px rgba(23,32,51,.2); }
+dialog.login-notice:not([open]) { display: none; }
+dialog.login-notice::backdrop { background: rgba(17,24,39,.5); }
+.login-notice-icon { display: grid; place-items: center; width: 62px; height: 62px; margin: 0 auto 18px; border-radius: 50%; background: #fef2f2; color: #dc2626; font-size: 27px; }
+.login-notice[data-kind="success"] .login-notice-icon { background: #ecfdf5; color: #059669; }
+.login-notice h2 { margin: 0 0 10px; font-size: 21px; font-weight: 800; line-height: 1.35; }
+.login-notice p { margin: 0 0 24px; color: #606976; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+.login-notice button { width: 100%; padding: 13px 20px; border: 0; border-radius: 10px; background: #171717; color: #fff; font: 600 14px 'Inter',sans-serif; cursor: pointer; }
+.login-notice button:focus-visible { outline: 3px solid #7199e8; outline-offset: 3px; }
+.btn-black-submit:disabled { opacity: .65; cursor: wait; }
+</style>
 </head>
 <body>
-
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
                 <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="nav-logo">
                 <span class="brand-name">IFC CRAFTS</span>
             </div>
-            
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
-
             <nav class="nav-links">
                 <a href="index.html">HOME</a>
                 <a href="products.html">PRODUCTS</a>
                 <a href="services.html">SERVICES</a>
                 <a href="reviews.html">REVIEWS</a>
             </nav>
-
             <div class="nav-right-actions" id="navRightActions">
                 <div id="navAuthArea" class="nav-auth-container">
                     <a href="login.html" class="auth-combined-btn">
@@ -44,44 +52,35 @@
             </div>
         </div>
     </header>
-
     <main class="auth-page-wrapper">
         <div class="auth-card-container">
             <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="auth-page-logo">
-            
             <h1 class="auth-heading">Sign up</h1>
-
             <form id="signupForm" class="custom-auth-form">
                 <div class="custom-input-group">
                     <label for="firstname">First Name: <span class="required-star">*</span></label>
                     <input type="text" id="firstname" name="firstname" required placeholder="Type your first name...">
                 </div>
-
                 <div class="custom-input-group">
                     <label for="lastname">Last Name: <span class="required-star">*</span></label>
                     <input type="text" id="lastname" name="lastname" required placeholder="Type your last name...">
                 </div>
-
                 <div class="custom-input-group">
                     <label for="username">Username: <span class="required-star">*</span></label>
                     <input type="text" id="username" name="username" required placeholder="Type your username...">
                 </div>
-
                 <div class="custom-input-group">
                     <label for="email">Email Address: <span class="required-star">*</span></label>
                     <input type="email" id="email" name="email" required placeholder="Type your email address...">
                 </div>
-
                 <div class="custom-input-group">
                     <label for="contact">Contact Number: <span class="required-star">*</span></label>
                     <input type="text" id="contact" name="contact" required placeholder="Type your contact number...">
                 </div>
-
                 <div class="custom-input-group">
                     <label for="address">Full Address: <span class="required-star">*</span></label>
                     <input type="text" id="address" name="address" required placeholder="Type your full address...">
                 </div>
-
                 <div class="custom-input-group">
                     <label for="password">Password: <span class="required-star">*</span></label>
                     <div class="password-field-wrapper">
@@ -92,7 +91,6 @@
                     </div>
                     <small id="passwordStrengthHint" class="password-hint error-text">Must be more than 8 characters and include a special character.</small>
                 </div>
-
                 <div class="custom-input-group">
                     <label for="confirm_password">Confirm Password: <span class="required-star">*</span></label>
                     <div class="password-field-wrapper">
@@ -103,25 +101,21 @@
                     </div>
                     <small id="passwordMatchHint" class="password-match-hint"></small>
                 </div>
-
                 <div class="auth-btn-wrapper">
                     <button type="submit" class="btn-black-submit">SIGN UP</button>
                 </div>
-
                 <div class="auth-prompt-wrapper">
                     <p>Already have an account? <a href="login.html" class="auth-link">Login</a></p>
                 </div>
             </form>
         </div>
     </main>
-
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>IFC CRAFTS</h3>
                 <p>Handmade • Creative • Student Artists</p>
             </div>
-           
             <div class="footer-socials">
                 <h4>Visit Our Pages</h4>
                 <div class="social-icons">
@@ -129,7 +123,6 @@
                     <a href="https://www.instagram.com/ifc_crafts" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-           
             <div class="footer-contact">
                 <h4>Contact Us</h4>
                 <p>Email: ifc.artgallery@gmail.com</p>
@@ -141,18 +134,15 @@
             <p>&copy; 2026 IFC Crafts. All Rights Reserved.</p>
         </div>
     </footer>
-
     <script>
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('menu-toggle').checked = false;
             });
         });
-
         function togglePassword(fieldId, iconId) {
             const passwordField = document.getElementById(fieldId);
             const eyeIcon = document.getElementById(iconId);
-            
             if (passwordField.type === "password") {
                 passwordField.type = "text";
                 eyeIcon.classList.remove("fa-eye-slash");
@@ -163,24 +153,19 @@
                 eyeIcon.classList.add("fa-eye-slash");
             }
         }
-
         const passwordInput = document.getElementById('password');
         const confirmPasswordInput = document.getElementById('confirm_password');
         const strengthHint = document.getElementById('passwordStrengthHint');
         const matchHint = document.getElementById('passwordMatchHint');
-
         const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
-
         function validatePasswordStrength() {
             const password = passwordInput.value;
-
             if (password === "") {
                 strengthHint.textContent = "Must be more than 8 characters and include a special character.";
                 strengthHint.className = "password-hint error-text";
                 passwordInput.classList.remove('password-match', 'password-mismatch');
                 return;
             }
-
             let errors = [];
             if (password.length <= 8) {
                 errors.push("more than 8 characters");
@@ -188,7 +173,6 @@
             if (!specialCharRegex.test(password)) {
                 errors.push("a special character");
             }
-
             if (errors.length > 0) {
                 strengthHint.textContent = "Password needs: " + errors.join(" and ");
                 strengthHint.className = "password-hint error-text";
@@ -202,18 +186,15 @@
             }
             validatePasswordMatch();
         }
-
         function validatePasswordMatch() {
             const password = passwordInput.value;
             const confirmPassword = confirmPasswordInput.value;
-
             if (confirmPassword === "") {
                 confirmPasswordInput.classList.remove('password-match', 'password-mismatch');
                 matchHint.textContent = "";
                 matchHint.className = "password-match-hint";
                 return;
             }
-
             if (password === confirmPassword) {
                 confirmPasswordInput.classList.remove('password-mismatch');
                 confirmPasswordInput.classList.add('password-match');
@@ -226,15 +207,66 @@
                 matchHint.className = "password-match-hint error-text";
             }
         }
-
         passwordInput.addEventListener('input', validatePasswordStrength);
         confirmPasswordInput.addEventListener('input', validatePasswordMatch);
-
-    
     </script>
-
-    
     <script src="js/config/api.js"></script>
-    <script src="js/auth/register.js"></script>
+    <dialog class="login-notice" id="signupNotice" aria-labelledby="signupNoticeTitle" aria-describedby="signupNoticeMessage">
+<div class="login-notice-icon" aria-hidden="true"><i id="signupNoticeIcon" class="fas fa-exclamation"></i></div>
+<h2 id="signupNoticeTitle"></h2><p id="signupNoticeMessage"></p>
+<button type="button" id="signupNoticeOk" autofocus>Try again</button>
+</dialog>
+<script>
+(() => {
+    const form = document.getElementById("signupForm");
+    const button = form.querySelector('button[type="submit"]');
+    const modal = document.getElementById("signupNotice");
+    const ok = document.getElementById("signupNoticeOk");
+    let busy = false, afterClose = null;
+    function notice(kind, title, message, callback = null) {
+        modal.dataset.kind = kind;
+        document.getElementById("signupNoticeTitle").textContent = title;
+        document.getElementById("signupNoticeMessage").textContent = message;
+        document.getElementById("signupNoticeIcon").className = kind === "success" ? "fas fa-check" : "fas fa-exclamation";
+        ok.textContent = kind === "success" ? "Continue" : "Try again";
+        afterClose = callback;
+        if (!modal.open) modal.showModal();
+    }
+    ok.addEventListener("click", () => modal.close());
+    modal.addEventListener("close", () => { const callback = afterClose; afterClose = null; if (callback) callback(); });
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+        if (busy || !form.reportValidity()) return;
+        const value = id => document.getElementById(id).value.trim();
+        const password = document.getElementById("password").value;
+        if (password !== document.getElementById("confirm_password").value) {
+            notice("error", "Passwords do not match", "Please enter the same password in both fields."); return;
+        }
+        if (password.length <= 8 || !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            notice("error", "Check your password", "Use more than 8 characters and include a special character."); return;
+        }
+        const payload = { firstName: value("firstname"), lastName: value("lastname"), username: value("username"), email: value("email"), contactNumber: value("contact"), address: value("address"), password };
+        if (Object.values(payload).some(v => !v)) { notice("error", "Complete your details", "Please fill in all required fields."); return; }
+        const apiBase = String(window.IFC_API_BASE || window.API_URL || "http://localhost:5000/api").replace(/\/+$/, "");
+        busy = true; button.disabled = true; button.textContent = "SIGNING UP…";
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 30000);
+        try {
+            const response = await fetch(apiBase + "/auth/register", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload), signal: controller.signal });
+            let result;
+            try { result = await response.json(); } catch { throw new Error(`The server returned an unexpected response (${response.status}). Check the backend terminal.`); }
+            if (!response.ok || !result.success) {
+                notice("error", "Unable to sign up", result.message || `Registration failed (${response.status}).`); return;
+            }
+            notice("success", "Check your email", result.message || "Your account was created. Check your email for the verification code.", () => {
+                window.location.href = "verify.html?email=" + encodeURIComponent(payload.email);
+            });
+        } catch (error) {
+            console.error("Register Error:", error);
+            notice("error", "Unable to sign up", error.name === "AbortError" ? "The request timed out. Check your email before trying again." : error instanceof TypeError ? "Cannot connect to the backend. Start the server, then open http://localhost:5000/signup.html." : error.message);
+        } finally { clearTimeout(timeout); busy = false; button.disabled = false; button.textContent = "SIGN UP"; }
+    });
+})();
+</script>
 </body>
 </html>

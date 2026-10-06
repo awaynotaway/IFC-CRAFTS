@@ -1,121 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link href="styles/api-components/root/style.css" rel="stylesheet" />
+    <link href="styles/api-components/root/login.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>IFC Crafts - Login</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=The+Seasons&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=The+Seasons&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="styles/login.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
     <header class="navbar">
-        <div class="nav-container">
-            <div class="logo-area">
-                <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="nav-logo">
-                <span class="brand-name">IFC CRAFTS</span>
-            </div>
-            
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
-            <nav class="nav-links">
-                <a href="index.html">HOME</a>
-                <a href="products.html">PRODUCTS</a>
-                <a href="services.html">SERVICES</a>
-                <a href="reviews.html">REVIEWS</a>
-            </nav>
-
-            <div class="nav-right-actions" id="navRightActions">
-                <div id="navAuthArea" class="nav-auth-container">
-                    <a href="login.html" class="auth-combined-btn">
-                        <i class="fas fa-user"></i>
-                        <span class="auth-text">LOGIN/SIGNUP</span>
-                    </a>
-                </div>
-            </div>
+      <div class="nav-container">
+        <div class="logo-area">
+          <img alt="IFC Crafts Logo" class="nav-logo" src="pics/Logo.jpg" />
+          <span class="brand-name">IFC CRAFTS</span>
         </div>
+        <input class="menu-toggle" id="menu-toggle" type="checkbox" />
+        <label class="hamburger" for="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-links">
+          <a href="index.html">HOME</a>
+          <a href="products.html">PRODUCTS</a>
+          <a href="services.html">SERVICES</a>
+          <a href="reviews.html">REVIEWS</a>
+        </nav>
+        <div class="nav-right-actions" id="navRightActions">
+          <div class="nav-auth-container" id="navAuthArea">
+            <a class="auth-combined-btn" href="login.html">
+              <i class="fas fa-user"></i>
+              <span class="auth-text">LOGIN/SIGNUP</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
-
     <main class="login-page-wrapper">
-        <div class="login-card-container">
-            <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="login-page-logo">
-            
-            <h1 class="login-heading">Login</h1>
-
-            <form id="loginForm" class="custom-login-form">
-                <div class="custom-input-group">
-                    <label for="username">Username:</label>
-<div class="input-with-icon">
-<i class="fas fa-user"></i>
-<input
-type="text"
-id="username"
-name="username"
-required
-placeholder="Type your username..."
->
-</div>
-                </div>
-
-                <div class="custom-input-group">
-                    <label for="password">Password:</label>
-                    <div class="input-with-icon">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="password" name="password" required placeholder="Type your password...">
-                    </div>
-                    <div class="forgot-password-wrapper">
-                        <a href="forgotPassword.html" class="forgot-password-link">Forgot password?</a>
-                    </div>
-                </div>
-
-                <div class="login-btn-wrapper">
-                    <button type="submit" class="btn-black-submit">LOGIN</button>
-                </div>
-
-                <div class="signup-prompt-wrapper">
-                    <p>Don't have an account? <a href="signup.html" class="signup-link">Sign up</a></p>
-                </div>
-            </form>
-        </div>
+      <div class="login-card-container">
+        <img
+          alt="IFC Crafts Logo"
+          class="login-page-logo"
+          src="pics/Logo.jpg"
+        />
+        <h1 class="login-heading">Login</h1>
+        <form class="custom-login-form" id="loginForm">
+          <div class="custom-input-group">
+            <label for="username">Username:</label>
+            <div class="input-with-icon">
+              <i class="fas fa-user"></i>
+              <input
+                id="username"
+                name="username"
+                placeholder="Type your username..."
+                required=""
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="custom-input-group">
+            <label for="password">Password:</label>
+            <div class="input-with-icon">
+              <i class="fas fa-lock"></i>
+              <input
+                id="password"
+                name="password"
+                placeholder="Type your password..."
+                required=""
+                type="password"
+              />
+            </div>
+            <div class="forgot-password-wrapper">
+              <a class="forgot-password-link" href="forgotPassword.html"
+                >Forgot password?</a
+              >
+            </div>
+          </div>
+          <div class="login-btn-wrapper">
+            <button class="btn-black-submit" type="submit">LOGIN</button>
+          </div>
+          <div class="signup-prompt-wrapper">
+            <p>
+              Don't have an account?
+              <a class="signup-link" href="signup.html">Sign up</a>
+            </p>
+          </div>
+          <div class="google-login-wrapper">
+            <a
+              class="google-login-btn"
+              href="http://localhost:5000/api/auth/google"
+              id="googleLoginBtn"
+            >
+              <img
+                alt="Google"
+                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              />
+              <span> Continue with Google </span>
+            </a>
+          </div>
+        </form>
+      </div>
     </main>
-
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>IFC CRAFTS</h3>
-                <p>Handmade • Creative • Student Artists</p>
-            </div>
-           
-            <div class="footer-socials">
-                <h4>Visit Our Pages</h4>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/share/1FCM4HD3Uy/" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ifc_crafts" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-           
-            <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <p>Email: ifc.artgallery@gmail.com</p>
-                <p>Phone: +63 952 678 1122</p>
-                <p>Location: Taytay, Rizal</p>
-            </div>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3>IFC CRAFTS</h3>
+          <p>Handmade • Creative • Student Artists</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 IFC Crafts. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <h4>Visit Our Pages</h4>
+          <div class="social-icons">
+            <a
+              class="social-icon fb"
+              href="https://www.facebook.com/share/1FCM4HD3Uy/"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="social-icon ig"
+              href="https://www.instagram.com/ifc_crafts"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
         </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>Email: ifc.artgallery@gmail.com</p>
+          <p>Phone: +63 952 678 1122</p>
+          <p>Location: Taytay, Rizal</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 IFC Crafts. All Rights Reserved.</p>
+      </div>
     </footer>
 
-   <script src="js/config/api.js">  </script>
-    <script src="js/auth/login.js"></script>
-</body>
+    <script src="js/migration/runtime.js"></script>
+    <script src="js/config/api.js"></script>
+
+    <script src="js/migration/navigation.js"></script>
+    <dialog
+      aria-describedby="loginNoticeMessage"
+      aria-labelledby="loginNoticeTitle"
+      class="login-notice"
+      data-kind="error"
+      id="loginNotice"
+    >
+      <div aria-hidden="true" class="login-notice-icon">
+        <i class="fas fa-exclamation" id="loginNoticeIcon"></i>
+      </div>
+      <h2 id="loginNoticeTitle">Unable to log in</h2>
+      <p id="loginNoticeMessage"></p>
+      <button autofocus="" id="loginNoticeOk" type="button">Try again</button>
+    </dialog>
+    <script>
+      (() => {
+        const form = document.getElementById("loginForm");
+        const submit = form.querySelector('button[type="submit"]');
+        const modal = document.getElementById("loginNotice");
+        const ok = document.getElementById("loginNoticeOk");
+        let afterClose = null,
+          busy = false;
+        function notice(kind, title, message, callback = null) {
+          modal.dataset.kind = kind;
+          document.getElementById("loginNoticeTitle").textContent = title;
+          document.getElementById("loginNoticeMessage").textContent = message;
+          document.getElementById("loginNoticeIcon").className =
+            kind === "success" ? "fas fa-check" : "fas fa-exclamation";
+          ok.textContent = kind === "success" ? "Continue" : "Try again";
+          afterClose = callback;
+          if (!modal.open) modal.showModal();
+        }
+        ok.addEventListener("click", () => modal.close());
+        modal.addEventListener("close", () => {
+          const callback = afterClose;
+          afterClose = null;
+          if (callback) callback();
+        });
+        const apiBase = String(
+          window.IFC_API_BASE || "http://localhost:5000/api",
+        ).replace(/\/$/, "");
+        document.getElementById("googleLoginBtn").href =
+          apiBase + "/auth/google";
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          if (busy || !form.reportValidity()) return;
+          const username = document.getElementById("username").value.trim();
+          const password = document.getElementById("password").value;
+          if (!username) {
+            notice("error", "Username required", "Please enter your username.");
+            return;
+          }
+          busy = true;
+          submit.disabled = true;
+          submit.textContent = "LOGGING IN…";
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 20000);
+          try {
+            const response = await fetch(apiBase + "/auth/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ username, password }),
+              signal: controller.signal,
+            });
+            let result;
+            try {
+              result = await response.json();
+            } catch {
+              throw new Error(
+                "The server returned an unexpected response. Please try again.",
+              );
+            }
+            if (!response.ok || !result.success) {
+              const invalid =
+                response.status === 401 || response.status === 400;
+              notice(
+                "error",
+                invalid ? "Invalid login details" : "Unable to log in",
+                result.message ||
+                  (invalid
+                    ? "Please check your username and password."
+                    : "Login failed. Please try again."),
+              );
+              return;
+            }
+            if (!result.token || !result.user)
+              throw new Error(
+                "The login response is incomplete. Please try again.",
+              );
+            localStorage.setItem("token", result.token);
+            localStorage.setItem("user", JSON.stringify(result.user));
+            const destination =
+              result.user.role === "admin"
+                ? "admin/adminDashboard.html"
+                : "user/userDashboard.html";
+            notice(
+              "success",
+              "Login successful!",
+              "Welcome back! Your account is ready.",
+              () => location.assign(destination),
+            );
+          } catch (error) {
+            const message =
+              error.name === "AbortError"
+                ? "The server took too long to respond. Please try again."
+                : error instanceof TypeError
+                  ? "Cannot connect to the server. Check your connection and make sure the backend is running."
+                  : error.message;
+            notice("error", "Unable to log in", message);
+          } finally {
+            clearTimeout(timeout);
+            busy = false;
+            submit.disabled = false;
+            submit.textContent = "LOGIN";
+          }
+        });
+        const url = new URL(location.href);
+        const error = url.searchParams.get("error");
+        if (error) {
+          notice(
+            "error",
+            "Google sign-in failed",
+            error === "google_not_registered"
+              ? "This Google account is not registered. Please sign up first."
+              : "Google sign-in could not be completed. Please try again.",
+          );
+          url.searchParams.delete("error");
+          history.replaceState({}, "", url.pathname + url.search + url.hash);
+        }
+      })();
+    </script>
+  </body>
 </html>

@@ -4,98 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>IFC Crafts - Products</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/the-seasons" rel="stylesheet">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
- 
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/products.css">
+    <style>
+        html, body { min-height: 100%; height: auto !important; overflow-y: auto !important; }
+        .product-main-wrapper { height: auto !important; max-height: none !important; overflow: visible !important; }
+        .product-grid-container { max-width: 1440px; margin: 0 auto; }
+        .products-toolbar { display: flex; justify-content: flex-end; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+        .products-toolbar p { margin: 0; font-size: .95rem; font-weight: 600; }
+        #product-container { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin: 0; }
+        #product-container > .col { width: 100% !important; max-width: none; padding: 0; margin: 0; min-width: 0; display: flex; }
+        #product-container > .col-12 { grid-column: 1 / -1; width: 100%; }
+        #product-container .product-card { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 16px; box-sizing: border-box; border: 1px solid #e2e8f0; border-radius: 16px; background: #fff; overflow: hidden; }
+        #product-container .product-img-wrapper { width: 100%; aspect-ratio: 1; overflow: hidden; border-radius: 10px; background: #f8fafc; flex-shrink: 0; }
+        #product-container .product-img-wrapper img,
+        #product-container .product-card > img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 10px; margin: 0; }
+        #product-container .product-img-wrapper img { height: 100%; }
+        #product-container .product-body { display: flex; flex: 1; flex-direction: column; width: 100%; padding: 16px 0 0; text-align: center; }
+        #product-container .product-name { min-height: 2.8em; margin: 16px 0 8px; font-size: 1rem; font-weight: 700; line-height: 1.4; overflow-wrap: anywhere; }
+        #product-container .product-body .product-name { margin-top: 0; }
+        #product-container .product-size { margin: 0 0 8px; }
+        #product-container .product-price { margin: 0 0 16px; font-weight: 700; }
+        #product-container .product-card .btn { width: 100%; margin-top: auto; border-radius: 8px; }
+        @media (max-width: 1100px) { #product-container { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (max-width: 760px) { #product-container { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } .products-toolbar { justify-content: center; } }
+        @media (max-width: 400px) { #product-container { grid-template-columns: 1fr; } }
+    
+        .craft-request-section { margin-top: 48px; }
+        .craft-request-container { max-width: 760px; margin: 0 auto; padding: 36px 24px; text-align: center; border: 1px solid #e2e8f0; border-radius: 16px; background: #fff; }
+        .craft-request-container h2 { margin: 0 0 12px; color: #111; font-family: 'Inter', sans-serif; font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; }
+        .craft-request-container p { max-width: 520px; margin: 0 auto 24px; color: #64748b; line-height: 1.6; }
+        @media (max-width: 540px) { .craft-request-section { margin-top: 32px; } .craft-request-container { padding: 28px 18px; } }
+    </style>
 </head>
-
 <body>
-
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
                 <img src="pics/Logo.jpg" alt="IFC Crafts Logo" class="nav-logo">
                 <span class="brand-name">IFC CRAFTS</span>
             </div>
-            
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
-
             <nav class="nav-links">
                 <a href="index.html#home">HOME</a>
                 <a href="products.html" class="active">PRODUCTS</a>
                 <a href="services.html">SERVICES</a>
                 <a href="reviews.html">REVIEWS</a> 
             </nav>
-
             <div class="nav-right-actions" id="navRightActions">
             </div>
         </div>
     </header>
-
     <main class="product-main-wrapper">
         <div class="container-fluid px-4 px-lg-5 py-5 product-grid-container">
-            <div class="row g-4">
-                
-                <div class="col-12 col-md-3 col-lg-2 mb-4">
-                    <button class="btn btn-dark w-100 mb-3 d-md-none filter-toggle-btn" data-bs-toggle="collapse" data-bs-target="#filterBox">
-                        <i class="bi bi-funnel-fill me-1"></i> Show Filters
-                    </button>
-                    <div id="filterBox" class="collapse d-md-block">
-                        <div class="card p-3 shadow-sm border-0 filter-card">
-                            <h5 class="fw-bold mb-2">Filter</h5>
-                            
-                            <p class="mt-3 mb-1 fw-semibold">Size</p>
-                            <div>
-                                <input type="checkbox" id="small" value="Small" class="size-filter"> <label for="small" class="ms-1">Small</label><br>
-                                <input type="checkbox" id="medium" value="Medium" class="size-filter"> <label for="medium" class="ms-1">Medium</label><br>
-                                <input type="checkbox" id="large" value="Large" class="size-filter"> <label for="large" class="ms-1">Large</label>
-                            </div>
-                            
-                            <p class="mt-3 mb-1 fw-semibold">Price</p>
-                            <div>
-                                <input type="radio" name="price" id="allPrice" value="all" checked class="price-filter"> 
-                                <label for="allPrice" class="ms-1">All</label><br>
-
-                                <input type="radio" name="price" id="under100" value="under100" class="price-filter"> 
-                                <label for="under100" class="ms-1">Under ₱100</label><br>
-
-                                <input type="radio" name="price" id="100to150" value="100-150" class="price-filter"> 
-                                <label for="100to150" class="ms-1">₱100 - ₱150</label><br>
-
-                                <input type="radio" name="price" id="150to200" value="150-200" class="price-filter"> 
-                                <label for="150to200" class="ms-1">₱150 - ₱200</label>
-                            </div>
-
-                            <div class="mt-4 pt-2">
-                                <p class="fw-bold mb-2">✨ Do you want custom craft?</p>
-                                <button class="btn btn-outline-dark w-100 rounded-pill" data-bs-toggle="modal" data-bs-target="#customModal">
-                                    <i class="bi bi-pencil-square me-1"></i> Request Custom
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-12 col-md-9 col-lg-10">
-                    <div id="product-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4"></div>
-                </div>
-
-            </div>
+            <div id="product-container" class="row g-4"></div>
+           
         </div>
     </main>
-
     <!-- ITEM MODAL -->
     <div class="modal fade" id="itemModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -115,7 +90,6 @@
                             <p id="modalDescription" class="mb-4 text-secondary"></p>
                             <label class="mb-1 fw-semibold">Quantity</label>
                             <input type="number" id="quantity" class="form-control mb-3" value="1" min="1" style="max-width: 130px;">
-                            
                             <div class="d-grid gap-2">
                                 <button id="addToCartBtn" class="btn btn-outline-dark fw-bold py-2 rounded-pill"><i class="bi bi-cart-plus me-1"></i> Add to Cart</button>
                                 <button id="buyNowBtn" class="btn btn-success fw-bold py-2 rounded-pill"><i class="bi bi-bag-check me-1"></i> Buy Now (Checkout)</button>
@@ -127,19 +101,15 @@
             </div>
         </div>
     </div>
-
     <!-- TERMS OF SERVICE MODAL (Eksaktong disenyo ng dating terms.html) -->
     <div class="modal fade" id="termsModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content rounded-4 shadow border-0 p-3 p-md-4" style="background-color: #fafafa; font-family: 'Inter', sans-serif;">
-                
                 <div class="modal-header border-0 pb-0 justify-content-center position-relative">
                     <h3 class="modal-title fw-bold text-uppercase text-center" style="color: #8b0000; letter-spacing: 1px;">Terms of Service</h3>
                     <button type="button" class="btn-close position-absolute end-0 top-0 m-3" data-bs-dismiss="modal"></button>
                 </div>
-
                 <div class="modal-body py-4">
-                    
                     <!-- READ BEFORE BUYING -->
                     <div class="section-box text-center border shadow-sm bg-white p-4 mb-4 rounded-3" style="border-left: 5px solid #8b0000 !important;">
                         <h5 class="fw-bold mb-3" style="color: #8b0000;">READ BEFORE BUYING</h5>
@@ -150,7 +120,6 @@
                         <h6 class="text-danger fw-bold mt-3 text-uppercase" style="font-size: 0.95rem;">FIRST TO PAY BASIS</h6>
                         <p class="mb-0 text-secondary" style="font-size: 0.9rem;">GCASH: 09952075734 (IFC)</p>
                     </div>
-
                     <div class="row g-3 mb-3">
                         <!-- SHIPPING -->
                         <div class="col-md-6">
@@ -168,7 +137,6 @@
                                 <p class="mb-0"><strong>Door-to-Door Delivery:</strong> ₱15</p>
                             </div>
                         </div>
-
                         <!-- NO RUSH ORDERS -->
                         <div class="col-md-6">
                             <div class="section-box border shadow-sm bg-white p-3 h-100 rounded-3" style="border-left: 5px solid #8b0000 !important;">
@@ -179,7 +147,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row g-3 mb-3">
                         <!-- CUSTOM ORDERS -->
                         <div class="col-md-6">
@@ -190,7 +157,6 @@
                                 <p class="mb-0">Reservations valid for <span style="color: #ff6600; font-weight: 600;">48 hours</span>.</p>
                             </div>
                         </div>
-
                         <!-- DON'TS -->
                         <div class="col-md-6">
                             <div class="section-box border shadow-sm bg-white p-3 h-100 rounded-3" style="border-left: 5px solid #8b0000 !important;">
@@ -208,7 +174,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- PAYMENT RULES -->
                     <div class="section-box border shadow-sm bg-white p-3 rounded-3" style="border-left: 5px solid #8b0000 !important;">
                         <h5 class="fw-bold mb-3" style="color: #8b0000; font-size: 1.1rem;">PAYMENT RULES</h5>
@@ -217,17 +182,13 @@
                         <p class="mb-2 text-secondary" style="font-size: 0.9rem;">Violations may result in public posting for accountability.</p>
                         <p class="text-danger fw-bold mb-0" style="font-size: 0.9rem;">NO EXTENSIONS on payment deadlines.</p>
                     </div>
-
                 </div>
-
                 <div class="modal-footer border-0 justify-content-center">
                     <button type="button" class="btn btn-dark rounded-pill px-5 fw-bold" data-bs-dismiss="modal">Close</button>
                 </div>
-
             </div>
         </div>
     </div>
-
     <!-- REVISED CHECKOUT MODAL -->
     <div class="modal fade" id="checkoutModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 440px;">
@@ -237,7 +198,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-0">
-                    
                     <div class="summary-section-box mb-3 p-3 bg-light border rounded-3">
                         <div class="summary-section-title fw-bold mb-2" style="font-size: 0.9rem; color: #111;">
                             <i class="fas fa-box-open me-1"></i> Product Information
@@ -253,7 +213,6 @@
                             <div id="checkoutItemSubtotal" class="fw-bold" style="font-size: 0.82rem;"></div>
                         </div>
                     </div>
-
                     <div class="summary-section-box mb-3 p-3 bg-light border rounded-3">
                         <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.85rem; color: #444;">
                             <span>Subtotal</span>
@@ -264,7 +223,6 @@
                             <span id="checkoutItemVat">₱0</span>
                         </div>
                     </div>
-
                     <!-- DELIVERY INFORMATION -->
                     <div class="summary-section-box mb-3 p-3 bg-light border rounded-3">
                         <div class="summary-section-title fw-bold mb-2" style="font-size: 0.9rem; color: #111;">
@@ -279,7 +237,6 @@
                             <span>Taytay, Rizal</span>
                         </div>
                     </div>
-
                     <!-- PERSONAL INFORMATION -->
                     <div class="summary-section-box mb-3 p-3 bg-light border rounded-3">
                         <div class="summary-section-title fw-bold mb-2" style="font-size: 0.9rem; color: #111;">
@@ -298,7 +255,6 @@
                             <span id="displayUserAddress" class="text-end" style="max-width: 200px;">Blk 1 Lot 2, Taytay, Rizal</span>
                         </div>
                     </div>
-
                     <!-- PAYMENT INFORMATION + GCASH QR CODE HOLDER -->
                     <div class="summary-section-box mb-3 p-3 bg-light border rounded-3">
                         <div class="summary-section-title fw-bold mb-2" style="font-size: 0.9rem; color: #111;">
@@ -311,14 +267,12 @@
                         <div style="font-size: 0.8rem; color: #555; background: #fff; padding: 6px; border-radius: 6px; margin: 6px 0; border: 1px dashed #ccc;">
                             Send payment via GCash to: <strong>0912-345-6789 (IFC Crafts)</strong>
                         </div>
-
                         <!-- GCASH QR CODE HOLDER -->
                         <div class="gcash-qr-holder text-center my-3 p-2 bg-white border rounded-3">
                             <p class="mb-1 text-dark fw-bold" style="font-size: 0.78rem;">Scan GCash QR Code to Pay</p>
-                            <img src="pics/gcash-qr.jpg" alt="IFC Crafts GCash QR Code" class="img-fluid rounded border" style="max-width: 130px; height: auto;" id="gcashQrImage">
+                            <img src="pictures/qrcode.jpg" alt="IFC Crafts GCash QR Code" class="img-fluid rounded border" style="max-width: 130px; height: auto;" id="gcashQrImage">
                             <div class="text-muted mt-1" style="font-size: 0.7rem;">IFC Crafts Official QR</div>
                         </div>
-
                         <div class="d-flex justify-content-between align-items-center mt-2" style="font-size: 0.85rem; color: #444;">
                             <span>Proof of Payment</span>
                             <div class="d-flex align-items-center gap-2">
@@ -330,12 +284,10 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="d-flex justify-content-between align-items-center py-2 mb-3 border-top border-bottom border-secondary">
                         <span class="fw-bold" style="font-size: 1.05rem;">Total Amount</span>
                         <span id="checkoutItemTotal" class="fw-bold" style="font-size: 1.2rem; color: #2e7d32;">₱0</span>
                     </div>
-
                     <div class="d-grid">
                         <button id="confirmOrderBtn" class="btn btn-dark fw-bold py-3 rounded-pill" style="background: #000; border-radius: 30px;">Confirm and Place Order</button>
                     </div>
@@ -343,7 +295,6 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="customModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content rounded-4 shadow border-0">
@@ -362,23 +313,18 @@
                             <div class="d-flex flex-wrap gap-3">
                                 <input type="radio" class="btn-check" name="customType" id="cType1" value="Necklace" required>
                                 <label class="btn btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" for="cType1"><i class="bi bi-gem"></i> Necklace</label>
-
                                 <input type="radio" class="btn-check" name="customType" id="cType2" value="Keychain">
                                 <label class="btn btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" for="cType2"><i class="bi bi-key"></i> Keychain</label>
-
                                 <input type="radio" class="btn-check" name="customType" id="cType3" value="Henna Art">
                                 <label class="btn btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" for="cType3"><i class="bi bi-brush"></i> Henna Art</label>
-
                                 <input type="radio" class="btn-check" name="customType" id="cType4" value="Bracelet">
                                 <label class="btn btn-outline-dark rounded-pill px-3 py-2 d-flex align-items-center gap-2" for="cType4"><i class="bi bi-circle"></i> Bracelet</label>
                             </div>
                         </div>
-
                         <div class="mb-4">
                             <label class="fw-bold mb-1 small text-uppercase text-secondary">2. Design Details</label>
                             <p class="text-muted small mb-2">Tell us what you have in mind. You can upload reference or describe it in detail.</p>
                             <textarea id="customDesignDesc" class="form-control rounded-3 mb-3" rows="3" placeholder="Example: I want a bracelet with a cat sitting on the moon..." required></textarea>
-                            
                             <div class="border border-dashed rounded-3 p-3 text-center bg-light position-relative">
                                 <i class="bi bi-cloud-arrow-up fs-3 text-muted"></i>
                                 <p class="mb-0 small fw-semibold text-secondary" id="refFileLabel">Upload reference image</p>
@@ -386,7 +332,6 @@
                                 <input type="file" id="customRefImage" class="position-absolute top-0 start-0 w-100 h-100 opacity-0" accept="image/*">
                             </div>
                         </div>
-
                         <div class="row mb-4">
                             <div class="col-md-6 mb-3 mb-md-0">
                                 <label class="fw-bold mb-1 small text-uppercase text-secondary">3. Material & Colors</label>
@@ -417,12 +362,10 @@
                                 <input type="text" id="customSizeMeasure" class="form-control form-control-sm rounded-3" placeholder="Enter size or measurements">
                             </div>
                         </div>
-
                         <div class="mb-4">
                             <label class="fw-bold mb-1 small text-uppercase text-secondary">5. Additional Notes</label>
                             <input type="text" id="customAddNotes" class="form-control rounded-3" placeholder="Write your notes here....">
                         </div>
-
                         <div class="mb-4">
                             <label class="fw-bold mb-1 small text-uppercase text-secondary">6. Contact Information</label>
                             <div class="row g-3">
@@ -437,14 +380,12 @@
                                 </div>
                             </div>
                         </div>
-
                         <button type="submit" class="btn btn-dark w-100 py-3 fw-bold rounded-pill text-uppercase" style="letter-spacing: 1px;">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="importantNoticeModal" tabindex="-1" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 shadow border-0 p-4">
@@ -463,7 +404,6 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade" id="smallAlertModal" tabindex="-1">
         <div class="modal-dialog modal-sm modal-dialog-centered">
             <div class="modal-content rounded-4 shadow border-0 p-3 text-center">
@@ -474,7 +414,6 @@
             </div>
         </div>
     </div>
-
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -499,18 +438,14 @@
             <p>&copy; 2026 IFC Crafts. All Rights Reserved.</p>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
     <script>
         function showCustomAlert(message, callback = null) {
             const msgEl = document.getElementById('smallAlertMessage');
             if (msgEl) msgEl.textContent = message;
-            
             const alertModalEl = document.getElementById('smallAlertModal');
             const alertModal = new bootstrap.Modal(alertModalEl);
             alertModal.show();
-
             if (callback) {
                 const okBtn = document.getElementById('smallAlertOkBtn');
                 const newOkBtn = okBtn.cloneNode(true);
@@ -521,7 +456,6 @@
                 });
             }
         }
-
         function previewProofImage(event) {
             const file = event.target.files[0];
             if (file) {
@@ -536,12 +470,10 @@
                 reader.readAsDataURL(file);
             }
         }
-
         document.addEventListener("DOMContentLoaded", () => {
             const isLoggedIn =
     !!localStorage.getItem("token");
             const navRightActions = document.getElementById('navRightActions');
-
             if (navRightActions) {
                 if (isLoggedIn) {
                     navRightActions.innerHTML = `
@@ -568,14 +500,12 @@
                     `;
                 }
             }
-
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     const menuToggle = document.getElementById('menu-toggle');
                     if (menuToggle) menuToggle.checked = false;
                 });
             });
-
             const refInput = document.getElementById('customRefImage');
             if (refInput) {
                 refInput.addEventListener('change', (e) => {
@@ -584,95 +514,140 @@
                     }
                 });
             }
-
             const addToCartBtn = document.getElementById('addToCartBtn');
             if (addToCartBtn) {
-                addToCartBtn.addEventListener('click', () => {
+               addToCartBtn.addEventListener('click', async () => {
+                    console.log(activeProduct);
                     if (!activeProduct) return;
-                    const isLoggedIn = localStorage.getItem("token") === 'true';
+                    const isLoggedIn =
+    !!localStorage.getItem("token");
                     if (!isLoggedIn) {
                         showCustomAlert('Please login first to add items to your cart.', () => {
                             window.location.href = 'login.html';
                         });
                         return;
                     }
-
                     const qty = parseInt(document.getElementById('quantity').value) || 1;
                     const cleanPriceStr = String(activeProduct.price).replace(/[^\d.]/g, '');
                     const rawPrice = parseFloat(cleanPriceStr) || 0;
                     const subtotal = rawPrice * qty;
                     const vatAmount = subtotal * 0.12;
                     const totalWithVat = subtotal + vatAmount;
-
-                    let cart = JSON.parse(localStorage.getItem('ifc_user_cart')) || [];
-                    const productWithVat = {
-                        ...activeProduct,
-                        subtotal: '₱' + subtotal.toFixed(2),
-                        vat: '₱' + vatAmount.toFixed(2),
-                        totalPrice: '₱' + totalWithVat.toFixed(2)
-                    };
-
-                    const existingIndex = cart.findIndex(item => item.name === activeProduct.name);
-                    if (existingIndex > -1) {
-                        cart[existingIndex].quantity += qty;
-                        const newSub = parseFloat(String(activeProduct.price).replace(/[^\d.]/g, '')) * cart[existingIndex].quantity;
-                        const newVat = newSub * 0.12;
-                        cart[existingIndex].subtotal = '₱' + newSub.toFixed(2);
-                        cart[existingIndex].vat = '₱' + newVat.toFixed(2);
-                        cart[existingIndex].totalPrice = '₱' + (newSub + newVat).toFixed(2);
-                    } else {
-                        cart.push({ ...productWithVat, quantity: qty });
-                    }
-
-                    localStorage.setItem('ifc_user_cart', JSON.stringify(cart));
-                    showCustomAlert('Product successfully added to your Cart!', () => {
-                        window.location.href = 'user/userCart.html'; 
-                    });
+try {
+    const token =
+        localStorage.getItem("token");
+    const response =
+        await fetch(
+            "http://localhost:5000/api/cart",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/json",
+                    Authorization:
+                        `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    productId:
+                        activeProduct.id,
+                    quantity:
+                        qty
+                })
+            }
+        );
+    const data =
+        await response.json();
+    if (!response.ok) {
+        throw new Error(
+            data.message ||
+            "Failed to add item to cart."
+        );
+    }
+    showCustomAlert(
+        "Product successfully added to your Cart!",
+        () => {
+            window.location.href =
+                "user/userCart.html";
+        }
+    );
+}
+catch(error) {
+    console.error(error);
+    showCustomAlert(
+        error.message
+    );
+}
                 });
             }
-
             const buyNowBtn = document.getElementById('buyNowBtn');
             if (buyNowBtn) {
                 buyNowBtn.addEventListener('click', () => {
+                    console.log("BUY NOW CLICKED");
                     if (!activeProduct) return;
-                    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+                    const isLoggedIn =
+    !!localStorage.getItem('token');
                     if (!isLoggedIn) {
                         showCustomAlert('Please login first to checkout products.', () => {
                             window.location.href = 'login.html';
                         });
                         return;
                     }
-
                     const qty = parseInt(document.getElementById('quantity').value) || 1;
                     const cleanPriceStr = String(activeProduct.price).replace(/[^\d.]/g, '');
                     const rawPrice = parseFloat(cleanPriceStr) || 0;
                     const subtotal = rawPrice * qty;
                     const vatAmount = subtotal * 0.12;
                     const totalAmount = subtotal + vatAmount;
-
-                    document.getElementById('checkoutItemImg').src = activeProduct.image;
-                    document.getElementById('checkoutItemName').textContent = activeProduct.name;
+                  document.getElementById("checkoutItemImg").src =
+    activeProduct.product_image.startsWith("/")
+        ? `http://localhost:5000${activeProduct.product_image}`
+        : activeProduct.product_image;
+                    document.getElementById(
+    'checkoutItemName'
+).textContent = activeProduct.product_name;
                     document.getElementById('checkoutItemQty').textContent = qty;
                     document.getElementById('checkoutSubtotalOnly').textContent = '₱' + subtotal.toFixed(2);
                     document.getElementById('checkoutItemSubtotal').textContent = '₱' + subtotal.toFixed(2);
                     document.getElementById('checkoutItemVat').textContent = '₱' + vatAmount.toFixed(2);
                     document.getElementById('checkoutItemTotal').textContent = '₱' + totalAmount.toFixed(2);
+console.log(localStorage.getItem("user"));
+                  const token =
+    localStorage.getItem("token");
 
-                    const currentUser =
-    JSON.parse(
-        localStorage.getItem(
-            "user"
-        )
-    );
+fetch(
+    "http://localhost:5000/api/users/profile",
+    {
+        headers: {
+            Authorization:
+                `Bearer ${token}`
+        }
+    }
+)
+.then(res => res.json())
+.then(result => {
 
-                    document.getElementById('displayUserName').textContent = currentUser.name;
-                    document.getElementById('displayUserContact').textContent = currentUser.contact;
-                    document.getElementById('displayUserAddress').textContent = currentUser.address;
+    const user =
+        result.data;
 
+    document.getElementById(
+        "displayUserName"
+    ).textContent =
+        `${user.first_name} ${user.last_name}`;
+
+    document.getElementById(
+        "displayUserContact"
+    ).textContent =
+        user.contact_number || "-";
+
+    document.getElementById(
+        "displayUserAddress"
+    ).textContent =
+        user.address || "-";
+
+});
                     const itemModalEl = document.getElementById('itemModal');
                     const itemModal = bootstrap.Modal.getInstance(itemModalEl);
                     if (itemModal) itemModal.hide();
-
                     setTimeout(() => {
                         const checkoutModalEl = document.getElementById('checkoutModal');
                         const checkoutModal = new bootstrap.Modal(checkoutModalEl);
@@ -680,73 +655,119 @@
                     }, 300);
                 });
             }
-
             const confirmOrderBtn = document.getElementById('confirmOrderBtn');
             if (confirmOrderBtn) {
                 confirmOrderBtn.addEventListener('click', () => {
                     const fullName = document.getElementById('displayUserName').textContent;
                     const contactNum = document.getElementById('displayUserContact').textContent;
                     const address = document.getElementById('displayUserAddress').textContent;
-
                     const receiptInput = document.getElementById('gcashReceipt');
                     if (!receiptInput.files || receiptInput.files.length === 0) {
                         showCustomAlert('Please upload your GCash payment screenshot or receipt first before confirming.');
                         return;
                     }
-
                     const reader = new FileReader();
-                    reader.onload = function(uploadEvent) {
+                   reader.onload = async function(uploadEvent) {
                         const receiptBase64 = uploadEvent.target.result;
+                        const formData =
+    new FormData();
+formData.append(
+    "proof",
+    receiptInput.files[0]
+);
+const token =
+    localStorage.getItem(
+        "token"
+    );
+const uploadResponse =
+    await fetch(
+        "http://localhost:5000/api/payments/upload",
+        {
+            method: "POST",
+            headers: {
+                Authorization:
+                    `Bearer ${token}`
+            },
+            body: formData
+        }
+    );
+const uploadData =
+    await uploadResponse.json();
+const proofPath =
+    uploadData.proofPath;
                         const qty = parseInt(document.getElementById('quantity').value) || 1;
                         const cleanPriceStr = String(activeProduct.price).replace(/[^\d.]/g, '');
                         const rawPrice = parseFloat(cleanPriceStr) || 0;
                         const subtotal = rawPrice * qty;
                         const vatAmount = subtotal * 0.12;
                         const totalAmount = subtotal + vatAmount;
-                        
-                        const orderItem = {
-                            id: 'IFC-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000),
-                            name: activeProduct.name,
-                            product: activeProduct.name,
-                            craft: activeProduct.size || 'Handmade Craft',
-                            image: activeProduct.image,
-                            price: '₱' + totalAmount.toFixed(2),
-                            quantity: qty,
-                            qty: qty,
-                            subtotal: '₱' + subtotal.toFixed(2),
-                            vat: '₱' + vatAmount.toFixed(2),
-                            total: '₱' + totalAmount.toFixed(2),
-                            date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
-                            year: String(new Date().getFullYear()),
-                            status: 'processing',
-                            shipping: address,
-                            customerName: fullName,
-                            contactNumber: contactNum,
-                            payment: 'GCash',
-                            receiptImage: receiptBase64
-                        };
-
-                        let orders = JSON.parse(localStorage.getItem('ifc_user_orders')) || [];
-                        orders.unshift(orderItem);
-                        localStorage.setItem('ifc_user_orders', JSON.stringify(orders));
-
-                        showCustomAlert('Order placed successfully with GCash payment! Redirecting to your Orders page.', () => {
-                            window.location.href = 'user/userOrder.html';
-                        });
+                       try {
+    reader.onload = async function(uploadEvent) {
+    const token =
+        localStorage.getItem("token");
+    const receiptBase64 =
+        uploadEvent.target.result;
+    const formData =
+        new FormData();
+    formData.append(
+        "proof",
+        receiptInput.files[0]
+    );
+}
+    const response =
+        await fetch(
+            "http://localhost:5000/api/orders/buy-now",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/json",
+                    Authorization:
+                        `Bearer ${token}`
+                },
+                body: JSON.stringify({
+    productId:
+        activeProduct.id,
+    quantity:
+        qty,
+    proofOfPayment:
+        proofPath
+})
+            }
+        );
+    const data =
+        await response.json();
+    if (!response.ok) {
+        throw new Error(
+            data.message ||
+            "Failed to place order."
+        );
+    }
+    showCustomAlert(
+        "Order placed successfully!",
+        () => {
+            window.location.href =
+                "user/userOrder.html";
+        }
+    );
+}
+catch (error) {
+    console.error(error);
+    showCustomAlert(
+        error.message
+    );
+}
                     };
                     reader.readAsDataURL(receiptInput.files[0]);
                 });
             }
-
             let pendingCustomData = null;
             const customForm = document.getElementById('customForm');
             if (customForm) {
                 customForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    
                     const typeEl = document.querySelector('input[name="customType"]:checked');
                     const fileInput = document.getElementById('customRefImage');
-
                     const processSubmission = (imageUrl = '') => {
                         const typeVal = typeEl ? typeEl.value : 'Custom Craft';
                         pendingCustomData = {
@@ -768,17 +789,14 @@
                             status: 'pending',
                             date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
                         };
-
                         const customModalEl = document.getElementById('customModal');
                         const customModal = bootstrap.Modal.getInstance(customModalEl);
                         if (customModal) customModal.hide();
-
                         setTimeout(() => {
                             const noticeModal = new bootstrap.Modal(document.getElementById('importantNoticeModal'));
                             noticeModal.show();
                         }, 300);
                     };
-
                     if (fileInput.files && fileInput.files[0]) {
                         const reader = new FileReader();
                         reader.onload = function(evt) {
@@ -790,20 +808,16 @@
                     }
                 });
             }
-
             const agreeNoticeBtn = document.getElementById('agreeNoticeBtn');
             if (agreeNoticeBtn) {
                 agreeNoticeBtn.addEventListener('click', () => {
                     if (!pendingCustomData) return;
-
                     let userOrders = JSON.parse(localStorage.getItem('ifc_user_orders')) || [];
                     userOrders.unshift(pendingCustomData);
                     localStorage.setItem('ifc_user_orders', JSON.stringify(userOrders));
-
                     const noticeModalEl = document.getElementById('importantNoticeModal');
                     const noticeModal = bootstrap.Modal.getInstance(noticeModalEl);
                     if (noticeModal) noticeModal.hide();
-
                     showCustomAlert('Custom request submitted successfully! It is now pending admin approval.', () => {
                         window.location.href = 'user/pendingOrders.html';
                     });
@@ -813,8 +827,27 @@
     </script>
 <script src="js/config/api.js"></script>
 <script src="js/products/product-render.js"></script>
-<script src="js/products/product-filter.js"></script>
 <script src="js/products/product-modal.js"></script>
-<script src="js/products/products.js"></script>
+<script>
+let allProducts = [];
+document.addEventListener("DOMContentLoaded", loadProducts);
+async function loadProducts() {
+    try {
+        const response = await fetch(`${API_URL}/products`);
+        if (!response.ok) throw new Error(`Products request failed (${response.status}).`);
+        const result = await response.json();
+        const products = result.data ?? result;
+        if (!Array.isArray(products)) throw new Error("Invalid products response.");
+        allProducts = products.filter(product =>
+            String(product.status ?? "").trim().toLowerCase() === "active"
+        );
+        renderProducts(allProducts);
+    } catch (error) {
+        console.error("Products Error:", error);
+        const container = document.getElementById("product-container");
+        if (container) container.textContent = "Unable to load products. Please refresh and try again.";
+    }
+}
+</script>
 </body>
 </html>
