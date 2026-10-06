@@ -3,7 +3,10 @@ const path = require("path");
 
 const express = require("express");
 const cors = require("cors");
-
+const customRequestRoutes =
+    require(
+        "./routes/customRequest.routes"
+    );
 const authRoutes = require("./routes/auth.routes");
 const productRoutes = require("./routes/products.routes");
 const categoryRoutes = require("./routes/categories.routes");
@@ -48,7 +51,45 @@ const reviewRoutes =
         "./routes/review.routes"
     );
 
+    const userRoutes =
+    require(
+        "./routes/users.routes"
+    );
+const passport =
+require("./config/passport");
+
+const session =
+require("express-session");
 const app = express();
+
+app.use(
+    session({
+        secret:
+            process.env.JWT_SECRET,
+
+        resave: false,
+
+        saveUninitialized: false
+    })
+);
+
+app.use(
+    passport.initialize()
+);
+
+app.use(
+    passport.session()
+);
+
+app.use(
+    "/uploads",
+    express.static(
+        path.join(
+            __dirname,
+            "uploads"
+        )
+    )
+);
 
 app.use(cors());
 
@@ -145,8 +186,49 @@ app.use(
     "/api/reviews",
     reviewRoutes
 );
+
+
+app.use(
+    "/api/uploads",
+    require("./routes/upload.routes")
+);
 const PORT = process.env.PORT || 5000;
 
+app.use(
+    "/api/users",
+    userRoutes
+);
+
+const settingsRoutes =
+    require("./routes/settings.routes");
+
+app.use(
+    "/api/settings",
+    settingsRoutes
+);
+
+app.use(
+    "/payment",
+    express.static("payment")
+);
+``
+
+app.use(
+    "/api/custom-requests",
+    customRequestRoutes
+);
+
+
+
+app.use(
+    "/references",
+    express.static(
+        path.join(
+            __dirname,
+            "references"
+        )
+    )
+);
 app.listen(PORT, () => {
 
     console.log(

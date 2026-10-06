@@ -19,4 +19,10 @@ router.get(
     NotificationController.getNotifications
 );
 
+router.put(
+    "/read-all",
+    authenticate,
+    NotificationController.markAllAsRead
+);
+
 module.exports = router;

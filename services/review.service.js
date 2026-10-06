@@ -6,7 +6,7 @@ const CodeGenerator = require(
 class ReviewService {
 
     async create(data) {
-
+console.log("SERVICE DATA:", data);
         const [result] =
             await db.execute(
                 `
@@ -15,12 +15,10 @@ class ReviewService {
     order_id,
     user_id,
     product_id,
-    reviewer_name,
-    product_name,
     rating,
     review
 )
-VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+VALUES (?, ?, ?, ?, ?, ?)
                 `,
 //                 [
 //     `TEMP-${Date.now()}`,
@@ -37,8 +35,6 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     data.orderId || null,
     data.userId || null,
     data.productId || null,
-    data.reviewerName || "Anonymous",
-    data.productName || "Unknown Product",
     data.rating,
     data.review
 ]
@@ -78,14 +74,23 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         const [reviews] =
             await db.execute(
                 `
-                SELECT
-                    reviews.*,
-                    users.first_name,
-                    users.last_name
-                FROM reviews
-                INNER JOIN users
-                    ON reviews.user_id = users.id
-                ORDER BY reviews.id DESC
+             SELECT
+    r.*,
+
+    u.first_name,
+    u.last_name,
+
+    p.product_name
+
+FROM reviews r
+
+LEFT JOIN users u
+    ON u.id = r.user_id
+
+LEFT JOIN products p
+    ON p.id = r.product_id
+
+ORDER BY r.created_at DESC
                 `
             );
 

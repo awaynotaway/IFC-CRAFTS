@@ -21,11 +21,11 @@ class NotificationService {
                 VALUES (?, ?, ?, ?)
                 `,
                 [
-                    "TEMP",
-                    data.userId,
-                    data.title,
-                    data.message
-                ]
+    `TEMP-${Date.now()}`,
+    data.userId,
+    data.title,
+    data.message
+]
             );
 
         const notificationId =

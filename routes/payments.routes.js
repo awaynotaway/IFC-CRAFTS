@@ -15,7 +15,10 @@ const authorize = require(
     "../middleware/role.middleware"
 );
 
-
+const paymentUpload =
+    require(
+        "../middleware/paymentUpload.middleware"
+    );
 router.get(
     "/",
     authenticate,
@@ -25,6 +28,7 @@ router.get(
 router.post(
     "/",
     authenticate,
+    paymentUpload.single("proof"),
     PaymentController.submitPayment
 );
 
@@ -42,4 +46,30 @@ router.put(
     PaymentController.rejectPayment
 );
 
+router.post(
+    "/upload",
+    authenticate,
+    paymentUpload.single(
+        "proof"
+    ),
+    (
+        req,
+        res
+    ) => {
+
+        return res.json({
+
+            success: true,
+
+            proofPath:
+    req.file.path.replace(
+        /\\/g,
+        "/"
+    )
+
+
+        });
+
+    }
+);
 module.exports = router;

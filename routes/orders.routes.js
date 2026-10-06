@@ -15,6 +15,12 @@ const authorize = require(
     "../middleware/role.middleware"
 );
 
+router.get(
+    "/pending",
+    authenticate,
+    OrderController.getPendingOrders
+);
+
 router.post(
     "/checkout",
     authenticate,
@@ -53,5 +59,35 @@ router.put(
     authorize("admin"),
     OrderController.shipOrder
 );
+
+router.post(
+    "/buy-now",
+    authenticate,
+    OrderController.buyNow
+);
+
+
+
+router.put(
+    "/:id/status",
+    authenticate,
+    authorize("admin"),
+    OrderController.updateOrderStatus
+);
+
+router.put(
+    "/:id/payment",
+    authenticate,
+    authorize("admin"),
+    OrderController.updatePaymentStatus
+);
+
+router.put(
+    "/:id/delivery",
+    authenticate,
+    authorize("admin"),
+    OrderController.updateDelivery
+);
+
 
 module.exports = router;

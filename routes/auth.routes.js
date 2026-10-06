@@ -9,6 +9,9 @@ const authenticate = require(
     "../middleware/auth.middleware"
 );
 
+const passport =
+require("passport");
+
 router.post(
     "/register",
     AuthController.register
@@ -25,4 +28,49 @@ router.post(
     AuthController.logout
 );
 
+router.post(
+    "/verify-email",
+    AuthController.verifyEmail
+);
+
+router.get(
+    "/google",
+
+    passport.authenticate(
+        "google",
+        {
+            scope: [
+                "profile",
+                "email"
+            ]
+        }
+    )
+);
+
+router.get(
+    "/google/callback",
+
+    passport.authenticate(
+        "google",
+        {
+            session: false
+        }
+    ),
+
+    AuthController.googleLogin
+);
+
+router.post(
+    "/forgot-password",
+    AuthController.forgotPassword
+);
+router.post(
+    "/verify-reset-code",
+    AuthController.verifyResetCode
+);
+
+router.post(
+    "/reset-password",
+    AuthController.resetPassword
+);
 module.exports = router;
