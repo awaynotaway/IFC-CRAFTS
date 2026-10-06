@@ -21,10 +21,16 @@ class PaymentController {
             const userId =
                 req.user.userId;
 
-            const {
-                orderId,
-                proofOfPayment
-            } = req.body;
+           const orderId =
+    req.body?.orderId;
+
+const proofOfPayment =
+    req.file
+        ? req.file.path.replace(
+            /\\/g,
+            "/"
+        )
+        : null;
 
             const [orders] =
                 await db.execute(
@@ -92,6 +98,43 @@ class PaymentController {
                     paymentId
                 ]
             );
+
+            const [userRows] =
+await db.execute(
+`
+SELECT
+    first_name,
+    last_name
+FROM users
+WHERE id = ?
+`,
+[userId]
+);
+
+const customerName =
+`${userRows[0].first_name} ${userRows[0].last_name}`;
+
+await db.execute(
+`
+INSERT INTO notifications (
+    notification_code,
+    user_id,
+    title,
+    message,
+    is_read,
+    type
+)
+VALUES (?, ?, ?, ?, ?, ?)
+`,
+[
+    `NOTIF-${Date.now()}`,
+    1,
+    "Payment Submitted",
+    `${customerName} submitted payment for Order ${order.order_code}.`,
+    0,
+    "payments"
+]
+);
 
             await IntegrationHub.processEvent(
                 "PAYMENT_SUBMITTED",

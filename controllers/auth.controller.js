@@ -8,6 +8,11 @@ const IntegrationHub = require(
     "../services/integrationHub.service"
 );
 
+const EmailService =
+require(
+    "../services/email.service"
+);
+
 class AuthController {
 
     async register(req, res) {
@@ -80,27 +85,37 @@ class AuthController {
             const hashedPassword =
                 await bcrypt.hash(password, 10);
 
-           
+           const verificationCode =
+String(
+    Math.floor(
+        100000 +
+        Math.random() * 900000
+    )
+);
 
             const [userResult] = await db.execute(
                 `
                 INSERT INTO users (
-                    user_code,
-                    first_name,
-                    last_name,
-                    email,
-                    contact_number,
-                    address
-                )
-                VALUES (?, ?, ?, ?, ?, ?)
+    user_code,
+    first_name,
+    last_name,
+    email,
+    contact_number,
+    address,
+    verification_code,
+    is_verified
+)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 `,
-                [
+               [
     `TEMP-${Date.now()}`,
     firstName,
     lastName,
     email,
     contactNumber,
-    address
+    address,
+    verificationCode,
+    0
 ]
             );
 
@@ -171,11 +186,19 @@ const accountId =
     }
 );
 
+await EmailService
+.sendVerificationCode(
+    email,
+    verificationCode
+);
+
             return res.status(201).json({
-                success: true,
-                message:
-                    "Account registered successfully."
-            });
+    success: true,
+    verificationRequired: true,
+    email,
+    message:
+        "Verification code sent to your email."
+});
 
         } catch (error) {
 
@@ -217,20 +240,23 @@ const accountId =
 
             const [accounts] = await db.execute(
                 `
-                SELECT
-                    accounts.id,
-                    accounts.user_id,
-                    accounts.username,
-                    accounts.password,
-                    users.first_name,
-                    users.last_name,
-                    users.email,
-                    users.role,
-                    users.status
-                FROM accounts
-                INNER JOIN users
-                    ON accounts.user_id = users.id
-                WHERE accounts.username = ?
+               SELECT
+    accounts.id,
+    accounts.user_id,
+    accounts.username,
+    accounts.password,
+    users.first_name,
+    users.last_name,
+    users.email,
+    users.contact_number,
+    users.address,
+users.role,
+users.status,
+users.is_verified
+FROM accounts
+INNER JOIN users
+    ON accounts.user_id = users.id
+WHERE accounts.username = ?
                 `,
                 [username]
             );
@@ -246,6 +272,18 @@ const accountId =
 
             const account =
                 accounts[0];
+
+                if (
+    !account.is_verified
+) {
+
+    return res.status(403).json({
+        success: false,
+        message:
+            "Please verify your email first."
+    });
+
+}
 
             const isPasswordValid =
                 await bcrypt.compare(
@@ -302,13 +340,16 @@ const accountId =
                 message: "Login successful.",
                 token,
                 user: {
-                    id: account.user_id,
-                    username: account.username,
-                    firstName: account.first_name,
-                    lastName: account.last_name,
-                    email: account.email,
-                    role: account.role
-                }
+    id: account.user_id,
+    username: account.username,
+    firstName: account.first_name,
+    lastName: account.last_name,
+    email: account.email,
+    contact_number: account.contact_number,
+    address: account.address,
+    role: account.role
+}
+
             });
 
         } catch (error) {
@@ -326,6 +367,172 @@ const accountId =
         }
 
     }
+
+    async verifyEmail(
+    req,
+    res
+) {
+
+    try {
+
+        const {
+            email,
+            code
+        } = req.body;
+
+        const [users] =
+        await db.execute(
+            `
+            SELECT *
+            FROM users
+            WHERE email = ?
+            `,
+            [email]
+        );
+
+        if (
+            users.length === 0
+        ) {
+
+            return res.status(404).json({
+                success:false,
+                message:"User not found."
+            });
+
+        }
+
+        const user =
+            users[0];
+
+        if (
+            user.verification_code !== code
+        ) {
+
+            return res.status(400).json({
+                success:false,
+                message:
+                    "Invalid verification code."
+            });
+
+        }
+
+        await db.execute(
+            `
+            UPDATE users
+            SET
+                is_verified = 1,
+                verification_code = NULL
+            WHERE id = ?
+            `,
+            [user.id]
+        );
+
+        return res.json({
+            success:true,
+            message:
+                "Email verified successfully."
+        });
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+            success:false
+        });
+
+    }
+
+}
+
+async googleLogin(
+    req,
+    res
+) {
+
+    try {
+
+        const email =
+            req.user.emails?.[0]?.value;
+
+        const fullName =
+            req.user.displayName || "";
+
+        const names =
+            fullName.split(" ");
+
+        const firstName =
+            names.shift() || "Google";
+
+        const lastName =
+            names.join(" ");
+
+        const [users] =
+        await db.execute(
+            `
+            SELECT *
+            FROM users
+            WHERE email = ?
+            `,
+            [email]
+        );
+
+        let user;
+
+       if ( 
+            users.length > 0
+        ) {
+
+            user =
+                users[0];
+
+        } else {
+return res.redirect(
+"http://localhost:5000/login.html?error=google_not_registered"
+);
+}
+
+        const token =
+        jwt.sign(
+            {
+                userId:
+                    user.id,
+
+                role:
+                    user.role ||
+                    "customer"
+            },
+
+            process.env.JWT_SECRET,
+
+            {
+                expiresIn:
+                    "1d"
+            }
+        );
+
+        return res.redirect(
+    `http://localhost:5000/google-auth.html?token=${token}&firstName=${encodeURIComponent(
+        user.first_name || firstName
+    )}&lastName=${encodeURIComponent(
+        user.last_name || lastName
+    )}&email=${encodeURIComponent(email)}`
+);
+
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        return res.redirect(
+            "http://localhost:5000/login.html"
+        );
+
+    }
+
+}
 
     async logout(req, res) {
 
@@ -360,6 +567,227 @@ const accountId =
 
     }
 
+    async forgotPassword(
+    req,
+    res
+) {
+
+    try {
+
+        const {
+            email
+        } = req.body;
+
+        const [users] =
+        await db.execute(
+            `
+            SELECT *
+            FROM users
+            WHERE email = ?
+            `,
+            [email]
+        );
+
+        if (
+            users.length === 0
+        ) {
+
+            return res.status(404).json({
+                success:false,
+                message:
+                    "Email not found."
+            });
+
+        }
+
+        const resetCode =
+        String(
+            Math.floor(
+                100000 +
+                Math.random() * 900000
+            )
+        );
+
+        await db.execute(
+            `
+            UPDATE users
+            SET reset_code = ?
+            WHERE email = ?
+            `,
+            [
+                resetCode,
+                email
+            ]
+        );
+
+        await EmailService
+        .sendResetCode(
+            email,
+            resetCode
+        );
+
+        return res.json({
+            success:true,
+            message:
+                "Reset code sent.",
+            email
+        });
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+            success:false
+        });
+
+    }
+
 }
+
+async verifyResetCode(
+    req,
+    res
+) {
+
+    try {
+
+        const {
+            email,
+            code
+        } = req.body;
+
+        const [users] =
+        await db.execute(
+            `
+            SELECT *
+            FROM users
+            WHERE email = ?
+            AND reset_code = ?
+            `,
+            [
+                email,
+                code
+            ]
+        );
+
+        if (
+            users.length === 0
+        ) {
+
+            return res.status(400).json({
+                success: false,
+                message:
+                    "Invalid reset code."
+            });
+
+        }
+
+        return res.json({
+            success: true
+        });
+
+    }
+    catch(error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+            success: false
+        });
+
+    }
+
+}
+
+async resetPassword(
+    req,
+    res
+) {
+
+    try {
+
+        const {
+            email,
+            password
+        } = req.body;
+
+        const [users] =
+        await db.execute(
+            `
+            SELECT id
+            FROM users
+            WHERE email = ?
+            `,
+            [email]
+        );
+
+        if (
+            users.length === 0
+        ) {
+
+            return res.status(404).json({
+                success: false,
+                message:
+                    "User not found."
+            });
+
+        }
+
+        const userId =
+            users[0].id;
+
+        const hashedPassword =
+            await bcrypt.hash(
+                password,
+                10
+            );
+
+        await db.execute(
+            `
+            UPDATE accounts
+            SET password = ?
+            WHERE user_id = ?
+            `,
+            [
+                hashedPassword,
+                userId
+            ]
+        );
+
+        await db.execute(
+            `
+            UPDATE users
+            SET reset_code = NULL
+            WHERE id = ?
+            `,
+            [userId]
+        );
+
+        return res.json({
+            success: true,
+            message:
+                "Password updated successfully."
+        });
+
+    }
+    catch (error) {
+
+        console.error(error);
+
+        return res.status(500).json({
+            success: false,
+            message:
+                "Failed to reset password."
+        });
+
+    }
+
+}
+
+}
+
+
 
 module.exports = new AuthController();

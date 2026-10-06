@@ -78,15 +78,16 @@ switch(period) {
             );
 
         const [[sales]] =
-            await db.execute(`
-                SELECT
-                    COALESCE(
-                        SUM(total_amount),
-                        0
-                    ) AS totalSales
-                FROM orders
-                WHERE status = 'received'
-            `);
+    await db.execute(`
+        SELECT
+            COALESCE(
+                SUM(total_amount),
+                0
+            ) AS totalSales
+        FROM orders
+        WHERE status = 'received'
+        ${dateFilter}
+    `);
 
            const [[vat]] =
     await db.execute(`
@@ -158,24 +159,34 @@ worksheet.addRow({
        const [topProducts] =
     await db.execute(`
         SELECT
-            p.product_name AS name,
+            COALESCE(
+    p.product_name,
+    oi.custom_item_name
+) AS name,
 
-            c.category_name AS category,
+  COALESCE(
+    c.category_name,
+    'Custom Request'
+) AS category,
 
             SUM(oi.quantity) AS orders,
 
-            SUM(oi.subtotal) AS revenue
+            SUM(oi.subtotal) AS revenue,
+
+SUM(
+    oi.subtotal * 0.12
+) AS vat
 
         FROM order_items oi
 
         INNER JOIN orders o
             ON oi.order_id = o.id
 
-        INNER JOIN products p
-            ON oi.product_id = p.id
+        LEFT JOIN products p
+    ON oi.product_id = p.id
 
-        INNER JOIN categories c
-            ON p.category_id = c.id
+       LEFT JOIN categories c
+    ON p.category_id = c.id
 
         WHERE o.status = 'received'
 
@@ -521,53 +532,78 @@ ${dateFilter}
         GROUP BY status
     `);
 
-            const [topProducts] =
-    await db.execute(`
-        SELECT
-            p.product_name AS name,
-            c.category_name AS category,
-            SUM(oi.quantity) AS orders,
-            SUM(
-                oi.quantity * oi.unit_price
-            ) AS revenue
+          const [topProducts] =
+await db.execute(`
+    SELECT
+        COALESCE(
+            p.product_name,
+            oi.custom_item_name
+        ) AS name,
 
-        FROM order_items oi
+        COALESCE(
+            c.category_name,
+            'Custom Request'
+        ) AS category,
 
-INNER JOIN orders o
-    ON oi.order_id = o.id
+        SUM(oi.quantity) AS orders,
 
-        INNER JOIN products p
-            ON oi.product_id = p.id
+       SUM(oi.subtotal) AS revenue,
 
-        INNER JOIN categories c
-            ON p.category_id = c.id
-WHERE o.status = 'received'
-${dateFilter.replaceAll("created_at", "o.created_at")}
-        GROUP BY p.id
+SUM(
+    oi.subtotal * 0.12
+) AS vat
 
-        ORDER BY orders DESC
-        
+    FROM orders o
 
-        LIMIT 5
-    `);
+    INNER JOIN order_items oi
+        ON o.id = oi.order_id
 
+    LEFT JOIN products p
+        ON oi.product_id = p.id
+
+    LEFT JOIN categories c
+        ON p.category_id = c.id
+
+    WHERE o.status = 'received'
+
+    ${dateFilter.replaceAll(
+        "created_at",
+        "o.created_at"
+    )}
+
+    GROUP BY
+        COALESCE(
+            p.product_name,
+            oi.custom_item_name
+        ),
+        COALESCE(
+            c.category_name,
+            'Custom Request'
+        )
+
+    ORDER BY orders DESC
+
+    LIMIT 5
+`);
     const [recentSales] =
     await db.execute(`
-        SELECT
-            o.order_code AS \`order\`,
+       SELECT
+    o.order_code AS \`order\`,
 
-            CONCAT(
-                u.first_name,
-                ' ',
-                u.last_name
-            ) AS customer,
+    CONCAT(
+        u.first_name,
+        ' ',
+        u.last_name
+    ) AS customer,
 
-            o.total_amount AS amount,
+    o.total_amount AS amount,
 
-            DATE_FORMAT(
-                o.created_at,
-                '%m/%d/%Y'
-            ) AS date
+    o.vat_amount AS vat,
+
+    DATE_FORMAT(
+        o.created_at,
+        '%m/%d/%Y'
+    ) AS date
 
         FROM orders o
 
@@ -579,7 +615,7 @@ ${dateFilter.replaceAll("created_at", "o.created_at")}
 
         ORDER BY o.created_at DESC
 
-        LIMIT 10
+        LIMIT 5
     `);
 
     const [salesOverview] =
@@ -599,6 +635,21 @@ ${dateFilter}
 
         ORDER BY salesDate ASC
     `);
+
+  console.log(
+    "TOP PRODUCTS:",
+    topProducts
+);
+
+console.log(
+    "PERIOD:",
+    period
+);
+
+console.log(
+    "DATE FILTER:",
+    dateFilter
+);
 
         return res.json({
             success: true,

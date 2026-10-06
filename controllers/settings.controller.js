@@ -176,10 +176,16 @@ if (
     contact_number,
     address,
     role,
-    status
+    status,
+    verification_code,
+    is_verified
 )
-                VALUES (
-    ?, ?, ?, ?, ?, ?, 'admin', 'active'
+VALUES (
+    ?, ?, ?, ?, ?, ?,
+    'admin',
+    'active',
+    NULL,
+    1
 )
                 `,
                 [

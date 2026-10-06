@@ -280,7 +280,7 @@ const oldProductName =
             const { id } = req.params;
 const [products] = await db.execute(
     `
-    SELECT product_name
+    SELECT product_name, product_image
     FROM products
     WHERE id = ?
     `,

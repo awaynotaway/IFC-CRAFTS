@@ -2,6 +2,10 @@ const ReviewService = require(
     "../services/review.service"
 );
 
+const IntegrationHub = require(
+"../services/integrationHub.service"
+);
+
 class ReviewController {
 
     async create(req, res) {
@@ -16,12 +20,12 @@ class ReviewController {
     rating,
     review
 } = req.body;
-
+console.log("REQ BODY:", req.body);
+console.log("PRODUCT ID:", productId);
             const result =
                 await ReviewService.create({
     orderId,
     productId,
-    reviewerName,
     productName,
     rating,
     review,

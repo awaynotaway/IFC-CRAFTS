@@ -103,7 +103,10 @@ class ChatController {
     async getChats(req, res) {
 
         try {
-
+console.log(
+    "USER ID:",
+    req.user.userId
+);
             const userId =
                 req.user.userId;
 
@@ -143,6 +146,11 @@ class ChatController {
             userId
         ]
     );
+
+    console.log(
+    "CHATS FOUND:",
+    chats
+);
 
             return res.status(200).json({
                 success: true,
@@ -224,6 +232,10 @@ ORDER BY m.created_at ASC
             const { message } =
                 req.body;
 
+                console.log("CHAT ID:", id);
+console.log("SENDER ID:", senderId);
+console.log("MESSAGE:", message);
+
             const [result] =
                 await db.execute(
                     `
@@ -236,12 +248,62 @@ ORDER BY m.created_at ASC
                     VALUES (?, ?, ?, ?)
                     `,
                     [
-                        "TEMP",
-                        id,
-                        senderId,
-                        message
-                    ]
+    `TEMP-${Date.now()}`,
+    id,
+    senderId,
+    message
+]
+
                 );
+const [userRows] =
+await db.execute(
+`
+SELECT
+    first_name,
+    last_name,
+    role
+FROM users
+WHERE id = ?
+`,
+[senderId]
+);
+
+if (
+    userRows.length > 0 &&
+    userRows[0].role === "customer"
+) {
+
+    const customerName =
+    `${userRows[0].first_name} ${userRows[0].last_name}`;
+
+    await db.execute(
+    `
+    INSERT INTO notifications
+    (
+        notification_code,
+        user_id,
+        title,
+        message,
+        is_read,
+        type
+    )
+    VALUES
+    (
+        ?, ?, ?, ?, ?, ?
+    )
+    `,
+    [
+        `NOTIF-${Date.now()}`,
+        1,
+        "New Message",
+        `${customerName} sent a new message.`,
+        0,
+        "messages"
+    ]
+    );
+
+}
+
 
             const messageId =
                 result.insertId;
@@ -286,9 +348,9 @@ ORDER BY m.created_at ASC
             );
 
             return res.status(500).json({
-                success: false
-            });
-
+    success: false,
+    message: error.message
+});
         }
 
     }

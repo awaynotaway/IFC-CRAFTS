@@ -130,6 +130,23 @@ const [[cancelledOrders]] =
 
         LIMIT 5
     `);
+    const [ordersOverview] =
+await db.execute(`
+    SELECT
+        MONTH(o.created_at) AS month,
+        p.product_name,
+        COUNT(*) AS total
+    FROM orders o
+    INNER JOIN order_items oi
+        ON oi.order_id = o.id
+    INNER JOIN products p
+        ON p.id = oi.product_id
+    GROUP BY
+        MONTH(o.created_at),
+        p.product_name
+    ORDER BY
+        MONTH(o.created_at)
+`);
 
             return res.status(200).json({
                 success: true,
@@ -155,21 +172,21 @@ const [[cancelledOrders]] =
     lowStockProducts:
         lowStock.lowStockProducts,
 
-        pendingPayments:
-    pendingPayments.pendingPayments,
+    pendingPayments:
+        pendingPayments.pendingPayments,
 
     processingOrders:
-    processingOrders.processingOrders,
+        processingOrders.processingOrders,
 
-cancelledOrders:
-    cancelledOrders.cancelledOrders,
+    cancelledOrders:
+        cancelledOrders.cancelledOrders,
 
     shippedOrders:
-    shippedOrders.shippedOrders,
+        shippedOrders.shippedOrders,
 
-    recentOrders
+    recentOrders,
 
-
+    ordersOverview
 }
             });
 

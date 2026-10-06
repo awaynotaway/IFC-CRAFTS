@@ -217,12 +217,13 @@ class CartController {
                 await db.execute(
                     `
                     SELECT
-                        cart_items.id,
-                        cart_items.cart_item_code,
-                        products.product_code,
-                        products.product_name,
-                        products.price,
-                        cart_items.quantity
+    cart_items.id,
+    cart_items.cart_item_code,
+    products.product_code,
+    products.product_name,
+    products.product_image,
+    products.price,
+    cart_items.quantity
                     FROM cart_items
                     INNER JOIN carts
                         ON cart_items.cart_id = carts.id
